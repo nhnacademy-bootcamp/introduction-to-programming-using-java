@@ -144,6 +144,9 @@ total = price + tax;
 | float  | 4바이트 | 약 7자리  | `float pi = 3.14159f;`    |
 | double | 8바이트 | 약 15자리 | `double e = 2.718281828;` |
 
+**참고:**
+- [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754)
+
 #### 문자형 (Character Type)
 | 타입 | 크기    | 설명               | 예시                |
 | ---- | ------- | ------------------ | ------------------- |
