@@ -1,0 +1,102 @@
+<svg width="800" height="750" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Main Program Flow -->
+ <!-- Subroutine Definitions -->
+ <!-- Flow arrows showing method calls -->
+ <!-- Method Structure Diagram -->
+ <!-- Arrow marker -->
+ <defs>
+  <marker orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrowhead">
+   <polygon id="svg_1" fill="#333" points="0 0, 10 3, 0 6"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_37" rx="5" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="120" width="350" y="250" x="401.11732"/>
+  <text id="svg_2" text-anchor="middle" font-weight="bold" font-size="24" font-family="Arial, sans-serif" y="30" x="400">Subroutines and Method Calls</text>
+  <text id="svg_4" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="60" x="50">Main Program Flow</text>
+  <!-- Main method -->
+  <rect stroke="#333" id="svg_5" rx="5" stroke-width="2" fill="#f8f9fa" height="400" width="346.36871" y="80" x="22.06703"/>
+  <rect stroke="#1976d2" id="svg_6" stroke-width="2" fill="#e3f2fd" height="40" width="329.72068" y="90" x="31.50839"/>
+  <text id="svg_7" text-anchor="middle" font-size="14" font-family="monospace" y="115" x="200">public static void main(String[] args)</text>
+  <!-- Statements in main -->
+  <path id="svg_10" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m200,180l0,20"/>
+  <!-- Method call 1 -->
+  <path id="svg_13" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m200,230l0,20"/>
+  <path id="svg_16" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m200,280l0,20"/>
+  <!-- Method call 2 -->
+  <path id="svg_19" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m200,330l0,20"/>
+  <path id="svg_22" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m200,380l0,20"/>
+  <text id="svg_26" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="60" x="400">Subroutine Definitions</text>
+  <!-- drawHouse method -->
+  <g id="svg_27">
+   <rect id="svg_28" rx="5" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="150" width="350" y="80" x="400"/>
+   <rect id="svg_29" stroke-width="2" stroke="#388e3c" fill="#c8e6c9" height="30" width="330" y="90" x="410"/>
+   <text id="svg_30" text-anchor="middle" font-size="12" font-family="monospace" y="110" x="575">public static void drawHouse()</text>
+   <text id="svg_31" font-size="11" font-family="monospace" y="140" x="420">// Draw roof</text>
+   <text id="svg_32" font-size="11" font-family="monospace" y="160" x="420">drawTriangle(100, 50, 50);</text>
+   <text id="svg_33" font-size="11" font-family="monospace" y="180" x="420">// Draw walls</text>
+   <text id="svg_34" font-size="11" font-family="monospace" y="200" x="420">drawRectangle(75, 100, 100, 80);</text>
+   <text id="svg_35" font-size="11" font-family="monospace" y="220" x="420">// Draw door and windows...</text>
+  </g>
+  <!-- calculateArea method -->
+  <rect id="svg_38" stroke-width="2" stroke="#388e3c" fill="#c8e6c9" height="30" width="330" y="260" x="410"/>
+  <text id="svg_39" text-anchor="middle" font-size="12" font-family="monospace" y="280" x="575">public static int calculateArea(int w, int h)</text>
+  <text id="svg_40" font-size="11" font-family="monospace" y="310" x="420">int area = w * h;</text>
+  <text id="svg_41" font-size="11" font-family="monospace" y="330" x="420">return area;</text>
+  <!-- Return arrow -->
+  <text id="svg_43" fill="#f44336" font-size="10" font-family="Arial, sans-serif" y="360" x="430">returns value</text>
+  <!-- printResult method -->
+  <g id="svg_44">
+   <rect id="svg_45" rx="5" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="100" width="350" y="390" x="400"/>
+   <rect id="svg_46" stroke-width="2" stroke="#388e3c" fill="#c8e6c9" height="30" width="330" y="400" x="410"/>
+   <text id="svg_47" text-anchor="middle" font-size="12" font-family="monospace" y="420" x="575">public static void printResult(int value)</text>
+   <text id="svg_48" font-size="11" font-family="monospace" y="450" x="420">System.out.println("Result: " + value);</text>
+   <text id="svg_49" font-size="11" font-family="monospace" y="470" x="420">// No return value (void)</text>
+  </g>
+  <path stroke="#ff9800" id="svg_50" marker-end="url(#arrowhead)" stroke-dasharray="5,5" stroke-width="2" d="m323.07263,198.57542l76.92737,-90.13967"/>
+  <text transform="rotate(-30 358.464 142.933)" stroke="null" id="svg_51" fill="#ff9800" font-size="10" font-family="Arial, sans-serif" y="142.93296" x="358.46369">call</text>
+  <path stroke="#4caf50" id="svg_52" marker-end="url(#arrowhead)" stroke-dasharray="5,5" stroke-width="2" d="m398.88269,275.02793l-73.57542,-5"/>
+  <text transform="rotate(-2 364.05 266.145)" id="svg_53" fill="#4caf50" font-size="10" font-family="Arial, sans-serif" y="266.14525" x="364.05028">return</text>
+  <path stroke="#ff9800" id="svg_54" marker-end="url(#arrowhead)" stroke-dasharray="5,5" stroke-width="2" d="m324.7486,319.80447l71.34078,70.2514"/>
+  <text transform="rotate(45 360.14 345.698)" id="svg_55" fill="#ff9800" font-size="10" font-family="Arial, sans-serif" y="345.69832" x="360.13967">call</text>
+  <g stroke="null" id="svg_56">
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_57" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="537.5419" x="50">Method Structure</text>
+   <rect stroke="#333" id="svg_58" rx="5" stroke-width="2" fill="#f0f0f0" height="180" width="727.37429" y="557.5419" x="22.62571"/>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_59" font-size="14" font-family="monospace" y="587.5419" x="70">public static returnType methodName(parameterType param1, ...) {</text>
+   <!-- Parts breakdown -->
+   <rect stroke="#c2185b" id="svg_60" stroke-width="2" fill="#fce4ec" height="30" width="103.91061" y="607.5419" x="43.40783"/>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_61" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="627.5419" x="120">Access Modifier</text>
+   <rect stroke="#7b1fa2" id="svg_62" stroke-width="2" fill="#e1bee7" height="30" width="83.12849" y="607.5419" x="157.70951"/>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_63" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="627.5419" x="220">static</text>
+   <rect stroke="#1976d2" id="svg_64" stroke-width="2" fill="#e3f2fd" height="30" width="103.91061" y="607.5419" x="251.22906"/>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_65" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="627.5419" x="320">Return Type</text>
+   <rect stroke="#388e3c" id="svg_66" stroke-width="2" fill="#e8f5e9" height="30" width="124.69274" y="607.5419" x="365.53073"/>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_67" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="627.5419" x="440">Method Name</text>
+   <rect stroke="#f57c00" id="svg_68" stroke-width="2" fill="#fff3e0" height="30" width="228.60335" y="607.5419" x="500.61453"/>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_69" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="627.5419" x="620">Parameters</text>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_70" font-size="14" font-family="monospace" y="667.5419" x="90">// Method body</text>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_71" font-size="14" font-family="monospace" y="687.5419" x="90">// Statements...</text>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_72" font-size="14" font-family="monospace" y="707.5419" x="90">return value;  // if not void</text>
+   <text transform="matrix(1.03911 0 0 1 -29.3296 0)" stroke="null" id="svg_73" font-size="14" font-family="monospace" y="727.5419" x="70">}</text>
+  </g>
+  <path stroke="#ff9800" id="svg_75" marker-end="url(#arrowhead)" stroke-dasharray="5,5" stroke-width="2" d="m323.07263,198.57542l76.92737,-90.13966"/>
+  <path stroke="#ff9800" id="svg_76" marker-end="url(#arrowhead)" stroke-dasharray="5,5" stroke-width="2" d="m482.84915,333.77096l-22.51392,16.56422"/>
+  <g id="svg_78">
+   <rect stroke="#2196F3" id="svg_14" stroke-width="2" fill="#e8f4f8" height="30" width="258.43573" y="250" x="66.03351"/>
+   <rect stroke="#ff9800" id="svg_17" stroke-width="3" fill="#fff3e0" height="30" width="258.43573" y="300" x="66.03351"/>
+   <rect stroke="#2196F3" id="svg_20" stroke-width="2" fill="#e8f4f8" height="30" width="258.43573" y="350" x="66.03351"/>
+   <rect stroke="#2196F3" id="svg_23" stroke-width="2" fill="#e8f4f8" height="30" width="258.43573" y="400" x="66.03351"/>
+   <path id="svg_8" d="m66.03351,150l258.43573,0l0,30l-258.43573,0l0,-30z" opacity="undefined" stroke-width="2" stroke="#2196F3" fill="#e8f4f8"/>
+   <rect stroke="#ff9800" id="svg_11" stroke-width="3" fill="#fff3e0" height="30" width="258.43573" y="200" x="66.03351"/>
+  </g>
+  <g id="svg_79">
+   <text id="svg_9" text-anchor="middle" font-size="12" font-family="monospace" y="170" x="200">System.out.println("Starting...");</text>
+   <text id="svg_12" text-anchor="middle" font-size="12" font-family="monospace" y="220" x="200">drawHouse();</text>
+   <text id="svg_15" text-anchor="middle" font-size="12" font-family="monospace" y="270" x="200">int result = calculateArea(5, 10);</text>
+   <text id="svg_18" text-anchor="middle" font-size="12" font-family="monospace" y="320" x="200">printResult(result);</text>
+   <text id="svg_21" text-anchor="middle" font-size="12" font-family="monospace" y="370" x="200">System.out.println("Done!");</text>
+   <text id="svg_24" text-anchor="middle" font-size="12" font-family="monospace" y="420" x="200">// End of main method</text>
+  </g>
+ </g>
+</svg>

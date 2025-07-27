@@ -1,0 +1,85 @@
+<svg width="900" height="799.9999999999999" xmlns="http://www.w3.org/2000/svg">
+ <!-- 제목 -->
+ <!-- CPU 박스 -->
+ <!-- 메모리 박스 -->
+ <!-- CPU 내부 구성요소 -->
+ <!-- 메모리 내용 -->
+ <!-- 사이클 단계 -->
+ <!-- 순환 화살표 -->
+ <!-- 데이터 흐름 화살표 -->
+ <!-- 화살표 정의 -->
+ <defs>
+  <marker orient="auto" refY="3.5" refX="9" markerHeight="7" markerWidth="10" id="arrowhead">
+   <polygon id="svg_1" fill="#666" points="0 0, 10 3.5, 0 7"/>
+  </marker>
+ </defs>
+ <!-- 예제 실행 과정 -->
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_2" fill="#333" font-weight="bold" font-size="28" text-anchor="middle" y="40" x="450">가져오기 및 실행 사이클</text>
+  <rect id="svg_3" stroke-width="2" stroke="#333" fill="#f0f0f0" height="300" width="350" y="80" x="50.68493"/>
+  <text id="svg_4" font-weight="bold" font-size="20" text-anchor="middle" y="110" x="225">CPU</text>
+  <rect id="svg_5" stroke-width="2" stroke="#333" fill="#f0f0f0" height="300" width="350" y="80" x="500"/>
+  <text id="svg_6" font-weight="bold" font-size="20" text-anchor="middle" y="110" x="675">메모리 (RAM)</text>
+  <rect id="svg_7" stroke="#666" fill="#ffd4d4" height="40" width="150" y="130" x="70"/>
+  <text id="svg_8" font-size="14" text-anchor="middle" y="155" x="145">PC: 0x0100</text>
+  <rect id="svg_9" stroke="#666" fill="#d4d4ff" height="60" width="150" y="180" x="70"/>
+  <text id="svg_10" font-size="14" text-anchor="middle" y="200" x="145">명령 레지스터</text>
+  <text id="svg_11" font-size="12" text-anchor="middle" y="220" x="145">(현재 명령)</text>
+  <rect id="svg_12" stroke="#666" fill="#d4ffd4" height="110" width="150" y="130" x="230"/>
+  <text id="svg_13" font-size="14" text-anchor="middle" y="155" x="305">레지스터</text>
+  <text id="svg_14" font-size="12" text-anchor="middle" y="175" x="305">R1: 0000</text>
+  <text id="svg_15" font-size="12" text-anchor="middle" y="195" x="305">R2: 0000</text>
+  <text id="svg_16" font-size="12" text-anchor="middle" y="215" x="305">R3: 0000</text>
+  <rect id="svg_17" stroke="#666" fill="#ffffd4" height="60" width="310" y="250" x="70"/>
+  <text id="svg_18" font-size="14" text-anchor="middle" y="275" x="225">ALU</text>
+  <text id="svg_19" font-size="12" text-anchor="middle" y="295" x="225">(산술/논리 연산)</text>
+  <rect id="svg_20" stroke="#666" fill="#ccffcc" height="40" width="310" y="130" x="520"/>
+  <text id="svg_21" font-size="12" y="155" x="530">0x0100: 00000101 (5를 R1에 로드)</text>
+  <rect id="svg_22" stroke="#666" fill="#ccffcc" height="40" width="310" y="170" x="520"/>
+  <text id="svg_23" font-size="12" y="195" x="530">0x0101: 00000011 (3을 R2에 로드)</text>
+  <rect id="svg_24" stroke="#666" fill="#ccffcc" height="40" width="310" y="210" x="520"/>
+  <text id="svg_25" font-size="12" y="235" x="530">0x0102: 10110001 (R1+R2→R3)</text>
+  <rect id="svg_26" stroke="#666" fill="#ccffcc" height="40" width="310" y="250" x="520"/>
+  <text id="svg_27" font-size="12" y="275" x="530">0x0103: 11111111 (프로그램 종료)</text>
+  <g id="svg_28">
+   <!-- 1. Fetch -->
+   <rect id="svg_29" rx="10" stroke-width="2" stroke="#cc0000" fill="#ffeeee" height="80" width="180" y="420" x="-0.68493"/>
+   <text id="svg_30" font-weight="bold" font-size="18" text-anchor="middle" y="450" x="89.31507">1. 가져오기</text>
+   <text id="svg_31" font-size="14" text-anchor="middle" y="470" x="89.31507">(Fetch)</text>
+   <text id="svg_32" font-size="12" text-anchor="middle" y="490" x="89.31507">PC 주소의 명령 읽기</text>
+   <!-- 화살표 -->
+   <path id="svg_33" marker-end="url(#arrowhead)" stroke-width="2" stroke="#666" d="m189.31507,460l40,0"/>
+   <!-- 2. Decode -->
+   <rect id="svg_34" rx="10" stroke-width="2" stroke="#0000cc" fill="#eeeeff" height="80" width="180" y="420" x="239.31507"/>
+   <text id="svg_35" font-weight="bold" font-size="18" text-anchor="middle" y="450" x="329.31507">2. 해독</text>
+   <text id="svg_36" font-size="14" text-anchor="middle" y="470" x="329.31507">(Decode)</text>
+   <text id="svg_37" font-size="12" text-anchor="middle" y="490" x="329.31507">명령 의미 파악</text>
+   <!-- 화살표 -->
+   <path id="svg_38" marker-end="url(#arrowhead)" stroke-width="2" stroke="#666" d="m429.31507,460l40,0"/>
+   <!-- 3. Execute -->
+   <rect id="svg_39" rx="10" stroke-width="2" stroke="#00cc00" fill="#eeffee" height="80" width="180" y="420" x="479.31507"/>
+   <text id="svg_40" font-weight="bold" font-size="18" text-anchor="middle" y="450" x="569.31507">3. 실행</text>
+   <text id="svg_41" font-size="14" text-anchor="middle" y="470" x="569.31507">(Execute)</text>
+   <text id="svg_42" font-size="12" text-anchor="middle" y="490" x="569.31507">명령 수행</text>
+   <!-- 화살표 -->
+   <path id="svg_43" marker-end="url(#arrowhead)" stroke-width="2" stroke="#666" d="m669.31507,460l40,0"/>
+   <!-- 4. PC Update -->
+   <rect id="svg_44" rx="10" stroke-width="2" stroke="#cccc00" fill="#ffffee" height="80" width="180" y="420" x="719.31507"/>
+   <text id="svg_45" font-weight="bold" font-size="18" text-anchor="middle" y="450" x="809.31507">4. PC 갱신</text>
+   <text id="svg_46" font-size="14" text-anchor="middle" y="470" x="809.31507">(Update PC)</text>
+   <text id="svg_47" font-size="12" text-anchor="middle" y="490" x="809.31507">다음 명령 주소로</text>
+  </g>
+  <path id="svg_48" marker-end="url(#arrowhead)" fill="none" stroke-width="2" stroke="#666" d="m799.31507,520c0,40 -400,40 -400,40c-350,0 -350,-40 -350,-40"/>
+  <text id="svg_49" fill="#666" font-size="14" text-anchor="middle" y="580" x="399.31507">사이클 반복</text>
+  <path id="svg_50" stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke-width="2" stroke="#ff0000" d="m400,150l100,0"/>
+  <text id="svg_51" fill="#ff0000" font-size="12" text-anchor="middle" y="145" x="450">명령 가져오기</text>
+  <path id="svg_52" stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke-width="2" stroke="#0000ff" d="m500,280l-100,0"/>
+  <text id="svg_53" fill="#0000ff" font-size="12" text-anchor="middle" y="305" x="450">데이터 읽기/쓰기</text>
+  <text id="svg_54" fill="#333" font-weight="bold" font-size="18" y="630" x="50">실행 예제:</text>
+  <text id="svg_55" fill="#666" font-size="14" y="655" x="50">1. PC=0x0100 → "00000101" 가져오기 → "5를 R1에" 해독 → R1=5 실행 → PC=0x0101</text>
+  <text id="svg_56" fill="#666" font-size="14" y="675" x="50">2. PC=0x0101 → "00000011" 가져오기 → "3을 R2에" 해독 → R2=3 실행 → PC=0x0102</text>
+  <text id="svg_57" fill="#666" font-size="14" y="695" x="50">3. PC=0x0102 → "10110001" 가져오기 → "R1+R2→R3" 해독 → R3=8 실행 → PC=0x0103</text>
+  <text id="svg_58" fill="#666" font-size="14" y="715" x="50">4. PC=0x0103 → "11111111" 가져오기 → "종료" 해독 → 프로그램 종료</text>
+ </g>
+</svg>

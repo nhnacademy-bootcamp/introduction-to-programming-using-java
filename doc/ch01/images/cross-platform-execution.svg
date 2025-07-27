@@ -1,0 +1,126 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Traditional Approach -->
+ <!-- Java Approach -->
+ <!-- Comparison -->
+ <!-- Arrow marker definition -->
+ <defs>
+  <marker orient="auto" refY="3.5" refX="9" markerHeight="7" markerWidth="10" id="arrowhead">
+   <polygon id="svg_1" fill="#333" points="0 0, 10 3.5, 0 7"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_2" font-weight="bold" font-size="24" text-anchor="middle" y="30" x="450">Cross-Platform Execution Concept</text>
+  <text id="svg_4" font-weight="bold" font-size="18" text-anchor="middle" y="80" x="225">Traditional Approach</text>
+  <!-- C++ Source -->
+  <rect id="svg_5" rx="5" stroke-width="2" stroke="#0066cc" fill="#e8f4f8" height="50" width="200" y="100" x="125"/>
+  <text id="svg_6" font-size="14" text-anchor="middle" y="130" x="225">C++ Source Code</text>
+  <!-- Compilers -->
+  <g id="svg_7">
+   <!-- Windows Compiler -->
+   <rect id="svg_8" stroke="#cc0000" fill="#ffe8e8" height="40" width="100" y="191.76166" x="50"/>
+   <text id="svg_9" font-size="12" text-anchor="middle" y="216.76166" x="100">Windows</text>
+   <text id="svg_10" font-size="10" text-anchor="middle" y="229.76166" x="100">Compiler</text>
+   <!-- Mac Compiler -->
+   <rect id="svg_11" stroke="#cc0000" fill="#ffe8e8" height="40" width="100" y="191.76166" x="175"/>
+   <text id="svg_12" font-size="12" text-anchor="middle" y="216.76166" x="225">macOS</text>
+   <text id="svg_13" font-size="10" text-anchor="middle" y="229.76166" x="225">Compiler</text>
+   <!-- Linux Compiler -->
+   <rect id="svg_14" stroke="#cc0000" fill="#ffe8e8" height="40" width="100" y="191.76166" x="300"/>
+   <text id="svg_15" font-size="12" text-anchor="middle" y="216.76166" x="350">Linux</text>
+   <text id="svg_16" font-size="10" text-anchor="middle" y="229.76166" x="350">Compiler</text>
+  </g>
+  <!-- Executables -->
+  <g id="svg_17">
+   <!-- Windows EXE -->
+   <rect id="svg_18" stroke="#666" fill="#f0f0f0" height="40" width="100" y="251.76166" x="50"/>
+   <text id="svg_19" font-size="12" text-anchor="middle" y="276.76166" x="100">.exe file</text>
+   <!-- Mac App -->
+   <rect id="svg_20" stroke="#666" fill="#f0f0f0" height="40" width="100" y="251.76166" x="175"/>
+   <text id="svg_21" font-size="12" text-anchor="middle" y="276.76166" x="225">.app file</text>
+   <!-- Linux Binary -->
+   <rect id="svg_22" stroke="#666" fill="#f0f0f0" height="40" width="100" y="251.76166" x="300"/>
+   <text id="svg_23" font-size="12" text-anchor="middle" y="276.76166" x="350">ELF binary</text>
+  </g>
+  <!-- Platforms -->
+  <g id="svg_24">
+   <!-- Windows -->
+   <rect id="svg_25" rx="5" stroke="#0066cc" fill="#cce6ff" height="40" width="100" y="311.76166" x="50"/>
+   <text id="svg_26" font-size="12" text-anchor="middle" y="336.76166" x="100">Windows</text>
+   <!-- Mac -->
+   <rect id="svg_27" rx="5" stroke="#0066cc" fill="#cce6ff" height="40" width="100" y="311.76166" x="175"/>
+   <text id="svg_28" font-size="12" text-anchor="middle" y="336.76166" x="225">macOS</text>
+   <!-- Linux -->
+   <rect id="svg_29" rx="5" stroke="#0066cc" fill="#cce6ff" height="40" width="100" y="311.76166" x="300"/>
+   <text id="svg_30" font-size="12" text-anchor="middle" y="336.76166" x="350">Linux</text>
+  </g>
+  <!-- Arrows -->
+  <path id="svg_31" marker-end="url(#arrowhead)" stroke="#333" d="m225,150l-125,40"/>
+  <path id="svg_32" marker-end="url(#arrowhead)" stroke="#333" d="m225,150l0,40"/>
+  <path id="svg_33" marker-end="url(#arrowhead)" stroke="#333" d="m225,150l125,40"/>
+  <path id="svg_34" marker-end="url(#arrowhead)" stroke="#333" d="m100,231.76166l0,20"/>
+  <path id="svg_35" marker-end="url(#arrowhead)" stroke="#333" d="m225,231.76166l0,20"/>
+  <path id="svg_36" marker-end="url(#arrowhead)" stroke="#333" d="m350,231.76166l0,20"/>
+  <path id="svg_37" marker-end="url(#arrowhead)" stroke="#333" d="m100,291.76166l0,20"/>
+  <path id="svg_38" marker-end="url(#arrowhead)" stroke="#333" d="m225,291.76166l0,20"/>
+  <path id="svg_39" marker-end="url(#arrowhead)" stroke="#333" d="m350,291.76166l0,20"/>
+  <!-- Problem indicators -->
+  <text id="svg_40" font-weight="bold" fill="#cc0000" font-size="14" text-anchor="middle" y="381.76166" x="225">3 Different Executables!</text>
+  <text id="svg_42" font-weight="bold" font-size="18" text-anchor="middle" y="80" x="675">Java Approach</text>
+  <!-- Java Source -->
+  <rect id="svg_43" rx="5" stroke-width="2" stroke="#0066cc" fill="#e8f4f8" height="50" width="200" y="100" x="575"/>
+  <text id="svg_44" font-size="14" text-anchor="middle" y="130" x="675">Java Source Code</text>
+  <!-- Java Compiler -->
+  <rect id="svg_45" stroke-width="2" stroke="#ff6600" fill="#fff0e0" height="40" width="200" y="170" x="575"/>
+  <text id="svg_46" font-size="14" text-anchor="middle" y="195" x="675">Java Compiler (javac)</text>
+  <!-- Bytecode -->
+  <rect id="svg_47" stroke-width="2" stroke="#6600cc" fill="#f0e8ff" height="40" width="200" y="230" x="575"/>
+  <text id="svg_48" font-size="14" text-anchor="middle" y="255" x="675">Java Bytecode (.class)</text>
+  <!-- JVMs and Platforms -->
+  <g id="svg_49">
+   <!-- Windows -->
+   <g id="svg_50">
+    <rect id="svg_51" stroke="#00cc00" fill="#e8ffe8" height="40" width="100" y="307.61658" x="500"/>
+    <text id="svg_52" font-size="12" text-anchor="middle" y="332.61658" x="550">JVM</text>
+    <rect id="svg_53" rx="5" stroke="#0066cc" fill="#cce6ff" height="40" width="100" y="357.61658" x="500"/>
+    <text id="svg_54" font-size="12" text-anchor="middle" y="382.61658" x="550">Windows</text>
+   </g>
+   <!-- Mac -->
+   <g id="svg_55">
+    <rect id="svg_56" stroke="#00cc00" fill="#e8ffe8" height="40" width="100" y="307.61658" x="625"/>
+    <text id="svg_57" font-size="12" text-anchor="middle" y="332.61658" x="675">JVM</text>
+    <rect id="svg_58" rx="5" stroke="#0066cc" fill="#cce6ff" height="40" width="100" y="357.61658" x="625"/>
+    <text id="svg_59" font-size="12" text-anchor="middle" y="382.61658" x="675">macOS</text>
+   </g>
+   <!-- Linux -->
+   <g id="svg_60">
+    <rect id="svg_61" stroke="#00cc00" fill="#e8ffe8" height="40" width="100" y="307.61658" x="750"/>
+    <text id="svg_62" font-size="12" text-anchor="middle" y="332.61658" x="800">JVM</text>
+    <rect id="svg_63" rx="5" stroke="#0066cc" fill="#cce6ff" height="40" width="100" y="357.61658" x="750"/>
+    <text id="svg_64" font-size="12" text-anchor="middle" y="382.61658" x="800">Linux</text>
+   </g>
+  </g>
+  <!-- Arrows -->
+  <path id="svg_65" marker-end="url(#arrowhead)" stroke="#333" d="m675,150l0,20"/>
+  <path id="svg_66" marker-end="url(#arrowhead)" stroke="#333" d="m675,210l0,20"/>
+  <path stroke="#6600cc" id="svg_67" stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke-width="2" d="m675,270l-124.48186,33.98964"/>
+  <path stroke="#6600cc" id="svg_68" stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke-width="2" d="m675,270l0,35.54404"/>
+  <path stroke="#6600cc" id="svg_69" stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke-width="2" d="m675,270l124.48186,35.02591"/>
+  <path id="svg_70" marker-end="url(#arrowhead)" stroke="#333" d="m550,347.61658l0,10"/>
+  <path id="svg_71" marker-end="url(#arrowhead)" stroke="#333" d="m675,347.61658l0,10"/>
+  <path id="svg_72" marker-end="url(#arrowhead)" stroke="#333" d="m800,347.61658l0,10"/>
+  <!-- Success indicator -->
+  <text id="svg_73" font-weight="bold" fill="#00cc00" font-size="14" text-anchor="middle" y="427.61658" x="675">1 Bytecode, Many Platforms!</text>
+  <g id="svg_74">
+   <rect id="svg_75" rx="10" stroke-width="2" stroke="#cccc00" fill="#ffffcc" height="150" width="800" y="439.58549" x="50"/>
+   <text id="svg_76" font-weight="bold" font-size="18" text-anchor="middle" y="469.58549" x="450">Key Advantages of Java's Approach</text>
+   <g id="svg_77">
+    <text id="svg_78" font-size="14" y="489.58549" x="100">✓ Write once, run anywhere (platform independence)</text>
+    <text id="svg_79" font-size="14" y="514.58549" x="100">✓ Single bytecode file works on all platforms with JVM</text>
+    <text id="svg_80" font-size="14" y="539.58549" x="100">✓ No need to recompile for different platforms</text>
+    <text id="svg_81" font-size="14" y="564.58549" x="100">✓ JVM handles platform-specific details</text>
+   </g>
+  </g>
+ </g>
+</svg>

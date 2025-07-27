@@ -1,0 +1,50 @@
+<svg width="699.9999999999999" height="650" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
+ <defs>
+  <marker orient="auto-start-reverse" markerHeight="6" markerWidth="6" refY="5" refX="8" viewBox="0 0 10 10" id="arrowhead">
+   <path id="svg_1" fill="#343a40" d="m0,0l10,5l-10,5l0,-10z"/>
+  </marker>
+ </defs>
+ <!-- Normal Operation Panel -->
+ <!-- Interrupt Panel -->
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_33">
+   <rect x="0" y="0" stroke="null" id="svg_2" fill="#f8f9fa" class="background" height="529.14111" width="700"/>
+   <text id="svg_3" fill="#212529" text-anchor="middle" font-weight="bold" font-size="18px" class="title" y="40" x="350">인터럽트 방식 동작</text>
+   <g id="normal-operation">
+    <rect id="svg_4" ry="8" rx="8" stroke-width="1.5" stroke="#a9a9a9" fill="#fff" class="panel" height="200" width="300" y="70" x="20"/>
+    <text id="svg_5" text-anchor="middle" font-weight="bold" font-size="16px" class="panel-title" y="100" x="170">정상 동작</text>
+    <rect id="svg_6" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#d1e7dd" class="box cpu-box" height="80" width="120" y="130" x="60"/>
+    <text id="svg_7" text-anchor="middle" font-size="14px" class="box-text" y="160" x="120">CPU가 다른</text>
+    <text id="svg_8" text-anchor="middle" font-size="14px" class="box-text" y="180" x="120">작업 수행</text>
+    <text id="svg_9" text-anchor="middle" fill="#495057" font-size="14px" class="box-text" y="200" x="120">(계산, 처리)</text>
+    <g id="svg_10" font-size="14px" class="device-text">
+     <text id="svg_11" x="210" y="150">[키보드] 😴</text>
+     <text id="svg_12" x="210" y="180">[마우스] 😴</text>
+     <text id="svg_13" x="210" y="210">[네트워크] 😴</text>
+    </g>
+   </g>
+   <rect stroke="#a9a9a9" id="svg_14" ry="8" rx="8" stroke-width="1.5" fill="#fff" class="panel" height="433.25155" width="300" y="70" x="380"/>
+   <text id="svg_15" text-anchor="middle" font-weight="bold" font-size="16px" class="panel-title" y="100" x="530">키보드 입력 발생 시</text>
+   <rect id="svg_16" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#d1e7dd" class="box cpu-box" height="50" width="120" y="130" x="420"/>
+   <text id="svg_17" text-anchor="middle" font-size="14px" class="box-text" y="160" x="480">CPU 작업 중</text>
+   <text id="svg_18" font-size="14px" class="device-text" y="160" x="610">[키보드] 🔔</text>
+   <path id="svg_19" fill="none" stroke-width="2" stroke="#d62828" marker-end="url(#arrowhead)" d="m606.99386,155.6135l-60,0" class="interrupt-arrow"/>
+   <text id="svg_20" text-anchor="middle" fill="#d62828" font-weight="bold" font-size="14px" class="interrupt-label" y="145.6135" x="576.99386">"인터럽트!"</text>
+   <path id="svg_21" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m480,180l0,30" class="arrow"/>
+   <g text-anchor="middle" font-size="14px" class="box-text" id="isr-steps">
+    <rect id="svg_22" x="420" y="210" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#cfe2ff" class="box isr-box" height="70" width="120"/>
+    <text id="svg_23" y="240" x="480">1. 현재</text>
+    <text id="svg_24" y="260" x="480">작업 저장</text>
+    <path id="svg_25" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m480,280l0,30" class="arrow"/>
+    <rect id="svg_26" x="420" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#cfe2ff" class="box isr-box" height="70" width="120" y="310"/>
+    <text id="svg_27" y="335" x="480">2. 키보드</text>
+    <text id="svg_28" y="355" x="480">입력 처리</text>
+    <path id="svg_29" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m480,380l0,30" class="arrow"/>
+    <rect id="svg_30" x="420" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#cfe2ff" class="box isr-box" height="70" width="120" y="410"/>
+    <text id="svg_31" y="435" x="480">3. 원래</text>
+    <text id="svg_32" y="455" x="480">작업 복원</text>
+   </g>
+  </g>
+ </g>
+</svg>

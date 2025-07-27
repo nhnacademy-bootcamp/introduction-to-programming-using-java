@@ -1,0 +1,67 @@
+<svg width="700" height="500" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
+  <style>
+    .background { fill: #f8f9fa; }
+    .title { font-size: 18px; font-weight: bold; text-anchor: middle; fill: #212529; }
+    .component-box { fill: #fff; stroke: #495057; stroke-width: 1.5; rx: 8; ry: 8; }
+    .component-text { font-size: 14px; text-anchor: middle; }
+    .cpu-box { fill: #d1e7dd; }
+    .memory-box { fill: #cfe2ff; }
+    .device-box { fill: #fff3cd; }
+    .bus-line { stroke: #6c757d; stroke-width: 8; }
+    .bus-connector { stroke: #6c757d; stroke-width: 1.5; }
+    .bus-label { font-size: 13px; font-weight: bold; fill: #495057; }
+  </style>
+
+  <rect width="100%" height="100%" class="background"/>
+  <text x="350" y="40" class="title">컴퓨터 버스 시스템</text>
+
+  <!-- Main Bus Line -->
+  <line x1="100" y1="200" x2="600" y2="200" class="bus-line" />
+
+  <!-- Bus Labels -->
+  <text x="350" y="180" class="bus-label" text-anchor="middle">데이터 버스 (Data Bus)</text>
+  <text x="350" y="205" class="bus-label" text-anchor="middle">주소 버스 (Address Bus)</text>
+  <text x="350" y="230" class="bus-label" text-anchor="middle">제어 버스 (Control Bus)</text>
+
+  <!-- CPU -->
+  <g id="cpu">
+    <line x1="150" y1="120" x2="150" y2="200" class="bus-connector" />
+    <rect x="100" y="70" width="100" height="50" class="component-box cpu-box" />
+    <text x="150" y="100" class="component-text">CPU</text>
+  </g>
+
+  <!-- Memory -->
+  <g id="memory">
+    <line x1="550" y1="120" x2="550" y2="200" class="bus-connector" />
+    <rect x="500" y="70" width="100" height="50" class="component-box memory-box" />
+    <text x="550" y="100" class="component-text">Memory</text>
+  </g>
+
+  <!-- Devices -->
+  <g id="devices" class="component-text">
+    <!-- Keyboard -->
+    <g transform="translate(50, 300)">
+      <line x1="75" y1="0" x2="75" y2="-100" class="bus-connector" />
+      <rect x="0" y="0" width="150" height="50" class="component-box device-box"/>
+      <text x="75" y="30">키보드 (Keyboard)</text>
+    </g>
+    <!-- Monitor -->
+    <g transform="translate(225, 300)">
+      <line x1="75" y1="0" x2="75" y2="-100" class="bus-connector" />
+      <rect x="0" y="0" width="150" height="50" class="component-box device-box"/>
+      <text x="75" y="30">모니터 (Monitor)</text>
+    </g>
+    <!-- Disk -->
+    <g transform="translate(400, 300)">
+      <line x1="50" y1="0" x2="50" y2="-100" class="bus-connector" />
+      <rect x="0" y="0" width="100" height="50" class="component-box device-box"/>
+      <text x="50" y="30">디스크 (Disk)</text>
+    </g>
+    <!-- Network -->
+    <g transform="translate(525, 300)">
+      <line x1="50" y1="0" x2="50" y2="-100" class="bus-connector" />
+      <rect x="0" y="0" width="100" height="50" class="component-box device-box"/>
+      <text x="50" y="30">네트워크</text>
+    </g>
+  </g>
+</svg>

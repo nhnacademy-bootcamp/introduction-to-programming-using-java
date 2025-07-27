@@ -1,0 +1,137 @@
+<svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moduleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="350" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+    Information Hiding and Encapsulation
+  </text>
+  
+  <!-- Module Box -->
+  <g transform="translate(150, 80)">
+    <!-- Outer container (Module) -->
+    <rect x="0" y="0" width="400" height="300" rx="20" fill="url(#moduleGrad)" filter="url(#shadow)"/>
+    
+    <!-- Module Label -->
+    <text x="200" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      Module: Mailing List
+    </text>
+    
+    <!-- Private Data Section -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="340" height="120" rx="10" fill="#fff" opacity="0.2"/>
+      <text x="170" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+        Private Data (Hidden)
+      </text>
+      
+      <!-- Data items -->
+      <rect x="20" y="40" width="140" height="30" rx="5" fill="#e74c3c" opacity="0.8"/>
+      <text x="90" y="60" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Names List
+      </text>
+      
+      <rect x="180" y="40" width="140" height="30" rx="5" fill="#e74c3c" opacity="0.8"/>
+      <text x="250" y="60" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Addresses List
+      </text>
+      
+      <rect x="100" y="80" width="140" height="30" rx="5" fill="#e74c3c" opacity="0.8"/>
+      <text x="170" y="100" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Email List
+      </text>
+    </g>
+    
+    <!-- Public Interface Section -->
+    <g transform="translate(30, 200)">
+      <rect x="0" y="0" width="340" height="60" rx="10" fill="#27ae60" opacity="0.9"/>
+      <text x="170" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+        Public Interface
+      </text>
+      
+      <!-- Interface methods -->
+      <g transform="translate(10, 30)">
+        <rect x="0" y="0" width="100" height="20" rx="3" fill="#fff" opacity="0.9"/>
+        <text x="50" y="15" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#27ae60">
+          addName()
+        </text>
+        
+        <rect x="110" y="0" width="100" height="20" rx="3" fill="#fff" opacity="0.9"/>
+        <text x="160" y="15" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#27ae60">
+          printLabels()
+        </text>
+        
+        <rect x="220" y="0" width="100" height="20" rx="3" fill="#fff" opacity="0.9"/>
+        <text x="270" y="15" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#27ae60">
+          searchList()
+        </text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- External Access Arrows -->
+  <g>
+    <!-- Success arrow to interface -->
+    <defs>
+      <marker id="greenArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60" />
+      </marker>
+      <marker id="redArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
+      </marker>
+    </defs>
+    
+    <!-- Allowed access -->
+    <line x1="50" y1="300" x2="140" y2="300" stroke="#27ae60" stroke-width="3" marker-end="url(#greenArrow)"/>
+    <text x="40" y="295" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#27ae60">
+      Allowed
+    </text>
+    
+    <!-- Blocked access -->
+    <line x1="50" y1="180" x2="140" y2="180" stroke="#e74c3c" stroke-width="3" stroke-dasharray="5,5"/>
+    <text x="145" y="180" font-family="Arial, sans-serif" font-size="20" fill="#e74c3c">✗</text>
+    <text x="40" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#e74c3c">
+      Blocked
+    </text>
+  </g>
+  
+  <!-- Benefits Box -->
+  <g transform="translate(50, 420)">
+    <rect x="0" y="0" width="600" height="60" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+    
+    <text x="20" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">
+      Benefits of Information Hiding:
+    </text>
+    
+    <text x="20" y="45" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      • Data Protection  • Easy Maintenance  • Clear Interface  • Implementation Flexibility
+    </text>
+  </g>
+  
+  <!-- Example Usage -->
+  <g transform="translate(450, 100)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#666">
+      Example Usage:
+    </text>
+    
+    <rect x="-10" y="10" width="200" height="80" rx="5" fill="#f8f9fa" stroke="#dee2e6"/>
+    <text x="0" y="30" font-family="monospace" font-size="11" fill="#333">
+      // External code
+    </text>
+    <text x="0" y="45" font-family="monospace" font-size="11" fill="#333">
+      mailingList.addName("John");
+    </text>
+    <text x="0" y="60" font-family="monospace" font-size="11" fill="#27ae60">
+      ✓ OK - uses interface
+    </text>
+    <text x="0" y="75" font-family="monospace" font-size="11" fill="#e74c3c">
+      ✗ namesList[0] = "John";
+    </text>
+  </g>
+</svg>

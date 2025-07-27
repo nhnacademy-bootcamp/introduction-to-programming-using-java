@@ -1,0 +1,96 @@
+<svg width="900" height="800" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Bytecode Input -->
+ <!-- JVM Container -->
+ <!-- Initial Interpretation Phase -->
+ <!-- Hot Spot Detection -->
+ <!-- JIT Compilation -->
+ <!-- Native Code Cache -->
+ <!-- Arrows and Flow -->
+ <defs>
+  <marker orient="auto" refY="3.5" refX="9" markerHeight="7" markerWidth="10" id="arrowhead">
+   <polygon id="svg_1" fill="#333" points="0 0, 10 3.5, 0 7"/>
+  </marker>
+ </defs>
+ <!-- Flow arrows -->
+ <!-- Performance Comparison -->
+ <!-- Example Timeline -->
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_2" font-weight="bold" font-size="24" text-anchor="middle" y="30" x="450">JIT (Just-In-Time) Compilation Process</text>
+  <rect id="svg_3" rx="10" stroke-width="2" stroke="#6600cc" fill="#f0e8ff" height="60" width="200" y="70" x="350"/>
+  <text id="svg_4" font-weight="bold" font-size="16" text-anchor="middle" y="105" x="450">Java Bytecode</text>
+  <rect stroke="#333" id="svg_5" rx="10" stroke-width="2" fill="#f8f8f8" height="534.06973" width="700" y="160" x="100"/>
+  <text id="svg_6" font-weight="bold" font-size="20" text-anchor="middle" y="190" x="450">JVM Execution Engine</text>
+  <g id="svg_7">
+   <text id="svg_8" font-weight="bold" font-size="16" y="236.86045" x="149.41861">Phase 1: Initial Interpretation</text>
+   <!-- Interpreter -->
+   <rect id="svg_9" rx="5" stroke-width="2" stroke="#ff6600" fill="#fff0e0" height="80" width="250" y="256.86045" x="149.41861"/>
+   <text id="svg_10" font-weight="bold" font-size="14" text-anchor="middle" y="286.86045" x="274.41861">Bytecode Interpreter</text>
+   <text id="svg_11" font-size="12" text-anchor="middle" y="306.86045" x="274.41861">• Executes bytecode line by line</text>
+   <text id="svg_12" font-size="12" text-anchor="middle" y="321.86045" x="274.41861">• Slower but starts immediately</text>
+   <!-- Profiler -->
+   <rect id="svg_13" rx="5" stroke-width="2" stroke="#0066cc" fill="#e8f4f8" height="80" width="220" y="256.86045" x="429.41861"/>
+   <text id="svg_14" font-weight="bold" font-size="14" text-anchor="middle" y="286.86045" x="539.41861">Profiler</text>
+   <text id="svg_15" font-size="12" text-anchor="middle" y="306.86045" x="539.41861">• Monitors execution frequency</text>
+   <text id="svg_16" font-size="12" text-anchor="middle" y="321.86045" x="539.41861">• Identifies "hot spots"</text>
+  </g>
+  <g id="svg_17">
+   <text id="svg_18" font-weight="bold" font-size="16" y="361.51161" x="149.41861">Phase 2: Hot Spot Detection</text>
+   <rect id="svg_19" rx="5" stroke-width="2" stroke="#cccc00" fill="#ffffcc" height="60" width="500" y="381.51161" x="149.41861"/>
+   <text id="svg_20" font-size="14" y="406.51161" x="169.41861">Method executed &gt; threshold times → Mark as "hot"</text>
+   <text id="svg_21" fill="#666" font-size="12" y="426.51161" x="169.41861">Example: Method called 10,000+ times or loop executed frequently</text>
+  </g>
+  <g id="svg_22">
+   <text id="svg_23" font-weight="bold" font-size="16" y="477.79066" x="150">Phase 3: JIT Compilation</text>
+   <!-- JIT Compiler -->
+   <rect id="svg_24" rx="5" stroke-width="2" stroke="#00cc00" fill="#e8ffe8" height="100" width="250" y="497.79066" x="150"/>
+   <text id="svg_25" font-weight="bold" font-size="14" text-anchor="middle" y="527.79066" x="275">JIT Compiler</text>
+   <text id="svg_26" font-size="12" text-anchor="middle" y="547.79066" x="275">• Compiles hot methods to</text>
+   <text id="svg_27" font-size="12" text-anchor="middle" y="562.79066" x="275">native machine code</text>
+   <text id="svg_28" font-size="12" text-anchor="middle" y="577.79066" x="275">• Applies optimizations</text>
+   <!-- Optimizations -->
+   <rect id="svg_29" rx="5" stroke-width="2" stroke="#0066cc" fill="#f0f8ff" height="100" width="220" y="497.79066" x="430"/>
+   <text id="svg_30" font-weight="bold" font-size="14" text-anchor="middle" y="522.79066" x="540">Optimizations</text>
+   <text id="svg_31" font-size="12" text-anchor="middle" y="542.79066" x="540">• Method inlining</text>
+   <text id="svg_32" font-size="12" text-anchor="middle" y="557.79066" x="540">• Dead code elimination</text>
+   <text id="svg_33" font-size="12" text-anchor="middle" y="572.79066" x="540">• Loop unrolling</text>
+   <text id="svg_34" font-size="12" text-anchor="middle" y="587.79066" x="540">• Escape analysis</text>
+  </g>
+  <rect id="svg_35" rx="5" stroke-width="2" stroke="#cc0000" fill="#ffe8e8" height="40" width="400" y="635.8139" x="250"/>
+  <text id="svg_36" font-weight="bold" font-size="14" text-anchor="middle" y="660.8139" x="450">Native Code Cache (Optimized Machine Code)</text>
+  <path id="svg_37" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m450,130l0,30"/>
+  <path id="svg_38" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m450,200l-175,20"/>
+  <path id="svg_39" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m400.58139,339.53484l0,40"/>
+  <path stroke="#333" id="svg_40" marker-end="url(#arrowhead)" stroke-width="2" d="m403.14136,443.4555l-125,14.86911"/>
+  <path stroke="#333" id="svg_41" marker-end="url(#arrowhead)" stroke-width="2" d="m400.58139,602.33406l23.25584,28.82867"/>
+  <g id="svg_42">
+   <rect id="svg_43" rx="5" stroke-width="2" stroke="#00cc00" fill="#f0fff0" height="200" width="150" y="300" x="720"/>
+   <text id="svg_44" font-weight="bold" font-size="14" text-anchor="middle" y="325" x="795">Performance</text>
+   <text id="svg_45" font-weight="bold" font-size="12" y="350" x="730">Interpretation:</text>
+   <text id="svg_46" font-size="12" y="370" x="740">• Slow startup ✓</text>
+   <text id="svg_47" font-size="12" y="385" x="740">• Low memory</text>
+   <text id="svg_48" font-size="12" y="400" x="740">• Slow execution</text>
+   <text id="svg_49" font-weight="bold" font-size="12" y="430" x="730">JIT Compiled:</text>
+   <text id="svg_50" font-size="12" y="450" x="740">• Fast execution ✓</text>
+   <text id="svg_51" font-size="12" y="465" x="740">• More memory</text>
+   <text id="svg_52" font-size="12" y="480" x="740">• Optimization time</text>
+  </g>
+  <!-- Timeline markers -->
+  <!-- Performance line -->
+  <g id="svg_66">
+   <text id="svg_54" font-weight="bold" font-size="14" text-anchor="middle" y="719.76737" x="449.41861">Execution Timeline Example</text>
+   <line id="svg_55" stroke-width="2" stroke="#999" y2="762.44177" x2="799.41861" y1="762.44177" x1="99.41861"/>
+   <circle id="svg_56" fill="#ff6600" r="4" cy="762.44177" cx="99.41861"/>
+   <text id="svg_57" font-size="10" text-anchor="middle" y="782.44177" x="99.41861">Start</text>
+   <circle id="svg_58" fill="#cccc00" r="4" cy="762.44177" cx="299.41861"/>
+   <text id="svg_59" font-size="10" text-anchor="middle" y="782.44177" x="299.41861">Hot spot detected</text>
+   <circle id="svg_60" fill="#00cc00" r="4" cy="762.44177" cx="499.41861"/>
+   <text id="svg_61" font-size="10" text-anchor="middle" y="782.44177" x="499.41861">JIT compilation</text>
+   <circle id="svg_62" fill="#cc0000" r="4" cy="762.44177" cx="799.41861"/>
+   <text id="svg_63" font-size="10" text-anchor="middle" y="782.44177" x="799.41861">Native code execution</text>
+   <path id="svg_64" fill="none" stroke-width="2" stroke="#00cc00" d="m99.41861,752.44177l200,0l200,-5l300,-5"/>
+   <text id="svg_65" fill="#00cc00" font-size="10" text-anchor="middle" y="736.86038" x="449.41861">Performance increase</text>
+  </g>
+ </g>
+</svg>

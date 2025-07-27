@@ -1,0 +1,67 @@
+<svg width="600" height="500" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
+  <style>
+    .background { fill: #f8f9fa; }
+    .title { font-size: 18px; font-weight: bold; text-anchor: middle; fill: #212529; }
+    .layer-box { fill: #fff; stroke: #495057; stroke-width: 1.5; rx: 8; ry: 8; }
+    .layer-title { font-size: 16px; font-weight: bold; text-anchor: middle; }
+    .layer-text { font-size: 12px; text-anchor: middle; fill: #495057; }
+    .os-box { fill: #cfe2ff; }
+    .os-component-box { fill: #e2eefe; stroke: #aaccf8; stroke-width: 1; rx:4; ry:4;}
+    .os-component-text { font-size: 11px; text-anchor: middle; }
+    .arrow { marker-start: url(#double-arrow); marker-end: url(#double-arrow); stroke: #343a40; stroke-width: 2.5; fill: none; }
+    .arrow-head { fill: #343a40; }
+  </style>
+
+  <defs>
+    <marker id="double-arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 5 L 10 0 L 10 10 z" class="arrow-head" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="background"/>
+  <text x="300" y="40" class="title">운영 체제 계층 구조</text>
+
+  <!-- Applications Layer -->
+  <g id="applications-layer">
+    <rect x="50" y="70" width="500" height="70" class="layer-box" />
+    <text x="300" y="100" class="layer-title">응용 프로그램 (Applications)</text>
+    <text x="300" y="120" class="layer-text">웹 브라우저, 워드 프로세서, 게임, IDE 등</text>
+  </g>
+
+  <path class="arrow" d="M 300 145 V 185" />
+
+  <!-- Operating System Layer -->
+  <g id="os-layer">
+    <rect x="50" y="190" width="500" height="120" class="layer-box os-box" />
+    <text x="300" y="215" class="layer-title">운영 체제 (Operating System)</text>
+
+    <g id="os-components" class="os-component-text">
+      <rect x="70" y="235" width="145" height="30" class="os-component-box" />
+      <text x="142.5" y="255">프로세스 관리</text>
+
+      <rect x="225" y="235" width="145" height="30" class="os-component-box" />
+      <text x="297.5" y="255">메모리 관리</text>
+
+      <rect x="380" y="235" width="145" height="30" class="os-component-box" />
+      <text x="452.5" y="255">파일 시스템 관리</text>
+
+      <rect x="70" y="270" width="145" height="30" class="os-component-box" />
+      <text x="142.5" y="290">장치 드라이버</text>
+
+      <rect x="225" y="270" width="145" height="30" class="os-component-box" />
+      <text x="297.5" y="290">네트워크</text>
+
+      <rect x="380" y="270" width="145" height="30" class="os-component-box" />
+      <text x="452.5" y="290">보안 및 접근 제어</text>
+    </g>
+  </g>
+
+  <path class="arrow" d="M 300 315 V 355" />
+
+  <!-- Hardware Layer -->
+  <g id="hardware-layer">
+    <rect x="50" y="360" width="500" height="70" class="layer-box" />
+    <text x="300" y="390" class="layer-title">하드웨어 (Hardware)</text>
+    <text x="300" y="410" class="layer-text">CPU, 메모리, 디스크, 네트워크 카드 등</text>
+  </g>
+</svg>

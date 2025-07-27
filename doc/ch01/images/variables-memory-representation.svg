@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">Variables and Memory Representation</text>
+  
+  <!-- Memory representation -->
+  <g transform="translate(50, 80)">
+    <!-- Memory blocks -->
+    <rect x="0" y="0" width="700" height="400" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    <text x="350" y="-10" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Computer Memory</text>
+    
+    <!-- Memory addresses -->
+    <text x="-30" y="50" font-family="monospace" font-size="12" text-anchor="end">0x1000</text>
+    <text x="-30" y="130" font-family="monospace" font-size="12" text-anchor="end">0x1004</text>
+    <text x="-30" y="210" font-family="monospace" font-size="12" text-anchor="end">0x1008</text>
+    <text x="-30" y="290" font-family="monospace" font-size="12" text-anchor="end">0x100C</text>
+    <text x="-30" y="370" font-family="monospace" font-size="12" text-anchor="end">0x1010</text>
+    
+    <!-- Variable boxes -->
+    <!-- age variable -->
+    <rect x="50" y="20" width="150" height="60" fill="#e8f4f8" stroke="#2196F3" stroke-width="2"/>
+    <text x="125" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">age</text>
+    <text x="125" y="65" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">25</text>
+    
+    <!-- score variable -->
+    <rect x="250" y="20" width="150" height="60" fill="#e8f4f8" stroke="#2196F3" stroke-width="2"/>
+    <text x="325" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">score</text>
+    <text x="325" y="65" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">87.5</text>
+    
+    <!-- name variable -->
+    <rect x="450" y="20" width="200" height="60" fill="#e8f4f8" stroke="#2196F3" stroke-width="2"/>
+    <text x="550" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">name</text>
+    <text x="550" y="65" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">"John"</text>
+    
+    <!-- grade variable -->
+    <rect x="50" y="100" width="150" height="60" fill="#e8f4f8" stroke="#2196F3" stroke-width="2"/>
+    <text x="125" y="125" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">grade</text>
+    <text x="125" y="145" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">'A'</text>
+    
+    <!-- isActive variable -->
+    <rect x="250" y="100" width="150" height="60" fill="#e8f4f8" stroke="#2196F3" stroke-width="2"/>
+    <text x="325" y="125" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">isActive</text>
+    <text x="325" y="145" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">true</text>
+    
+    <!-- Arrows showing assignment -->
+    <g transform="translate(0, 220)">
+      <text x="50" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Variable Assignment Process:</text>
+      
+      <!-- Before -->
+      <rect x="50" y="20" width="150" height="60" fill="#ffe8e8" stroke="#f44336" stroke-width="2"/>
+      <text x="125" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">principal</text>
+      <text x="125" y="65" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">10000</text>
+      
+      <!-- Arrow -->
+      <path d="M 220 50 L 280 50" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+      <text x="250" y="35" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">principal * 0.07</text>
+      
+      <!-- After -->
+      <rect x="300" y="20" width="150" height="60" fill="#e8f8e8" stroke="#4CAF50" stroke-width="2"/>
+      <text x="375" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">interest</text>
+      <text x="375" y="65" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">700</text>
+    </g>
+    
+    <!-- Variable naming rules -->
+    <g transform="translate(0, 330)">
+      <text x="50" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Variable Naming Rules:</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14">• Must start with letter, _, or $</text>
+      <text x="70" y="45" font-family="Arial, sans-serif" font-size="14">• Can contain letters, digits, _, $</text>
+      <text x="350" y="25" font-family="Arial, sans-serif" font-size="14">• Case sensitive (age ≠ Age)</text>
+      <text x="350" y="45" font-family="Arial, sans-serif" font-size="14">• Cannot use reserved words</text>
+    </g>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

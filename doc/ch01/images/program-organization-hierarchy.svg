@@ -1,0 +1,120 @@
+<svg width="850" height="649.9999999999999" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+
+ <!-- Package Level -->
+ <!-- Class Level -->
+ <!-- Method Level -->
+ <!-- Statements Level -->
+ <!-- Connecting lines -->
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_1" text-anchor="middle" font-weight="bold" font-size="24" font-family="Arial, sans-serif" y="30" x="384.95209">Program Organization Hierarchy</text>
+  <g id="svg_2">
+   <rect id="svg_3" rx="5" stroke-width="3" stroke="#3f51b5" fill="#e8eaf6" height="80" width="500" y="61.79641" x="155.01198"/>
+   <text id="svg_4" text-anchor="middle" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="86.79641" x="405.01198">Package</text>
+   <text id="svg_5" text-anchor="middle" font-size="14" font-family="monospace" y="106.79641" x="405.01198">com.example.myproject</text>
+   <text id="svg_6" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="126.79641" x="405.01198">Groups related classes together</text>
+  </g>
+  <g id="svg_7">
+   <!-- Main Class -->
+   <rect id="svg_8" rx="5" stroke-width="3" stroke="#2196f3" fill="#e3f2fd" height="120" width="300" y="170" x="84.95209"/>
+   <text id="svg_9" text-anchor="middle" font-weight="bold" font-size="16" font-family="Arial, sans-serif" y="195" x="234.95209">Main Class</text>
+   <text id="svg_10" text-anchor="middle" font-size="13" font-family="monospace" y="215" x="234.95209">public class Application</text>
+   <text id="svg_11" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="235" x="234.95209">• Entry point (main method)</text>
+   <text id="svg_12" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="255" x="234.95209">• Program initialization</text>
+   <text id="svg_13" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="275" x="234.95209">• Coordinates other classes</text>
+   <!-- Utility Class -->
+   <rect id="svg_14" rx="5" stroke-width="3" stroke="#4caf50" fill="#e8f5e9" height="120" width="300" y="170" x="434.95209"/>
+   <text id="svg_15" text-anchor="middle" font-weight="bold" font-size="16" font-family="Arial, sans-serif" y="195" x="584.95209">Utility Class</text>
+   <text id="svg_16" text-anchor="middle" font-size="13" font-family="monospace" y="215" x="584.95209">public class MathUtils</text>
+   <text id="svg_17" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="235" x="584.95209">• Helper methods</text>
+   <text id="svg_18" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="255" x="584.95209">• Static utility functions</text>
+   <text id="svg_19" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="275" x="584.95209">• Reusable components</text>
+  </g>
+  <text id="svg_21" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="325.98802" x="34.95209">Methods Within Classes:</text>
+  <!-- Main method -->
+  <!-- Instance methods -->
+  <!-- Static methods -->
+  <!-- Private methods -->
+  <text id="svg_51" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="478.56287" x="34.95209">Statements Within Methods:</text>
+  <rect stroke="#666" id="svg_52" rx="5" stroke-width="2" fill="#f5f5f5" height="140" width="806.28743" y="491.97604" x="23.78445"/>
+  <!-- Variable declarations -->
+  <!-- Control structures -->
+  <!-- Operations -->
+  <!-- Method calls -->
+  <path stroke="#666" id="svg_73" stroke-dasharray="5,5" stroke-width="2" d="m401.11976,142.39521l-167.66469,27.60479"/>
+  <path stroke="#666" id="svg_74" stroke-dasharray="5,5" stroke-width="2" d="m407.10778,143.59281l163.77245,24.01198"/>
+  <path stroke="#666" id="svg_75" stroke-dasharray="5,5" stroke-width="2" d="m231.05986,292.39521l-104.61078,50.95808"/>
+  <path stroke="#666" id="svg_76" stroke-dasharray="5,5" stroke-width="2" d="m236.44908,292.3952l85.80839,52.15568"/>
+  <path stroke="#666" id="svg_77" stroke-dasharray="5,5" stroke-width="2" d="m591.2395,291.7964l-65.38922,52.15568"/>
+  <path stroke="#666" id="svg_78" stroke-dasharray="5,5" stroke-width="2" d="m593.63471,290.5988l134.61078,53.35329"/>
+  <path stroke="#666" id="svg_79" stroke-dasharray="5,5" stroke-width="2" d="m124.05388,447.54491l-0.17964,72.33533"/>
+  <path stroke="#666" id="svg_80" stroke-dasharray="5,5" stroke-width="2" d="m321.65868,447.54491l0.17963,72.33532"/>
+  <path stroke="#666" id="svg_81" stroke-dasharray="5,5" stroke-width="2" d="m519.26346,448.1437l-0.05989,71.13772"/>
+  <path stroke="#666" id="svg_82" stroke-dasharray="5,5" stroke-width="2" d="m734.83239,446.9461l-0.89831,72.93413"/>
+  <g stroke="null" id="svg_87">
+   <g stroke="null" id="svg_83">
+    <rect stroke="#5c6bc0" id="svg_53" rx="3" stroke-width="2" fill="#e8eaf6" height="80" width="164.56129" y="521.97605" x="35.97003"/>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_54" text-anchor="middle" font-weight="bold" font-size="12" font-family="Arial, sans-serif" y="541.97605" x="125.55089">Declarations</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_55" text-anchor="middle" font-size="10" font-family="monospace" y="561.97605" x="125.55089">int count = 0;</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_56" text-anchor="middle" font-size="10" font-family="monospace" y="576.97605" x="125.55089">String name;</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_57" text-anchor="middle" font-size="10" font-family="monospace" y="591.97605" x="125.55089">double[] array;</text>
+   </g>
+   <g stroke="null" id="svg_84">
+    <rect stroke="#f9a825" id="svg_58" rx="3" stroke-width="2" fill="#fff9c4" height="80" width="164.56129" y="521.97607" x="241.05577"/>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_59" text-anchor="middle" font-weight="bold" font-size="12" font-family="Arial, sans-serif" y="541.97607" x="324.95209">Control Flow</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_60" text-anchor="middle" font-size="10" font-family="monospace" y="561.97607" x="324.95209">if/else</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_61" text-anchor="middle" font-size="10" font-family="monospace" y="576.97607" x="324.95209">for/while loops</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_62" text-anchor="middle" font-size="10" font-family="monospace" y="591.97607" x="324.95209">switch</text>
+   </g>
+   <g stroke="null" id="svg_85">
+    <rect stroke="#8e24aa" id="svg_63" rx="3" stroke-width="2" fill="#f3e5f5" height="80" width="164.56129" y="521.97607" x="444.47866"/>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_64" text-anchor="middle" font-weight="bold" font-size="12" font-family="Arial, sans-serif" y="541.97607" x="522.73652">Operations</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_65" text-anchor="middle" font-size="10" font-family="monospace" y="561.97607" x="522.73652">x = y + z;</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_66" text-anchor="middle" font-size="10" font-family="monospace" y="576.97607" x="522.73652">result *= 2;</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_67" text-anchor="middle" font-size="10" font-family="monospace" y="591.97607" x="522.73652">list.add(item);</text>
+   </g>
+   <g stroke="null" id="svg_86">
+    <rect stroke="#00897b" id="svg_68" rx="3" stroke-width="2" fill="#e0f2f1" height="80" width="164.56129" y="521.97607" x="649.13329"/>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_69" text-anchor="middle" font-weight="bold" font-size="12" font-family="Arial, sans-serif" y="541.97607" x="721.71855">Method Calls</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_70" text-anchor="middle" font-size="10" font-family="monospace" y="561.97607" x="721.71855">println();</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_71" text-anchor="middle" font-size="10" font-family="monospace" y="576.97607" x="721.71855">calculate();</text>
+    <text stroke="null" transform="matrix(1.02851 0 0 1 -10.8794 0)" id="svg_72" text-anchor="middle" font-size="10" font-family="monospace" y="591.97607" x="721.71855">obj.method();</text>
+   </g>
+  </g>
+  <g id="svg_88">
+   <g id="svg_22">
+    <rect id="svg_23" rx="3" stroke-width="2" stroke="#ff9800" fill="#fff3e0" height="100" width="180" y="345.98802" x="35.55089"/>
+    <text id="svg_24" text-anchor="middle" font-weight="bold" font-size="14" font-family="Arial, sans-serif" y="365.98802" x="125.55089">main()</text>
+    <text id="svg_25" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="385.98802" x="125.55089">• Program entry</text>
+    <text id="svg_26" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="400.98802" x="125.55089">• Static method</text>
+    <text id="svg_27" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="415.98802" x="125.55089">• Calls other methods</text>
+    <text id="svg_28" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="430.98802" x="125.55089">• Required in app</text>
+   </g>
+   <g id="svg_29">
+    <rect id="svg_30" rx="3" stroke-width="2" stroke="#9c27b0" fill="#f3e5f5" height="100" width="180" y="345.98802" x="234.95209"/>
+    <text id="svg_31" text-anchor="middle" font-weight="bold" font-size="14" font-family="Arial, sans-serif" y="365.98802" x="324.95209">Instance Methods</text>
+    <text id="svg_32" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="385.98802" x="324.95209">• Object behavior</text>
+    <text id="svg_33" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="400.98802" x="324.95209">• Access object data</text>
+    <text id="svg_34" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="415.98802" x="324.95209">• Non-static</text>
+    <text id="svg_35" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="430.98802" x="324.95209">• this reference</text>
+   </g>
+   <g id="svg_36">
+    <rect id="svg_37" rx="3" stroke-width="2" stroke="#0288d1" fill="#e1f5fe" height="100" width="180" y="345.98802" x="432.73652"/>
+    <text id="svg_38" text-anchor="middle" font-weight="bold" font-size="14" font-family="Arial, sans-serif" y="365.98802" x="522.73652">Static Methods</text>
+    <text id="svg_39" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="385.98802" x="522.73652">• Class-level</text>
+    <text id="svg_40" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="400.98802" x="522.73652">• No object needed</text>
+    <text id="svg_41" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="415.98802" x="522.73652">• Utility functions</text>
+    <text id="svg_42" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="430.98802" x="522.73652">• Math operations</text>
+   </g>
+   <g id="svg_43">
+    <rect id="svg_44" rx="3" stroke-width="2" stroke="#d32f2f" fill="#ffebee" height="100" width="180" y="345.98802" x="631.71855"/>
+    <text id="svg_45" text-anchor="middle" font-weight="bold" font-size="14" font-family="Arial, sans-serif" y="365.98802" x="721.71855">Private Methods</text>
+    <text id="svg_46" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="385.98802" x="721.71855">• Internal use only</text>
+    <text id="svg_47" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="400.98802" x="721.71855">• Helper functions</text>
+    <text id="svg_48" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="415.98802" x="721.71855">• Encapsulation</text>
+    <text id="svg_49" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="430.98802" x="721.71855">• Code organization</text>
+   </g>
+  </g>
+ </g>
+</svg>

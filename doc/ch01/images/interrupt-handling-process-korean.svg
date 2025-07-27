@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="24" font-weight="bold" font-family="Arial, sans-serif">인터럽트 처리 과정</text>
+  
+  <!-- Main flow -->
+  <g transform="translate(50, 70)">
+    
+    <!-- Step 1: Normal Execution -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="200" height="100" fill="#e6f3ff" stroke="#0066cc" stroke-width="2" rx="5"/>
+      <text x="100" y="30" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial, sans-serif">1. 정상 실행</text>
+      <text x="100" y="55" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">프로그램 A 실행중</text>
+      <text x="100" y="75" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">PC = 1000</text>
+      <text x="100" y="90" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">레지스터 = {...}</text>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 200 50 L 250 50" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Step 2: Interrupt Occurs -->
+    <g transform="translate(250, 0)">
+      <rect x="0" y="0" width="200" height="100" fill="#ffe6e6" stroke="#cc0000" stroke-width="2" rx="5"/>
+      <text x="100" y="30" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial, sans-serif">2. 인터럽트 발생!</text>
+      <text x="100" y="55" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">키보드: 'A' 입력</text>
+      <text x="100" y="75" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">인터럽트 신호 ON</text>
+      <text x="100" y="90" text-anchor="middle" font-size="20" font-family="Arial, sans-serif">🔔</text>
+    </g>
+    
+    <!-- Arrow -->
+    <path d="M 450 50 L 500 50" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Step 3: Save State -->
+    <g transform="translate(500, 0)">
+      <rect x="0" y="0" width="200" height="100" fill="#fff9e6" stroke="#cc9900" stroke-width="2" rx="5"/>
+      <text x="100" y="30" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial, sans-serif">3. 상태 저장</text>
+      <text x="100" y="50" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">스택에 저장:</text>
+      <text x="100" y="70" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">• PC = 1000</text>
+      <text x="100" y="85" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">• 레지스터 값들</text>
+    </g>
+    
+    <!-- Vertical Arrow -->
+    <path d="M 600 100 L 600 150" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Step 4: Execute ISR -->
+    <g transform="translate(500, 150)">
+      <rect x="0" y="0" width="200" height="120" fill="#e6ffe6" stroke="#009900" stroke-width="2" rx="5"/>
+      <text x="100" y="30" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial, sans-serif">4. ISR 실행</text>
+      <text x="100" y="50" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">키보드 ISR:</text>
+      <text x="100" y="70" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">PC = 5000 (ISR 주소)</text>
+      <text x="100" y="90" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">• 'A' 읽기</text>
+      <text x="100" y="105" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">• 버퍼에 저장</text>
+    </g>
+    
+    <!-- Arrow back -->
+    <path d="M 500 210 L 450 210" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Step 5: Restore State -->
+    <g transform="translate(250, 150)">
+      <rect x="0" y="0" width="200" height="120" fill="#f0e6ff" stroke="#6600cc" stroke-width="2" rx="5"/>
+      <text x="100" y="30" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial, sans-serif">5. 상태 복원</text>
+      <text x="100" y="50" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">스택에서 복원:</text>
+      <text x="100" y="70" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">• PC = 1000</text>
+      <text x="100" y="90" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">• 레지스터 값들</text>
+      <text x="100" y="110" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">원래 상태로 복귀</text>
+    </g>
+    
+    <!-- Arrow back -->
+    <path d="M 250 210 L 200 210" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Step 6: Resume -->
+    <g transform="translate(0, 150)">
+      <rect x="0" y="0" width="200" height="120" fill="#e6f3ff" stroke="#0066cc" stroke-width="2" rx="5"/>
+      <text x="100" y="30" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial, sans-serif">6. 정상 실행 재개</text>
+      <text x="100" y="50" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">프로그램 A 계속</text>
+      <text x="100" y="70" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">PC = 1000 (복원됨)</text>
+      <text x="100" y="90" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">레지스터 = {...} (복원됨)</text>
+      <text x="100" y="110" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial, sans-serif" fill="#009900">✅ 완료</text>
+    </g>
+  </g>
+  
+  <!-- Memory Stack Visualization -->
+  <g transform="translate(100, 380)">
+    <text x="0" y="0" font-size="18" font-weight="bold" font-family="Arial, sans-serif">메모리 스택 상태:</text>
+    
+    <!-- Before Interrupt -->
+    <g transform="translate(0, 20)">
+      <text x="0" y="0" font-size="14" font-family="Arial, sans-serif">인터럽트 전:</text>
+      <rect x="0" y="10" width="100" height="120" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+      <text x="50" y="70" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">프로그램 A</text>
+      <text x="50" y="85" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">데이터</text>
+    </g>
+    
+    <!-- During Interrupt -->
+    <g transform="translate(150, 20)">
+      <text x="0" y="0" font-size="14" font-family="Arial, sans-serif">인터럽트 중:</text>
+      <rect x="0" y="10" width="100" height="120" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+      <!-- Saved state -->
+      <rect x="0" y="10" width="100" height="40" fill="#ffcccc" stroke="#333" stroke-width="1"/>
+      <text x="50" y="25" text-anchor="middle" font-size="10" font-family="Arial, sans-serif">PC = 1000</text>
+      <text x="50" y="40" text-anchor="middle" font-size="10" font-family="Arial, sans-serif">레지스터</text>
+      <!-- Original data -->
+      <text x="50" y="90" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">프로그램 A</text>
+      <text x="50" y="105" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">데이터</text>
+    </g>
+    
+    <!-- After Interrupt -->
+    <g transform="translate(300, 20)">
+      <text x="0" y="0" font-size="14" font-family="Arial, sans-serif">인터럽트 후:</text>
+      <rect x="0" y="10" width="100" height="120" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+      <text x="50" y="70" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">프로그램 A</text>
+      <text x="50" y="85" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">데이터</text>
+      <text x="50" y="105" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">(복원됨)</text>
+    </g>
+  </g>
+  
+  <!-- Key Terms -->
+  <g transform="translate(500, 380)">
+    <rect x="0" y="0" width="250" height="150" fill="#f5f5f5" stroke="#333" stroke-width="1" rx="5"/>
+    <text x="125" y="25" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial, sans-serif">핵심 용어</text>
+    <text x="10" y="50" font-size="14" font-weight="bold" font-family="Arial, sans-serif">ISR</text>
+    <text x="50" y="50" font-size="12" font-family="Arial, sans-serif">: Interrupt Service Routine</text>
+    <text x="50" y="65" font-size="12" font-family="Arial, sans-serif">  (인터럽트 서비스 루틴)</text>
+    <text x="10" y="85" font-size="14" font-weight="bold" font-family="Arial, sans-serif">PC</text>
+    <text x="50" y="85" font-size="12" font-family="Arial, sans-serif">: Program Counter</text>
+    <text x="50" y="100" font-size="12" font-family="Arial, sans-serif">  (프로그램 카운터)</text>
+    <text x="10" y="120" font-size="14" font-weight="bold" font-family="Arial, sans-serif">Stack</text>
+    <text x="50" y="120" font-size="12" font-family="Arial, sans-serif">: 상태 저장 공간</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,134 @@
+<svg width="900" height="800" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Sequential Flow -->
+ <!-- Branching (If-Else) -->
+ <!-- Loop (While) -->
+ <!-- For Loop Example -->
+ <!-- Switch Statement -->
+ <!-- Arrow marker -->
+ <defs>
+  <marker orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrowhead">
+   <polygon id="svg_1" fill="#333" points="0 0, 10 3, 0 6"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_2" text-anchor="middle" font-weight="bold" font-size="24" font-family="Arial, sans-serif" y="30" x="450">Control Flow Structures</text>
+  <g id="svg_3">
+   <text id="svg_4" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="59.29578" x="32.39437">1. Sequential Flow</text>
+   <rect id="svg_5" rx="5" stroke-width="2" stroke="#333" fill="#f0f0f0" height="180" width="200" y="79.29578" x="32.39437"/>
+   <!-- Statements -->
+   <rect id="svg_6" stroke-width="2" stroke="#1976d2" fill="#e3f2fd" height="30" width="160" y="99.29578" x="52.39437"/>
+   <text id="svg_7" text-anchor="middle" font-size="12" font-family="monospace" y="119.29578" x="132.39437">x = 10;</text>
+   <path id="svg_8" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m132.39437,129.29578l0,20"/>
+   <rect id="svg_9" stroke-width="2" stroke="#1976d2" fill="#e3f2fd" height="30" width="160" y="149.29578" x="52.39437"/>
+   <text id="svg_10" text-anchor="middle" font-size="12" font-family="monospace" y="169.29578" x="132.39437">y = x * 2;</text>
+   <path id="svg_11" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m132.39437,179.29578l0,20"/>
+   <rect id="svg_12" stroke-width="2" stroke="#1976d2" fill="#e3f2fd" height="30" width="160" y="199.29578" x="52.39437"/>
+   <text id="svg_13" text-anchor="middle" font-size="12" font-family="monospace" y="219.29578" x="132.39437">print(y);</text>
+  </g>
+  <!-- Condition diamond -->
+  <!-- True branch -->
+  <!-- False branch -->
+  <!-- Merge point -->
+  <circle id="svg_31" fill="#333" r="5" cy="289.29577" cx="402.67606"/>
+  <!-- Initial setup -->
+  <!-- Loop condition -->
+  <!-- True branch (loop body) -->
+  <!-- Loop back -->
+  <!-- False branch (exit) -->
+  <g id="svg_55">
+   <text id="svg_56" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="390.28169" x="32.39437">4. For Loop Structure</text>
+   <rect id="svg_57" rx="5" stroke-width="2" stroke="#333" fill="#f0f0f0" height="200" width="380" y="410.28169" x="32.39437"/>
+   <text id="svg_58" font-size="14" font-family="monospace" y="440.28169" x="52.39437">for (int i = 0; i &lt; 5; i++) {</text>
+   <text id="svg_59" font-size="14" font-family="monospace" y="460.28169" x="72.39437">System.out.println("Iteration: " + i);</text>
+   <text id="svg_60" font-size="14" font-family="monospace" y="480.28169" x="52.39437">}</text>
+   <!-- Components -->
+   <rect id="svg_61" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="40" width="100" y="500.28169" x="52.39437"/>
+   <text id="svg_62" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="515.28169" x="102.39437">Initialization</text>
+   <text id="svg_63" text-anchor="middle" font-size="11" font-family="monospace" y="530.28169" x="102.39437">i = 0</text>
+   <rect id="svg_64" stroke-width="2" stroke="#f57c00" fill="#fff3e0" height="40" width="100" y="500.28169" x="172.39437"/>
+   <text id="svg_65" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="515.28169" x="222.39437">Condition</text>
+   <text id="svg_66" text-anchor="middle" font-size="11" font-family="monospace" y="530.28169" x="222.39437">i &lt; 5</text>
+   <rect id="svg_67" stroke-width="2" stroke="#1976d2" fill="#e3f2fd" height="40" width="100" y="500.28169" x="292.39437"/>
+   <text id="svg_68" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" y="515.28169" x="342.39437">Update</text>
+   <text id="svg_69" text-anchor="middle" font-size="11" font-family="monospace" y="530.28169" x="342.39437">i++</text>
+   <text id="svg_70" font-size="12" font-family="Arial, sans-serif" y="570.28169" x="52.39437">Output: Iteration: 0, 1, 2, 3, 4</text>
+  </g>
+  <!-- Switch header -->
+  <!-- Cases -->
+  <!-- Flow arrows -->
+  <text id="svg_36" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="59.29578" x="575.49298">3. Loop (While)</text>
+  <rect id="svg_37" rx="5" stroke-width="2" stroke="#333" fill="#f0f0f0" height="280" width="280" y="79.29578" x="575.49298"/>
+  <rect id="svg_38" stroke-width="2" stroke="#1976d2" fill="#e3f2fd" height="30" width="120" y="99.29578" x="655.49298"/>
+  <text id="svg_39" text-anchor="middle" font-size="12" font-family="monospace" y="119.29578" x="715.49298">count = 0;</text>
+  <path id="svg_40" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m715.49298,129.29578l0,20"/>
+  <path id="svg_41" stroke-width="2" stroke="#f57c00" fill="#fff3e0" d="m715.49298,149.29578l50,30l-50,30l-50,-30l50,-30z"/>
+  <text id="svg_42" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="184.29578" x="715.49298">count &lt; 5?</text>
+  <path id="svg_43" marker-end="url(#arrowhead)" stroke-width="2" stroke="#4caf50" d="m715.49298,209.29578l0,20"/>
+  <text id="svg_44" fill="#4caf50" font-size="12" font-family="Arial, sans-serif" y="224.29578" x="730.49298">true</text>
+  <rect id="svg_45" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="30" width="120" y="229.29578" x="655.49298"/>
+  <text id="svg_46" text-anchor="middle" font-size="12" font-family="monospace" y="249.29578" x="715.49298">print(count);</text>
+  <path id="svg_47" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m715.49298,259.29578l0,20"/>
+  <rect id="svg_48" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="30" width="120" y="279.29578" x="655.49298"/>
+  <text id="svg_49" text-anchor="middle" font-size="12" font-family="monospace" y="299.29578" x="715.49298">count++;</text>
+  <path stroke="#333" fill="none" id="svg_50" marker-end="url(#arrowhead)" stroke-width="2" d="m715.49298,322.05088l0,10.98116l110,0l0,-153.73626l-60,0"/>
+  <path fill="none" id="svg_51" marker-end="url(#arrowhead)" stroke-width="2" stroke="#f44336" d="m665.49298,179.29578l-60,0l0,150l50,0"/>
+  <text id="svg_52" fill="#f44336" font-size="12" font-family="Arial, sans-serif" y="174.29578" x="585.49298">false</text>
+  <rect id="svg_53" stroke-width="2" stroke="#f44336" fill="#ffebee" height="30" width="120" y="319.29578" x="655.49298"/>
+  <text id="svg_54" text-anchor="middle" font-size="12" font-family="monospace" y="339.29578" x="715.49298">exit loop</text>
+  <g id="svg_99">
+   <text id="svg_15" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="59.29577" x="263.22551">2. Branching (If-Else)</text>
+   <rect id="svg_16" rx="5" stroke-width="2" stroke="#333" fill="#f0f0f0" height="280" width="280" y="79.29577" x="263.22551"/>
+   <path id="svg_17" stroke-width="2" stroke="#f57c00" fill="#fff3e0" d="m402.67606,119.29577l50,30l-50,30l-50,-30l50,-30z"/>
+   <text id="svg_18" text-anchor="middle" font-size="11" font-family="Arial, sans-serif" y="154.29577" x="402.67606">principal &gt; 10000?</text>
+   <path fill="none" stroke="#4caf50" id="svg_19" marker-end="url(#arrowhead)" stroke-width="2" d="m352.67606,149.29577l-40,0l0,60"/>
+   <text id="svg_20" fill="#4caf50" font-size="12" font-family="Arial, sans-serif" y="144.29577" x="293.22551">true</text>
+   <rect id="svg_21" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="40" width="120" y="209.29577" x="272.67606"/>
+   <text id="svg_22" text-anchor="middle" font-size="10" font-family="monospace" y="224.29577" x="332.67606">interest =</text>
+   <text id="svg_23" text-anchor="middle" font-size="10" font-family="monospace" y="239.29577" x="332.67606">principal * 0.05</text>
+   <path fill="none" stroke="#f44336" id="svg_24" marker-end="url(#arrowhead)" stroke-width="2" d="m452.67606,149.29577l40,0l0,60"/>
+   <text id="svg_25" fill="#f44336" font-size="12" font-family="Arial, sans-serif" y="144.29577" x="503.22551">false</text>
+   <rect id="svg_26" stroke-width="2" stroke="#f44336" fill="#ffebee" height="40" width="120" y="209.29577" x="412.67606"/>
+   <text id="svg_27" text-anchor="middle" font-size="10" font-family="monospace" y="224.29577" x="472.67606">interest =</text>
+   <text id="svg_28" text-anchor="middle" font-size="10" font-family="monospace" y="239.29577" x="472.67606">principal * 0.04</text>
+   <path fill="none" id="svg_29" stroke-width="2" stroke="#333" d="m332.67606,249.29577l0,40l70,0"/>
+   <path fill="none" id="svg_30" stroke-width="2" stroke="#333" d="m472.67606,249.29577l0,40l-70,0"/>
+   <path id="svg_32" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m402.67606,289.29577l0,30"/>
+   <rect id="svg_33" stroke-width="2" stroke="#1976d2" fill="#e3f2fd" height="30" width="120" y="319.29577" x="342.67606"/>
+   <text id="svg_34" text-anchor="middle" font-size="12" font-family="monospace" y="339.29577" x="402.67606">continue...</text>
+  </g>
+  <g id="svg_101">
+   <text id="svg_72" font-weight="bold" font-size="18" font-family="Arial, sans-serif" y="390.2817" x="435.49296">5. Switch Statement</text>
+   <rect id="svg_73" rx="5" stroke-width="2" stroke="#333" fill="#f0f0f0" height="360" width="420" y="410.2817" x="435.49296"/>
+   <rect id="svg_74" stroke-width="2" stroke="#1976d2" fill="#e3f2fd" height="30" width="200" y="430.2817" x="537.2512"/>
+   <text id="svg_75" text-anchor="middle" font-size="12" font-family="monospace" y="450.2817" x="637.2512">switch (dayNumber)</text>
+   <g id="svg_76">
+    <!-- Case 1 -->
+    <rect id="svg_77" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="50" width="120" y="499.51246" x="447.2512"/>
+    <text id="svg_78" text-anchor="middle" font-size="11" font-family="monospace" y="519.51246" x="507.2512">case 1:</text>
+    <text id="svg_79" text-anchor="middle" font-size="10" font-family="monospace" y="534.51246" x="507.2512">day = "Monday"</text>
+    <!-- Case 2 -->
+    <rect id="svg_80" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="50" width="120" y="499.51246" x="587.2512"/>
+    <text id="svg_81" text-anchor="middle" font-size="11" font-family="monospace" y="519.51246" x="647.2512">case 2:</text>
+    <text id="svg_82" text-anchor="middle" font-size="10" font-family="monospace" y="534.51246" x="647.2512">day = "Tuesday"</text>
+    <!-- Case 3 -->
+    <rect id="svg_83" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="50" width="120" y="499.51246" x="727.2512"/>
+    <text id="svg_84" text-anchor="middle" font-size="11" font-family="monospace" y="519.51246" x="787.2512">case 3:</text>
+    <text id="svg_85" text-anchor="middle" font-size="10" font-family="monospace" y="534.51246" x="787.2512">day = "Wednesday"</text>
+    <!-- More cases indication -->
+    <text id="svg_86" text-anchor="middle" font-size="14" font-family="Arial, sans-serif" y="579.51246" x="647.2512">... (cases 4-6) ...</text>
+    <!-- Case 7 -->
+    <rect id="svg_87" stroke-width="2" stroke="#4caf50" fill="#e8f5e9" height="50" width="120" y="599.51246" x="517.2512"/>
+    <text id="svg_88" text-anchor="middle" font-size="11" font-family="monospace" y="619.51246" x="577.2512">case 7:</text>
+    <text id="svg_89" text-anchor="middle" font-size="10" font-family="monospace" y="634.51246" x="577.2512">day = "Sunday"</text>
+    <!-- Default -->
+    <rect id="svg_90" stroke-width="2" stroke="#f44336" fill="#ffebee" height="50" width="120" y="599.51246" x="657.2512"/>
+    <text id="svg_91" text-anchor="middle" font-size="11" font-family="monospace" y="619.51246" x="717.2512">default:</text>
+    <text id="svg_92" text-anchor="middle" font-size="10" font-family="monospace" y="634.51246" x="717.2512">day = "Invalid"</text>
+   </g>
+   <path stroke="#333" id="svg_93" marker-end="url(#arrowhead)" stroke-width="2" d="m637.2512,460.28169l0,34.83516"/>
+   <text id="svg_94" font-size="12" font-family="Arial, sans-serif" y="689.51246" x="447.2512">Each case ends with break; to exit switch</text>
+  </g>
+ </g>
+</svg>

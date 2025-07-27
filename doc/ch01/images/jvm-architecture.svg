@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="700" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+    <!-- Title -->
+    <text x="400" y="30" text-anchor="middle" font-size="24" font-weight="bold">JVM Architecture</text>
+    
+    <!-- Main JVM Container -->
+    <rect x="50" y="60" width="700" height="600" fill="#f8f8f8" stroke="#333" stroke-width="2" rx="10"/>
+    <text x="400" y="90" text-anchor="middle" font-size="20" font-weight="bold">Java Virtual Machine (JVM)</text>
+    
+    <!-- Class Loader Subsystem -->
+    <g transform="translate(70, 120)">
+        <rect x="0" y="0" width="660" height="100" fill="#e8f4f8" stroke="#0066cc" stroke-width="2" rx="5"/>
+        <text x="330" y="25" text-anchor="middle" font-size="16" font-weight="bold">Class Loader Subsystem</text>
+        
+        <!-- Loading -->
+        <rect x="20" y="40" width="180" height="40" fill="#cce6ff" stroke="#0066cc" stroke-width="1"/>
+        <text x="110" y="65" text-anchor="middle" font-size="14">Loading</text>
+        
+        <!-- Linking -->
+        <rect x="240" y="40" width="180" height="40" fill="#cce6ff" stroke="#0066cc" stroke-width="1"/>
+        <text x="330" y="65" text-anchor="middle" font-size="14">Linking</text>
+        
+        <!-- Initialization -->
+        <rect x="460" y="40" width="180" height="40" fill="#cce6ff" stroke="#0066cc" stroke-width="1"/>
+        <text x="550" y="65" text-anchor="middle" font-size="14">Initialization</text>
+    </g>
+    
+    <!-- Runtime Data Areas -->
+    <g transform="translate(70, 240)">
+        <rect x="0" y="0" width="660" height="200" fill="#fff0e0" stroke="#ff6600" stroke-width="2" rx="5"/>
+        <text x="330" y="25" text-anchor="middle" font-size="16" font-weight="bold">Runtime Data Areas</text>
+        
+        <!-- Method Area -->
+        <rect x="20" y="40" width="120" height="140" fill="#ffe0cc" stroke="#ff6600" stroke-width="1"/>
+        <text x="80" y="60" text-anchor="middle" font-size="14" font-weight="bold">Method Area</text>
+        <text x="80" y="80" text-anchor="middle" font-size="12">Class metadata</text>
+        <text x="80" y="95" text-anchor="middle" font-size="12">Static variables</text>
+        <text x="80" y="110" text-anchor="middle" font-size="12">Constants</text>
+        
+        <!-- Heap -->
+        <rect x="160" y="40" width="120" height="140" fill="#ffe0cc" stroke="#ff6600" stroke-width="1"/>
+        <text x="220" y="60" text-anchor="middle" font-size="14" font-weight="bold">Heap</text>
+        <text x="220" y="80" text-anchor="middle" font-size="12">Objects</text>
+        <text x="220" y="95" text-anchor="middle" font-size="12">Arrays</text>
+        <text x="220" y="110" text-anchor="middle" font-size="12">Instance vars</text>
+        
+        <!-- Stack Area -->
+        <rect x="300" y="40" width="120" height="140" fill="#ffe0cc" stroke="#ff6600" stroke-width="1"/>
+        <text x="360" y="60" text-anchor="middle" font-size="14" font-weight="bold">Stack Area</text>
+        <text x="360" y="80" text-anchor="middle" font-size="12">Local variables</text>
+        <text x="360" y="95" text-anchor="middle" font-size="12">Method calls</text>
+        <text x="360" y="110" text-anchor="middle" font-size="12">Partial results</text>
+        
+        <!-- PC Registers -->
+        <rect x="440" y="40" width="100" height="70" fill="#ffe0cc" stroke="#ff6600" stroke-width="1"/>
+        <text x="490" y="60" text-anchor="middle" font-size="14" font-weight="bold">PC Registers</text>
+        <text x="490" y="80" text-anchor="middle" font-size="12">Current</text>
+        <text x="490" y="95" text-anchor="middle" font-size="12">instruction</text>
+        
+        <!-- Native Method Stack -->
+        <rect x="440" y="120" width="100" height="60" fill="#ffe0cc" stroke="#ff6600" stroke-width="1"/>
+        <text x="490" y="140" text-anchor="middle" font-size="14" font-weight="bold">Native</text>
+        <text x="490" y="155" text-anchor="middle" font-size="14" font-weight="bold">Method Stack</text>
+        
+        <!-- Thread indicators -->
+        <text x="580" y="60" font-size="12" fill="#666">Per Thread →</text>
+        <line x1="290" y1="40" x2="290" y2="180" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+        <text x="150" y="195" font-size="12" fill="#666">← Shared</text>
+    </g>
+    
+    <!-- Execution Engine -->
+    <g transform="translate(70, 460)">
+        <rect x="0" y="0" width="660" height="120" fill="#e8ffe8" stroke="#00cc00" stroke-width="2" rx="5"/>
+        <text x="330" y="25" text-anchor="middle" font-size="16" font-weight="bold">Execution Engine</text>
+        
+        <!-- Interpreter -->
+        <rect x="20" y="40" width="180" height="60" fill="#ccffcc" stroke="#00cc00" stroke-width="1"/>
+        <text x="110" y="65" text-anchor="middle" font-size="14" font-weight="bold">Interpreter</text>
+        <text x="110" y="85" text-anchor="middle" font-size="12">Line by line execution</text>
+        
+        <!-- JIT Compiler -->
+        <rect x="240" y="40" width="180" height="60" fill="#ccffcc" stroke="#00cc00" stroke-width="1"/>
+        <text x="330" y="65" text-anchor="middle" font-size="14" font-weight="bold">JIT Compiler</text>
+        <text x="330" y="85" text-anchor="middle" font-size="12">Hotspot optimization</text>
+        
+        <!-- Garbage Collector -->
+        <rect x="460" y="40" width="180" height="60" fill="#ccffcc" stroke="#00cc00" stroke-width="1"/>
+        <text x="550" y="65" text-anchor="middle" font-size="14" font-weight="bold">Garbage Collector</text>
+        <text x="550" y="85" text-anchor="middle" font-size="12">Memory management</text>
+    </g>
+    
+    <!-- Native Method Interface -->
+    <g transform="translate(70, 600)">
+        <rect x="0" y="0" width="300" height="40" fill="#f0e8ff" stroke="#6600cc" stroke-width="2" rx="5"/>
+        <text x="150" y="25" text-anchor="middle" font-size="14" font-weight="bold">Native Method Interface (JNI)</text>
+    </g>
+    
+    <!-- Native Method Libraries -->
+    <g transform="translate(430, 600)">
+        <rect x="0" y="0" width="300" height="40" fill="#f0e8ff" stroke="#6600cc" stroke-width="2" rx="5"/>
+        <text x="150" y="25" text-anchor="middle" font-size="14" font-weight="bold">Native Method Libraries</text>
+    </g>
+    
+    <!-- Data flow arrows -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+        </marker>
+    </defs>
+    
+    <!-- Connection lines -->
+    <path d="M 400 220 L 400 240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 400 440 L 400 460" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 220 600 L 280 580" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 580 600 L 520 580" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

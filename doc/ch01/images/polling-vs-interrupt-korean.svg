@@ -1,0 +1,79 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
+  <style>
+    .background { fill: #f8f9fa; }
+    .title { font-size: 18px; font-weight: bold; text-anchor: middle; fill: #212529; }
+    .header-cell { fill: #e9ecef; }
+    .body-cell-polling { fill: #fff3cd; }
+    .body-cell-interrupt { fill: #cfe2ff; }
+    .cell { stroke: #dee2e6; stroke-width: 1.5; }
+    .header-text { font-size: 16px; font-weight: bold; text-anchor: middle; }
+    .body-text { font-size: 14px; text-anchor: middle; }
+    .sub-text { font-size: 12px; text-anchor: middle; fill: #495057; }
+    .feature-text { font-weight: bold; }
+  </style>
+
+  <rect width="100%" height="100%" class="background"/>
+  <text x="300" y="40" class="title">폴링 vs 인터럽트 비교</text>
+
+  <g id="table" transform="translate(30, 70)">
+    <!-- Headers -->
+    <rect width="180" height="40" class="cell header-cell" />
+    <text x="90" y="25" class="header-text">특성</text>
+
+    <rect x="180" width="180" height="40" class="cell header-cell" />
+    <text x="270" y="25" class="header-text">폴링 (Polling)</text>
+
+    <rect x="360" width="180" height="40" class="cell header-cell" />
+    <text x="450" y="25" class="header-text">인터럽트 (Interrupt)</text>
+
+    <!-- Row 1: CPU Efficiency -->
+    <g transform="translate(0, 40)">
+      <rect width="180" height="50" class="cell header-cell" />
+      <text x="90" y="30" class="body-text feature-text">CPU 효율성</text>
+
+      <rect x="180" width="180" height="50" class="cell body-cell-polling" />
+      <text x="270" y="25" class="body-text">낮음</text>
+      <text x="270" y="40" class="sub-text">(계속 확인)</text>
+
+      <rect x="360" width="180" height="50" class="cell body-cell-interrupt" />
+      <text x="450" y="25" class="body-text">높음</text>
+      <text x="450" y="40" class="sub-text">(필요시만 처리)</text>
+    </g>
+
+    <!-- Row 2: Response Time -->
+    <g transform="translate(0, 90)">
+      <rect width="180" height="40" class="cell header-cell" />
+      <text x="90" y="25" class="body-text feature-text">응답 시간</text>
+
+      <rect x="180" width="180" height="40" class="cell body-cell-polling" />
+      <text x="270" y="25" class="body-text">예측 가능</text>
+
+      <rect x="360" width="180" height="40" class="cell body-cell-interrupt" />
+      <text x="450" y="25" class="body-text">즉각적</text>
+    </g>
+
+    <!-- Row 3: Complexity -->
+    <g transform="translate(0, 130)">
+      <rect width="180" height="40" class="cell header-cell" />
+      <text x="90" y="25" class="body-text feature-text">구현 복잡도</text>
+
+      <rect x="180" width="180" height="40" class="cell body-cell-polling" />
+      <text x="270" y="25" class="body-text">단순</text>
+
+      <rect x="360" width="180" height="40" class="cell body-cell-interrupt" />
+      <text x="450" y="25" class="body-text">복잡</text>
+    </g>
+
+    <!-- Row 4: Suitable Situation -->
+    <g transform="translate(0, 170)">
+      <rect width="180" height="40" class="cell header-cell" />
+      <text x="90" y="25" class="body-text feature-text">적합한 상황</text>
+
+      <rect x="180" width="180" height="40" class="cell body-cell-polling" />
+      <text x="270" y="25" class="body-text">빈번한 입력</text>
+
+      <rect x="360" width="180" height="40" class="cell body-cell-interrupt" />
+      <text x="450" y="25" class="body-text">간헐적 입력</text>
+    </g>
+  </g>
+</svg>

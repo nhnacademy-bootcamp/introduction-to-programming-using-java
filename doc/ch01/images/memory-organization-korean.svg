@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- 메모리 전체 박스 -->
+  <rect x="150" y="50" width="500" height="600" fill="#f5f5f5" stroke="#333" stroke-width="3"/>
+  <text x="400" y="90" text-anchor="middle" font-size="28" font-weight="bold" fill="#333">주 메모리 (RAM)</text>
+  
+  <!-- 메모리 셀들 -->
+  <!-- 시스템 영역 -->
+  <rect x="200" y="120" width="150" height="40" fill="#ffcccc" stroke="#666" stroke-width="1"/>
+  <text x="210" y="145" font-size="14" font-weight="bold">0x0000</text>
+  <text x="280" y="145" font-size="14">00000000</text>
+  <text x="370" y="145" font-size="14">시스템 영역</text>
+  
+  <rect x="200" y="160" width="150" height="40" fill="#ffcccc" stroke="#666" stroke-width="1"/>
+  <text x="210" y="185" font-size="14" font-weight="bold">0x0001</text>
+  <text x="280" y="185" font-size="14">00000000</text>
+  
+  <!-- 점선 표시 -->
+  <text x="275" y="220" font-size="20" text-anchor="middle">...</text>
+  
+  <!-- 프로그램 영역 -->
+  <rect x="200" y="240" width="150" height="40" fill="#ccffcc" stroke="#666" stroke-width="1"/>
+  <text x="210" y="265" font-size="14" font-weight="bold">0x0100</text>
+  <text x="280" y="265" font-size="14">10110010</text>
+  <text x="370" y="265" font-size="14">프로그램 시작</text>
+  
+  <rect x="200" y="280" width="150" height="40" fill="#ccffcc" stroke="#666" stroke-width="1"/>
+  <text x="210" y="305" font-size="14" font-weight="bold">0x0101</text>
+  <text x="280" y="305" font-size="14">01001101</text>
+  <text x="370" y="305" font-size="14">(기계어 명령)</text>
+  
+  <rect x="200" y="320" width="150" height="40" fill="#ccffcc" stroke="#666" stroke-width="1"/>
+  <text x="210" y="345" font-size="14" font-weight="bold">0x0102</text>
+  <text x="280" y="345" font-size="14">11000001</text>
+  
+  <rect x="200" y="360" width="150" height="40" fill="#ccffcc" stroke="#666" stroke-width="1"/>
+  <text x="210" y="385" font-size="14" font-weight="bold">0x0103</text>
+  <text x="280" y="385" font-size="14">00101110</text>
+  
+  <!-- 점선 표시 -->
+  <text x="275" y="430" font-size="20" text-anchor="middle">...</text>
+  
+  <!-- 데이터 영역 -->
+  <rect x="200" y="450" width="150" height="40" fill="#ccccff" stroke="#666" stroke-width="1"/>
+  <text x="210" y="475" font-size="14" font-weight="bold">0x0200</text>
+  <text x="280" y="475" font-size="14">00001010</text>
+  <text x="370" y="475" font-size="14">데이터 영역</text>
+  
+  <rect x="200" y="490" width="150" height="40" fill="#ccccff" stroke="#666" stroke-width="1"/>
+  <text x="210" y="515" font-size="14" font-weight="bold">0x0201</text>
+  <text x="280" y="515" font-size="14">00000101</text>
+  <text x="370" y="515" font-size="14">(변수 값)</text>
+  
+  <rect x="200" y="530" width="150" height="40" fill="#ccccff" stroke="#666" stroke-width="1"/>
+  <text x="210" y="555" font-size="14" font-weight="bold">0x0202</text>
+  <text x="280" y="555" font-size="14">11111111</text>
+  
+  <!-- 점선 표시 -->
+  <text x="275" y="600" font-size="20" text-anchor="middle">...</text>
+  
+  <!-- 설명 텍스트 -->
+  <text x="50" y="140" font-size="16" font-weight="bold" fill="#333">주소</text>
+  <text x="50" y="160" font-size="14" fill="#666">(16진수)</text>
+  
+  <text x="50" y="265" font-size="16" font-weight="bold" fill="#333">내용</text>
+  <text x="50" y="285" font-size="14" fill="#666">(이진수)</text>
+  
+  <!-- 범례 -->
+  <rect x="50" y="630" width="20" height="20" fill="#ffcccc" stroke="#666"/>
+  <text x="80" y="645" font-size="14">시스템 영역</text>
+  
+  <rect x="250" y="630" width="20" height="20" fill="#ccffcc" stroke="#666"/>
+  <text x="280" y="645" font-size="14">프로그램 영역</text>
+  
+  <rect x="450" y="630" width="20" height="20" fill="#ccccff" stroke="#666"/>
+  <text x="480" y="645" font-size="14">데이터 영역</text>
+  
+  <!-- 바이트 설명 -->
+  <rect x="500" y="240" width="120" height="80" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="350" y1="265" x2="500" y2="280" stroke="#666" stroke-width="1"/>
+  <text x="510" y="270" font-size="12">1 바이트 = 8 비트</text>
+  <text x="510" y="290" font-size="12">1 0 1 1 0 0 1 0</text>
+  <text x="510" y="310" font-size="12">각 위치 = 1 주소</text>
+</svg>

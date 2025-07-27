@@ -1,0 +1,68 @@
+<svg width="720" height="400" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
+  <style>
+    .background { fill: #f8f9fa; }
+    .title { font-size: 18px; font-weight: bold; text-anchor: middle; fill: #212529; }
+    .subtitle { font-size: 14px; text-anchor: middle; fill: #495057; }
+    .label { font-size: 14px; font-weight: bold; text-anchor: end; fill: #495057; }
+    .time-axis { stroke: #6c757d; stroke-width: 1.5; marker-end: url(#arrowhead); }
+    .time-tick { stroke: #6c757d; stroke-width: 1; }
+    .time-text { font-size: 12px; text-anchor: middle; fill: #6c757d; }
+    .task-block { stroke: #343a40; stroke-width: 1; rx: 4; ry: 4; }
+    .task-text { font-size: 14px; font-weight: bold; text-anchor: middle; fill: white; }
+    .prog-a { fill: #0d6efd; }
+    .prog-b { fill: #198754; }
+    .prog-c { fill: #dc3545; }
+    .timeline-bg { fill: #e9ecef; rx: 4; ry: 4;}
+    .explanation { font-size: 13px; fill: #212529; }
+    .highlight { font-weight: bold; fill: #0056b3; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6c757d"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="background"/>
+  <text x="360" y="35" class="title">멀티태스킹 동작 원리</text>
+  <text x="360" y="55" class="subtitle">단일 CPU에서의 시분할 (Time-Sharing)</text>
+
+  <g id="cpu-execution-timeline">
+      <path class="time-axis" d="M 100 80 H 670" />
+      <text x="680" y="85" class="time-text">시간</text>
+      <g class="time-text">
+        <text x="100" y="70">0ms</text><line x1="100" y1="75" x2="100" y2="85" class="time-tick"/>
+        <text x="190" y="70">10ms</text><line x1="190" y1="75" x2="190" y2="85" class="time-tick"/>
+        <text x="280" y="70">20ms</text><line x1="280" y1="75" x2="280" y2="85" class="time-tick"/>
+        <text x="370" y="70">30ms</text><line x1="370" y1="75" x2="370" y2="85" class="time-tick"/>
+        <text x="460" y="70">40ms</text><line x1="460" y1="75" x2="460" y2="85" class="time-tick"/>
+        <text x="550" y="70">50ms</text><line x1="550" y1="75" x2="550" y2="85" class="time-tick"/>
+        <text x="640" y="70">60ms</text><line x1="640" y1="75" x2="640" y2="85" class="time-tick"/>
+      </g>
+      <text x="30" y="115" class="label">CPU 실행:</text>
+      <g id="exec-sequence">
+        <g transform="translate(100, 90)"><rect width="90" height="40" class="task-block prog-a" /><text x="45" y="27" class="task-text">A</text></g>
+        <g transform="translate(190, 90)"><rect width="90" height="40" class="task-block prog-b" /><text x="45" y="27" class="task-text">B</text></g>
+        <g transform="translate(280, 90)"><rect width="90" height="40" class="task-block prog-c" /><text x="45" y="27" class="task-text">C</text></g>
+        <g transform="translate(370, 90)"><rect width="90" height="40" class="task-block prog-a" /><text x="45" y="27" class="task-text">A</text></g>
+        <g transform="translate(460, 90)"><rect width="90" height="40" class="task-block prog-b" /><text x="45" y="27" class="task-text">B</text></g>
+        <g transform="translate(550, 90)"><rect width="90" height="40" class="task-block prog-c" /><text x="45" y="27" class="task-text">C</text></g>
+      </g>
+  </g>
+
+  <g id="program-timelines" transform="translate(0, 150)">
+    <text x="80" y="25" class="label">프로그램 A:</text>
+    <rect x="100" y="10" width="540" height="25" class="timeline-bg" /><rect x="100" y="10" width="90" height="25" class="task-block prog-a" /><rect x="370" y="10" width="90" height="25" class="task-block prog-a" />
+    <text x="80" y="65" class="label">프로그램 B:</text>
+    <rect x="100" y="50" width="540" height="25" class="timeline-bg" /><rect x="190" y="50" width="90" height="25" class="task-block prog-b" /><rect x="460" y="50" width="90" height="25" class="task-block prog-b" />
+    <text x="80" y="105" class="label">프로그램 C:</text>
+    <rect x="100" y="90" width="540" height="25" class="timeline-bg" /><rect x="280" y="90" width="90" height="25" class="task-block prog-c" /><rect x="550" y="90" width="90" height="25" class="task-block prog-c" />
+  </g>
+
+  <g transform="translate(50, 310)">
+    <text class="explanation">
+      <tspan x="0" dy="1.2em"><tspan class="highlight">사용자 관점:</tspan> 프로그램 A, B, C가 동시에 실행되는 것처럼 보입니다.</tspan>
+      <tspan x="0" dy="1.4em"><tspan class="highlight">실제:</tspan> CPU가 짧은 시간(Time Slice) 단위로 프로그램을 매우 빠르게 전환하며 실행합니다.</tspan>
+    </text>
+  </g>
+</svg>

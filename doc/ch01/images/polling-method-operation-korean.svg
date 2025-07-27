@@ -1,0 +1,52 @@
+<svg width="550" height="580" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
+ <defs>
+  <marker orient="auto-start-reverse" markerHeight="6" markerWidth="6" refY="5" refX="8" viewBox="0 0 10 10" id="arrowhead">
+   <path id="svg_1" fill="#343a40" d="m0,0l10,5l-10,5l0,-10z"/>
+  </marker>
+ </defs>
+ <!-- CPU Actions -->
+ <!-- Devices -->
+ <!-- Loop -->
+ <!-- Problem -->
+ <g>
+  <title>Layer 1</title>
+  <!-- Step 1 -->
+  <!-- Step 2 -->
+  <!-- Step 3 -->
+  <text id="svg_3" fill="#212529" text-anchor="middle" font-weight="bold" font-size="18px" class="title" y="40" x="275">폴링 방식 동작 과정</text>
+  <text id="svg_4" font-weight="bold" font-size="16px" class="main-label" y="80" x="50">CPU 동작:</text>
+  <rect id="svg_5" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#e2eefe" class="box cpu-box" height="60" width="120" y="100" x="83.75"/>
+  <text id="svg_6" text-anchor="middle" font-size="14px" class="step-text" y="125" x="143.75">1. 키보드</text>
+  <text id="svg_7" text-anchor="middle" font-size="14px" class="step-text" y="145" x="143.75">확인</text>
+  <path id="svg_8" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m203.75,130l80,0" class="arrow"/>
+  <text id="svg_9" fill="#495057" text-anchor="middle" font-size="12px" class="arrow-label" y="120" x="243.125">"입력 있나?"</text>
+  <path id="svg_10" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m143.75,160l0,50" class="arrow"/>
+  <rect id="svg_11" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#e2eefe" class="box cpu-box" height="60" width="120" y="210" x="83.75"/>
+  <text id="svg_12" text-anchor="middle" font-size="14px" class="step-text" y="235" x="143.75">2. 마우스</text>
+  <text id="svg_13" text-anchor="middle" font-size="14px" class="step-text" y="255" x="143.75">확인</text>
+  <path id="svg_14" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m203.75,240l80,0" class="arrow"/>
+  <text id="svg_15" fill="#495057" text-anchor="middle" font-size="12px" class="arrow-label" y="230" x="243.75">"입력 있나?"</text>
+  <path id="svg_16" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m143.75,270l0,50" class="arrow"/>
+  <rect id="svg_17" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#e2eefe" class="box cpu-box" height="60" width="120" y="320" x="83.75"/>
+  <text id="svg_18" text-anchor="middle" font-size="14px" class="step-text" y="345" x="143.75">3. 네트워크</text>
+  <text id="svg_19" text-anchor="middle" font-size="14px" class="step-text" y="365" x="143.75">확인</text>
+  <path id="svg_20" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m203.75,350l80,0" class="arrow"/>
+  <text id="svg_21" fill="#495057" text-anchor="middle" font-size="12px" class="arrow-label" y="340" x="243.75">"데이터 있나?"</text>
+  <g id="devices">
+   <path id="svg_22" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m443.75,130l80,0" class="arrow"/>
+   <rect id="svg_23" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#fff3cd" class="box device-box" height="60" width="150" y="100" x="283.75"/>
+   <text id="svg_24" text-anchor="middle" font-size="14px" class="step-text" y="130" x="358.75">[키보드] "없음"</text>
+   <path id="svg_25" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m443.75,240l80,0" class="arrow"/>
+   <rect id="svg_26" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#fff3cd" class="box device-box" height="60" width="150" y="210" x="283.75"/>
+   <text id="svg_27" text-anchor="middle" font-size="14px" class="step-text" y="240" x="358.75">[마우스] "없음"</text>
+   <path id="svg_28" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m443.75,350l80,0" class="arrow"/>
+   <rect id="svg_29" ry="8" rx="8" stroke-width="1.5" stroke="#495057" fill="#fff3cd" class="box device-box" height="60" width="150" y="320" x="283.75"/>
+   <text id="svg_30" text-anchor="middle" font-size="14px" class="step-text" y="350" x="358.75">[네트워크] "없음"</text>
+  </g>
+  <path id="svg_31" fill="none" stroke-width="1.5" stroke="#343a40" marker-end="url(#arrowhead)" d="m143.75,380l0,40" class="arrow"/>
+  <path stroke="#0d6efd" id="svg_32" stroke-dasharray="5,5" fill="none" stroke-width="2" marker-end="url(#arrowhead)" d="m25.625,405q0,-277.5 55,-277.5" class="loop-arrow"/>
+  <text transform="matrix(0.82488 0 0 1 3.19739 0)" stroke="null" id="svg_33" text-anchor="middle" font-weight="bold" fill="#0d6efd" font-size="12px" class="loop-text" y="423.75" x="82.5">[1단계로 돌아가서 반복...]</text>
+  <rect id="svg_34" stroke-dasharray="4" ry="8" rx="8" stroke-width="1.5" stroke="#d63384" fill="#f8d7da" class="box problem-box" height="50" width="470" y="480" x="40"/>
+  <text id="svg_35" font-weight="bold" fill="#b02a37" text-anchor="middle" font-size="13px" class="problem-text" y="510" x="275">문제점: CPU가 계속 확인하느라 다른 작업을 할 수 없음!</text>
+ </g>
+</svg>

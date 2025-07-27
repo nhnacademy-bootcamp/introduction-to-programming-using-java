@@ -1,0 +1,168 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="obj1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="obj2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="obj3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#229954;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="obj4Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d68910;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+    <marker id="msgArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+    Object Interaction and Message Passing
+  </text>
+  
+  <!-- Controller Object -->
+  <g transform="translate(300, 60)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="url(#obj1Grad)" filter="url(#shadow)"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      Controller
+    </text>
+    <text x="100" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+      Object
+    </text>
+    
+    <rect x="20" y="60" width="160" height="45" rx="5" fill="white" opacity="0.2"/>
+    <text x="100" y="80" font-family="monospace" font-size="10" text-anchor="middle" fill="white">
+      sendMessage("draw")
+    </text>
+    <text x="100" y="95" font-family="monospace" font-size="10" text-anchor="middle" fill="white">
+      to: shapeObject
+    </text>
+  </g>
+  
+  <!-- Shape Objects -->
+  <!-- Circle Object -->
+  <g transform="translate(50, 250)">
+    <rect x="0" y="0" width="150" height="140" rx="10" fill="url(#obj2Grad)" filter="url(#shadow)"/>
+    <text x="75" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+      Circle Object
+    </text>
+    
+    <circle cx="75" cy="60" r="20" fill="white" opacity="0.3"/>
+    
+    <rect x="15" y="90" width="120" height="40" rx="5" fill="white" opacity="0.2"/>
+    <text x="75" y="105" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      Receives: "draw"
+    </text>
+    <text x="75" y="120" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      Action: Draw circle
+    </text>
+  </g>
+  
+  <!-- Square Object -->
+  <g transform="translate(230, 250)">
+    <rect x="0" y="0" width="150" height="140" rx="10" fill="url(#obj3Grad)" filter="url(#shadow)"/>
+    <text x="75" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+      Square Object
+    </text>
+    
+    <rect x="55" y="40" width="40" height="40" fill="white" opacity="0.3"/>
+    
+    <rect x="15" y="90" width="120" height="40" rx="5" fill="white" opacity="0.2"/>
+    <text x="75" y="105" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      Receives: "draw"
+    </text>
+    <text x="75" y="120" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      Action: Draw square
+    </text>
+  </g>
+  
+  <!-- Triangle Object -->
+  <g transform="translate(410, 250)">
+    <rect x="0" y="0" width="150" height="140" rx="10" fill="url(#obj4Grad)" filter="url(#shadow)"/>
+    <text x="75" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+      Triangle Object
+    </text>
+    
+    <path d="M 75,40 L 95,70 L 55,70 Z" fill="white" opacity="0.3"/>
+    
+    <rect x="15" y="90" width="120" height="40" rx="5" fill="white" opacity="0.2"/>
+    <text x="75" y="105" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      Receives: "draw"
+    </text>
+    <text x="75" y="120" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      Action: Draw triangle
+    </text>
+  </g>
+  
+  <!-- Text Object -->
+  <g transform="translate(590, 250)">
+    <rect x="0" y="0" width="150" height="140" rx="10" fill="#9b59b6" filter="url(#shadow)"/>
+    <text x="75" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+      Text Object
+    </text>
+    
+    <text x="75" y="60" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" opacity="0.3">
+      ABC
+    </text>
+    
+    <rect x="15" y="90" width="120" height="40" rx="5" fill="white" opacity="0.2"/>
+    <text x="75" y="105" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      Receives: "draw"
+    </text>
+    <text x="75" y="120" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="white">
+      Action: Draw text
+    </text>
+  </g>
+  
+  <!-- Message Arrows -->
+  <path d="M 350,180 Q 250,215 125,250" stroke="#34495e" stroke-width="2" fill="none" marker-end="url(#msgArrow)" stroke-dasharray="5,5"/>
+  <text x="220" y="210" font-family="Arial, sans-serif" font-size="12" fill="#34495e" transform="rotate(-20 220 210)">
+    "draw"
+  </text>
+  
+  <path d="M 380,180 Q 340,215 305,250" stroke="#34495e" stroke-width="2" fill="none" marker-end="url(#msgArrow)" stroke-dasharray="5,5"/>
+  <text x="340" y="210" font-family="Arial, sans-serif" font-size="12" fill="#34495e">
+    "draw"
+  </text>
+  
+  <path d="M 420,180 Q 460,215 485,250" stroke="#34495e" stroke-width="2" fill="none" marker-end="url(#msgArrow)" stroke-dasharray="5,5"/>
+  <text x="450" y="210" font-family="Arial, sans-serif" font-size="12" fill="#34495e">
+    "draw"
+  </text>
+  
+  <path d="M 450,180 Q 550,215 665,250" stroke="#34495e" stroke-width="2" fill="none" marker-end="url(#msgArrow)" stroke-dasharray="5,5"/>
+  <text x="560" y="210" font-family="Arial, sans-serif" font-size="12" fill="#34495e" transform="rotate(20 560 210)">
+    "draw"
+  </text>
+  
+  <!-- Polymorphism Explanation -->
+  <g transform="translate(50, 420)">
+    <rect x="0" y="0" width="700" height="60" rx="10" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+    
+    <text x="350" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">
+      Polymorphism in Action
+    </text>
+    
+    <text x="20" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      • Same message ("draw") sent to different objects
+    </text>
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      • Each object responds differently based on its type
+    </text>
+    <text x="380" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      • Controller doesn't need to know object details
+    </text>
+    <text x="380" y="55" font-family="Arial, sans-serif" font-size="12" fill="#666">
+      • New object types can be added easily
+    </text>
+  </g>
+</svg>

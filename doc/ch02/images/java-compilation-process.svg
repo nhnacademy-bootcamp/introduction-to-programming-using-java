@@ -1,0 +1,90 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="24" font-weight="bold">Java Compilation and Execution Process</text>
+  
+  <!-- Step 1: Source Code -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="160" height="100" fill="#e8f4fd" stroke="#0066cc" stroke-width="2" rx="10"/>
+    <text x="80" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#0066cc">Source Code</text>
+    <text x="80" y="55" text-anchor="middle" font-size="14" fill="#333">HelloWorld.java</text>
+    <text x="80" y="75" text-anchor="middle" font-size="12" fill="#666">(Human readable)</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <g transform="translate(210, 120)">
+    <line x1="0" y1="10" x2="80" y2="10" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="40" y="5" text-anchor="middle" font-size="14" fill="#333">javac</text>
+    <text x="40" y="25" text-anchor="middle" font-size="12" fill="#666">(Compiler)</text>
+  </g>
+  
+  <!-- Step 2: Bytecode -->
+  <g transform="translate(290, 80)">
+    <rect x="0" y="0" width="160" height="100" fill="#f0f9ff" stroke="#0891b2" stroke-width="2" rx="10"/>
+    <text x="80" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#0891b2">Bytecode</text>
+    <text x="80" y="55" text-anchor="middle" font-size="14" fill="#333">HelloWorld.class</text>
+    <text x="80" y="75" text-anchor="middle" font-size="12" fill="#666">(Platform neutral)</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <g transform="translate(450, 120)">
+    <line x1="0" y1="10" x2="80" y2="10" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="40" y="5" text-anchor="middle" font-size="14" fill="#333">java</text>
+    <text x="40" y="25" text-anchor="middle" font-size="12" fill="#666">(JVM)</text>
+  </g>
+  
+  <!-- Step 3: JVM -->
+  <g transform="translate(530, 80)">
+    <rect x="0" y="0" width="200" height="100" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="10"/>
+    <text x="100" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#f59e0b">Java Virtual Machine</text>
+    <text x="100" y="55" text-anchor="middle" font-size="14" fill="#333">Executes bytecode</text>
+    <text x="100" y="75" text-anchor="middle" font-size="12" fill="#666">(Platform specific)</text>
+  </g>
+  
+  <!-- Output Arrow -->
+  <g transform="translate(630, 180)">
+    <line x1="0" y1="0" x2="0" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Output -->
+  <g transform="translate(530, 240)">
+    <rect x="0" y="0" width="200" height="60" fill="#e6fffa" stroke="#10b981" stroke-width="2" rx="10"/>
+    <text x="100" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#10b981">Output</text>
+    <text x="100" y="45" text-anchor="middle" font-size="14" fill="#333">Hello World!</text>
+  </g>
+  
+  <!-- Platform Examples -->
+  <g transform="translate(50, 350)">
+    <text x="0" y="0" font-size="18" font-weight="bold" fill="#333">Platform Independence</text>
+    
+    <!-- Windows -->
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="150" height="80" fill="#f3f4f6" stroke="#666" stroke-width="1" rx="5"/>
+      <text x="75" y="25" text-anchor="middle" font-size="14" font-weight="bold">Windows</text>
+      <text x="75" y="45" text-anchor="middle" font-size="12">JVM for Windows</text>
+      <text x="75" y="65" text-anchor="middle" font-size="11" fill="#666">Same bytecode</text>
+    </g>
+    
+    <!-- Mac -->
+    <g transform="translate(180, 30)">
+      <rect x="0" y="0" width="150" height="80" fill="#f3f4f6" stroke="#666" stroke-width="1" rx="5"/>
+      <text x="75" y="25" text-anchor="middle" font-size="14" font-weight="bold">macOS</text>
+      <text x="75" y="45" text-anchor="middle" font-size="12">JVM for macOS</text>
+      <text x="75" y="65" text-anchor="middle" font-size="11" fill="#666">Same bytecode</text>
+    </g>
+    
+    <!-- Linux -->
+    <g transform="translate(360, 30)">
+      <rect x="0" y="0" width="150" height="80" fill="#f3f4f6" stroke="#666" stroke-width="1" rx="5"/>
+      <text x="75" y="25" text-anchor="middle" font-size="14" font-weight="bold">Linux</text>
+      <text x="75" y="45" text-anchor="middle" font-size="12">JVM for Linux</text>
+      <text x="75" y="65" text-anchor="middle" font-size="11" fill="#666">Same bytecode</text>
+    </g>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

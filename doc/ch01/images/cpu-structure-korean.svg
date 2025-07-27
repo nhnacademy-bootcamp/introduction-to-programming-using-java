@@ -1,0 +1,53 @@
+<svg width="799.9999999999999" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- CPU 전체 박스 -->
+ <!-- ALU -->
+ <!-- 레지스터 -->
+ <!-- 개별 레지스터들 -->
+ <!-- 프로그램 카운터 -->
+ <!-- 제어 유닛 -->
+ <!-- 데이터 버스 표시 -->
+ <!-- 화살표 정의 -->
+ <defs>
+  <marker orient="auto" refY="3.5" refX="9" markerHeight="7" markerWidth="10" id="arrowhead">
+   <polygon id="svg_1" fill="#666" points="0 0, 10 3.5, 0 7"/>
+  </marker>
+ </defs>
+ <!-- 범례 -->
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_2" stroke-width="3" stroke="#333" fill="#f0f0f0" height="500" width="700" y="50.74627" x="49.25373"/>
+  <text id="svg_3" fill="#333" font-weight="bold" font-size="28" text-anchor="middle" y="90" x="400">중앙처리장치 (CPU)</text>
+  <rect id="svg_4" rx="10" stroke-width="2" stroke="#cc0000" fill="#ffd4d4" height="150" width="200" y="150" x="100"/>
+  <text id="svg_5" font-weight="bold" font-size="20" text-anchor="middle" y="180" x="200">ALU</text>
+  <text id="svg_6" font-size="16" text-anchor="middle" y="205" x="200">산술논리장치</text>
+  <text id="svg_7" font-size="14" text-anchor="middle" y="230" x="200">• 덧셈/뺄셈</text>
+  <text id="svg_8" font-size="14" text-anchor="middle" y="250" x="200">• 곱셈/나눗셈</text>
+  <text id="svg_9" font-size="14" text-anchor="middle" y="270" x="200">• AND/OR/NOT</text>
+  <rect id="svg_10" rx="10" stroke-width="2" stroke="#0000cc" fill="#d4d4ff" height="200" width="350" y="150" x="350"/>
+  <text id="svg_11" font-weight="bold" font-size="20" text-anchor="middle" y="180" x="525">레지스터 (Registers)</text>
+  <rect id="svg_12" stroke="#666" fill="white" height="30" width="140" y="200" x="380"/>
+  <text id="svg_13" font-size="14" y="220" x="390">R0: 00000000</text>
+  <rect id="svg_14" stroke="#666" fill="white" height="30" width="140" y="200" x="540"/>
+  <text id="svg_15" font-size="14" y="220" x="550">R1: 00000101</text>
+  <rect id="svg_16" stroke="#666" fill="white" height="30" width="140" y="240" x="380"/>
+  <text id="svg_17" font-size="14" y="260" x="390">R2: 00000011</text>
+  <rect id="svg_18" stroke="#666" fill="white" height="30" width="140" y="240" x="540"/>
+  <text id="svg_19" font-size="14" y="260" x="550">R3: 00001000</text>
+  <rect id="svg_20" stroke="#666" fill="white" height="30" width="300" y="280" x="380"/>
+  <text id="svg_21" font-size="14" text-anchor="middle" y="300" x="480">... (총 16~32개의 범용 레지스터)</text>
+  <rect id="svg_22" rx="10" stroke-width="2" stroke="#00cc00" fill="#d4ffd4" height="80" width="250" y="400.74626" x="86.56717"/>
+  <text id="svg_23" font-weight="bold" font-size="20" text-anchor="middle" y="430.74626" x="211.56717">프로그램 카운터 (PC)</text>
+  <rect id="svg_24" stroke="#666" fill="white" height="25" width="210" y="440.74626" x="106.56717"/>
+  <text id="svg_25" font-size="14" text-anchor="middle" y="458.74626" x="211.56717">다음 명령 주소: 0x0100</text>
+  <rect id="svg_26" rx="10" stroke-width="2" stroke="#cccc00" fill="#ffffd4" height="130" width="300" y="370" x="400"/>
+  <text id="svg_27" font-weight="bold" font-size="20" text-anchor="middle" y="400" x="550">제어 유닛 (Control Unit)</text>
+  <text id="svg_28" font-size="14" text-anchor="middle" y="430" x="550">• 명령어 해독</text>
+  <text id="svg_29" font-size="14" text-anchor="middle" y="450" x="550">• 실행 제어</text>
+  <text id="svg_30" font-size="14" text-anchor="middle" y="470" x="550">• 신호 조정</text>
+  <line id="svg_31" marker-end="url(#arrowhead)" stroke-width="2" stroke="#666" y2="225" x2="350" y1="225" x1="300"/>
+  <line stroke="#666" id="svg_32" marker-end="url(#arrowhead)" stroke-width="2" y2="398.50745" x2="203.35821" y1="304.4776" x1="203.35821"/>
+  <line stroke="#666" id="svg_33" marker-end="url(#arrowhead)" stroke-width="2" y2="442.46269" x2="400.74627" y1="442.46269" x1="339.55224"/>
+  <text id="svg_34" fill="#666" font-size="14" y="516.56716" x="61.04478">* CPU는 이러한 구성요소들이 함께 작동하여 명령을 실행합니다</text>
+  <text id="svg_35" fill="#666" font-size="14" y="536.56716" x="61.04478">* 모든 데이터는 이진수(0과 1)로 표현됩니다</text>
+ </g>
+</svg>

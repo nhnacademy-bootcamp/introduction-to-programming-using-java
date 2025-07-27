@@ -1,0 +1,207 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <linearGradient id="topDownGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E5C8A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bottomUpGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#E94B3C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C23B2C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+    Programming Approaches
+  </text>
+  
+  <!-- Top-Down Section -->
+  <g transform="translate(50, 60)">
+    <text x="150" y="20" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#4A90E2">
+      Top-Down
+    </text>
+    
+    <!-- Main Problem -->
+    <rect x="50" y="40" width="200" height="50" rx="5" fill="url(#topDownGrad)" opacity="0.9"/>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+      Main Problem
+    </text>
+    
+    <!-- Arrow down -->
+    <line x1="150" y1="90" x2="150" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Sub-problems -->
+    <g transform="translate(0, 130)">
+      <rect x="20" y="0" width="80" height="40" rx="5" fill="url(#topDownGrad)" opacity="0.8"/>
+      <text x="60" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Sub-problem 1
+      </text>
+      
+      <rect x="110" y="0" width="80" height="40" rx="5" fill="url(#topDownGrad)" opacity="0.8"/>
+      <text x="150" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Sub-problem 2
+      </text>
+      
+      <rect x="200" y="0" width="80" height="40" rx="5" fill="url(#topDownGrad)" opacity="0.8"/>
+      <text x="240" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Sub-problem 3
+      </text>
+    </g>
+    
+    <!-- Arrows to details -->
+    <line x1="60" y1="170" x2="60" y2="200" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <line x1="150" y1="170" x2="150" y2="200" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <line x1="240" y1="170" x2="240" y2="200" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    
+    <!-- Details -->
+    <g transform="translate(0, 210)">
+      <rect x="10" y="0" width="40" height="30" rx="3" fill="url(#topDownGrad)" opacity="0.6"/>
+      <text x="30" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Detail
+      </text>
+      
+      <rect x="70" y="0" width="40" height="30" rx="3" fill="url(#topDownGrad)" opacity="0.6"/>
+      <text x="90" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Detail
+      </text>
+      
+      <rect x="130" y="0" width="40" height="30" rx="3" fill="url(#topDownGrad)" opacity="0.6"/>
+      <text x="150" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Detail
+      </text>
+      
+      <rect x="190" y="0" width="40" height="30" rx="3" fill="url(#topDownGrad)" opacity="0.6"/>
+      <text x="210" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Detail
+      </text>
+      
+      <rect x="250" y="0" width="40" height="30" rx="3" fill="url(#topDownGrad)" opacity="0.6"/>
+      <text x="270" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Detail
+      </text>
+    </g>
+    
+    <!-- Description -->
+    <text x="150" y="290" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+      Start with big problem
+    </text>
+    <text x="150" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+      Break down into smaller parts
+    </text>
+  </g>
+  
+  <!-- Bottom-Up Section -->
+  <g transform="translate(450, 60)">
+    <text x="150" y="20" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#E94B3C">
+      Bottom-Up
+    </text>
+    
+    <!-- Components -->
+    <g transform="translate(0, 210)">
+      <rect x="10" y="0" width="40" height="30" rx="3" fill="url(#bottomUpGrad)" opacity="0.6"/>
+      <text x="30" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Module
+      </text>
+      
+      <rect x="70" y="0" width="40" height="30" rx="3" fill="url(#bottomUpGrad)" opacity="0.6"/>
+      <text x="90" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Module
+      </text>
+      
+      <rect x="130" y="0" width="40" height="30" rx="3" fill="url(#bottomUpGrad)" opacity="0.6"/>
+      <text x="150" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Module
+      </text>
+      
+      <rect x="190" y="0" width="40" height="30" rx="3" fill="url(#bottomUpGrad)" opacity="0.6"/>
+      <text x="210" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Module
+      </text>
+      
+      <rect x="250" y="0" width="40" height="30" rx="3" fill="url(#bottomUpGrad)" opacity="0.6"/>
+      <text x="270" y="20" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="white">
+        Module
+      </text>
+    </g>
+    
+    <!-- Arrows up -->
+    <line x1="60" y1="210" x2="60" y2="180" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <line x1="150" y1="210" x2="150" y2="180" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <line x1="240" y1="210" x2="240" y2="180" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    
+    <!-- Combined components -->
+    <g transform="translate(0, 130)">
+      <rect x="20" y="0" width="80" height="40" rx="5" fill="url(#bottomUpGrad)" opacity="0.8"/>
+      <text x="60" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Component 1
+      </text>
+      
+      <rect x="110" y="0" width="80" height="40" rx="5" fill="url(#bottomUpGrad)" opacity="0.8"/>
+      <text x="150" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Component 2
+      </text>
+      
+      <rect x="200" y="0" width="80" height="40" rx="5" fill="url(#bottomUpGrad)" opacity="0.8"/>
+      <text x="240" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white">
+        Component 3
+      </text>
+    </g>
+    
+    <!-- Arrow up -->
+    <line x1="150" y1="130" x2="150" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Complete System -->
+    <rect x="50" y="40" width="200" height="50" rx="5" fill="url(#bottomUpGrad)" opacity="0.9"/>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">
+      Complete System
+    </text>
+    
+    <!-- Description -->
+    <text x="150" y="290" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+      Start with reusable modules
+    </text>
+    <text x="150" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+      Combine to build system
+    </text>
+  </g>
+  
+  <!-- Comparison Box -->
+  <g transform="translate(100, 350)">
+    <rect x="0" y="0" width="600" height="120" rx="10" fill="#f9f9f9" stroke="#ddd" stroke-width="2"/>
+    
+    <text x="300" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">
+      Key Differences
+    </text>
+    
+    <!-- Top-Down characteristics -->
+    <text x="20" y="50" font-family="Arial, sans-serif" font-size="12" fill="#4A90E2" font-weight="bold">
+      Top-Down:
+    </text>
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      • Problem-specific design
+    </text>
+    <text x="20" y="85" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      • Clear logical structure
+    </text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      • Lower reusability
+    </text>
+    
+    <!-- Bottom-Up characteristics -->
+    <text x="320" y="50" font-family="Arial, sans-serif" font-size="12" fill="#E94B3C" font-weight="bold">
+      Bottom-Up:
+    </text>
+    <text x="320" y="70" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      • Component-based design
+    </text>
+    <text x="320" y="85" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      • High reusability
+    </text>
+    <text x="320" y="100" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      • Requires existing modules
+    </text>
+  </g>
+</svg>

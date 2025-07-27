@@ -1,0 +1,98 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Compilation Process -->
+ <!-- Interpretation Process -->
+ <!-- Key Differences -->
+ <!-- Arrow marker definition -->
+ <defs>
+  <marker orient="auto" refY="3.5" refX="9" markerHeight="7" markerWidth="10" id="arrowhead">
+   <polygon id="svg_1" fill="#333" points="0 0, 10 3.5, 0 7"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_2" font-weight="bold" font-size="24" text-anchor="middle" y="30" x="400">Compilation vs Interpretation</text>
+  <!-- Source Code -->
+  <!-- Arrow -->
+  <!-- Machine Code -->
+  <!-- Arrow -->
+  <!-- CPU -->
+  <!-- Timeline -->
+  <!-- Source Code -->
+  <!-- Arrow -->
+  <!-- Interpreter -->
+  <!-- Arrow -->
+  <!-- CPU -->
+  <!-- Timeline -->
+  <g id="svg_38">
+   <text id="svg_39" font-weight="bold" font-size="18" text-anchor="middle" y="429.76526" x="400">Key Differences</text>
+   <!-- Compilation -->
+   <g id="svg_40">
+    <text id="svg_41" fill="#0066cc" font-weight="bold" font-size="16" y="459.76526" x="50">Compilation:</text>
+    <text id="svg_42" font-size="14" y="484.76526" x="70">• Translates entire program before execution</text>
+    <text id="svg_43" font-size="14" y="504.76526" x="70">• Creates standalone executable file</text>
+    <text id="svg_44" font-size="14" y="524.76526" x="70">• Faster execution (direct machine code)</text>
+    <text id="svg_45" font-size="14" y="544.76526" x="70">• Platform-specific output</text>
+   </g>
+   <!-- Interpretation -->
+   <g id="svg_46">
+    <text id="svg_47" fill="#ff6600" font-weight="bold" font-size="16" y="459.76526" x="450">Interpretation:</text>
+    <text id="svg_48" font-size="14" y="484.76526" x="470">• Translates and executes line by line</text>
+    <text id="svg_49" font-size="14" y="504.76526" x="470">• No separate executable file</text>
+    <text id="svg_50" font-size="14" y="524.76526" x="470">• Slower execution (translation overhead)</text>
+    <text id="svg_51" font-size="14" y="544.76526" x="470">• Platform-independent (needs interpreter)</text>
+   </g>
+  </g>
+  <g id="svg_59">
+   <text id="svg_4" font-weight="bold" font-size="20" text-anchor="middle" y="80" x="158.68545">Compilation</text>
+   <rect id="svg_5" stroke-width="2" stroke="#0066cc" fill="#e8f4f8" height="60" width="200" y="110" x="58.21596"/>
+   <path stroke="#333" id="svg_8" marker-end="url(#arrowhead)" stroke-width="2" d="m158.68545,170l0,57.37089"/>
+   <text id="svg_9" font-size="14" y="195" x="168.68545">Compiler</text>
+   <rect id="svg_10" stroke-width="2" stroke="#cc0000" fill="#ffe8e8" height="60" width="200" y="230" x="58.68545"/>
+   <path id="svg_13" marker-end="url(#arrowhead)" stroke-width="2" stroke="#333" d="m158.68545,292.20657l0,40"/>
+   <text id="svg_14" font-size="14" y="305" x="168.68545">Execute</text>
+   <rect id="svg_15" rx="10" stroke-width="2" stroke="#666" fill="#f0f0f0" height="60" width="200" y="336.10329" x="58.68545"/>
+   <line id="svg_18" stroke-dasharray="5,5" stroke="#999" y2="390" x2="298.68545" y1="110" x1="298.68545"/>
+   <text id="svg_19" fill="#666" font-size="12" y="193.14554" x="308.21596">Compile Time</text>
+   <text id="svg_20" fill="#666" font-size="12" y="360" x="308.68545">Run Time</text>
+   <g id="svg_52">
+    <text id="svg_11" font-size="16" text-anchor="middle" y="256.82278" x="158.68543">Machine Code</text>
+    <text id="svg_12" fill="#666" font-size="12" text-anchor="middle" y="276.32278" x="158.68546">(Executable File)</text>
+   </g>
+   <g id="svg_55">
+    <text id="svg_6" font-size="16" text-anchor="middle" y="136.42957" x="158.68545">Source Code</text>
+    <text id="svg_7" fill="#666" font-size="12" text-anchor="middle" y="156.71595" x="158.68542">(High-level Language)</text>
+   </g>
+   <g id="svg_57">
+    <text id="svg_16" font-size="16" text-anchor="middle" y="362.88495" x="158.68545">CPU</text>
+    <text id="svg_17" fill="#666" font-size="12" text-anchor="middle" y="382.4671" x="158.68545">(Direct Execution)</text>
+   </g>
+  </g>
+  <g id="svg_60">
+   <text id="svg_22" font-weight="bold" font-size="20" text-anchor="middle" y="80" x="558.68545">Interpretation</text>
+   <rect id="svg_23" stroke-width="2" stroke="#0066cc" fill="#e8f4f8" height="60" width="200" y="109.53052" x="458.68545"/>
+   <path stroke="#333" id="svg_26" marker-end="url(#arrowhead)" stroke-width="2" d="m558.68548,170l0,47.51173"/>
+   <rect id="svg_27" rx="10" stroke-width="2" stroke="#ff6600" fill="#fff0e0" height="80" width="200" y="219.53052" x="458.68545"/>
+   <path stroke="#333" id="svg_31" marker-end="url(#arrowhead)" stroke-width="2" d="m558.68548,300l0,32.67606"/>
+   <rect id="svg_32" rx="10" stroke-width="2" stroke="#666" fill="#f0f0f0" height="60" width="200" y="335.6338" x="458.68545"/>
+   <line id="svg_35" stroke-dasharray="5,5" stroke="#999" y2="390" x2="698.68545" y1="110" x1="698.68545"/>
+   <text id="svg_36" fill="#666" font-size="12" y="260" x="708.68545">Run Time</text>
+   <text id="svg_37" fill="#666" font-size="12" y="275" x="708.68545">(All at once)</text>
+   <g id="svg_54">
+    <text id="svg_29" fill="#666" font-size="12" text-anchor="middle" y="264.22535" x="558.68548">Reads &amp; Executes</text>
+    <g id="svg_53">
+     <text id="svg_28" font-size="16" text-anchor="middle" y="247.21007" x="558.68547">Interpreter</text>
+     <text id="svg_30" fill="#666" font-size="12" text-anchor="middle" y="284.99645" x="558.68546">Line by Line</text>
+    </g>
+   </g>
+   <g id="svg_56">
+    <text id="svg_24" font-size="16" text-anchor="middle" y="135.96008" x="558.6855">Source Code</text>
+    <text id="svg_25" fill="#666" font-size="12" text-anchor="middle" y="156.24648" x="558.68546">(High-level Language)</text>
+   </g>
+   <g id="svg_58">
+    <text id="svg_33" font-size="16" text-anchor="middle" y="362.41545" x="558.68549">CPU</text>
+    <text id="svg_34" fill="#666" font-size="12" text-anchor="middle" y="381.99763" x="558.68548">(Indirect Execution)</text>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,66 @@
+<svg width="600" height="520" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'">
+  <style>
+    .background { fill: #f8f9fa; }
+    .title { font-size: 18px; font-weight: bold; text-anchor: middle; fill: #212529; }
+    .state-box { fill: #fff; stroke: #495057; stroke-width: 1.5; rx: 8; ry: 8; }
+    .state-text { font-size: 16px; font-weight: bold; text-anchor: middle; }
+    .state-subtext { font-size: 12px; font-weight: normal; text-anchor: middle; fill: #495057; }
+    .created { fill: #e9ecef; }
+    .ready { fill: #cfe2ff; }
+    .running { fill: #d1e7dd; }
+    .waiting { fill: #fff3cd; }
+    .arrow { marker-end: url(#arrowhead); stroke: #343a40; stroke-width: 1.5; fill: none; }
+    .arrow-label { font-size: 12px; text-anchor: middle; fill: #212529; }
+    .desc-box { fill: #e9ecef; rx: 4; ry: 4; }
+    .desc-title { font-size: 14px; font-weight: bold; }
+    .desc-text { font-size: 12px; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#343a40"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="background"/>
+  <text x="300" y="40" class="title">스레드 상태 변화 다이어그램</text>
+
+  <g id="states">
+    <g>
+      <rect x="250" y="80" width="100" height="50" class="state-box created" />
+      <text x="300" y="105" class="state-text">Created</text>
+      <text x="300" y="120" class="state-subtext">(생성)</text>
+    </g>
+    <g>
+      <rect x="250" y="180" width="100" height="50" class="state-box ready" />
+      <text x="300" y="205" class="state-text">Ready</text>
+      <text x="300" y="220" class="state-subtext">(준비)</text>
+    </g>
+    <g>
+      <rect x="425" y="180" width="100" height="50" class="state-box running" />
+      <text x="475" y="205" class="state-text">Running</text>
+      <text x="475" y="220" class="state-subtext">(실행)</text>
+    </g>
+    <g>
+      <rect x="425" y="280" width="100" height="50" class="state-box waiting" />
+      <text x="475" y="305" class="state-text">Waiting</text>
+      <text x="475" y="320" class="state-subtext">(대기)</text>
+    </g>
+  </g>
+
+  <g id="transitions" class="arrow-label">
+    <path class="arrow" d="M 300 130 v 50" />
+    <path class="arrow" d="M 350 205 h 75" /><text x="387.5" y="198">Dispatch</text>
+    <path class="arrow" d="M 425 205 q-20 -40 -75 -40" /><text x="387.5" y="158">Time Expired</text>
+    <path class="arrow" d="M 475 230 v 50" /><text x="495" y="260">I/O Wait</text>
+    <path class="arrow" d="M 425 305 q-120 0 -120 -80 v -25" /><text x="365" y="255">I/O Complete</text>
+  </g>
+
+  <g transform="translate(40, 390)">
+    <rect width="520" height="110" class="desc-box" />
+    <text x="20" y="25" class="desc-title">상태 설명:</text>
+    <text x="30" y="50" class="desc-text"><tspan font-weight="bold">• Ready:</tspan> CPU를 할당받으면 즉시 실행 가능하지만, 대기 중인 상태</text>
+    <text x="30" y="70" class="desc-text"><tspan font-weight="bold">• Running:</tspan> CPU를 점유하고 코드를 실행 중인 상태</text>
+    <text x="30" y="90" class="desc-text"><tspan font-weight="bold">• Waiting:</tspan> 입출력 작업이 끝나기를 기다리는 상태</text>
+  </g>
+</svg>
