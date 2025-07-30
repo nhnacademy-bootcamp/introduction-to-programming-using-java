@@ -135,18 +135,16 @@ while (x < 10) {
 
 **형식 1: if-else**
 ```java
-if (조건식) {
-    // 조건이 참일 때 실행
-} else {
-    // 조건이 거짓일 때 실행
-}
+if (조건식)
+    statement // 조건이 참일 때 실행
+else
+    statement // 조건이 거짓일 때 실행
 ```
 
 **형식 2: 단순 if**
 ```java
-if (조건식) {
-    // 조건이 참일 때만 실행
-}
+if (조건식)
+    statement // 조건이 참일 때만 실행
 ```
 
 ### 4.3 if 문 예제
@@ -193,22 +191,22 @@ public class Interest3 {
     public static void main(String[] args) {
         double principal;  // 원금
         double rate;       // 이자율
-        
+
         // 입력 받기
         System.out.print("초기 투자 금액: ");
         principal = TextIO.getlnDouble();
-        
+
         System.out.print("연간 이자율 (소수): ");
         rate = TextIO.getlnDouble();
-        
+
         // 5년간 계산
         int years = 0;
         while (years < 5) {
             double interest = principal * rate;
             principal = principal + interest;
             years = years + 1;
-            
-            System.out.printf("%d년 후: $%.2f%n", 
+
+            System.out.printf("%d년 후: $%.2f%n",
                             years, principal);
         }
     }
