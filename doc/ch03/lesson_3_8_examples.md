@@ -3,19 +3,23 @@
 ## 1. 배열 기본 예제
 
 ### 예제 1-1: 배열 선언과 생성
+
+#### 요구사항
+- int[] numbers1 선언 후 new int[5]로 생성
+- int[] numbers2를 크기 10으로 선언과 동시에 생성
+- int[] numbers3를 {10, 20, 30, 40, 50}으로 초기화
+- String 배열 names를 크기 3으로 생성
+- double 배열 prices를 크기 7로 생성
+- boolean 배열 flags를 크기 4로 생성
+
+#### 예제 코드
 ```java
 public class ArrayBasicsExample {
     public static void main(String[] args) {
         System.out.println("=== 배열 기본 예제 ===");
 
         // TODO: 배열 선언과 생성
-        // 힌트:
-        // 1. int[] numbers1 선언 후 new int[5]로 생성
-        // 2. int[] numbers2를 크기 10으로 선언과 동시에 생성
-        // 3. int[] numbers3를 {10, 20, 30, 40, 50}으로 초기화
-        // 4. String 배열 names를 크기 3으로 생성
-        // 5. double 배열 prices를 크기 7로 생성
-        // 6. boolean 배열 flags를 크기 4로 생성
+        // 힌트: 배열 생성 문법
 
         // 여기에 코드를 작성하세요
 
@@ -33,10 +37,7 @@ public class ArrayBasicsExample {
         System.out.println("numbers3 길이: " + numbers3.length);
 
         // TODO: 배열 값 설정과 읽기
-        // 힌트:
-        // 1. numbers1[0]부터 numbers1[4]까지 100, 200, 300, 400, 500 할당
-        // 2. "첫 번째 요소: " + numbers1[0] 출력
-        // 3. "마지막 요소: " + numbers1[numbers1.length - 1] 출력
+        // 힌트: 인덱스 사용
         System.out.println("\n=== 배열 요소 접근 ===");
 
         // 여기에 코드를 작성하세요
@@ -64,6 +65,13 @@ numbers3 길이: 5
 ```
 
 ### 예제 1-2: 배열 초기화 방법들
+
+#### 요구사항
+- int[] multiples = new int[10] 생성
+- for 루프로 i를 0부터 multiples.length미만까지 반복
+- multiples[i]에 (i + 1) * 5 할당 (5의 배수)
+
+#### 예제 코드
 ```java
 public class ArrayInitializationExample {
     public static void main(String[] args) {
@@ -77,10 +85,7 @@ public class ArrayInitializationExample {
         int[] scores = new int[]{85, 92, 78, 96, 88};
 
         // TODO: 방법 3 - 반복문으로 초기화
-        // 힌트:
-        // 1. int[] multiples = new int[10] 생성
-        // 2. for 루프로 i를 0부터 multiples.length미만까지 반복
-        // 3. multiples[i]에 (i + 1) * 5 할당 (5의 배수)
+        // 힌트: for 루프
 
         // 여기에 코드를 작성하세요
 
@@ -111,6 +116,15 @@ sameValues: [99, 99, 99, 99, 99, 99, 99, 99]
 ## 2. 배열 처리 예제
 
 ### 예제 2-1: 기본 배열 처리 - 합계, 평균, 최대값, 최소값
+
+#### 요구사항
+- sum을 0으로 초기화
+- for 루프로 temperatures 배열의 모든 값을 sum에 누적
+- 합계 출력 (printf 사용, 형식: "\n주간 온도 합계: %.1f°C%n")
+- average = sum / temperatures.length로 평균 계산
+- 평균 출력 (printf 사용, 형식: "주간 평균 온도: %.1f°C%n")
+
+#### 예제 코드
 ```java
 public class ArrayProcessingExample {
     public static void main(String[] args) {
@@ -125,35 +139,17 @@ public class ArrayProcessingExample {
         }
 
         // TODO: 합계와 평균 계산
-        // 힌트:
-        // 1. sum을 0으로 초기화
-        // 2. for 루프로 temperatures 배열의 모든 값을 sum에 누적
-        // 3. 합계 출력 (printf 사용, 형식: "\n주간 온도 합계: %.1f°C%n")
-        // 4. average = sum / temperatures.length로 평균 계산
-        // 5. 평균 출력 (printf 사용, 형식: "주간 평균 온도: %.1f°C%n")
+        // 힌트: for 루프와 누적
 
         // 여기에 코드를 작성하세요
 
         // TODO: 최고 온도와 최저 온도 찾기
-        // 힌트:
-        // 1. max와 min을 temperatures[0]으로 초기화
-        // 2. maxDay와 minDay를 0으로 초기화
-        // 3. for 루프로 i를 1부터 시작 (0번은 이미 초기값)
-        // 4. temperatures[i] > max면 max와 maxDay 업데이트
-        // 5. temperatures[i] < min이면 min과 minDay 업데이트
-        // 6. 최고 온도와 요일 출력
-        // 7. 최저 온도와 요일 출력
+        // 힌트: 비교와 갱신
 
         // 여기에 코드를 작성하세요
 
         // TODO: 평균보다 높은 날 찾기
-        // 힌트:
-        // 1. countAboveAverage를 0으로 초기화
-        // 2. for 루프로 모든 온도 검사
-        // 3. temperatures[i] > average면:
-        //    - 요일, 온도, 평균과의 차이 출력
-        //    - countAboveAverage 증가
-        // 4. "총 " + countAboveAverage + "일" 출력
+        // 힌트: 조건문과 카운터
         System.out.println("\n평균보다 높은 온도의 날:");
 
         // 여기에 코드를 작성하세요
@@ -186,6 +182,15 @@ public class ArrayProcessingExample {
 ```
 
 ### 예제 2-2: 학생 성적 처리 시스템
+
+#### 요구사항
+- 학생 이름, 국어/수학/영어 점수 입력받기 ('quit'으로 종료)
+- 각 학생의 총점과 평균 계산하여 성적표 출력
+- 과목별 총점을 누적하여 과목별 평균 계산
+- 최고 총점을 받은 학생 찾아 최우수 학생으로 표시
+- 최대 30명까지 입력 가능
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -241,14 +246,9 @@ public class StudentGradeSystemExample {
             int totalKorean = 0, totalMath = 0, totalEnglish = 0;
 
             // TODO: 학생별 성적 출력
-            // 힌트:
-            // 1. for 루프로 i를 0부터 studentCount까지 반복
-            // 2. 각 학생의 total = 국어 + 수학 + 영어
-            // 3. average = total / 3.0
-            // 4. printf로 학생 정보 출력 (형식: "%-10s %6d %6d %6d %6d %6.1f%n")
-            // 5. totalKorean, totalMath, totalEnglish에 각 과목 점수 누적
+            // 힌트: 총점 계산 및 출력
 
-            // 여기에 코듍를 작성하세요
+            // 여기에 코드를 작성하세요
 
             System.out.println("-".repeat(70));
 
@@ -261,12 +261,7 @@ public class StudentGradeSystemExample {
                 avgKorean, avgMath, avgEnglish);
 
             // TODO: 최고 점수 학생 찾기
-            // 힌트:
-            // 1. maxTotalIndex를 0으로 초기화
-            // 2. maxTotal을 첫 번째 학생의 총점으로 초기화
-            // 3. for 루프로 i를 1부터 studentCount까지 반복
-            // 4. 각 학생의 total 계산
-            // 5. total > maxTotal이면 maxTotal과 maxTotalIndex 업데이트
+            // 힌트: 최댓값 알고리즘
 
             // 여기에 코드를 작성하세요
 
@@ -320,6 +315,14 @@ public class StudentGradeSystemExample {
 ## 3. 배열의 임의 접근 예제
 
 ### 예제 3-1: 로또 번호 생성기
+
+#### 요구사항
+- 1~45 범위의 중복되지 않는 6개 숫자 선택
+- 선택된 숫자를 오름차순으로 정렬
+- 5세트의 로또 번호 생성
+- generateLottoNumbers() 메소드에서 랜덤 번호 생성 및 정렬 구현
+
+#### 예제 코드
 ```java
 public class LottoNumberGeneratorExample {
     public static void main(String[] args) {
@@ -342,24 +345,12 @@ public class LottoNumberGeneratorExample {
         int[] numbers = new int[6];       // 선택된 6개 번호
 
         // TODO: 6개의 서로 다른 번호 선택
-        // 힌트:
-        // 1. for 루프로 i를 0부터 5까지 반복
-        // 2. do-while 루프로:
-        //    - number = 1 + (int)(Math.random() * 45)로 1~45 생성
-        //    - used[number]가 true면 다시 생성
-        // 3. used[number] = true로 사용 표시
-        // 4. numbers[i] = number로 번호 저장
+        // 힌트: do-while 루프와 중복 검사
 
         // 여기에 코드를 작성하세요
 
         // TODO: 번호 정렬 (버블 정렬)
-        // 힌트:
-        // 1. 외부 for 루프: i를 0부터 numbers.length - 1까지
-        // 2. 내부 for 루프: j를 0부터 numbers.length - 1 - i까지
-        // 3. numbers[j] > numbers[j + 1]이면 두 값 교환
-        //    - temp에 numbers[j] 저장
-        //    - numbers[j]에 numbers[j + 1] 할당
-        //    - numbers[j + 1]에 temp 할당
+        // 힌트: 이중 루프와 교환
 
         // 여기에 코드를 작성하세요
 
@@ -379,6 +370,15 @@ public class LottoNumberGeneratorExample {
 ```
 
 ### 예제 3-2: 카드 덱 셔플링
+
+#### 요구사항
+- 52장의 트럼프 카드 덱 생성 (♠, ♥, ♦, ♣ 각 13장)
+- Fisher-Yates 셔플 알고리즘으로 카드 섮기
+- 원본 덱과 셔플된 덱 출력
+- 셔플된 덱에서 상위 5장 뽑기
+- shuffleDeck() 메소드에 셔플 알고리즘 구현
+
+#### 예제 코드
 ```java
 public class CardDeckShuffleExample {
     public static void main(String[] args) {
@@ -418,13 +418,7 @@ public class CardDeckShuffleExample {
 
     public static void shuffleDeck(String[] deck) {
         // TODO: Fisher-Yates 셔플 알고리즘 구현
-        // 힌트:
-        // 1. for 루프로 i를 deck.length - 1부터 1까지 감소
-        // 2. j = (int)(Math.random() * (i + 1))로 0~i 범위의 랜덤 인덱스 생성
-        // 3. deck[i]와 deck[j]를 교환:
-        //    - temp에 deck[i] 저장
-        //    - deck[i]에 deck[j] 할당
-        //    - deck[j]에 temp 할당
+        // 힌트: 랜덤 교환
 
         // 여기에 코드를 작성하세요
     }
@@ -466,6 +460,16 @@ public class CardDeckShuffleExample {
 ## 4. 부분적으로 채워진 배열 예제
 
 ### 예제 4-1: 동적 목록 관리
+
+#### 요구사항
+- To-Do 리스트 관리 시스템 구현
+- 항목 추가: 최대 100개까지 저장 가능
+- 항목 목록 보기: 현재 저장된 모든 항목 표시
+- 항목 삭제: 선택한 항목 삭제 후 배열 요소 재정렬
+- 항목 완료 표시: 선택한 항목 앞에 ✓ 추가
+- 메뉴 선택에 따른 작업 수행
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -521,11 +525,7 @@ public class DynamicListExample {
 
                         if (deleteIndex >= 0 && deleteIndex < itemCount) {
                             // TODO: 항목 삭제 로직
-                            // 힌트:
-                            // 1. for 루프로 i를 deleteIndex부터 itemCount - 1까지 반복
-                            // 2. todoList[i] = todoList[i + 1]로 한 칸씩 앞으로 이동
-                            // 3. itemCount 감소
-                            // 4. "✅ 항목이 삭제되었습니다." 출력
+                            // 힌트: 배열 요소 이동
 
                             // 여기에 코드를 작성하세요
                         } else {
@@ -626,6 +626,16 @@ public class DynamicListExample {
 ```
 
 ### 예제 4-2: 성적 통계 계산기
+
+#### 요구사항
+- 점수 입력받기 (0 이하 입력 시 종료, 100점 초과 불가)
+- 통계 계산: 합계, 평균, 최고점, 최저점, 표준편차
+- 등급별 분포 계산: A(90-100), B(80-89), C(70-79), D(60-69), F(0-59)
+- 각 등급의 학생 수와 비율 계산
+- 막대 그래프로 등급별 분포 시각화
+- 최대 50개 점수 입력 가능
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -662,30 +672,12 @@ public class GradeStatisticsExample {
         }
 
         // TODO: 통계 계산 (합계, 최대, 최소, 평균, 표준편차)
-        // 힌트:
-        // 1. sum = 0, max = scores[0], min = scores[0]로 초기화
-        // 2. for 루프로 모든 점수에 대해:
-        //    - sum에 scores[i] 누적
-        //    - scores[i] > max면 max 업데이트
-        //    - scores[i] < min이면 min 업데이트
-        // 3. average = sum / scoreCount
-        // 4. 표준편차 계산:
-        //    - varianceSum = 0으로 초기화
-        //    - for 루프로 (scores[i] - average)의 제곱을 varianceSum에 누적
-        //    - variance = varianceSum / scoreCount
-        //    - standardDeviation = Math.sqrt(variance)
+        // 힌트: 누적과 표준편차 공식
 
         // 여기에 코드를 작성하세요
 
         // TODO: 등급별 분포 계산
-        // 힌트:
-        // 1. int[] gradeCount = new int[5] 생성 (A, B, C, D, F)
-        // 2. for 루프로 모든 점수에 대해:
-        //    - scores[i] >= 90: gradeCount[0]++ (A)
-        //    - scores[i] >= 80: gradeCount[1]++ (B)
-        //    - scores[i] >= 70: gradeCount[2]++ (C)
-        //    - scores[i] >= 60: gradeCount[3]++ (D)
-        //    - 그 외: gradeCount[4]++ (F)
+        // 힌트: else-if 체인
 
         // 여기에 코드를 작성하세요
 
@@ -755,6 +747,16 @@ F (0-59): 0명 (0.0%)
 ## 5. 2차원 배열 예제
 
 ### 예제 5-1: 좌석 예약 시스템
+
+#### 요구사항
+- 5행 × 6열 극장 좌석 배치
+- 좌석 예약: 행과 열 번호 입력받아 예약 처리
+- 예약 취소: 선택한 좌석 예약 취소
+- 예약률 확인: 전체 예약률 및 행별 예약 현황 표시
+- displaySeats() 메소드에 좌석 현황 출력 구현
+- showReservationStats() 메소드에 예약된 좌석 수 계산 구현
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -836,16 +838,7 @@ public class SeatReservationSystemExample {
         System.out.println("(□ = 빈 좌석, ■ = 예약된 좌석)");
 
         // TODO: 좌석 배치 출력
-        // 힌트:
-        // 1. 열 번호 표시:
-        //    - "   " 출력 후
-        //    - for 루프로 col + 1 출력 (형식: " %d ")
-        // 2. 각 행에 대해:
-        //    - 행 번호 출력 (형식: "%d행 ")
-        //    - 각 열에 대해:
-        //      * seats[row][col]이 true면 "[■]" 출력
-        //      * false면 "[□]" 출력
-        //    - 줄바꿈
+        // 힌트: 이중 루프와 조건문
 
         // 여기에 코드를 작성하세요
     }
@@ -859,9 +852,7 @@ public class SeatReservationSystemExample {
         int reservedSeats = 0;
 
         // TODO: 예약된 좌석 수 계산
-        // 힌트:
-        // 1. 이중 for 루프로 모든 좌석 검사
-        // 2. seats[row][col]이 true면 reservedSeats 증가
+        // 힌트: 이중 루프와 카운터
 
         // 여기에 코드를 작성하세요
 
@@ -941,6 +932,16 @@ public class SeatReservationSystemExample {
 ```
 
 ### 예제 5-2: 게임 보드 - 틱택토
+
+#### 요구사항
+- 3×3 틱택토 게임 보드 구현
+- 두 플레이어가 번갈아 X와 O를 놓기
+- 유효한 위치 입력 검증 (빈 칸인지 확인)
+- 승리 조건 확인: 가로, 세로, 대각선 검사
+- 9번 이동 후에도 승자가 없으면 무승부 처리
+- checkWin() 메소드에 승리 조건 검사 구현
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -1022,17 +1023,7 @@ public class TicTacToeExample {
 
     public static boolean checkWin(char[][] board, char player) {
         // TODO: 승리 조건 확인
-        // 힌트:
-        // 1. 행 확인:
-        //    - for 루프로 각 행 검사
-        //    - board[row][0], board[row][1], board[row][2]가 모두 player와 같으면 true
-        // 2. 열 확인:
-        //    - for 루프로 각 열 검사
-        //    - board[0][col], board[1][col], board[2][col]이 모두 player와 같으면 true
-        // 3. 대각선 확인:
-        //    - board[0][0], board[1][1], board[2][2]가 모두 player와 같으면 true
-        //    - board[0][2], board[1][1], board[2][0]이 모두 player와 같으면 true
-        // 4. 모든 조건을 만족하지 않으면 false
+        // 힌트: 행, 열, 대각선 검사
 
         // 여기에 코드를 작성하세요
 

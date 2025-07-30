@@ -12,9 +12,9 @@
 ## 1. 배열의 기본 개념
 
 ### 1.1 데이터 구조와 배열
-**데이터 구조(Data Structure)**는 여러 데이터를 함께 묶어 하나의 단위로 취급할 수 있도록 하는 구조입니다.
+**데이터 구조(Data Structure)** 는 여러 데이터를 함께 묶어 하나의 단위로 취급할 수 있도록 하는 구조입니다.
 
-**배열(Array)**은 데이터가 번호가 매겨진 순서대로 배열된 구조로, 각 항목을 위치 번호로 참조할 수 있습니다.
+**배열(Array)** 은 데이터가 번호가 매겨진 순서대로 배열된 구조로, 각 항목을 위치 번호로 참조할 수 있습니다.
 
 ### 1.2 배열의 핵심 용어
 ```java
@@ -85,7 +85,7 @@ System.out.println("names[0] = " + names[0]);      // 출력: null
 
 **타입별 기본값:**
 - `int`, `double`, `float`, `long`: `0`
-- `boolean`: `false`  
+- `boolean`: `false`
 - `char`: `'\u0000'` (유니코드 0)
 - `String` 및 객체: `null`
 
@@ -119,20 +119,20 @@ int averageScore = totalScore / scores.length;
 public class ArrayProcessingExample {
     public static void main(String[] args) {
         int[] numbers = {10, 20, 30, 40, 50};
-        
+
         // 1. 배열의 모든 요소 출력
         System.out.println("=== 배열 요소 출력 ===");
         for (int i = 0; i < numbers.length; i++) {
             System.out.println("numbers[" + i + "] = " + numbers[i]);
         }
-        
+
         // 2. 배열 요소의 합계 계산
         int sum = 0;
         for (int i = 0; i < numbers.length; i++) {
             sum += numbers[i];
         }
         System.out.println("합계: " + sum);
-        
+
         // 3. 배열 요소의 평균 계산
         double average = (double) sum / numbers.length;
         System.out.println("평균: " + average);
@@ -145,7 +145,7 @@ public class ArrayProcessingExample {
 public class FindMaxMinExample {
     public static void main(String[] args) {
         double[] values = {3.5, 1.8, 9.2, 2.1, 7.4, 5.6};
-        
+
         // 최대값 찾기
         double max = values[0];  // 첫 번째 요소를 초기값으로 설정
         for (int i = 1; i < values.length; i++) {
@@ -154,7 +154,7 @@ public class FindMaxMinExample {
             }
         }
         System.out.println("최대값: " + max);
-        
+
         // 최소값 찾기
         double min = values[0];  // 첫 번째 요소를 초기값으로 설정
         for (int i = 1; i < values.length; i++) {
@@ -163,11 +163,11 @@ public class FindMaxMinExample {
             }
         }
         System.out.println("최소값: " + min);
-        
+
         // 최대값과 최소값의 위치(인덱스) 찾기
         int maxIndex = 0;
         int minIndex = 0;
-        
+
         for (int i = 1; i < values.length; i++) {
             if (values[i] > values[maxIndex]) {
                 maxIndex = i;
@@ -176,7 +176,7 @@ public class FindMaxMinExample {
                 minIndex = i;
             }
         }
-        
+
         System.out.println("최대값 위치: " + maxIndex);
         System.out.println("최소값 위치: " + minIndex);
     }
@@ -188,12 +188,12 @@ public class FindMaxMinExample {
 public class ConditionalArrayProcessing {
     public static void main(String[] args) {
         int[] numbers = {12, -5, 8, 0, -3, 15, 22, -1, 9};
-        
+
         // 양수만 처리하기
         System.out.println("=== 양수만 처리 ===");
         int positiveSum = 0;
         int positiveCount = 0;
-        
+
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] > 0) {  // 양수만 선택
                 System.out.println("양수: " + numbers[i]);
@@ -201,14 +201,14 @@ public class ConditionalArrayProcessing {
                 positiveCount++;
             }
         }
-        
+
         if (positiveCount > 0) {
             double positiveAverage = (double) positiveSum / positiveCount;
             System.out.println("양수 개수: " + positiveCount);
             System.out.println("양수 합계: " + positiveSum);
             System.out.printf("양수 평균: %.2f%n", positiveAverage);
         }
-        
+
         // 짝수와 홀수 분류
         System.out.println("\n=== 짝수와 홀수 분류 ===");
         for (int i = 0; i < numbers.length; i++) {
@@ -256,44 +256,44 @@ System.out.println("무작위 요소: " + data[randomIndex]);
 public class BirthdayProblemSimulation {
     public static void main(String[] args) {
         System.out.println("=== 생일 문제 시뮬레이션 ===");
-        
+
         // 여러 번 실험하여 평균값 구하기
         int experiments = 1000;
         int totalPeople = 0;
-        
+
         for (int experiment = 1; experiment <= experiments; experiment++) {
             int peopleNeeded = runSingleExperiment();
             totalPeople += peopleNeeded;
-            
+
             if (experiment % 100 == 0) {
                 System.out.printf("실험 %d회 완료%n", experiment);
             }
         }
-        
+
         double average = (double) totalPeople / experiments;
         System.out.printf("%n%d회 실험 결과:%n", experiments);
         System.out.printf("평균적으로 %.1f명을 확인하면 중복 생일을 발견합니다.%n", average);
     }
-    
+
     public static int runSingleExperiment() {
         boolean[] used = new boolean[365];  // 사용된 생일 추적
         int count = 0;
-        
+
         while (true) {
             // 0~364 범위에서 무작위 생일 선택
             int birthday = (int)(Math.random() * 365);
             count++;
-            
+
             // 이미 사용된 생일인지 확인
             if (used[birthday]) {
                 // 중복 생일 발견!
                 break;
             }
-            
+
             // 생일을 사용된 것으로 표시
             used[birthday] = true;
         }
-        
+
         return count;
     }
 }
@@ -310,55 +310,55 @@ public class PartiallyFilledArrayExample {
         final int MAX_SIZE = 100;
         int[] numbers = new int[MAX_SIZE];  // 최대 100개 저장 가능
         int count = 0;  // 실제 저장된 개수
-        
+
         System.out.println("양의 정수를 입력하세요 (0으로 종료):");
-        
+
         // 데이터 입력
         while (true) {
             System.out.print("숫자 " + (count + 1) + ": ");
             int num = TextIO.getlnInt();
-            
+
             if (num <= 0) {
                 break;  // 입력 종료
             }
-            
+
             if (count >= MAX_SIZE) {
                 System.out.println("배열이 가득 찼습니다!");
                 break;
             }
-            
+
             numbers[count] = num;  // count 위치에 저장
             count++;               // 개수 증가
         }
-        
+
         // 결과 출력
         System.out.println("\n입력된 숫자 (" + count + "개):");
         for (int i = 0; i < count; i++) {
             System.out.print(numbers[i] + " ");
         }
         System.out.println();
-        
+
         // 역순 출력
         System.out.println("\n역순으로 출력:");
         for (int i = count - 1; i >= 0; i--) {
             System.out.print(numbers[i] + " ");
         }
         System.out.println();
-        
+
         // 통계 계산
         if (count > 0) {
             int sum = 0;
             int max = numbers[0];
             int min = numbers[0];
-            
+
             for (int i = 0; i < count; i++) {
                 sum += numbers[i];
                 if (numbers[i] > max) max = numbers[i];
                 if (numbers[i] < min) min = numbers[i];
             }
-            
+
             double average = (double) sum / count;
-            
+
             System.out.println("\n통계:");
             System.out.println("개수: " + count);
             System.out.println("합계: " + sum);
@@ -375,20 +375,20 @@ public class PartiallyFilledArrayExample {
 public class ArrayBoundsExample {
     public static void main(String[] args) {
         int[] array = new int[5];  // 인덱스 0~4만 유효
-        
+
         // ✅ 올바른 접근
         for (int i = 0; i < array.length; i++) {
             array[i] = i * 10;
             System.out.println("array[" + i + "] = " + array[i]);
         }
-        
+
         // ❌ 잘못된 접근 - ArrayIndexOutOfBoundsException 발생!
         try {
             array[5] = 100;  // 인덱스 5는 존재하지 않음
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("오류: " + e.getMessage());
         }
-        
+
         try {
             int value = array[-1];  // 음수 인덱스 사용 불가
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -408,7 +408,7 @@ int[][] matrix = new int[3][4];  // 3행 4열 배열
 /*
   열: 0  1  2  3
 행 0: [ 0  0  0  0 ]
-행 1: [ 0  0  0  0 ]  
+행 1: [ 0  0  0  0 ]
 행 2: [ 0  0  0  0 ]
 */
 
@@ -424,29 +424,29 @@ public class TwoDimensionalArrayExample {
     public static void main(String[] args) {
         // 1. 선언과 생성
         int[][] numbers = new int[3][4];  // 3행 4열
-        
+
         // 2. 초기값으로 배열 생성
         int[][] initializedArray = {
             {1, 2, 3, 4},
             {5, 6, 7, 8},
             {9, 10, 11, 12}
         };
-        
+
         // 3. 값 할당
         for (int row = 0; row < numbers.length; row++) {
             for (int col = 0; col < numbers[row].length; col++) {
                 numbers[row][col] = row * 4 + col + 1;
             }
         }
-        
+
         // 4. 배열 출력
         System.out.println("=== numbers 배열 ===");
         printMatrix(numbers);
-        
+
         System.out.println("\n=== initializedArray 배열 ===");
         printMatrix(initializedArray);
     }
-    
+
     public static void printMatrix(int[][] matrix) {
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
@@ -465,9 +465,9 @@ public class Store2DArrayExample {
         // 25개 매장의 12개월 수익 데이터
         final int NUM_STORES = 25;
         final int NUM_MONTHS = 12;
-        
+
         double[][] profit = new double[NUM_STORES][NUM_MONTHS];
-        
+
         // 1. 가상의 데이터로 배열 채우기
         for (int store = 0; store < NUM_STORES; store++) {
             for (int month = 0; month < NUM_MONTHS; month++) {
@@ -475,7 +475,7 @@ public class Store2DArrayExample {
                 profit[store][month] = 100000 + Math.random() * 400000;
             }
         }
-        
+
         // 2. 전체 연간 총 수익 계산
         double totalProfit = 0;
         for (int store = 0; store < NUM_STORES; store++) {
@@ -483,13 +483,13 @@ public class Store2DArrayExample {
                 totalProfit += profit[store][month];
             }
         }
-        
+
         // 3. 12월 총 수익 계산 (특정 열만 처리)
         double decemberProfit = 0;
         for (int store = 0; store < NUM_STORES; store++) {
             decemberProfit += profit[store][11];  // 12월은 인덱스 11
         }
-        
+
         // 4. 각 매장의 연간 수익 계산 (특정 행만 처리)
         System.out.println("=== 매장별 연간 수익 ===");
         for (int store = 0; store < NUM_STORES; store++) {
@@ -499,12 +499,12 @@ public class Store2DArrayExample {
             }
             System.out.printf("매장 %2d: $%,.0f%n", store, storeAnnualProfit);
         }
-        
+
         // 5. 월별 전체 수익 계산
         System.out.println("\n=== 월별 전체 수익 ===");
         String[] monthNames = {"1월", "2월", "3월", "4월", "5월", "6월",
                               "7월", "8월", "9월", "10월", "11월", "12월"};
-        
+
         for (int month = 0; month < NUM_MONTHS; month++) {
             double monthlyTotalProfit = 0;
             for (int store = 0; store < NUM_STORES; store++) {
@@ -512,7 +512,7 @@ public class Store2DArrayExample {
             }
             System.out.printf("%s: $%,.0f%n", monthNames[month], monthlyTotalProfit);
         }
-        
+
         // 6. 결과 요약
         System.out.println("\n=== 요약 ===");
         System.out.printf("전체 연간 총 수익: $%,.0f%n", totalProfit);
@@ -530,26 +530,26 @@ public class Store2DArrayExample {
 public class ArrayCopyExample {
     public static void main(String[] args) {
         int[] original = {1, 2, 3, 4, 5};
-        
+
         // ❌ 잘못된 복사 - 참조만 복사됨
         int[] wrongCopy = original;
         wrongCopy[0] = 100;
         System.out.println("original[0] = " + original[0]);  // 100으로 변경됨!
-        
+
         // ✅ 올바른 복사 방법 1: 수동 복사
         int[] correctCopy1 = new int[original.length];
         for (int i = 0; i < original.length; i++) {
             correctCopy1[i] = original[i];
         }
-        
+
         // ✅ 올바른 복사 방법 2: System.arraycopy 사용
         int[] correctCopy2 = new int[original.length];
         System.arraycopy(original, 0, correctCopy2, 0, original.length);
-        
+
         // 복사본 수정이 원본에 영향을 주지 않는지 확인
         correctCopy1[0] = 200;
         correctCopy2[1] = 300;
-        
+
         System.out.println("원본: " + java.util.Arrays.toString(original));
         System.out.println("복사본1: " + java.util.Arrays.toString(correctCopy1));
         System.out.println("복사본2: " + java.util.Arrays.toString(correctCopy2));
@@ -562,24 +562,24 @@ public class ArrayCopyExample {
 public class ArraySearchExample {
     public static void main(String[] args) {
         String[] names = {"김철수", "이영희", "박민수", "최자영", "정하늘"};
-        
+
         // 선형 검색 (Linear Search)
         String target = "박민수";
         int foundIndex = linearSearch(names, target);
-        
+
         if (foundIndex != -1) {
             System.out.println(target + "을(를) 인덱스 " + foundIndex + "에서 발견했습니다.");
         } else {
             System.out.println(target + "을(를) 찾을 수 없습니다.");
         }
-        
+
         // 모든 요소 검색
         System.out.println("\n이름 목록:");
         for (int i = 0; i < names.length; i++) {
             System.out.println((i + 1) + ". " + names[i]);
         }
     }
-    
+
     public static int linearSearch(String[] array, String target) {
         for (int i = 0; i < array.length; i++) {
             if (array[i].equals(target)) {
@@ -596,19 +596,19 @@ public class ArraySearchExample {
 public class ArraySortExample {
     public static void main(String[] args) {
         int[] numbers = {64, 34, 25, 12, 22, 11, 90};
-        
+
         System.out.println("정렬 전:");
         printArray(numbers);
-        
+
         bubbleSort(numbers);
-        
+
         System.out.println("정렬 후:");
         printArray(numbers);
     }
-    
+
     public static void bubbleSort(int[] array) {
         int n = array.length;
-        
+
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (array[j] > array[j + 1]) {
@@ -620,7 +620,7 @@ public class ArraySortExample {
             }
         }
     }
-    
+
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");

@@ -3,6 +3,13 @@
 ## 1. 기본 예외 처리 예제
 
 ### 예제 1-1: 숫자 변환 예외 처리
+
+#### 요구사항
+- 문자열 배열의 각 요소를 Integer와 Double로 변환 시도
+- 변환 성공 시 값 출력, 실패 시 오류 메시지 출력
+- NumberFormatException 예외 처리
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -16,22 +23,12 @@ public class NumberParsingExample {
             System.out.println("\n입력: '" + input + "'");
             
             // TODO: Integer 변환 시도
-            // 힌트:
-            // 1. try 블록 시작
-            // 2. Integer.parseInt(input)으로 변환
-            // 3. 성공하면 "✅ Integer 성공: " + 변환된 값 출력
-            // 4. catch (NumberFormatException e)로 예외 처리
-            // 5. 실패하면 "❌ Integer 실패: " + e.getMessage() 출력
+            // 힌트: try-catch 구조 사용
             
             // 여기에 Integer 변환 코드를 작성하세요
             
             // TODO: Double 변환 시도
-            // 힌트:
-            // 1. try 블록 시작
-            // 2. Double.parseDouble(input)으로 변환
-            // 3. 성공하면 "✅ Double 성공: " + 변환된 값 출력
-            // 4. catch (NumberFormatException e)로 예외 처리
-            // 5. 실패하면 "❌ Double 실패: " + e.getMessage() 출력
+            // 힌트: try-catch 구조 사용
             
             // 여기에 Double 변환 코드를 작성하세요
         }
@@ -73,6 +70,14 @@ public class NumberParsingExample {
 ```
 
 ### 예제 1-2: 안전한 나눗셈
+
+#### 요구사항
+- 사용자로부터 두 숫자를 입력받아 나눗셈 수행
+- 0으로 나누기 시도 시 ArithmeticException 발생
+- 숫자 형식 오류 시 NumberFormatException 처리
+- 'quit' 입력 시 프로그램 종료
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -93,10 +98,7 @@ public class SafeDivisionExample {
                 String input2 = TextIO.getln();
                 
                 // TODO: 숫자 변환과 나눗셈 수행
-                // 힌트:
-                // 1. Double.parseDouble()로 input1, input2를 변환
-                // 2. safeDivide() 메서드 호출
-                // 3. 결과를 printf로 출력 (형식: "결과: %.2f ÷ %.2f = %.2f%n")
+                // 힌트: parseDouble() 사용
                 
                 // 여기에 코드를 작성하세요
                 
@@ -114,10 +116,7 @@ public class SafeDivisionExample {
     
     public static double safeDivide(double dividend, double divisor) {
         // TODO: 안전한 나눗셈 구현
-        // 힌트:
-        // 1. divisor가 0.0인지 확인
-        // 2. 0이면 throw new ArithmeticException("0으로 나눌 수 없습니다")
-        // 3. 0이 아니면 dividend / divisor 반환
+        // 힌트: 0 검사 후 예외 발생
         
         // 여기에 코드를 작성하세요
         return 0; // 임시 반환값
@@ -147,6 +146,14 @@ public class SafeDivisionExample {
 ## 2. 사용자 입력 검증 예제
 
 ### 예제 2-1: 범위 검증 입력
+
+#### 요구사항
+- 나이(1-150)와 점수(0-100)를 입력받아 검증
+- 범위를 벗어나면 재입력 요구
+- 숫자 형식이 아니면 NumberFormatException 처리
+- 유효한 입력 후 등급 계산
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -172,14 +179,7 @@ public class RangeValidationExample {
             String input = TextIO.getln();
             
             // TODO: 나이 검증 로직
-            // 힌트:
-            // 1. try 블록에서 Integer.parseInt(input)으로 변환
-            // 2. age가 1보다 작거나 150보다 크면:
-            //    - 오류 메시지 출력
-            //    - continue로 다시 시도
-            // 3. 유효하면 "✅ 유효한 나이입니다." 출력 후 age 반환
-            // 4. catch (NumberFormatException e)로 예외 처리
-            //    - "❌ 숫자를 입력해주세요." 출력
+            // 힌트: 범위 검사 후 continue로 재시도
             
             // 여기에 코드를 작성하세요
         }
@@ -191,25 +191,18 @@ public class RangeValidationExample {
             String input = TextIO.getln();
             
             // TODO: 점수 검증 로직
-            // 힌트:
-            // 1. try 블록에서 Integer.parseInt(input)으로 변환
-            // 2. score가 0보다 작거나 100보다 크면:
-            //    - 오류 메시지 출력
-            //    - continue로 다시 시도
-            // 3. 유효하면 "✅ 유효한 점수입니다." 출력 후 score 반환
-            // 4. catch (NumberFormatException e)로 예외 처리
-            //    - "❌ 숫자를 입력해주세요." 출력
+            // 힌트: 범위 검사 후 continue로 재시도
             
             // 여기에 코드를 작성하세요
         }
     }
     
     public static String calculateGrade(int score) {
-        if (score >= 90) return "A";
-        else if (score >= 80) return "B";
-        else if (score >= 70) return "C";
-        else if (score >= 60) return "D";
-        else return "F";
+        // TODO: 점수에 따른 등급 계산
+        // 힌트: if-else if 체인
+        
+        // 여기에 코드를 작성하세요
+        return ""; // 임시 반환값
     }
 }
 ```
@@ -228,6 +221,15 @@ public class RangeValidationExample {
 ```
 
 ### 예제 2-2: 이메일 형식 검증
+
+#### 요구사항
+- 이메일 주소 형식 검증
+  - @ 기호 포함 여부
+  - 로컬 부분과 도메인 부분 존재
+  - 도메인에 .포함 여부
+- 유효한 이메일 입력 후 사용자명과 도메인 분석
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -248,11 +250,7 @@ public class EmailValidationExample {
             String input = TextIO.getln().trim();
             
             // TODO: 이메일 검증 시도
-            // 힌트:
-            // 1. try 블록에서 validateEmail(input) 호출
-            // 2. 성공하면 "✅ 유효한 이메일입니다." 출력 후 input 반환
-            // 3. catch (IllegalArgumentException e)로 예외 처리
-            //    - "❌ " + e.getMessage() 출력
+            // 힌트: validateEmail() 호출
             
             // 여기에 코드를 작성하세요
         }
@@ -260,41 +258,16 @@ public class EmailValidationExample {
     
     public static void validateEmail(String email) {
         // TODO: 이메일 유효성 검증
-        // 힌트:
-        // 1. email이 null이거나 비어있으면 예외 던지기
-        // 2. @ 기호가 없으면 예외 던지기
-        // 3. email.split("@")로 분리하여 parts 배열 생성
-        // 4. parts.length가 2가 아니면 예외 던지기
-        // 5. localPart (parts[0])가 비어있으면 예외 던지기
-        // 6. domainPart (parts[1])가 비어있으면 예외 던지기
-        // 7. domainPart에 .이 없으면 예외 던지기
-        // 8. domainPart가 .으로 시작하거나 끝나면 예외 던지기
-        // 모든 예외는 IllegalArgumentException 사용
+        // 힌트: IllegalArgumentException 사용
         
         // 여기에 코드를 작성하세요
     }
     
     public static void analyzeEmail(String email) {
-        String[] parts = email.split("@");
-        String username = parts[0];
-        String domain = parts[1];
+        // TODO: 이메일 분석
+        // 힌트: split("@") 사용하여 사용자명과 도메인 분리
         
-        System.out.println("\n📧 이메일 분석:");
-        System.out.println("사용자명: " + username);
-        System.out.println("도메인: " + domain);
-        
-        // 도메인 분석
-        if (domain.endsWith(".com")) {
-            System.out.println("종류: 상업적 도메인");
-        } else if (domain.endsWith(".edu")) {
-            System.out.println("종류: 교육기관 도메인");
-        } else if (domain.endsWith(".gov")) {
-            System.out.println("종류: 정부기관 도메인");
-        } else if (domain.endsWith(".org")) {
-            System.out.println("종류: 비영리기관 도메인");
-        } else {
-            System.out.println("종류: 기타 도메인");
-        }
+        // 여기에 코드를 작성하세요
     }
 }
 ```
@@ -315,6 +288,14 @@ public class EmailValidationExample {
 ## 3. 파일 처리 예외 예제
 
 ### 예제 3-1: 안전한 파일 읽기
+
+#### 요구사항
+- 파일 이름을 입력받아 파일 열기 시도
+- 파일이 없으면 IllegalArgumentException 처리
+- 파일에서 숫자를 읽어 통계 계산
+- 파일 끝에 도달하면 "past end of file" 메시지로 확인
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -367,13 +348,7 @@ public class SafeFileReadingExample {
         try {
             while (true) {
                 // TODO: 파일에서 숫자 읽기
-                // 힌트:
-                // 1. try 블록에서 TextIO.getDouble()로 숫자 읽기
-                // 2. 읽은 숫자를 sum에 더하고 count 증가
-                // 3. printf로 "읽은 숫자 %d: %.2f%n" 형식으로 출력
-                // 4. catch (IllegalArgumentException e)로 예외 처리:
-                //    - e.getMessage()에 "past end of file"이 포함되면 break
-                //    - 그렇지 않으면 errorCount 증가하고 경고 메시지 출력
+                // 힌트: TextIO.getDouble() 사용
                 
                 // 여기에 코드를 작성하세요
             }
@@ -423,6 +398,14 @@ public class SafeFileReadingExample {
 ```
 
 ### 예제 3-2: 숫자 목록 파일 생성기
+
+#### 요구사항
+- 파일 이름, 숫자 개수(1-1000), 최소/최대값 입력받기
+- 범위 내 랜덤 숫자 생성하여 파일에 저장 (시뮬레이션)
+- 숫자 형식 오류 시 NumberFormatException 처리
+- 범위 검증 및 재입력 요구
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -479,16 +462,7 @@ public class NumberFileGeneratorExample {
     public static int getValidInteger(String errorMessage, int min, int max) {
         while (true) {
             // TODO: 범위 내 정수 입력 받기
-            // 힌트:
-            // 1. try 블록에서 TextIO.getln()으로 입력 받기
-            // 2. Integer.parseInt()로 변환
-            // 3. value가 min보다 작거나 max보다 크면:
-            //    - errorMessage 출력
-            //    - "다시 입력: " 프롬프트 출력
-            //    - continue로 재시도
-            // 4. 유효하면 value 반환
-            // 5. catch (NumberFormatException e)로 예외 처리
-            //    - 오류 메시지와 재입력 프롬프트 출력
+            // 힌트: parseInt() 사용
             
             // 여기에 코드를 작성하세요
         }
@@ -497,12 +471,7 @@ public class NumberFileGeneratorExample {
     public static double getValidDouble(String prompt) {
         while (true) {
             // TODO: 실수 입력 받기
-            // 힌트:
-            // 1. try 블록에서 TextIO.getln()으로 입력 받기
-            // 2. Double.parseDouble()로 변환 후 반환
-            // 3. catch (NumberFormatException e)로 예외 처리
-            //    - 오류 메시지 출력
-            //    - prompt + ": " 출력하여 재입력 유도
+            // 힌트: parseDouble() 사용
             
             // 여기에 코드를 작성하세요
         }
@@ -563,6 +532,16 @@ public class NumberFileGeneratorExample {
 ## 4. 고급 예외 처리 예제
 
 ### 예제 4-1: 다중 예외 처리
+
+#### 요구사항
+- 메뉴 선택에 따라 다양한 예외 상황 테스트
+- 배열 접근 테스트: 사용자가 입력한 인덱스로 배열 접근 시도
+- 숫자 변환 테스트: 문자열을 Integer, Double, Boolean으로 변환 시도
+- 나눗셈 테스트: 두 수를 입력받아 나눗셈 수행, 0으로 나누기 처리
+- 복합 계산 테스트: 배열 크기를 입력받아 배열 생성 후 통계 계산
+- 각 테스트에서 발생 가능한 예외를 적절히 처리
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -606,15 +585,7 @@ public class MultipleExceptionHandlingExample {
         System.out.println("\n🔍 배열 접근 테스트");
         
         // TODO: 배열 접근 예외 처리
-        // 힌트:
-        // 1. try 블록에서:
-        //    - int[] numbers = {10, 20, 30, 40, 50} 배열 생성
-        //    - 인덱스 입력 받기
-        //    - Integer.parseInt()로 변환
-        //    - numbers[index] 접근하여 값 출력
-        // 2. catch (NumberFormatException e)로 숫자 형식 오류 처리
-        // 3. catch (ArrayIndexOutOfBoundsException e)로 배열 범위 오류 처리
-        // 4. catch (Exception e)로 기타 오류 처리
+        // 힌트: 다중 catch 블록 사용
         
         // 여기에 코드를 작성하세요
     }
@@ -626,19 +597,7 @@ public class MultipleExceptionHandlingExample {
         String input = TextIO.getln();
         
         // TODO: 여러 형태로 변환 시도
-        // 힌트:
-        // 1. 정수 변환 try-catch:
-        //    - Integer.parseInt(input) 시도
-        //    - 성공하면 "✅ 정수 변환 성공: " 출력
-        //    - NumberFormatException 발생시 "❌ 정수 변환 실패" 출력
-        // 2. 실수 변환 try-catch:
-        //    - Double.parseDouble(input) 시도
-        //    - 성공하면 "✅ 실수 변환 성공: " 출력
-        //    - NumberFormatException 발생시 "❌ 실수 변환 실패" 출력
-        // 3. 불린 변환 try-catch:
-        //    - Boolean.parseBoolean(input) 시도
-        //    - 결과를 "✅ 불린 변환 결과: " 와 함께 출력
-        //    - Exception 발생시 실패 메시지 출력
+        // 힌트: 각각 독립된 try-catch 블록
         
         // 여기에 코드를 작성하세요
     }
@@ -654,15 +613,7 @@ public class MultipleExceptionHandlingExample {
             double divisor = Double.parseDouble(TextIO.getln());
             
             // TODO: 나눗셈 수행 및 결과 분석
-            // 힌트:
-            // 1. divisor가 0이면 ArithmeticException 던지기
-            // 2. result = dividend / divisor 계산
-            // 3. printf로 결과 출력 (형식: "✅ 결과: %.2f ÷ %.2f = %.2f%n")
-            // 4. 결과에 따른 추가 정보 출력:
-            //    - result > 1: "ℹ️  결과가 1보다 큽니다."
-            //    - result == 1: "ℹ️  두 수가 같습니다."
-            //    - result == 0: "ℹ️  피제수가 0입니다."
-            //    - 그 외: "ℹ️  결과가 1보다 작습니다."
+            // 힌트: 0으로 나누기 검사
             
             // 여기에 코드를 작성하세요
             
@@ -681,20 +632,7 @@ public class MultipleExceptionHandlingExample {
             int size = Integer.parseInt(TextIO.getln());
             
             // TODO: 배열 생성 및 통계 계산
-            // 힌트:
-            // 1. size 검증:
-            //    - size <= 0이면 "배열 크기는 양수여야 합니다" 예외
-            //    - size > 100이면 "배열 크기가 너무 큽니다 (최대 100)" 예외
-            // 2. double[] numbers = new double[size] 배열 생성
-            // 3. for 루프로 숫자 입력 받기:
-            //    - Double.parseDouble()로 변환
-            //    - 배열에 저장하고 sum에 누적
-            // 4. average = sum / size 계산
-            // 5. 결과 출력 (합계, 평균)
-            // 6. 표준편차 계산:
-            //    - variance 계산 (각 값과 평균의 차이 제곱의 평균)
-            //    - standardDeviation = Math.sqrt(variance)
-            //    - 분산과 표준편차 출력
+            // 힌트: 크기 검증, 표준편차 계산
             
             // 여기에 코드를 작성하세요
             
@@ -747,6 +685,17 @@ public class MultipleExceptionHandlingExample {
 ## 5. 실전 응용 예제
 
 ### 예제 5-1: 성적 관리 시스템
+
+#### 요구사항
+- 학생 수 입력받기 (1-50명 범위 검증)
+- 각 학생의 이름과 점수 입력받기
+  - 이름: 빈 문자열 불가, 20자 이내, 숫자만으로 구성 불가
+  - 점수: 0-100 범위 검증
+- 점수에 따른 등급 계산 (A+: 95+, A: 90+, B+: 85+, B: 80+, C+: 75+, C: 70+, D: 60+, F: 60 미만)
+- 전체 학생 성적 결과표 출력
+- 통계 정보 계산 및 출력 (평균, 최고점, 최저점, 등급별 분포)
+
+#### 예제 코드
 ```java
 import textio.TextIO;
 
@@ -771,10 +720,7 @@ public class GradeManagementExample {
                 int count = Integer.parseInt(input);
                 
                 // TODO: 학생 수 검증
-                // 힌트:
-                // 1. count가 1보다 작거나 50보다 크면
-                //    IllegalArgumentException 던지기
-                // 2. 유효하면 count 반환
+                // 힌트: 범위 검사
                 
                 // 여기에 코드를 작성하세요
                 return 0; // 임시 반환값
@@ -815,12 +761,7 @@ public class GradeManagementExample {
                 String name = TextIO.getln().trim();
                 
                 // TODO: 이름 유효성 검증
-                // 힌트:
-                // 1. name이 비어있으면 "이름을 입력해주세요" 예외
-                // 2. name.length() > 20이면 "이름이 너무 깁니다 (최대 20자)" 예외
-                // 3. name.matches("\\d+")가 true면 
-                //    "이름은 숫자만으로 구성될 수 없습니다" 예외
-                // 4. 모든 검증 통과시 name 반환
+                // 힌트: 비어있는지, 길이, 숫자만 있는지 검사
                 
                 // 여기에 코드를 작성하세요
                 return ""; // 임시 반환값
@@ -839,10 +780,7 @@ public class GradeManagementExample {
                 double score = Double.parseDouble(input);
                 
                 // TODO: 점수 유효성 검증
-                // 힌트:
-                // 1. score가 0보다 작거나 100보다 크면
-                //    "점수는 0-100 사이여야 합니다" 예외 던지기
-                // 2. 유효하면 score 반환
+                // 힌트: 범위 검사
                 
                 // 여기에 코드를 작성하세요
                 return 0; // 임시 반환값
@@ -856,32 +794,18 @@ public class GradeManagementExample {
     }
     
     public static String calculateGrade(double score) {
-        if (score >= 97) return "A+";
-        else if (score >= 93) return "A";
-        else if (score >= 90) return "A-";
-        else if (score >= 87) return "B+";
-        else if (score >= 83) return "B";
-        else if (score >= 80) return "B-";
-        else if (score >= 77) return "C+";
-        else if (score >= 73) return "C";
-        else if (score >= 70) return "C-";
-        else if (score >= 67) return "D+";
-        else if (score >= 63) return "D";
-        else if (score >= 60) return "D-";
-        else return "F";
+        // TODO: 세분화된 등급 계산
+        // 힌트: if-else if 체인
+        
+        // 여기에 코드를 작성하세요
+        return ""; // 임시 반환값
     }
     
     public static void displayResults(String[] names, double[] scores, String[] grades) {
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println("📊 성적 결과");
-        System.out.println("=".repeat(50));
-        System.out.printf("%-15s %8s %6s%n", "이름", "점수", "등급");
-        System.out.println("-".repeat(50));
+        // TODO: 성적 결과 출력
+        // 힌트: printf로 테이블 형태 출력
         
-        for (int i = 0; i < names.length; i++) {
-            System.out.printf("%-15s %8.1f %6s%n", names[i], scores[i], grades[i]);
-        }
-        System.out.println("-".repeat(50));
+        // 여기에 코드를 작성하세요
     }
     
     public static void calculateStatistics(double[] scores) {
@@ -899,14 +823,7 @@ public class GradeManagementExample {
             double average = sum / scores.length;
             
             // TODO: 등급별 통계 계산
-            // 힌트:
-            // 1. int[] gradeCount = new int[5] 배열 생성 (A, B, C, D, F)
-            // 2. scores 배열의 각 점수에 대해:
-            //    - score >= 90: gradeCount[0]++ (A)
-            //    - score >= 80: gradeCount[1]++ (B)
-            //    - score >= 70: gradeCount[2]++ (C)
-            //    - score >= 60: gradeCount[3]++ (D)
-            //    - 그 외: gradeCount[4]++ (F)
+            // 힌트: 점수 범위로 등급 구분
             int[] gradeCount = new int[5];
             
             // 여기에 코드를 작성하세요
