@@ -20,7 +20,241 @@
 - 다양한 그래픽 요소와 애니메이션 지원
 - 이벤트 처리 및 사용자 상호작용 지원
 
-### 2. 픽셀과 좌표 시스템
+**참고**
+- [JavaFX 가이드](./java_fx_guide.md)
+
+### 2. JavaFX 개발 환경 설정
+
+#### IntelliJ IDEA에서 JavaFX 프로젝트 생성
+
+**1. 새 프로젝트 생성**
+- File → New → Project 선택
+- 좌측 메뉴에서 "JavaFX" 선택
+- Project SDK: Java 17 이상 선택
+- JavaFX 버전 선택 (예: 17.0.2)
+- Next 클릭
+
+**2. 프로젝트 설정**
+- Project name: 프로젝트 이름 입력
+- Project location: 프로젝트 저장 위치 선택
+- Base package: 패키지명 입력 (예: com.example)
+- Finish 클릭
+
+**3. JavaFX 라이브러리 설정 (수동 설정이 필요한 경우)**
+- File → Project Structure (Ctrl+Alt+Shift+S)
+- Libraries → + 버튼 → Java 선택
+- JavaFX lib 폴더 선택 (다운로드한 JavaFX SDK의 lib 폴더)
+- Apply → OK
+
+**4. 실행 구성 설정**
+- Run → Edit Configurations
+- VM options에 다음 추가:
+```
+--module-path "JavaFX경로/lib" --add-modules javafx.controls,javafx.fxml
+```
+
+#### Visual Studio Code에서 JavaFX 프로젝트 설정
+
+**1. 필수 확장 프로그램 설치**
+- Extension Pack for Java 설치
+- JavaFX Support 확장 프로그램 설치
+
+**2. 프로젝트 폴더 구조 생성**
+```
+my-javafx-project/
+├── src/
+│   └── Main.java
+├── lib/
+│   └── (JavaFX jar 파일들)
+└── .vscode/
+    ├── settings.json
+    └── launch.json
+```
+
+**3. JavaFX 다운로드 및 설정**
+- [OpenJFX 웹사이트](https://openjfx.io)에서 JavaFX SDK 다운로드
+- 압축 해제 후 lib 폴더의 내용을 프로젝트의 lib 폴더로 복사
+
+**4. VS Code 설정 파일 구성**
+
+**.vscode/settings.json**:
+```json
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
+}
+```
+
+**.vscode/launch.json**:
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch JavaFX App",
+            "request": "launch",
+            "mainClass": "Main",
+            "vmArgs": "--module-path lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
+```
+
+**5. 샘플 코드 작성 (src/Main.java)**
+```java
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+    @Override
+    public void start(Stage stage) {
+        Label label = new Label("Hello JavaFX!");
+        StackPane root = new StackPane(label);
+        Scene scene = new Scene(root, 300, 200);
+
+        stage.setTitle("My JavaFX App");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+#### 명령줄에서 JavaFX 프로그램 실행
+
+**컴파일**:
+```bash
+javac --module-path /path/to/javafx/lib --add-modules javafx.controls Main.java
+```
+
+**실행**:
+```bash
+java --module-path /path/to/javafx/lib --add-modules javafx.controls Main
+```
+
+### 3. JavaFX Application 기본 구조
+
+**JavaFX 프로그램의 기본 구조**
+```java
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+public class MyFirstGUI extends Application {
+
+    public static void main(String[] args) {
+        launch(args);  // JavaFX 애플리케이션 시작
+    }
+
+    @Override
+    public void start(Stage stage) {
+        // 캔버스 생성 (그리기 영역)
+        Canvas canvas = new Canvas(600, 400);
+        GraphicsContext g = canvas.getGraphicsContext2D();
+
+        // 그리기 작업 수행
+        drawPicture(g, 600, 400);
+
+        // 레이아웃에 캔버스 추가
+        BorderPane root = new BorderPane(canvas);
+
+        // Scene 생성 및 Stage에 설정
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("나의 첫 JavaFX 프로그램");
+        stage.show();
+    }
+
+    private void drawPicture(GraphicsContext g, int width, int height) {
+        // 배경 채우기
+        g.setFill(Color.WHITE);
+        g.fillRect(0, 0, width, height);
+
+        // 간단한 도형 그리기
+        g.setFill(Color.BLUE);
+        g.fillOval(100, 100, 200, 200);  // 파란색 원
+
+        g.setStroke(Color.RED);
+        g.setLineWidth(3);
+        g.strokeRect(200, 150, 150, 100);  // 빨간색 사각형 윤곽선
+    }
+}
+```
+
+**주요 구성 요소**
+1. **Application 클래스 상속**
+   - JavaFX 애플리케이션은 `Application` 클래스를 상속
+   - `start()` 메서드를 반드시 재정의
+
+2. **main 메서드**
+   - `launch(args)`를 호출하여 JavaFX 애플리케이션 시작
+   - JavaFX 런타임이 `start()` 메서드를 자동으로 호출
+
+3. **start 메서드**
+   - Stage: 애플리케이션 창
+   - Scene: 창의 내용물을 담는 컨테이너
+   - Canvas: 실제 그리기가 수행되는 영역
+
+4. **GraphicsContext**
+   - Canvas에서 `getGraphicsContext2D()`로 획득
+   - 모든 그리기 작업은 이 객체를 통해 수행
+
+**애니메이션을 위한 구조**
+```java
+import javafx.animation.AnimationTimer;
+
+public class AnimatedGUI extends Application {
+
+    private int frameNumber = 0;
+    private long startTime;
+
+    @Override
+    public void start(Stage stage) {
+        Canvas canvas = new Canvas(600, 400);
+        GraphicsContext g = canvas.getGraphicsContext2D();
+
+        BorderPane root = new BorderPane(canvas);
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("애니메이션 예제");
+        stage.show();
+
+        // 애니메이션 타이머 시작
+        startTime = System.nanoTime();
+        AnimationTimer timer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                double elapsedSeconds = (now - startTime) / 1e9;
+                drawFrame(g, frameNumber++, elapsedSeconds, 600, 400);
+            }
+        };
+        timer.start();
+    }
+
+    private void drawFrame(GraphicsContext g, int frameNumber,
+                          double elapsedSeconds, int width, int height) {
+        // 프레임마다 호출되는 그리기 메서드
+        g.setFill(Color.WHITE);
+        g.fillRect(0, 0, width, height);
+
+        // 애니메이션 그리기 코드
+    }
+}
+```
+
+### 4. 픽셀과 좌표 시스템
 
 **픽셀 (Pixel)**
 - 화면을 구성하는 가장 작은 단위
@@ -39,7 +273,7 @@ Y축 (증가)
 - X 좌표: 왼쪽에서 오른쪽으로 증가
 - Y 좌표: 위에서 아래로 증가
 
-### 3. 그래픽 컨텍스트 (GraphicsContext)
+### 5. 그래픽 컨텍스트 (GraphicsContext)
 
 **그래픽 컨텍스트란?**
 - 그리기 작업을 수행하는 객체
@@ -52,7 +286,7 @@ Y축 (증가)
 - 선 속성: 선 너비, 스타일 등
 - 그리기 표면: 실제 그림이 그려지는 영역
 
-### 4. 색상 설정
+### 6. 색상 설정
 
 **채우기 색상 (Fill Color)**
 ```java
@@ -70,7 +304,7 @@ g.strokeRect(x, y, w, h); // 파란색 윤곽선 사각형
 - 기본 색상: BLACK, WHITE, RED, GREEN, BLUE, YELLOW
 - 추가 색상: CORNFLOWERBLUE 등 다양한 색상명 지원
 
-### 5. 기본 도형 그리기
+### 7. 기본 도형 그리기
 
 **선 그리기**
 ```java
@@ -138,7 +372,7 @@ public void drawPicture(GraphicsContext g, int width, int height) {
     // 배경 채우기
     g.setFill(Color.WHITE);
     g.fillRect(0, 0, width, height);
-    
+
     // 그리기 코드
     // ...
 }
