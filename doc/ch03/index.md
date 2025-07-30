@@ -21,6 +21,8 @@
   * [실습 7](lesson_3_7_examples.md)
 * Section 8: [Introduction to Arrays](lesson_3_8.md)
   * [실습 8](lesson_3_8_examples.md)
+* Section 9: [Introduction to GUI Programming](lession_3_9.md)
+  * [실습 9](lesson_3_9_examples.md)
 
 ***
 
