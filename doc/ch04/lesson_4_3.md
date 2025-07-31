@@ -12,7 +12,7 @@
 ## 1. 매개변수의 개념
 
 ### 1.1 매개변수란?
-**매개변수(Parameter)**는 외부에서 서브루틴 내부로 정보를 전달하는 메커니즘입니다.
+**매개변수(Parameter)** 는 외부에서 서브루틴 내부로 정보를 전달하는 메커니즘입니다.
 
 비유: 온도 조절 장치
 ```
@@ -47,16 +47,16 @@ printGreeting("이영희");  // "Hello, 이영희!"
  * 3N+1 시퀀스를 출력하는 메서드
  * 규칙: N이 홀수면 3N+1, N이 짝수면 N/2
  * N이 1이 될 때까지 반복
- * 
+ *
  * @param startingValue 시작값 (양의 정수여야 함)
  */
 static void print3NSequence(int startingValue) {
     int N = startingValue;  // 매개변수 값을 지역 변수에 복사
     int count = 1;          // 시퀀스의 항 개수
-    
+
     System.out.println("시작값 " + N + "의 3N+1 시퀀스:");
     System.out.println(N);  // 첫 번째 항 출력
-    
+
     while (N > 1) {
         if (N % 2 == 1) {   // N이 홀수인가?
             N = 3 * N + 1;
@@ -66,7 +66,7 @@ static void print3NSequence(int startingValue) {
         count++;
         System.out.println(N);
     }
-    
+
     System.out.println("시퀀스에는 " + count + "개의 항이 있습니다.");
 }
 ```
@@ -76,11 +76,11 @@ static void print3NSequence(int startingValue) {
 public static void main(String[] args) {
     // 직접 값 전달
     print3NSequence(3);     // 3, 10, 5, 16, 8, 4, 2, 1
-    
+
     // 변수를 통해 전달
     int num = 7;
     print3NSequence(num);   // 7, 22, 11, 34, 17, ...
-    
+
     // 표현식으로 전달
     print3NSequence(2 * 5 + 1);  // 11로 시작하는 시퀀스
 }
@@ -208,7 +208,7 @@ System.out.println(true);      // println(boolean)
  */
 static void printDivisors(int N) {
     System.out.println(N + "의 약수:");
-    
+
     for (int D = 1; D <= N; D++) {
         if (N % D == 0) {  // D가 N의 약수인가?
             System.out.println(D);
@@ -301,7 +301,7 @@ static int findMax(int[] arr) {
     if (arr.length == 0) {
         throw new IllegalArgumentException("빈 배열입니다");
     }
-    
+
     int max = arr[0];
     for (int i = 1; i < arr.length; i++) {
         if (arr[i] > max) {
@@ -315,13 +315,13 @@ static int findMax(int[] arr) {
 static void reverse(int[] arr) {
     int left = 0;
     int right = arr.length - 1;
-    
+
     while (left < right) {
         // 두 요소 교환
         int temp = arr[left];
         arr[left] = arr[right];
         arr[right] = temp;
-        
+
         left++;
         right--;
     }
@@ -335,7 +335,7 @@ static void reverse(int[] arr) {
 public static void main(String[] args) {
     // args는 명령줄 인수를 담은 String 배열
     System.out.println("인수 개수: " + args.length);
-    
+
     for (int i = 0; i < args.length; i++) {
         System.out.println("args[" + i + "] = " + args[i]);
     }
@@ -365,10 +365,10 @@ public class FileCopy {
             System.out.println("사용법: java FileCopy 원본파일 대상파일");
             return;
         }
-        
+
         String sourceFile = args[0];
         String destFile = args[1];
-        
+
         System.out.println(sourceFile + "을(를) " + destFile + "로 복사합니다.");
         // 실제 파일 복사 코드...
     }
@@ -402,7 +402,7 @@ static void print3NSequence(int startingValue) {
             "시작값은 양수여야 합니다. 입력값: " + startingValue
         );
     }
-    
+
     // 정상적인 처리
     int N = startingValue;
     // ... 나머지 코드
@@ -423,17 +423,17 @@ try {
 public class VariableScope {
     // 전역 변수 (정적 멤버 변수)
     static int globalCount = 0;
-    
+
     public static void method(int parameter) {  // parameter = 매개변수
         // 지역 변수
         int localVar = 10;
-        
+
         // 모든 변수 사용 가능
         globalCount++;      // 전역 변수 사용
         parameter *= 2;     // 매개변수 사용
         localVar += 5;      // 지역 변수 사용
     }
-    
+
     public static void main(String[] args) {
         method(5);
         System.out.println("globalCount = " + globalCount);  // 1
@@ -444,22 +444,22 @@ public class VariableScope {
 ```
 
 ### 9.2 변수 범위 비교
-| 변수 종류 | 선언 위치 | 생명 주기 | 접근 범위 |
-|----------|----------|----------|----------|
-| 지역 변수 | 메서드 내부 | 메서드 실행 중 | 해당 메서드만 |
-| 매개변수 | 메서드 선언부 | 메서드 실행 중 | 해당 메서드만 |
-| 전역 변수 | 클래스 레벨 | 프로그램 실행 중 | 모든 메서드 |
+| 변수 종류 | 선언 위치     | 생명 주기        | 접근 범위     |
+| --------- | ------------- | ---------------- | ------------- |
+| 지역 변수 | 메서드 내부   | 메서드 실행 중   | 해당 메서드만 |
+| 매개변수  | 메서드 선언부 | 메서드 실행 중   | 해당 메서드만 |
+| 전역 변수 | 클래스 레벨   | 프로그램 실행 중 | 모든 메서드   |
 
 ### 9.3 전역 변수 사용 시 주의사항
 ```java
 public class GameScore {
     static int totalScore = 0;  // 전역 변수
-    
+
     // ⚠️ 전역 변수를 변경하는 메서드
     static void addScore(int points) {
         totalScore += points;  // 외부에 영향을 줌
     }
-    
+
     // ✅ 매개변수로 받아서 반환하는 메서드 (더 나은 방법)
     static int calculateNewScore(int currentScore, int points) {
         return currentScore + points;  // 외부에 영향 없음

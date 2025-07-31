@@ -11,7 +11,7 @@
 ## 1. 서브루틴과 복잡성 관리
 
 ### 1.1 서브루틴이란?
-**서브루틴(Subroutine)**은 특정 작업을 수행하기 위한 명령어들을 하나로 묶어 이름을 붙인 것입니다.
+**서브루틴(Subroutine)** 은 특정 작업을 수행하기 위한 명령어들을 하나로 묶어 이름을 붙인 것입니다.
 
 ```java
 // 서브루틴 없이 같은 작업을 반복하는 경우
@@ -42,7 +42,7 @@ drawBox();
 ```
 
 ### 1.2 청킹(Chunking)의 개념
-**청킹**은 복잡한 작업을 하나의 단순한 개념으로 만드는 것입니다.
+**청킹** 은 복잡한 작업을 하나의 단순한 개념으로 만드는 것입니다.
 
 실생활 예시:
 - "커피 만들기" = 물 끓이기 + 커피 가루 넣기 + 물 붓기 + 설탕/크림 추가
@@ -59,7 +59,7 @@ sendEmail(recipient);      // 이메일 전송의 모든 과정을 숨김
 ## 2. 블랙박스 개념
 
 ### 2.1 블랙박스란?
-**블랙박스(Black Box)**는 내부 구조를 알 필요 없이 사용할 수 있는 장치나 시스템입니다.
+**블랙박스(Black Box)** 는 내부 구조를 알 필요 없이 사용할 수 있는 장치나 시스템입니다.
 
 ![블랙박스 개념도]
 ```
@@ -182,12 +182,12 @@ public static int findMax(int[] numbers) {
 ```java
 /**
  * 문자열을 정수로 변환합니다.
- * 
+ *
  * 계약:
  * - 사용자가 제공해야 할 것: 유효한 정수 형식의 문자열
  * - 메서드가 보장하는 것: 해당 문자열의 정수 값 반환
  * - 예외 상황: 잘못된 형식이면 NumberFormatException 발생
- * 
+ *
  * @param str 변환할 문자열
  * @return 문자열이 나타내는 정수 값
  * @throws NumberFormatException 문자열이 정수로 변환 불가능할 때
@@ -201,15 +201,15 @@ public static int parseInt(String str) {
 ```java
 /**
  * 은행 계좌에서 출금합니다.
- * 
+ *
  * 전제 조건 (사용자의 책임):
  * - amount > 0
  * - 계좌가 활성 상태여야 함
- * 
+ *
  * 사후 조건 (메서드의 보장):
  * - 잔액 >= amount이면 출금 성공, true 반환
  * - 잔액 < amount이면 출금 실패, false 반환, 잔액 변화 없음
- * 
+ *
  * @param amount 출금할 금액
  * @return 출금 성공 여부
  */
@@ -217,7 +217,7 @@ public boolean withdraw(double amount) {
     if (amount <= 0) {
         throw new IllegalArgumentException("출금액은 양수여야 합니다");
     }
-    
+
     if (balance >= amount) {
         balance -= amount;
         return true;
@@ -229,7 +229,7 @@ public boolean withdraw(double amount) {
 ## 6. 절차적 추상화
 
 ### 6.1 추상화의 개념
-**추상화(Abstraction)**는 복잡한 구현 세부사항을 숨기고 본질적인 기능만 노출하는 것입니다.
+**추상화(Abstraction)** 는 복잡한 구현 세부사항을 숨기고 본질적인 기능만 노출하는 것입니다.
 
 ```java
 // 추상화 수준이 높은 코드
@@ -257,12 +257,12 @@ for (int i = 0; i < 10 && i < students.size(); i++) {
 ```java
 public class BankAccount {
     private double balance;  // 외부에서 직접 접근 불가
-    
+
     // 인터페이스를 통해서만 접근
     public double getBalance() {
         return balance;
     }
-    
+
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;  // 내부 구현
@@ -280,10 +280,35 @@ public class BankAccount {
 ## 7. 실전 예제
 
 ### 7.1 블랙박스 서브루틴 설계
+블랙박스 서브루틴을 설계할 때는 다음 단계를 따릅니다:
+
+#### 1단계: 목적 정의
+- 서브루틴이 **무엇을** 해야 하는지 명확히 정의
+- 입력과 출력을 구체적으로 명시
+
+#### 2단계: 인터페이스 설계
+- 매개변수: 최소한으로 유지하되 명확하게 명명
+- 반환값: 예측 가능하고 일관성 있게 설계
+- 메서드명: 동작을 명확히 표현
+
+#### 3단계: 계약 명세
+- **사전조건(Precondition)**: 호출 전 만족해야 할 조건
+- **사후조건(Postcondition)**: 실행 후 보장되는 결과
+- **예외 상황**: 오류 발생 시 처리 방법
+
+#### 4단계: 구현 은닉
+- 내부 알고리즘과 데이터 구조는 외부에서 접근 불가
+- 구현 변경이 인터페이스에 영향을 주지 않도록 설계
+
+#### 예시: 이메일 유효성 검사 서브루틴
+
+
+
+
 ```java
 /**
  * 이메일 주소의 유효성을 검사합니다.
- * 
+ *
  * 인터페이스 설계:
  * - 입력: 문자열 (이메일 주소)
  * - 출력: boolean (유효하면 true, 아니면 false)
@@ -294,16 +319,16 @@ public static boolean isValidEmail(String email) {
     if (email == null || email.isEmpty()) {
         return false;
     }
-    
+
     // @ 기호 확인
     int atIndex = email.indexOf('@');
     if (atIndex <= 0 || atIndex == email.length() - 1) {
         return false;
     }
-    
+
     // 도메인 부분 확인
     String domain = email.substring(atIndex + 1);
-    return domain.contains(".") && !domain.startsWith(".") 
+    return domain.contains(".") && !domain.startsWith(".")
            && !domain.endsWith(".");
 }
 
@@ -317,6 +342,10 @@ if (isValidEmail(userEmail)) {
 ```
 
 ### 7.2 계층적 추상화
+**계층적 추상화(Hierarchical Abstraction)** 는 복잡한 시스템을 여러 단계의 추상화 수준으로 나누어 관리하는 방법입니다.
+
+#### 계층적 추상화의 구조
+
 ```java
 // 높은 수준의 추상화
 public static void processOrder(Order order) {
