@@ -1,4 +1,4 @@
-# 4.1 블랙박스와 절차적 추상화 - 학습 자료
+# 4.1 Black Boxes and Procedural Abstraction(블랙박스와 절차적 추상화)
 
 ## 학습 목표
 이 장을 마치면 다음을 할 수 있습니다:

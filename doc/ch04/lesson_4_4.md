@@ -1,4 +1,4 @@
-# 4.4 반환값(Return Values) - 학습 자료
+# 4.4 Return Values(반환값)
 
 ## 학습 목표
 이 장을 마치면 다음을 할 수 있습니다:
@@ -194,7 +194,7 @@ static int countVowels(String str) {
     str = str.toLowerCase();
     for (int i = 0; i < str.length(); i++) {
         char ch = str.charAt(i);
-        if (ch == 'a' || ch == 'e' || ch == 'i' || 
+        if (ch == 'a' || ch == 'e' || ch == 'i' ||
             ch == 'o' || ch == 'u') {
             count++;
         }
@@ -213,16 +213,16 @@ static boolean isPrime(int n) {
     if (n <= 1) {
         return false;  // 1 이하는 소수가 아님
     }
-    
+
     // 2부터 √n까지만 검사하면 충분
     int maxToCheck = (int)Math.sqrt(n);
-    
+
     for (int divisor = 2; divisor <= maxToCheck; divisor++) {
         if (n % divisor == 0) {
             return false;  // 나누어떨어지면 소수가 아님
         }
     }
-    
+
     return true;  // 약수를 찾지 못했으므로 소수
 }
 ```
@@ -236,7 +236,7 @@ static void processNumber(int n) {
         System.out.println("음수는 처리할 수 없습니다.");
         return;  // 여기서 메서드 종료
     }
-    
+
     // n이 0 이상인 경우만 실행됨
     System.out.println("처리 중: " + n);
     // ... 추가 처리
@@ -265,7 +265,7 @@ static double calculateAverage(int[] scores) {
     if (scores.length == 0) {
         return 0;  // 빈 배열 처리
     }
-    
+
     int sum = 0;
     for (int score : scores) {
         sum += score;
@@ -321,12 +321,12 @@ static int nextN(int currentN) {
 static int sequenceLength(int startingValue) {
     int n = startingValue;
     int count = 0;
-    
+
     while (n != 1) {
         n = nextN(n);
         count++;
     }
-    
+
     return count;
 }
 ```
@@ -335,11 +335,11 @@ static int sequenceLength(int startingValue) {
 ```java
 public static void main(String[] args) {
     int start = 27;
-    
+
     // 시퀀스 길이 출력
     int length = sequenceLength(start);
     System.out.println(start + "의 시퀀스 길이: " + length);
-    
+
     // 시퀀스 출력
     System.out.print("시퀀스: " + start);
     int n = start;

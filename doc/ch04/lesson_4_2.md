@@ -1,4 +1,4 @@
-# 4.2 정적 서브루틴과 정적 변수 - 학습 자료
+# 4.2 Static Subroutines and Static Variables(정적 서브루틴과 정적 변수)
 
 ## 학습 목표
 이 장을 마치면 다음을 할 수 있습니다:
@@ -44,7 +44,7 @@ public class Example {
     public static void staticMethod() {
         System.out.println("정적 메서드입니다");
     }
-    
+
     // 비정적 서브루틴 (이번 장에서는 다루지 않음)
     public void nonStaticMethod() {
         System.out.println("비정적 메서드입니다");
@@ -114,11 +114,11 @@ public class AccessExample {
     public static void publicMethod() {
         // 어디서든 호출 가능
     }
-    
+
     private static void privateMethod() {
         // 이 클래스 내에서만 호출 가능
     }
-    
+
     static void packageMethod() {
         // 같은 패키지에서 호출 가능
     }
@@ -163,14 +163,14 @@ public class Calculator {
         // 같은 클래스의 메서드는 이름만으로 호출
         int result = add(5, 3);
         System.out.println("5 + 3 = " + result);
-        
+
         printResult(result);
     }
-    
+
     public static int add(int a, int b) {
         return a + b;
     }
-    
+
     public static void printResult(int value) {
         System.out.println("결과: " + value);
     }
@@ -192,7 +192,7 @@ public class TestProgram {
         // 다른 클래스의 정적 메서드는 클래스명.메서드명으로 호출
         int result = MathUtils.multiply(4, 5);
         System.out.println("4 × 5 = " + result);
-        
+
         // Java 내장 클래스의 예
         double sqrt = Math.sqrt(16);  // Math 클래스의 sqrt 메서드
         System.out.println("√16 = " + sqrt);
@@ -232,43 +232,43 @@ showInfo("김철수", 20, 175.5);
 import textio.TextIO;
 
 public class GuessingGame {
-    
+
     public static void main(String[] args) {
         System.out.println("=== 숫자 맞추기 게임 ===");
         System.out.println("1부터 100 사이의 숫자를 맞춰보세요!");
-        
+
         boolean playAgain;
         do {
             playGame();  // 게임 실행
             System.out.print("다시 하시겠습니까? ");
             playAgain = TextIO.getlnBoolean();
         } while (playAgain);
-        
+
         System.out.println("게임을 종료합니다. 감사합니다!");
     }
-    
+
     static void playGame() {
         int computerNumber = (int)(Math.random() * 100) + 1;
         int userGuess;
         int guessCount = 0;
-        
+
         System.out.println("\n새 게임을 시작합니다!");
         System.out.print("첫 번째 추측: ");
-        
+
         while (true) {
             userGuess = TextIO.getInt();
             guessCount++;
-            
+
             if (userGuess == computerNumber) {
                 System.out.println("정답! " + guessCount + "번 만에 맞추셨습니다!");
                 break;
             }
-            
+
             if (guessCount == 6) {
                 System.out.println("아쉽게도 실패했습니다. 정답은 " + computerNumber + "였습니다.");
                 break;
             }
-            
+
             if (userGuess < computerNumber) {
                 System.out.print("더 높습니다. 다시 시도: ");
             } else {
@@ -315,13 +315,13 @@ playGame() 메서드
 public class VariableExample {
     // 멤버 변수 (전역 변수)
     static int globalCount = 0;
-    
+
     public static void method1() {
         // 지역 변수
         int localVar = 10;
         globalCount++;  // 멤버 변수 사용
     }
-    
+
     public static void method2() {
         // localVar는 여기서 사용할 수 없음 (method1의 지역 변수)
         globalCount++;  // 멤버 변수는 사용 가능
@@ -336,7 +336,7 @@ public class GameStats {
     static int totalGames;
     public static int wins;
     private static double winRate;
-    
+
     // 여러 변수를 한 줄에 선언 가능
     static int losses, draws;
 }
@@ -355,7 +355,7 @@ public class AutoInit {
     static boolean flag;      // false로 초기화
     static String text;       // null로 초기화
     static double[] array;    // null로 초기화
-    
+
     public static void main(String[] args) {
         System.out.println("number = " + number);  // 0
         System.out.println("flag = " + flag);      // false
@@ -374,18 +374,18 @@ public class GuessingGame2 {
     // 멤버 변수로 게임 통계 관리
     static int gamesPlayed;   // 총 게임 수
     static int gamesWon;      // 승리한 게임 수
-    
+
     public static void main(String[] args) {
         System.out.println("=== 숫자 맞추기 게임 ===");
         System.out.println("1부터 100 사이의 숫자를 맞춰보세요!");
-        
+
         boolean playAgain;
         do {
             playGame();
             System.out.print("다시 하시겠습니까? ");
             playAgain = TextIO.getlnBoolean();
         } while (playAgain);
-        
+
         // 게임 통계 출력
         System.out.println("\n=== 게임 통계 ===");
         System.out.println("총 게임 수: " + gamesPlayed);
@@ -396,32 +396,32 @@ public class GuessingGame2 {
         }
         System.out.println("게임을 종료합니다. 감사합니다!");
     }
-    
+
     static void playGame() {
         gamesPlayed++;  // 게임 수 증가
-        
+
         int computerNumber = (int)(Math.random() * 100) + 1;
         int userGuess;
         int guessCount = 0;
-        
+
         System.out.println("\n게임 #" + gamesPlayed + " 시작!");
         System.out.print("첫 번째 추측: ");
-        
+
         while (true) {
             userGuess = TextIO.getInt();
             guessCount++;
-            
+
             if (userGuess == computerNumber) {
                 System.out.println("정답! " + guessCount + "번 만에 맞추셨습니다!");
                 gamesWon++;  // 승리 수 증가
                 break;
             }
-            
+
             if (guessCount == 6) {
                 System.out.println("아쉽게도 실패했습니다. 정답은 " + computerNumber + "였습니다.");
                 break;
             }
-            
+
             if (userGuess < computerNumber) {
                 System.out.print("더 높습니다. 다시 시도: ");
             } else {
@@ -442,11 +442,11 @@ public class Example {
         method1();
         method2();
     }
-    
+
     static void method1() {
         // 구현
     }
-    
+
     static void method2() {
         // 구현
     }

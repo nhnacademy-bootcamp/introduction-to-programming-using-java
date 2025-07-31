@@ -1,4 +1,4 @@
-# 4.5 람다 표현식(Lambda Expressions) - 학습 자료
+# 4.5 Lambda Expressions(람다 표현식)
 
 ## 학습 목표
 이 장을 마치면 다음을 할 수 있습니다:
@@ -199,16 +199,16 @@ import java.util.*;
 public class LambdaSorting {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("김철수", "이영희", "박민수", "최지우");
-        
+
         // 람다로 정렬 기준 지정
         // 1. 이름 길이순
         names.sort((name1, name2) -> name1.length() - name2.length());
         System.out.println("길이순: " + names);
-        
+
         // 2. 알파벳순
         names.sort((name1, name2) -> name1.compareTo(name2));
         System.out.println("알파벳순: " + names);
-        
+
         // 3. 역순
         names.sort((name1, name2) -> name2.compareTo(name1));
         System.out.println("역순: " + names);
@@ -250,10 +250,10 @@ public class LambdaCalculator {
     interface Operation {
         double calculate(double a, double b);
     }
-    
+
     static class Calculator {
         private Map<String, Operation> operations = new HashMap<>();
-        
+
         public Calculator() {
             // 람다로 연산 등록
             operations.put("+", (a, b) -> a + b);
@@ -265,7 +265,7 @@ public class LambdaCalculator {
             });
             operations.put("^", (a, b) -> Math.pow(a, b));
         }
-        
+
         public double calculate(double a, String operator, double b) {
             Operation op = operations.get(operator);
             if (op == null) {
@@ -274,10 +274,10 @@ public class LambdaCalculator {
             return op.calculate(a, b);
         }
     }
-    
+
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        
+
         System.out.println("10 + 5 = " + calc.calculate(10, "+", 5));
         System.out.println("10 - 5 = " + calc.calculate(10, "-", 5));
         System.out.println("10 * 5 = " + calc.calculate(10, "*", 5));
@@ -323,28 +323,28 @@ public class MethodReferenceExample {
     static int doubleIt(int n) {
         return n * 2;
     }
-    
+
     // 인스턴스 메서드
     int tripleIt(int n) {
         return n * 3;
     }
-    
+
     public static void main(String[] args) {
         // 1. 정적 메서드 참조
         Function<Integer, Integer> doubler = MethodReferenceExample::doubleIt;
         System.out.println(doubler.apply(5)); // 10
-        
+
         // 2. 인스턴스 메서드 참조
         MethodReferenceExample obj = new MethodReferenceExample();
         Function<Integer, Integer> tripler = obj::tripleIt;
         System.out.println(tripler.apply(5)); // 15
-        
+
         // 3. 기존 메서드 활용
         List<String> words = Arrays.asList("apple", "banana", "cherry");
-        
+
         // 람다 표현식
         words.forEach(word -> System.out.println(word));
-        
+
         // 메서드 참조
         words.forEach(System.out::println);
     }

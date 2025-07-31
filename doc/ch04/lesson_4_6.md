@@ -1,4 +1,4 @@
-# 4.6 API, 패키지, 모듈, Javadoc - 학습 자료
+# 4.6 API, Packages, Modules, Javadoc
 
 ## 학습 목표
 이 장을 마치면 다음을 할 수 있습니다:
@@ -128,7 +128,7 @@ public class StaticImportExample {
         // Math. 없이 사용
         double result = sqrt(16);
         double angle = sin(PI / 2);
-        
+
         // System. 없이 사용
         out.println("결과: " + result);
     }
@@ -151,7 +151,7 @@ public class StaticImportExample {
 ```java
 /**
  * 원의 넓이를 계산합니다.
- * 
+ *
  * @param radius 원의 반지름 (양수여야 함)
  * @return 원의 넓이
  * @throws IllegalArgumentException 반지름이 음수일 때
@@ -175,17 +175,17 @@ public static double circleArea(double radius) {
 ```java
 /**
  * 학생 정보를 관리하는 클래스입니다.
- * 
+ *
  * @author 김철수
  * @version 1.0
  */
 public class Student {
     private String name;
     private int score;
-    
+
     /**
      * 학생 객체를 생성합니다.
-     * 
+     *
      * @param name 학생 이름
      * @param score 학생 점수 (0-100)
      */
@@ -193,10 +193,10 @@ public class Student {
         this.name = name;
         this.score = score;
     }
-    
+
     /**
      * 학생의 학점을 계산합니다.
-     * 
+     *
      * @return 학점 (A, B, C, D, F)
      */
     public char getGrade() {
@@ -218,13 +218,13 @@ public class Student {
 ```java
 /**
  * 배열에서 최대값을 찾습니다.
- * 
+ *
  * <p>사용 예제:
  * <pre>
  * int[] numbers = {3, 7, 2, 9, 1};
  * int max = findMax(numbers);  // 9 반환
  * </pre>
- * 
+ *
  * @param array 검색할 배열 (null이거나 비어있으면 안됨)
  * @return 배열의 최대값
  * @throws IllegalArgumentException 배열이 null이거나 비어있을 때
@@ -233,7 +233,7 @@ public static int findMax(int[] array) {
     if (array == null || array.length == 0) {
         throw new IllegalArgumentException("배열이 비어있습니다");
     }
-    
+
     int max = array[0];
     for (int i = 1; i < array.length; i++) {
         if (array[i] > max) {
@@ -314,11 +314,11 @@ package com.mycompany.myproject.model;
 
 public class User {
     private String name;
-    
+
     public User(String name) {
         this.name = name;
     }
-    
+
     public String getName() {
         return name;
     }

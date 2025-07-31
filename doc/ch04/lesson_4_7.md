@@ -1,4 +1,4 @@
-# 4.7 프로그램 설계 - 학습 자료
+# 4.7 More on Program Design(프로그램 설계)
 
 ## 학습 목표
 이 장을 마치면 다음을 할 수 있습니다:
@@ -56,7 +56,7 @@ public static void main(String[] args) {
 ```java
 /**
  * 제곱근을 계산합니다.
- * 
+ *
  * 사전 조건: x >= 0 (음수가 아니어야 함)
  */
 public static double sqrt(double x) {
@@ -71,7 +71,7 @@ public static double sqrt(double x) {
 ```java
 /**
  * 배열을 오름차순으로 정렬합니다.
- * 
+ *
  * 사전 조건: array != null
  * 사후 조건: array[0] <= array[1] <= ... <= array[n-1]
  */
@@ -92,10 +92,10 @@ public static void sortArray(int[] array) {
 ```java
 /**
  * 두 수를 나눕니다.
- * 
+ *
  * 사전 조건: divisor != 0
  * 사후 조건: 반환값 * divisor = dividend (오차 범위 내)
- * 
+ *
  * @param dividend 피제수
  * @param divisor 제수
  * @return dividend / divisor
@@ -181,10 +181,10 @@ Mosaic.delay(milliseconds)              // 지연
 public static void main(String[] args) {
     // 16x20 격자, 각 셀은 25x25 픽셀
     Mosaic.open(16, 20, 25, 25);
-    
+
     // 초기화
     fillWithRandomColors();
-    
+
     // 애니메이션
     while (true) {
         int row = (int)(Math.random() * 16);
@@ -201,7 +201,7 @@ public static void main(String[] args) {
 ```java
 /**
  * 모든 격자를 무작위 색상으로 채웁니다.
- * 
+ *
  * 사전 조건: 모자이크 창이 열려 있어야 함
  * 사후 조건: 모든 격자가 무작위 색상을 가짐
  */
@@ -218,7 +218,7 @@ static void fillWithRandomColors() {
 ```java
 /**
  * 지정된 위치의 색상을 무작위로 변경합니다.
- * 
+ *
  * 사전 조건: row와 col이 유효한 범위 내에 있어야 함
  * 사후 조건: 지정된 위치가 새로운 무작위 색상을 가짐
  */
@@ -246,17 +246,17 @@ static void changeToRandomColor(int row, int col) {
 ```java
 /**
  * 현재 위치를 인접한 셀로 이동시킵니다.
- * 
+ *
  * 사전 조건: currentRow와 currentColumn이 유효한 위치
  * 사후 조건: 위치가 상하좌우 중 한 방향으로 이동됨
  */
 static void randomMove() {
     int direction = (int)(4 * Math.random());
-    
+
     switch (direction) {
         case 0:  // 위로
             currentRow--;
-            if (currentRow < 0) 
+            if (currentRow < 0)
                 currentRow = 15;  // 반대편으로 이동
             break;
         case 1:  // 오른쪽으로
@@ -296,10 +296,10 @@ static void randomMove() {
 ```java
 /**
  * 이 메서드가 무엇을 하는지 설명
- * 
+ *
  * 사전 조건: 메서드 호출 전 만족해야 할 조건
  * 사후 조건: 메서드 실행 후 보장되는 조건
- * 
+ *
  * @param 매개변수 설명
  * @return 반환값 설명
  * @throws 발생 가능한 예외
