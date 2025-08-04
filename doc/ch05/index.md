@@ -13,13 +13,21 @@
 ### Contents of Chapter 5:
 
 *   Section 1: [Objects, Instance Methods, and Instance Variables](lesson_5_1.md)
+    *   [실습](lesson_5_1_examples.md)
 *   Section 2: [Constructors and Object Initialization](lesson_5_2.md)
+    *   [실습](lesson_5_2_examples.md)
 *   Section 3: [Programming with Objects](lesson_5_3.md)
+    *   [실습](lesson_5_3_examples.md)
 *   Section 4: [Programming Example: Card, Hand, Deck](lesson_5_4.md)
+    *   [실습](lesson_5_4_examples.md)
 *   Section 5: [Inheritance, Polymorphism, and Abstract Classes](lesson_5_5.md)
+    *   [실습](lesson_5_5_examples.md)
 *   Section 6: [this and super](lesson_5_6.md)
+    *   [실습](lesson_5_6_examples.md)
 *   Section 7: [Interfaces](lesson_5_7.md)
+    *   [실습](lesson_5_7_examples.md)
 *   Section 8: [Nested Classes](lesson_5_8.md)
+    *   [실습](lesson_5_8_examples.md)
 
 ***
 
