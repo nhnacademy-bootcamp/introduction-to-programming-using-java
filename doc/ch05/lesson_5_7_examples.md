@@ -6,114 +6,114 @@
 **목표**: 인터페이스를 사용하여 도형의 다양한 기능을 구현해보세요.
 
 ```java
-import java.awt.*;
-import java.awt.geom.*;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 /**
  * 그래픽 객체를 위한 기본 인터페이스들
  */
 // 외곽선을 그릴 수 있는 객체
 public interface Strokeable {
-    void stroke(Graphics g);
+    void stroke(GraphicsContext gc);
     void setStrokeColor(Color color);
-    void setStrokeWidth(int width);
+    void setStrokeWidth(double width);
 }
 
 // 내부를 채울 수 있는 객체
 public interface Fillable {
-    void fill(Graphics g);
+    void fill(GraphicsContext gc);
     void setFillColor(Color color);
 }
 
 // 변형 가능한 객체
 public interface Transformable {
-    void translate(int dx, int dy);
+    void translate(double dx, double dy);
     void rotate(double angle);
     void scale(double factor);
 }
 
 // Line 클래스 - Strokeable만 구현
 public class Line implements Strokeable {
-    private int x1, y1, x2, y2;
+    private double x1, y1, x2, y2;
     private Color strokeColor = Color.BLACK;
-    private int strokeWidth = 1;
-    
-    public Line(int x1, int y1, int x2, int y2) {
+    private double strokeWidth = 1;
+
+    public Line(double x1, double y1, double x2, double y2) {
         // TODO 1: 좌표 초기화하기
     }
-    
+
     @Override
-    public void stroke(Graphics g) {
+    public void stroke(GraphicsContext gc) {
         // TODO 2: 선 그리기 구현하기
-        // g.setColor()로 색상 설정
-        // ((Graphics2D) g).setStroke()로 선 두께 설정
-        // g.drawLine()으로 선 그리기
+        // gc.setStroke()로 색상 설정
+        // gc.setLineWidth()로 선 두께 설정
+        // gc.strokeLine()으로 선 그리기
     }
-    
+
     @Override
     public void setStrokeColor(Color color) {
         // TODO 3: 선 색상 설정하기
     }
-    
+
     @Override
-    public void setStrokeWidth(int width) {
+    public void setStrokeWidth(double width) {
         // TODO 4: 선 두께 설정하기
     }
 }
 
 // Rectangle 클래스 - 여러 인터페이스 구현
 public class Rectangle implements Strokeable, Fillable, Transformable {
-    private int x, y, width, height;
+    private double x, y, width, height;
     private Color strokeColor = Color.BLACK;
     private Color fillColor = Color.WHITE;
-    private int strokeWidth = 1;
-    
-    public Rectangle(int x, int y, int width, int height) {
+    private double strokeWidth = 1;
+
+    public Rectangle(double x, double y, double width, double height) {
         // TODO 5: 사각형 속성 초기화하기
     }
-    
+
     @Override
-    public void stroke(Graphics g) {
+    public void stroke(GraphicsContext gc) {
         // TODO 6: 사각형 외곽선 그리기
-        // g.setColor()로 색상 설정
-        // ((Graphics2D) g).setStroke()로 선 두께 설정
-        // g.drawRect()로 외곽선 그리기
+        // gc.setStroke()로 색상 설정
+        // gc.setLineWidth()로 선 두께 설정
+        // gc.strokeRect()로 외곽선 그리기
     }
-    
+
     @Override
-    public void fill(Graphics g) {
+    public void fill(GraphicsContext gc) {
         // TODO 7: 사각형 내부 채우기
-        // g.setColor()로 채움 색상 설정
-        // g.fillRect()로 사각형 채우기
+        // gc.setFill()로 채움 색상 설정
+        // gc.fillRect()로 사각형 채우기
     }
-    
+
     @Override
     public void setStrokeColor(Color color) {
         // TODO 8: 외곽선 색상 설정하기
     }
-    
+
     @Override
-    public void setStrokeWidth(int width) {
+    public void setStrokeWidth(double width) {
         // TODO 9: 외곽선 두께 설정하기
     }
-    
+
     @Override
     public void setFillColor(Color color) {
         // TODO 10: 채움 색상 설정하기
     }
-    
+
     @Override
-    public void translate(int dx, int dy) {
+    public void translate(double dx, double dy) {
         // TODO 11: 위치 이동하기
         // x에 dx 더하기, y에 dy 더하기
     }
-    
+
     @Override
     public void rotate(double angle) {
         // TODO 12: 회전 구현하기 (간단히 출력만)
         // "사각형을 [angle]도 회전합니다." 출력
     }
-    
+
     @Override
     public void scale(double factor) {
         // TODO 13: 크기 조정하기
@@ -127,24 +127,25 @@ public class DrawingTest {
         // TODO 14: Line과 Rectangle 객체 생성하기
         // Line: (10, 10)에서 (100, 100)
         // Rectangle: (50, 50) 위치, 너비 80, 높이 60
-        
+
         // TODO 15: Strokeable 배열로 처리하기
         // 두 도형을 Strokeable 배열에 담기
-        // 각각 색상을 RED로, 두께를 2로 설정
-        
+        // 각각 색상을 Color.RED로, 두께를 2로 설정
+
         // TODO 16: Rectangle을 Fillable로 형변환하여 처리하기
         // instanceof로 확인 후 Fillable로 형변환
-        // 채움 색상을 BLUE로 설정
-        
+        // 채움 색상을 Color.BLUE로 설정
+
         // TODO 17: Rectangle을 Transformable로 형변환하여 처리하기
         // instanceof로 확인 후 Transformable로 형변환
         // (10, 20) 이동하고, 1.5배 확대하기
-        
+
         // TODO 18: 설정된 값들 출력하기 (그래픽 없이)
         // "Line 생성 완료"
         // "Rectangle 생성 및 변형 완료"
     }
 }
+```
 
 #### 실행 결과 (참고용):
 ```
@@ -164,19 +165,19 @@ public interface GameConstants {
     // 게임 설정 상수들 (모두 public static final)
     int MAX_PLAYERS = 4;
     int MIN_PLAYERS = 2;
-    
+
     int BOARD_WIDTH = 10;
     int BOARD_HEIGHT = 10;
-    
+
     int INITIAL_HEALTH = 100;
     int INITIAL_MANA = 50;
-    
+
     // 게임 상태
     int STATE_WAITING = 0;
     int STATE_PLAYING = 1;
     int STATE_PAUSED = 2;
     int STATE_GAME_OVER = 3;
-    
+
     // 방향
     int DIRECTION_UP = 0;
     int DIRECTION_RIGHT = 1;
@@ -199,7 +200,7 @@ public class Player implements GameCharacter {
     private int health;
     private int mana;
     private int x, y;
-    
+
     public Player(String name) {
         // TODO 19: 플레이어 초기화하기
         // name 설정
@@ -207,7 +208,7 @@ public class Player implements GameCharacter {
         // mana를 INITIAL_MANA로 초기화
         // x, y를 보드 중앙으로 설정 (BOARD_WIDTH/2, BOARD_HEIGHT/2)
     }
-    
+
     @Override
     public void move(int direction) {
         // TODO 20: 방향에 따라 이동하기
@@ -217,25 +218,25 @@ public class Player implements GameCharacter {
         // DIRECTION_RIGHT: x < BOARD_WIDTH - 1이면 x++
         // "[name] 이동: (x, y)" 출력
     }
-    
+
     @Override
     public void attack(GameCharacter target) {
         // TODO 21: 공격 구현하기
         // "[name]이(가) 공격!" 출력
     }
-    
+
     @Override
     public int getHealth() {
         // TODO 22: health 반환하기
         return 0;
     }
-    
+
     @Override
     public int getMana() {
         // TODO 23: mana 반환하기
         return 0;
     }
-    
+
     @Override
     public boolean isAlive() {
         // TODO 24: health > 0인지 반환하기
@@ -248,20 +249,20 @@ public class GameManager implements GameConstants {
     private GameCharacter[] players;
     private int gameState;
     private int playerCount;
-    
+
     public GameManager() {
         // TODO 25: 게임 매니저 초기화하기
         // players를 MAX_PLAYERS 크기로 생성
         // gameState를 STATE_WAITING으로 설정
         // playerCount를 0으로 설정
     }
-    
+
     public void addPlayer(GameCharacter player) {
         // TODO 26: 플레이어 추가하기
         // playerCount < MAX_PLAYERS이면 players 배열에 추가
         // playerCount 증가
     }
-    
+
     public void startGame() {
         // TODO 27: 게임 시작하기
         // playerCount >= MIN_PLAYERS이면:
@@ -270,7 +271,7 @@ public class GameManager implements GameConstants {
         // 아니면:
         //   "최소 [MIN_PLAYERS]명이 필요합니다." 출력
     }
-    
+
     private int getPlayerCount() {
         return playerCount;
     }
@@ -280,17 +281,17 @@ public class GameManager implements GameConstants {
 public class GameTest {
     public static void main(String[] args) {
         // TODO 28: GameManager 생성하기
-        
+
         // TODO 29: Player 생성하고 추가하기
         // "용사"와 "마법사" 플레이어 생성
         // GameManager에 추가
-        
+
         // TODO 30: 게임 시작 시도하기
-        
+
         // TODO 31: 플레이어들 이동시키기
         // 용사는 UP, RIGHT로 이동
         // 마법사는 DOWN, LEFT로 이동
-        
+
         // TODO 32: 서로 공격하기
         // 용사가 마법사를 공격
         // 마법사가 용사를 공격
@@ -320,7 +321,7 @@ public class GameTest {
 public interface Readable {
     // 추상 메서드 - 구현 필수
     char readChar();
-    
+
     // 기본 메서드 - 한 줄 읽기
     default String readLine() {
         StringBuilder line = new StringBuilder();
@@ -335,18 +336,18 @@ public interface Readable {
         }
         return line.toString();
     }
-    
+
     // 기본 메서드 - 단어 읽기
     default String readWord() {
         StringBuilder word = new StringBuilder();
         try {
             char ch = readChar();
-            
+
             // 공백 건너뛰기
             while (Character.isWhitespace(ch)) {
                 ch = readChar();
             }
-            
+
             // 단어 읽기
             while (!Character.isWhitespace(ch) && ch != '\0') {
                 word.append(ch);
@@ -357,7 +358,7 @@ public interface Readable {
         }
         return word.toString();
     }
-    
+
     // 기본 메서드 - 모든 내용 읽기
     default String readAll() {
         StringBuilder all = new StringBuilder();
@@ -377,11 +378,11 @@ public interface Readable {
 public class StringReader implements Readable {
     private String content;
     private int position;
-    
+
     public StringReader(String content) {
         // TODO 33: content와 position 초기화하기
     }
-    
+
     @Override
     public char readChar() {
         // TODO 34: 문자 하나 읽기
@@ -396,7 +397,7 @@ public class StarPattern implements Readable {
     private int currentLine = 0;
     private int currentPos = 0;
     private final int maxLines = 5;
-    
+
     @Override
     public char readChar() {
         // TODO 35: 별 패턴 문자 생성하기
@@ -416,7 +417,7 @@ public class ReadableTest {
         // "Hello World\nJava Programming" 문자열로 생성
         // readLine()으로 첫 줄 읽고 출력
         // readWord()로 다음 단어 읽고 출력
-        
+
         // TODO 37: StarPattern 테스트하기
         // StarPattern 객체 생성
         // readAll()로 전체 패턴 읽고 출력
@@ -449,19 +450,19 @@ public interface Calculator {
     double subtract(double a, double b);
     double multiply(double a, double b);
     double divide(double a, double b);
-    
+
     // 확장 연산 (기본 메서드)
     default double power(double base, double exponent) {
         return Math.pow(base, exponent);
     }
-    
+
     default double squareRoot(double number) {
         if (number < 0) {
             throw new IllegalArgumentException("음수의 제곱근은 계산할 수 없습니다.");
         }
         return Math.sqrt(number);
     }
-    
+
     default double average(double... numbers) {
         if (numbers.length == 0) {
             return 0;
@@ -472,7 +473,7 @@ public interface Calculator {
         }
         return divide(sum, numbers.length);
     }
-    
+
     default double factorial(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("음수의 팩토리얼은 정의되지 않습니다.");
@@ -492,19 +493,19 @@ public class BasicCalculator implements Calculator {
         // TODO 38: 덧셈 구현하기
         return 0;
     }
-    
+
     @Override
     public double subtract(double a, double b) {
         // TODO 39: 뺄셈 구현하기
         return 0;
     }
-    
+
     @Override
     public double multiply(double a, double b) {
         // TODO 40: 곱셈 구현하기
         return 0;
     }
-    
+
     @Override
     public double divide(double a, double b) {
         // TODO 41: 나눗셈 구현하기
@@ -524,13 +525,13 @@ public class ScientificCalculator extends BasicCalculator {
         // "개선된 알고리즘 사용" 출력 후 결과 반환
         return 0;
     }
-    
+
     // 추가 메서드
     public double sin(double angle) {
         // TODO 43: 사인 함수 구현하기
         return 0;
     }
-    
+
     public double cos(double angle) {
         // TODO 44: 코사인 함수 구현하기
         return 0;
@@ -545,7 +546,7 @@ public class CalculatorTest {
         // average(2, 4, 6, 8) 계산하고 출력
         // 5! 계산하고 출력
         // √16 계산하고 출력
-        
+
         // TODO 46: ScientificCalculator 테스트하기
         // √25 계산하고 출력
         // sin(π/2), cos(0) 계산하고 출력
@@ -620,55 +621,55 @@ public class Dog implements LandAnimal {
     private String name;
     private int speed = 30;  // km/h
     private int volume = 5;
-    
+
     public Dog(String name) {
         // TODO 47: name 초기화하기
     }
-    
+
     @Override
     public String getName() {
         // TODO 48: name 반환하기
         return "";
     }
-    
+
     @Override
     public void eat(String food) {
         // TODO 49: "[name]가 [food]를 먹습니다." 출력하기
     }
-    
+
     @Override
     public void sleep() {
         // TODO 50: "[name]가 잠을 잡니다. Zzz..." 출력하기
     }
-    
+
     @Override
     public void move(int distance) {
         // TODO 51: "[name]가 [distance]m 이동합니다." 출력하기
     }
-    
+
     @Override
     public int getSpeed() {
         // TODO 52: speed 반환하기
         return 0;
     }
-    
+
     @Override
     public void makeSound() {
         // TODO 53: "[name]가 짖습니다: 멍멍! (볼륨: [volume])" 출력하기
     }
-    
+
     @Override
     public void setVolume(int level) {
         // TODO 54: volume 설정하기 (0~10 범위로 제한)
         // Math.max(0, Math.min(10, level)) 사용
     }
-    
+
     @Override
     public void run() {
         // TODO 55: "[name]가 달립니다!" 출력하고
         // move(100) 호출하기
     }
-    
+
     @Override
     public void jump() {
         // TODO 56: "[name]가 점프합니다!" 출력하기
@@ -684,83 +685,83 @@ public class Duck implements LandAnimal, AquaticAnimal, FlyingAnimal {
     private int currentSpeed;
     private int altitude = 0;
     private int volume = 3;
-    
+
     public Duck(String name) {
         // TODO 57: name과 currentSpeed(landSpeed) 초기화하기
     }
-    
+
     @Override
     public String getName() {
         // TODO 58: name 반환하기
         return "";
     }
-    
+
     @Override
     public void eat(String food) {
         // TODO 59: "[name]가 [food]를 먹습니다." 출력하기
     }
-    
+
     @Override
     public void sleep() {
         // TODO 60: "[name]가 물 위에서 잠을 잡니다." 출력하기
     }
-    
+
     @Override
     public void move(int distance) {
         // TODO 61: "[name]가 [distance]m 이동합니다. (속도: [currentSpeed]km/h)" 출력하기
     }
-    
+
     @Override
     public int getSpeed() {
         // TODO 62: currentSpeed 반환하기
         return 0;
     }
-    
+
     @Override
     public void makeSound() {
         // TODO 63: "[name]: 꽥꽥! (볼륨: [volume])" 출력하기
     }
-    
+
     @Override
     public void setVolume(int level) {
         // TODO 64: volume 설정하기 (0~10 범위로 제한)
     }
-    
+
     @Override
     public void run() {
         // TODO 65: currentSpeed를 landSpeed로 설정하고
         // "[name]가 뒤뚱뒤뚱 걷습니다." 출력하기
     }
-    
+
     @Override
     public void jump() {
         // TODO 66: "[name]가 폴짝 뜁니다." 출력하기
     }
-    
+
     @Override
     public void swim() {
         // TODO 67: currentSpeed를 swimSpeed로 설정하고
         // "[name]가 우아하게 헤엄칩니다." 출력하기
     }
-    
+
     @Override
     public void dive(int depth) {
         // TODO 68: "[name]가 [depth]m 깊이로 잠수합니다." 출력하기
     }
-    
+
     @Override
     public void fly() {
         // TODO 69: currentSpeed를 flySpeed로 설정하고
         // altitude를 100으로 설정하고
         // "[name]가 날아오릅니다!" 출력하기
     }
-    
+
     @Override
     public void land() {
         // TODO 70: altitude를 0으로, currentSpeed를 landSpeed로 설정하고
         // "[name]가 착륙합니다." 출력하기
     }
-    
+
     @Override
     public int getAltitude() {
         // TODO 71: altitude 반환하기
@@ -774,11 +775,11 @@ public class Zoo {
         // TODO 72: Dog과 Duck 객체 생성하기
         // Dog: "바둑이"
         // Duck: "도널드"
-        
+
         // TODO 73: LandAnimal 배열로 처리하기
         // 두 동물을 LandAnimal 배열에 담고
         // 각각 run(), makeSound(), jump() 호출하기
-        
+
         // TODO 74: 오리의 특별한 능력 테스트하기
         // swim(), dive(2), fly() 호출
         // 현재 고도 출력
@@ -828,22 +829,22 @@ public class Event {
     private Object source;
     private long timestamp;
     private Map<String, Object> data;
-    
+
     public Event(String type, Object source) {
         // TODO 75: type, source, timestamp 초기화하기
         // timestamp는 System.currentTimeMillis() 사용
         // data는 새 HashMap으로 초기화
     }
-    
+
     // getter 메서드들
     public String getType() { return type; }
     public Object getSource() { return source; }
     public long getTimestamp() { return timestamp; }
-    
+
     public void setData(String key, Object value) {
         // TODO 76: data에 key-value 추가하기
     }
-    
+
     public Object getData(String key) {
         // TODO 77: data에서 key에 해당하는 값 반환하기
         return null;
@@ -858,7 +859,7 @@ public interface ClickListener extends EventListener {
             onClick(event);
         }
     }
-    
+
     void onClick(Event event);
 }
 
@@ -873,31 +874,31 @@ public interface EventEmitter {
 public class Button implements EventEmitter {
     private String text;
     private Map<String, List<EventListener>> listeners;
-    
+
     public Button(String text) {
         // TODO 78: text 초기화하고
         // listeners를 새 HashMap으로 초기화하기
     }
-    
+
     @Override
     public void addEventListener(String eventType, EventListener listener) {
         // TODO 79: 이벤트 리스너 등록하기
         // listeners.computeIfAbsent(eventType, k -> new ArrayList<>()).add(listener)
     }
-    
+
     @Override
     public void removeEventListener(String eventType, EventListener listener) {
         // TODO 80: 이벤트 리스너 제거하기
         // listeners.get(eventType)에서 listener 제거
     }
-    
+
     @Override
     public void emit(Event event) {
         // TODO 81: 이벤트 발생시키기
         // event.getType()에 해당하는 리스너들을 찾아서
         // 각각의 onEvent(event) 호출하기
     }
-    
+
     // 버튼 클릭 시뮬레이션
     public void click() {
         // TODO 82: 클릭 이벤트 생성하고 발생시키기
@@ -905,7 +906,7 @@ public class Button implements EventEmitter {
         // event에 "button" 데이터로 text 추가
         // emit(event) 호출
     }
-    
+
     public String getText() {
         return text;
     }
@@ -915,35 +916,35 @@ public class Button implements EventEmitter {
 public class Application {
     private Button saveButton;
     private Button cancelButton;
-    
+
     public Application() {
         // TODO 83: 버튼 생성하기
         // saveButton: "저장"
         // cancelButton: "취소"
-        
+
         // TODO 84: 저장 버튼에 클릭 리스너 등록하기
         // ClickListener 구현체 생성 (익명 클래스)
         // onClick에서 "저장 버튼 클릭!" 출력하고 save() 호출
-        
+
         // TODO 85: 취소 버튼에 클릭 리스너 등록하기
         // 람다 표현식 사용
         // "취소 버튼 클릭!" 출력하고 cancel() 호출
     }
-    
+
     private void save() {
         System.out.println("데이터를 저장합니다...");
     }
-    
+
     private void cancel() {
         System.out.println("작업을 취소합니다...");
     }
-    
+
     public void run() {
         // TODO 86: 버튼 클릭 시뮬레이션하기
         // saveButton.click()
         // cancelButton.click()
     }
-    
+
     public static void main(String[] args) {
         // TODO 87: Application 실행하기
         // Application 객체 생성하고 run() 호출
@@ -1012,45 +1013,45 @@ public class TextFile implements File {
     private Date createdDate;
     private Date modifiedDate;
     private String path;
-    
+
     public TextFile(String name, String path) {
         // TODO 88: 필드 초기화하기
         // name, path 설정
         // content는 빈 문자열
         // createdDate, modifiedDate는 현재 시간
     }
-    
+
     @Override
     public String getName() {
         // TODO 89: name 반환하기
         return "";
     }
-    
+
     @Override
     public long getSize() {
         // TODO 90: content의 바이트 크기 반환하기
         // content.getBytes().length
         return 0;
     }
-    
+
     @Override
     public Date getCreatedDate() {
         // TODO 91: createdDate 반환하기
         return null;
     }
-    
+
     @Override
     public Date getModifiedDate() {
         // TODO 92: modifiedDate 반환하기
         return null;
     }
-    
+
     @Override
     public String getPath() {
         // TODO 93: path 반환하기
         return "";
     }
-    
+
     @Override
     public String getExtension() {
         // TODO 94: 파일 확장자 반환하기
@@ -1058,36 +1059,36 @@ public class TextFile implements File {
         // '.'이 없으면 빈 문자열
         return "";
     }
-    
+
     @Override
     public String getMimeType() {
         // TODO 95: "text/plain" 반환하기
         return "";
     }
-    
+
     @Override
     public byte[] read() {
         // TODO 96: content를 바이트 배열로 반환하기
         return null;
     }
-    
+
     @Override
     public String readAsString() {
         // TODO 97: content 반환하기
         return "";
     }
-    
+
     @Override
     public void write(byte[] data) {
         // TODO 98: data를 문자열로 변환하여 content에 저장하기
         // modifiedDate 업데이트
     }
-    
+
     @Override
     public void writeString(String content) {
         // TODO 99: content 저장하고 modifiedDate 업데이트하기
     }
-    
+
     @Override
     public void append(byte[] data) {
         // TODO 100: data를 문자열로 변환하여 content에 추가하기
@@ -1102,64 +1103,64 @@ public class SimpleDirectory implements Directory {
     private Date createdDate;
     private Date modifiedDate;
     private List<FileSystemItem> items;
-    
+
     public SimpleDirectory(String name, String path) {
         // TODO 101: 필드 초기화하기
         // name, path 설정
         // createdDate, modifiedDate는 현재 시간
         // items는 새 ArrayList
     }
-    
+
     @Override
     public String getName() {
         // TODO 102: name 반환하기
         return "";
     }
-    
+
     @Override
     public long getSize() {
         // TODO 103: 모든 항목의 크기 합계 반환하기
         // items의 각 항목의 getSize() 합계
         return 0;
     }
-    
+
     @Override
     public Date getCreatedDate() {
         // TODO 104: createdDate 반환하기
         return null;
     }
-    
+
     @Override
     public Date getModifiedDate() {
         // TODO 105: modifiedDate 반환하기
         return null;
     }
-    
+
     @Override
     public String getPath() {
         // TODO 106: path 반환하기
         return "";
     }
-    
+
     @Override
     public List<FileSystemItem> listItems() {
         // TODO 107: items의 복사본 반환하기
         // new ArrayList<>(items)
         return null;
     }
-    
+
     @Override
     public void addItem(FileSystemItem item) {
         // TODO 108: item 추가하고 modifiedDate 업데이트하기
     }
-    
+
     @Override
     public void removeItem(String name) {
         // TODO 109: name과 일치하는 항목 제거하기
         // items.removeIf() 사용
         // modifiedDate 업데이트
     }
-    
+
     @Override
     public FileSystemItem findItem(String name) {
         // TODO 110: name과 일치하는 항목 찾기
@@ -1175,10 +1176,10 @@ public class FileSystemTest {
         // root 디렉토리: "root", "/"
         // readme 파일: "README.txt", "/README.txt"
         // readme에 "이것은 읽어보기 파일입니다." 쓰기
-        
+
         // TODO 112: 파일 시스템 구성하기
         // root에 readme 추가
-        
+
         // TODO 113: 파일 시스템 정보 출력하기
         // "=== 파일 시스템 내용 ==="
         // root 디렉토리 이름과 크기 출력
