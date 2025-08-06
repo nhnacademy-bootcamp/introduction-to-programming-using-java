@@ -89,45 +89,38 @@ public class TreeTraversalExample {
     
     // 전위 순회 (루트 → 왼쪽 → 오른쪽)
     public static void preorder(TreeNode root) {
-        if (root != null) {
-            System.out.print(root.data + " ");
-            preorder(root.left);
-            preorder(root.right);
-        }
+        // TODO 1: root가 null이면 리턴
+        // TODO 2: 현재 노드의 데이터 출력
+        // TODO 3: 왼쪽 서브트리 순회
+        // TODO 4: 오른쪽 서브트리 순회
     }
     
     // 중위 순회 (왼쪽 → 루트 → 오른쪽)
     public static void inorder(TreeNode root) {
-        if (root != null) {
-            inorder(root.left);
-            System.out.print(root.data + " ");
-            inorder(root.right);
-        }
+        // TODO 1: root가 null이면 리턴
+        // TODO 2: 왼쪽 서브트리 순회
+        // TODO 3: 현재 노드의 데이터 출력
+        // TODO 4: 오른쪽 서브트리 순회
     }
     
     // 후위 순회 (왼쪽 → 오른쪽 → 루트)
     public static void postorder(TreeNode root) {
-        if (root != null) {
-            postorder(root.left);
-            postorder(root.right);
-            System.out.print(root.data + " ");
-        }
+        // TODO 1: root가 null이면 리턴
+        // TODO 2: 왼쪽 서브트리 순회
+        // TODO 3: 오른쪽 서브트리 순회
+        // TODO 4: 현재 노드의 데이터 출력
     }
     
     // 레벨 순회 (너비 우선 탐색)
     public static void levelOrder(TreeNode root) {
-        if (root == null) return;
+        // TODO 1: root가 null이면 리턴
         
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
+        // TODO 2: 큐 생성하고 root를 큐에 추가
         
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-            System.out.print(node.data + " ");
-            
-            if (node.left != null) queue.offer(node.left);
-            if (node.right != null) queue.offer(node.right);
-        }
+        // TODO 3: 큐가 비지 않은 동안 반복:
+        //   - 큐에서 노드를 꺼내고 데이터 출력
+        //   - 왼쪽 자식이 있으면 큐에 추가
+        //   - 오른쪽 자식이 있으면 큐에 추가
     }
     
     public static void main(String[] args) {
@@ -165,40 +158,50 @@ public class TreeTraversalApplications {
     
     // 트리의 모든 노드 합계 구하기
     public static int sumTree(TreeNode root) {
-        if (root == null) return 0;
-        return root.data + sumTree(root.left) + sumTree(root.right);
+        // TODO 1: 기저 사례 - root가 null이면 0 반환
+        // TODO 2: 현재 노드와 왼쪽, 오른쪽 서브트리의 합을 더해서 반환
+        
+        return 0; // 임시 반환값
     }
     
     // 트리의 최대값 찾기
     public static int findMax(TreeNode root) {
-        if (root == null) return Integer.MIN_VALUE;
+        // TODO 1: 기저 사례 - root가 null이면 Integer.MIN_VALUE 반환
         
-        int leftMax = findMax(root.left);
-        int rightMax = findMax(root.right);
+        // TODO 2: 왼쪽 서브트리의 최대값 구하기
+        // TODO 3: 오른쪽 서브트리의 최대값 구하기
         
-        return Math.max(root.data, Math.max(leftMax, rightMax));
+        // TODO 4: 현재 노드, 왼쪽 최대값, 오른쪽 최대값 중 가장 큰 값 반환
+        
+        return 0; // 임시 반환값
     }
     
     // 특정 값이 트리에 있는지 확인
     public static boolean contains(TreeNode root, int target) {
-        if (root == null) return false;
-        if (root.data == target) return true;
+        // TODO 1: 기저 사례 - root가 null이면 false 반환
+        // TODO 2: 현재 노드의 값이 target과 같으면 true 반환
         
-        return contains(root.left, target) || contains(root.right, target);
+        // TODO 3: 왼쪽 또는 오른쪽 서브트리에 target이 있는지 확인
+        
+        return false; // 임시 반환값
     }
     
     // 트리의 높이 구하기
     public static int height(TreeNode root) {
-        if (root == null) return 0;
-        return 1 + Math.max(height(root.left), height(root.right));
+        // TODO 1: 기저 사례 - root가 null이면 0 반환
+        // TODO 2: 1 + (왼쪽 서브트리와 오른쪽 서브트리 높이 중 큰 값) 반환
+        
+        return 0; // 임시 반환값
     }
     
     // 잎 노드의 개수 세기
     public static int countLeaves(TreeNode root) {
-        if (root == null) return 0;
-        if (root.left == null && root.right == null) return 1;
+        // TODO 1: 기저 사례 - root가 null이면 0 반환
+        // TODO 2: 잎 노드인지 확인 (왼쪽, 오른쪽 자식이 모두 null)
+        // TODO 3: 왼쪽과 오른쪽 서브트리의 잎 노드 개수를 더해서 반환
         
-        return countLeaves(root.left) + countLeaves(root.right);
+        
+        return 0; // 임시 반환값
     }
     
     // 모든 경로 출력하기
@@ -252,18 +255,15 @@ public class BinarySearchTree {
     }
     
     private TreeNode insertRec(TreeNode node, int value) {
-        if (node == null) {
-            return new TreeNode(value);
-        }
+        // TODO 1: 기저 사례 - node가 null이면 새 TreeNode 생성하여 반환
         
-        if (value < node.data) {
-            node.left = insertRec(node.left, value);
-        } else if (value > node.data) {
-            node.right = insertRec(node.right, value);
-        }
-        // 중복값은 무시
+        // TODO 2: value가 node.data보다 작으면 왼쪽 서브트리에 삽입
+        // TODO 3: value가 node.data보다 크면 오른쪽 서브트리에 삽입
+        // TODO 4: 같으면 중복이므로 무시
         
-        return node;
+        // TODO 5: 현재 노드 반환
+        
+        return null; // 임시 반환값
     }
     
     // 삽입 (반복적)
@@ -300,14 +300,13 @@ public class BinarySearchTree {
     }
     
     private boolean containsRec(TreeNode node, int value) {
-        if (node == null) return false;
-        if (value == node.data) return true;
+        // TODO 1: 기저 사례 - node가 null이면 false 반환
+        // TODO 2: value와 node.data가 같으면 true 반환
         
-        if (value < node.data) {
-            return containsRec(node.left, value);
-        } else {
-            return containsRec(node.right, value);
-        }
+        // TODO 3: value가 node.data보다 작으면 왼쪽 서브트리에서 검색
+        // TODO 4: 그렇지 않으면 오른쪽 서브트리에서 검색
+        
+        return false; // 임시 반환값
     }
     
     // 최소값 찾기
@@ -317,10 +316,10 @@ public class BinarySearchTree {
     }
     
     private TreeNode findMinNode(TreeNode node) {
-        while (node.left != null) {
-            node = node.left;
-        }
-        return node;
+        // TODO: 가장 왼쪽 노드를 찾을 때까지 왼쪽으로 이동
+        // 힌트: while 루프를 사용하여 node.left가 null이 아닌 동안 계속 이동
+        
+        return null; // 임시 반환값
     }
     
     // 최대값 찾기
@@ -471,19 +470,13 @@ class BinaryOpNode extends ExprNode {
     
     @Override
     public double evaluate() {
-        double leftVal = left.evaluate();
-        double rightVal = right.evaluate();
+        // TODO 1: 왼쪽 및 오른쪽 자식의 값 계산
         
-        switch (operator) {
-            case '+': return leftVal + rightVal;
-            case '-': return leftVal - rightVal;
-            case '*': return leftVal * rightVal;
-            case '/': 
-                if (rightVal == 0) throw new ArithmeticException("0으로 나눔");
-                return leftVal / rightVal;
-            case '^': return Math.pow(leftVal, rightVal);
-            default: throw new IllegalArgumentException("Unknown operator: " + operator);
-        }
+        // TODO 2: 연산자에 따라 적절한 연산 수행
+        // +, -, *, /, ^ 연산자 처리
+        // 나눗셈의 경우 0으로 나누는지 확인
+        
+        return 0.0; // 임시 반환값
     }
     
     @Override
@@ -594,12 +587,14 @@ public class TreeAdvancedOperations {
     
     // 두 트리가 동일한지 확인
     public static boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null && q == null) return true;
-        if (p == null || q == null) return false;
+        // TODO 1: 두 노드가 모두 null이면 true 반환
+        // TODO 2: 하나만 null이면 false 반환
         
-        return p.data == q.data 
-            && isSameTree(p.left, q.left)
-            && isSameTree(p.right, q.right);
+        // TODO 3: 두 노드의 데이터가 같고, 
+        //         왼쪽 서브트리들끼리 같고,
+        //         오른쪽 서브트리들끼리 같은지 확인
+        
+        return false; // 임시 반환값
     }
     
     // 트리가 대칭인지 확인
@@ -619,13 +614,15 @@ public class TreeAdvancedOperations {
     
     // 트리 뒤집기 (좌우 반전)
     public static TreeNode invertTree(TreeNode root) {
-        if (root == null) return null;
+        // TODO 1: 기저 사례 - root가 null이면 null 반환
         
-        TreeNode temp = root.left;
-        root.left = invertTree(root.right);
-        root.right = invertTree(temp);
+        // TODO 2: 왼쪽 자식을 임시 변수에 저장
+        // TODO 3: 왼쪽에 오른쪽 서브트리를 뒤집어서 할당
+        // TODO 4: 오른쪽에 임시 변수에 저장한 왼쪽 서브트리를 뒤집어서 할당
         
-        return root;
+        // TODO 5: 현재 노드 반환
+        
+        return null; // 임시 반환값
     }
     
     // 배열을 균형 BST로 변환
@@ -695,14 +692,14 @@ public class TreePathProblems {
     
     // 경로 합계가 특정 값인지 확인
     public static boolean hasPathSum(TreeNode root, int targetSum) {
-        if (root == null) return false;
+        // TODO 1: 기저 사례 - root가 null이면 false 반환
         
-        if (root.left == null && root.right == null) {
-            return root.data == targetSum;
-        }
+        // TODO 2: 잎 노드인 경우, 노드의 값이 targetSum과 같은지 확인
         
-        return hasPathSum(root.left, targetSum - root.data)
-            || hasPathSum(root.right, targetSum - root.data);
+        // TODO 3: 왼쪽 또는 오른쪽 서브트리에서 
+        //         (targetSum - 현재 노드 값)을 만족하는 경로가 있는지 확인
+        
+        return false; // 임시 반환값
     }
     
     // 모든 경로의 합계 중 최대값
@@ -725,13 +722,14 @@ public class TreePathProblems {
     
     // 가장 낮은 공통 조상(LCA) 찾기
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || root == p || root == q) return root;
+        // TODO 1: 기저 사례 - root가 null이거나 p 또는 q와 같으면 root 반환
         
-        TreeNode left = lowestCommonAncestor(root.left, p, q);
-        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        // TODO 2: 왼쪽과 오른쪽 서브트리에서 재귀적으로 LCA 찾기
         
-        if (left != null && right != null) return root;
-        return left != null ? left : right;
+        // TODO 3: 왼쪽과 오른쪽 모두에서 null이 아닌 값이 반환되면 현재 노드가 LCA
+        // TODO 4: 한쪽만 null이 아니면 그 쪽의 값 반환
+        
+        return null; // 임시 반환값
     }
 }
 ```

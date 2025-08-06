@@ -13,13 +13,13 @@ public class RecursiveFunctions {
      * 팩토리얼 계산 (long 버전)
      */
     public static long factorial(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("음수는 불가능합니다");
-        }
-        if (n == 0) {
-            return 1;  // 기본 경우
-        }
-        return n * factorial(n - 1);  // 재귀 경우
+        // TODO 1: n이 음수인 경우 IllegalArgumentException 던지기
+        
+        // TODO 2: 기본 경우 - n이 0이면 1 반환
+        
+        // TODO 3: 재귀 경우 - n * factorial(n-1) 반환
+        
+        return 0; // 임시 반환값
     }
     
     /**
@@ -39,36 +39,30 @@ public class RecursiveFunctions {
      * 피보나치 계산 (비효율적인 재귀 버전)
      */
     public static long fibonacci(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("음수는 불가능합니다");
-        }
-        if (n == 0 || n == 1) {
-            return 1;  // 기본 경우
-        }
-        return fibonacci(n - 1) + fibonacci(n - 2);  // 재귀 경우
+        // TODO 1: n이 음수인 경우 IllegalArgumentException 던지기
+        
+        // TODO 2: 기본 경우 - n이 0 또는 1이면 1 반환
+        
+        // TODO 3: 재귀 경우 - fibonacci(n-1) + fibonacci(n-2) 반환
+        
+        return 0; // 임시 반환값
     }
     
     /**
      * 피보나치 계산 (효율적인 반복 버전)
      */
     public static long fibonacciIterative(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("음수는 불가능합니다");
-        }
-        if (n == 0 || n == 1) {
-            return 1;
-        }
+        // TODO 1: n이 음수인 경우 예외 처리
+        // TODO 2: n이 0 또는 1인 경우 1 반환
         
-        long prev1 = 1, prev2 = 1;
-        long current = 0;
+        // TODO 3: 이전 두 값을 저장할 변수 초기화 (prev1=1, prev2=1)
+        // TODO 4: 2부터 n까지 반복하면서:
+        //   - current = prev1 + prev2
+        //   - prev2 = prev1
+        //   - prev1 = current
+        // TODO 5: current 반환
         
-        for (int i = 2; i <= n; i++) {
-            current = prev1 + prev2;
-            prev2 = prev1;
-            prev1 = current;
-        }
-        
-        return current;
+        return 0; // 임시 반환값
     }
     
     /**
@@ -80,15 +74,16 @@ public class RecursiveFunctions {
     }
     
     private static long fibonacciMemoHelper(int n, long[] memo) {
-        if (n == 0 || n == 1) {
-            return 1;
-        }
-        if (memo[n] != 0) {
-            return memo[n];  // 이미 계산된 값
-        }
-        memo[n] = fibonacciMemoHelper(n - 1, memo) + 
-                  fibonacciMemoHelper(n - 2, memo);
-        return memo[n];
+        // TODO 1: 기본 경우 - n이 0 또는 1이면 1 반환
+        
+        // TODO 2: 이미 계산된 값이 있는지 확인 (memo[n] != 0)
+        
+        // TODO 3: 계산하고 memo에 저장:
+        //   memo[n] = fibonacciMemoHelper(n-1, memo) + fibonacciMemoHelper(n-2, memo)
+        
+        // TODO 4: memo[n] 반환
+        
+        return 0; // 임시 반환값
     }
     
     public static void main(String[] args) {
@@ -165,20 +160,16 @@ public class WordSorterBST {
         }
         
         private TreeNode insertRec(TreeNode node, String word) {
-            if (node == null) {
-                size++;
-                return new TreeNode(word);
-            }
+            // TODO 1: 기본 경우 - node가 null이면 새 TreeNode 생성하고 size 증가
             
-            int cmp = word.compareTo(node.word);
-            if (cmp < 0) {
-                node.left = insertRec(node.left, word);
-            } else if (cmp > 0) {
-                node.right = insertRec(node.right, word);
-            }
-            // 같으면 중복이므로 무시
+            // TODO 2: word와 node.word를 비교 (compareTo 사용)
+            // TODO 3: word가 더 작으면 왼쪽 서브트리에 삽입
+            // TODO 4: word가 더 크면 오른쪽 서브트리에 삽입
+            // TODO 5: 같으면 중복이므로 무시
             
-            return node;
+            // TODO 6: node 반환
+            
+            return null; // 임시 반환값
         }
         
         /**
@@ -189,11 +180,11 @@ public class WordSorterBST {
         }
         
         private void printInOrderRec(TreeNode node, PrintWriter out) {
-            if (node != null) {
-                printInOrderRec(node.left, out);
-                out.println(node.word);
-                printInOrderRec(node.right, out);
-            }
+            // TODO: 중위 순회로 단어 출력
+            // 1. node가 null이 아니면:
+            //    - 왼쪽 서브트리 순회
+            //    - 현재 노드의 단어 출력
+            //    - 오른쪽 서브트리 순회
         }
         
         /**
@@ -330,37 +321,34 @@ public class ListReversal {
      * 리스트를 뒤집어서 복사 (재귀적 방법)
      */
     public static ListNode reverseRecursive(ListNode head) {
-        // 기본 경우: 빈 리스트 또는 한 개 노드
-        if (head == null || head.next == null) {
-            return copyNode(head);
-        }
+        // TODO 1: 기본 경우 - head가 null 또는 head.next가 null이면 
+        //         copyNode(head) 반환
         
-        // 나머지 리스트를 재귀적으로 뒤집기
-        ListNode reversedRest = reverseRecursive(head.next);
+        // TODO 2: head.next부터 뒤집기 (재귀 호출)
         
-        // 현재 노드를 뒤집힌 리스트의 끝에 추가
-        ListNode newNode = copyNode(head);
-        appendToEnd(reversedRest, newNode);
+        // TODO 3: 현재 노드를 복사하여 뒤집힌 리스트의 끝에 추가
         
-        return reversedRest;
+        // TODO 4: 뒤집힌 리스트 반환
+        
+        return null; // 임시 반환값
     }
     
     /**
      * 리스트를 뒤집어서 복사 (반복적 방법)
      */
     public static ListNode reverseIterative(ListNode head) {
-        ListNode reversed = null;
-        ListNode current = head;
+        // TODO 1: reversed를 null로 초기화
+        // TODO 2: current를 head로 초기화
         
-        while (current != null) {
-            // 새 노드를 reversed의 앞에 추가
-            ListNode newNode = new ListNode(current.item);
-            newNode.next = reversed;
-            reversed = newNode;
-            current = current.next;
-        }
+        // TODO 3: current가 null이 아닌 동안 반복:
+        //   - 현재 노드의 값으로 새 노드 생성
+        //   - 새 노드의 next를 reversed로 설정 (앞에 추가)
+        //   - reversed를 새 노드로 업데이트
+        //   - current를 다음 노드로 이동
         
-        return reversed;
+        // TODO 4: reversed 반환
+        
+        return null; // 임시 반환값
     }
     
     /**
@@ -371,14 +359,14 @@ public class ListReversal {
     }
     
     private static ListNode reverseHelper(ListNode current, ListNode reversed) {
-        if (current == null) {
-            return reversed;
-        }
+        // TODO 1: 기본 경우 - current가 null이면 reversed 반환
         
-        ListNode newNode = new ListNode(current.item);
-        newNode.next = reversed;
+        // TODO 2: 현재 노드의 값으로 새 노드 생성
+        // TODO 3: 새 노드의 next를 reversed로 설정
         
-        return reverseHelper(current.next, newNode);
+        // TODO 4: current.next와 새 노드로 재귀 호출
+        
+        return null; // 임시 반환값
     }
     
     // 헬퍼 메서드들
@@ -1123,31 +1111,21 @@ public class VariableExpressionParser {
      * 수식 파싱 및 평가
      */
     public void evaluateExpression(String expression) {
-        this.input = expression;
-        this.pos = 0;
+        // TODO 22: 입력 수식과 위치 초기화
         
         try {
-            ExpNode tree = parseExpression();
+            // TODO 23: parseExpression()을 호출하여 수식 트리 생성
             
-            if (pos < input.length()) {
-                throw new ParseError("예상치 못한 문자: " + peek());
-            }
+            // TODO 24: 전체 수식이 파싱되었는지 확인
+            // 힌트: pos < input.length()이면 예외 발생
             
-            System.out.println("수식: " + expression);
-            System.out.println("파싱된 트리: " + tree);
-            System.out.println("\n값:");
+            // TODO 25: 파싱 결과 출력
+            // - 원본 수식
+            // - 파싱된 트리
+            // - x = 0, 1, 2, 3일 때의 값
             
-            for (double x = 0; x <= 3; x++) {
-                double value = tree.value(x);
-                System.out.printf("x = %.0f일 때: %.2f%n", x, value);
-            }
-            
-            // 그래프를 위한 추가 값
-            System.out.println("\n그래프용 데이터:");
-            for (double x = -2; x <= 2; x += 0.5) {
-                System.out.printf("(%.1f, %.2f) ", x, tree.value(x));
-            }
-            System.out.println();
+            // TODO 26: 그래프용 데이터 생성
+            // 힌트: x = -2부터 2까지 0.5 간격으로 계산
             
         } catch (ParseError e) {
             System.err.println("파싱 오류: " + e.getMessage());
@@ -1254,35 +1232,15 @@ public class DerivativeCalculator {
         }
         
         ExpNode derivative() {
-            ExpNode dLeft = left.derivative();
-            ExpNode dRight = right.derivative();
+            // TODO 27: 왼쪽과 오른쪽 자식의 도함수 계산
             
-            switch (op) {
-                case '+':
-                    // (A + B)' = A' + B'
-                    return new BinOpNode('+', dLeft, dRight);
-                    
-                case '-':
-                    // (A - B)' = A' - B'
-                    return new BinOpNode('-', dLeft, dRight);
-                    
-                case '*':
-                    // (A * B)' = A' * B + A * B'
-                    ExpNode term1 = new BinOpNode('*', dLeft, right);
-                    ExpNode term2 = new BinOpNode('*', left, dRight);
-                    return new BinOpNode('+', term1, term2);
-                    
-                case '/':
-                    // (A / B)' = (A' * B - A * B') / (B * B)
-                    ExpNode numerator1 = new BinOpNode('*', dLeft, right);
-                    ExpNode numerator2 = new BinOpNode('*', left, dRight);
-                    ExpNode numerator = new BinOpNode('-', numerator1, numerator2);
-                    ExpNode denominator = new BinOpNode('*', right, right);
-                    return new BinOpNode('/', numerator, denominator);
-                    
-                default:
-                    throw new IllegalStateException();
-            }
+            // TODO 28: 연산자에 따라 도함수 규칙 적용
+            // - 덧셈: (A + B)' = A' + B'
+            // - 뺄셈: (A - B)' = A' - B'
+            // - 곱셈: (A * B)' = A' * B + A * B'
+            // - 나눗셈: (A / B)' = (A' * B - A * B') / (B * B)
+            
+            return null; // 임시 반환값
         }
         
         @Override

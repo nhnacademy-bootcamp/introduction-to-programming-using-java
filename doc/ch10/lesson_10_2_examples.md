@@ -21,15 +21,13 @@ public class ListPerformanceTest {
         // 1. 끝에 추가
         System.out.println("1. 끝에 추가:");
         long startTime = System.nanoTime();
-        for (int i = 0; i < size; i++) {
-            arrayList.add(i);
-        }
+        // TODO: ArrayList에 0부터 size-1까지 추가
+        
         long arrayAddEnd = System.nanoTime() - startTime;
         
         startTime = System.nanoTime();
-        for (int i = 0; i < size; i++) {
-            linkedList.add(i);
-        }
+        // TODO: LinkedList에 0부터 size-1까지 추가
+        
         long linkedAddEnd = System.nanoTime() - startTime;
         
         System.out.printf("ArrayList: %.2f ms%n", arrayAddEnd / 1_000_000.0);
@@ -41,15 +39,13 @@ public class ListPerformanceTest {
         LinkedList<Integer> linkedList2 = new LinkedList<>();
         
         startTime = System.nanoTime();
-        for (int i = 0; i < 1000; i++) {
-            arrayList2.add(0, i);
-        }
+        // TODO: ArrayList의 맨 앞(인덱스 0)에 1000개 요소 추가
+        
         long arrayAddFirst = System.nanoTime() - startTime;
         
         startTime = System.nanoTime();
-        for (int i = 0; i < 1000; i++) {
-            linkedList2.addFirst(i);
-        }
+        // TODO: LinkedList의 맨 앞에 1000개 요소 추가 (addFirst 사용)
+        
         long linkedAddFirst = System.nanoTime() - startTime;
         
         System.out.printf("ArrayList: %.2f ms%n", arrayAddFirst / 1_000_000.0);
@@ -60,17 +56,13 @@ public class ListPerformanceTest {
         Random rand = new Random();
         
         startTime = System.nanoTime();
-        for (int i = 0; i < 10000; i++) {
-            int index = rand.nextInt(size);
-            arrayList.get(index);
-        }
+        // TODO: ArrayList에서 무작위 인덱스로 10000번 접근
+        
         long arrayGet = System.nanoTime() - startTime;
         
         startTime = System.nanoTime();
-        for (int i = 0; i < 10000; i++) {
-            int index = rand.nextInt(size);
-            linkedList.get(index);
-        }
+        // TODO: LinkedList에서 무작위 인덱스로 10000번 접근
+        
         long linkedGet = System.nanoTime() - startTime;
         
         System.out.printf("ArrayList: %.2f ms%n", arrayGet / 1_000_000.0);
@@ -82,23 +74,37 @@ public class ListPerformanceTest {
         LinkedList<Integer> linkedList3 = new LinkedList<>(linkedList);
         
         startTime = System.nanoTime();
-        for (int i = 0; i < 100; i++) {
-            arrayList3.remove(arrayList3.size() / 2);
-        }
+        // TODO: ArrayList의 중간 요소 100개 삭제
+        
         long arrayRemoveMid = System.nanoTime() - startTime;
         
         startTime = System.nanoTime();
         ListIterator<Integer> iter = linkedList3.listIterator(linkedList3.size() / 2);
-        for (int i = 0; i < 100; i++) {
-            if (iter.hasNext()) {
-                iter.next();
-                iter.remove();
-            }
-        }
+        // TODO: LinkedList에서 Iterator를 사용하여 100개 요소 삭제
+        
         long linkedRemoveMid = System.nanoTime() - startTime;
         
         System.out.printf("ArrayList: %.2f ms%n", arrayRemoveMid / 1_000_000.0);
         System.out.printf("LinkedList: %.2f ms%n", linkedRemoveMid / 1_000_000.0);
+        
+        // 실행 결과:
+        // === 성능 비교 (요소 수: 100000) ===
+        //
+        // 1. 끝에 추가:
+        // ArrayList: XX.XX ms
+        // LinkedList: XX.XX ms
+        //
+        // 2. 처음에 추가 (1000개):
+        // ArrayList: XX.XX ms (느림)
+        // LinkedList: X.XX ms (빠름)
+        //
+        // 3. 임의 접근 (10000번):
+        // ArrayList: X.XX ms (빠름)
+        // LinkedList: XXX.XX ms (느림)
+        //
+        // 4. 중간 삭제 (100개):
+        // ArrayList: XX.XX ms
+        // LinkedList: X.XX ms
     }
 }
 ```
@@ -115,20 +121,18 @@ public class ListUseCases {
         private ArrayList<String> data = new ArrayList<>();
         
         public void loadData(List<String> items) {
-            data.addAll(items);
+            // TODO: items의 모든 요소를 data에 추가
         }
         
         public String getData(int index) {
-            return data.get(index);
+            // TODO: 지정된 인덱스의 데이터 반환
+            return null; // 임시 반환값
         }
         
         public List<String> search(String keyword) {
             List<String> results = new ArrayList<>();
-            for (String item : data) {
-                if (item.contains(keyword)) {
-                    results.add(item);
-                }
-            }
+            // TODO: data에서 keyword를 포함하는 모든 항목을 results에 추가
+            
             return results;
         }
     }
@@ -138,19 +142,21 @@ public class ListUseCases {
         private LinkedList<String> tasks = new LinkedList<>();
         
         public void addTask(String task) {
-            tasks.addLast(task);  // 끝에 추가
+            // TODO: 일반 작업을 큐의 끝에 추가
         }
         
         public void addUrgentTask(String task) {
-            tasks.addFirst(task);  // 앞에 추가
+            // TODO: 긴급 작업을 큐의 앞에 추가
         }
         
         public String getNextTask() {
-            return tasks.pollFirst();  // 첫 번째 제거 및 반환
+            // TODO: 첫 번째 작업을 제거하고 반환 (pollFirst 사용)
+            return null; // 임시 반환값
         }
         
         public boolean hasTask() {
-            return !tasks.isEmpty();
+            // TODO: 작업이 남아있는지 확인
+            return false; // 임시 반환값
         }
     }
     
@@ -160,32 +166,29 @@ public class ListUseCases {
         private int currentIndex = -1;
         
         public void visit(String url) {
-            // 현재 위치 이후의 히스토리 삭제
-            while (history.size() > currentIndex + 1) {
-                history.removeLast();
-            }
-            history.add(url);
-            currentIndex++;
+            // TODO: 현재 위치 이후의 히스토리 삭제
+            // 힌트: history.size() > currentIndex + 1인 동안 removeLast()
+            
+            // TODO: 새 URL을 history에 추가하고 currentIndex 증가
         }
         
         public String back() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                return history.get(currentIndex);
-            }
-            return null;
+            // TODO: 이전 페이지로 이동
+            // 힌트: currentIndex > 0일 때만 가능
+            
+            return null; // 임시 반환값
         }
         
         public String forward() {
-            if (currentIndex < history.size() - 1) {
-                currentIndex++;
-                return history.get(currentIndex);
-            }
-            return null;
+            // TODO: 다음 페이지로 이동
+            // 힌트: currentIndex < history.size() - 1일 때만 가능
+            
+            return null; // 임시 반환값
         }
         
         public String current() {
-            return currentIndex >= 0 ? history.get(currentIndex) : null;
+            // TODO: 현재 페이지 URL 반환
+            return null; // 임시 반환값
         }
     }
     
@@ -301,15 +304,11 @@ public class SortedListMaintainer {
     public static <T extends Comparable<T>> void insertSorted(List<T> list, T item) {
         ListIterator<T> iter = list.listIterator();
         
-        while (iter.hasNext()) {
-            T current = iter.next();
-            if (item.compareTo(current) <= 0) {
-                iter.previous();  // 한 칸 뒤로
-                break;
-            }
-        }
-        
-        iter.add(item);  // 현재 위치에 삽입
+        // TODO: 정렬된 리스트에 적절한 위치에 item 삽입
+        // 힌트: 
+        // 1. iter.hasNext()로 순회
+        // 2. item.compareTo(current) <= 0이면 iter.previous()후 break
+        // 3. iter.add(item)으로 삽입
     }
     
     // 병합 정렬 (두 정렬된 리스트 병합)
@@ -323,21 +322,12 @@ public class SortedListMaintainer {
         T item1 = iter1.hasNext() ? iter1.next() : null;
         T item2 = iter2.hasNext() ? iter2.next() : null;
         
-        while (item1 != null || item2 != null) {
-            if (item1 == null) {
-                result.add(item2);
-                item2 = iter2.hasNext() ? iter2.next() : null;
-            } else if (item2 == null) {
-                result.add(item1);
-                item1 = iter1.hasNext() ? iter1.next() : null;
-            } else if (item1.compareTo(item2) <= 0) {
-                result.add(item1);
-                item1 = iter1.hasNext() ? iter1.next() : null;
-            } else {
-                result.add(item2);
-                item2 = iter2.hasNext() ? iter2.next() : null;
-            }
-        }
+        // TODO: 두 정렬된 리스트를 하나의 정렬된 리스트로 병합
+        // 힌트:
+        // 1. item1과 item2가 모두 null이 될 때까지 반복
+        // 2. null 체크하여 적절히 처리
+        // 3. compareTo로 비교하여 작은 값을 result에 추가
+        // 4. 다음 요소로 이동 (hasNext() 확인)
         
         return result;
     }
@@ -522,7 +512,9 @@ public class HashSetExample {
             "apple", "banana", "apple", "cherry", "banana", "date"
         );
         
-        Set<String> uniqueItems = new HashSet<>(listWithDuplicates);
+        // TODO: listWithDuplicates에서 중복을 제거하여 HashSet 생성
+        Set<String> uniqueItems = null; // 임시 값
+        
         System.out.println("원본 리스트: " + listWithDuplicates);
         System.out.println("중복 제거: " + uniqueItems);
         
@@ -532,25 +524,30 @@ public class HashSetExample {
         
         // 합집합
         Set<Integer> union = new HashSet<>(setA);
-        union.addAll(setB);
+        // TODO: setB의 모든 요소를 union에 추가 (addAll 사용)
+        
         System.out.println("\nA ∪ B = " + union);
         
         // 교집합
         Set<Integer> intersection = new HashSet<>(setA);
-        intersection.retainAll(setB);
+        // TODO: setA와 setB의 교집합 구하기 (retainAll 사용)
+        
         System.out.println("A ∩ B = " + intersection);
         
         // 차집합
         Set<Integer> difference = new HashSet<>(setA);
-        difference.removeAll(setB);
+        // TODO: setA에서 setB의 요소들을 제거 (removeAll 사용)
+        
         System.out.println("A - B = " + difference);
         
         // 대칭 차집합 (A ∪ B) - (A ∩ B)
         Set<Integer> symmetricDiff = new HashSet<>(setA);
-        symmetricDiff.addAll(setB);
-        Set<Integer> temp = new HashSet<>(setA);
-        temp.retainAll(setB);
-        symmetricDiff.removeAll(temp);
+        // TODO: 대칭 차집합 구하기
+        // 힌트: 
+        // 1. symmetricDiff에 setB 추가 (addAll)
+        // 2. temp에 setA와 setB의 교집합 저장
+        // 3. symmetricDiff에서 temp 제거 (removeAll)
+        
         System.out.println("A △ B = " + symmetricDiff);
         
         // 3. 포함 관계 확인
@@ -559,8 +556,22 @@ public class HashSetExample {
         
         System.out.println("\nfruits: " + fruits);
         System.out.println("subset: " + subset);
-        System.out.println("subset ⊆ fruits? " + fruits.containsAll(subset));
-        System.out.println("fruits ⊆ subset? " + subset.containsAll(fruits));
+        // TODO: subset이 fruits의 부분집합인지 확인 (containsAll 사용)
+        // TODO: fruits가 subset의 부분집합인지 확인
+        
+        // 실행 결과:
+        // 원본 리스트: [apple, banana, apple, cherry, banana, date]
+        // 중복 제거: [banana, apple, cherry, date]
+        //
+        // A ∪ B = [1, 2, 3, 4, 5, 6, 7, 8]
+        // A ∩ B = [4, 5]
+        // A - B = [1, 2, 3]
+        // A △ B = [1, 2, 3, 6, 7, 8]
+        //
+        // fruits: [banana, apple, cherry]
+        // subset: [apple, cherry]
+        // subset ⊆ fruits? true
+        // fruits ⊆ subset? false
     }
 }
 ```
@@ -853,16 +864,15 @@ public class TopKElements {
         // 최소 힙 사용 (크기 K 유지)
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         
-        for (int num : nums) {
-            minHeap.offer(num);
-            if (minHeap.size() > k) {
-                minHeap.poll();  // 가장 작은 것 제거
-            }
-        }
+        // TODO: 배열의 각 요소를 힙에 추가하고 크기 K 유지
+        // 힌트:
+        // 1. minHeap.offer(num)으로 추가
+        // 2. 힙 크기가 k를 초과하면 poll()로 가장 작은 값 제거
         
         // 결과를 리스트로 변환 (내림차순)
         List<Integer> result = new ArrayList<>(minHeap);
-        Collections.sort(result, Collections.reverseOrder());
+        // TODO: result를 내림차순으로 정렬
+        
         return result;
     }
     
@@ -870,51 +880,35 @@ public class TopKElements {
     public static int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         
-        for (int num : nums) {
-            minHeap.offer(num);
-            if (minHeap.size() > k) {
-                minHeap.poll();
-            }
-        }
+        // TODO: 최소 힙을 사용하여 K번째로 큰 요소 찾기
+        // 힌트: findTopK와 유사하지만 peek()로 결과 반환
         
-        return minHeap.peek();
+        return 0; // 임시 반환값
     }
     
     // 빈도수 기준 Top-K
     public static List<String> topKFrequent(String[] words, int k) {
         // 단어 빈도수 계산
         Map<String, Integer> count = new HashMap<>();
-        for (String word : words) {
-            count.put(word, count.getOrDefault(word, 0) + 1);
-        }
+        // TODO: words 배열의 각 단어의 빈도수를 count Map에 저장
+        // 힌트: getOrDefault(word, 0) + 1 사용
         
         // 최소 힙 (빈도수 기준, 같으면 사전순)
         PriorityQueue<String> heap = new PriorityQueue<>((w1, w2) -> {
             int freq1 = count.get(w1);
             int freq2 = count.get(w2);
-            if (freq1 != freq2) {
-                return freq1 - freq2;  // 빈도수 오름차순
-            }
-            return w2.compareTo(w1);  // 사전역순
+            // TODO: 빈도수 기준 비교, 같으면 사전역순
+            // 힌트:
+            // 1. 빈도수가 다르면 freq1 - freq2 (오름차순)
+            // 2. 같으면 w2.compareTo(w1) (사전역순)
+            return 0; // 임시 반환값
         });
         
-        for (String word : count.keySet()) {
-            heap.offer(word);
-            if (heap.size() > k) {
-                heap.poll();
-            }
-        }
+        // TODO: count의 모든 단어를 heap에 추가하고 크기 k 유지
         
         // 결과 정렬
         List<String> result = new ArrayList<>(heap);
-        Collections.sort(result, (w1, w2) -> {
-            int freq1 = count.get(w1);
-            int freq2 = count.get(w2);
-            if (freq1 != freq2) {
-                return freq2 - freq1;  // 빈도수 내림차순
-            }
-            return w1.compareTo(w2);  // 사전순
-        });
+        // TODO: result를 빈도수 내림차순, 같으면 사전순으로 정렬
         
         return result;
     }
@@ -999,43 +993,40 @@ public class BookManagementSystem {
     
     // 도서 추가
     public void addBook(Book book) {
-        bookDatabase.put(book.isbn, book);
+        // TODO: bookDatabase에 ISBN을 키로 하여 도서 추가
         
-        // 장르별 분류
-        booksByGenre.computeIfAbsent(book.genre, k -> new HashSet<>()).add(book);
+        // TODO: 장르별 분류 - computeIfAbsent 사용
+        // 힌트: booksByGenre.computeIfAbsent(book.genre, k -> new HashSet<>()).add(book)
         
-        // 저자별 분류
-        booksByAuthor.computeIfAbsent(book.author, k -> new HashSet<>()).add(book);
+        // TODO: 저자별 분류 - computeIfAbsent 사용
         
-        // 평점별 정렬
-        booksByRating.add(book);
+        // TODO: 평점별 정렬된 집합에 추가
         
-        // 최근 추가 목록
-        recentlyAdded.addFirst(book);
-        if (recentlyAdded.size() > RECENT_LIMIT) {
-            recentlyAdded.removeLast();
-        }
+        // TODO: 최근 추가 목록 관리
+        // 힌트:
+        // 1. recentlyAdded 맨 앞에 추가 (addFirst)
+        // 2. 크기가 RECENT_LIMIT 초과하면 마지막 제거 (removeLast)
     }
     
     // 장르별 도서 검색
     public List<Book> getBooksByGenre(String genre) {
-        Set<Book> books = booksByGenre.getOrDefault(genre, Collections.emptySet());
-        return new ArrayList<>(books);
+        // TODO: 해당 장르의 도서 목록 반환
+        // 힌트: getOrDefault(genre, Collections.emptySet()) 사용
+        return new ArrayList<>(); // 임시 반환값
     }
     
     // 저자별 도서 검색
     public List<Book> getBooksByAuthor(String author) {
-        Set<Book> books = booksByAuthor.getOrDefault(author, Collections.emptySet());
-        return new ArrayList<>(books);
+        // TODO: 해당 저자의 도서 목록 반환
+        return new ArrayList<>(); // 임시 반환값
     }
     
     // 평점 상위 N개
     public List<Book> getTopRatedBooks(int n) {
         List<Book> result = new ArrayList<>();
-        Iterator<Book> iter = booksByRating.iterator();
-        for (int i = 0; i < n && iter.hasNext(); i++) {
-            result.add(iter.next());
-        }
+        // TODO: booksByRating에서 상위 n개의 도서를 result에 추가
+        // 힌트: Iterator를 사용하여 n개만 가져오기
+        
         return result;
     }
     

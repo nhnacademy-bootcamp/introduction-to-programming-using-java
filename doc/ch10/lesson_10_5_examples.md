@@ -16,15 +16,16 @@ public class GenericQueue<T> {
     
     // 큐에 요소 추가 (enqueue)
     public void enqueue(T item) {
-        items.addLast(item);
+        // TODO 1: items 리스트의 마지막에 item 추가
+        
     }
     
     // 큐에서 요소 제거 (dequeue)
     public T dequeue() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("큐가 비어있습니다");
-        }
-        return items.removeFirst();
+        // TODO 2: 큐가 비어있으면 NoSuchElementException 던지기
+        // TODO 3: items 리스트의 첫 번째 요소를 제거하고 반환
+        
+        return null; // 임시 반환값
     }
     
     // 큐의 첫 번째 요소 확인 (peek)
@@ -47,16 +48,15 @@ public class GenericQueue<T> {
     
     // 모든 요소를 다른 컬렉션에 추가
     public void addAll(Collection<? extends T> collection) {
-        for (T item : collection) {
-            enqueue(item);
-        }
+        // TODO 4: collection의 모든 요소를 순회하며 enqueue 호출
+        
     }
     
     // 큐의 모든 요소를 다른 컬렉션으로 이동
     public void drainTo(Collection<? super T> collection) {
-        while (!isEmpty()) {
-            collection.add(dequeue());
-        }
+        // TODO 5: 큐가 비어있지 않은 동안 반복
+        // TODO 6: dequeue()로 요소를 제거하고 collection에 추가
+        
     }
     
     @Override
@@ -121,10 +121,11 @@ public class GenericStack<T> {
     
     // 스택에서 요소 제거 (pop)
     public T pop() {
-        if (isEmpty()) {
-            throw new EmptyStackException();
-        }
-        return items.remove(items.size() - 1);
+        // TODO 7: 스택이 비어있으면 EmptyStackException 던지기
+        // TODO 8: items 리스트의 마지막 요소를 제거하고 반환
+        // 힌트: items.size() - 1이 마지막 인덱스
+        
+        return null; // 임시 반환값
     }
     
     // 스택의 최상위 요소 확인 (peek)
@@ -147,20 +148,16 @@ public class GenericStack<T> {
     
     // 특정 요소 검색 (인덱스 반환)
     public int search(T item) {
-        if (item == null) {
-            for (int i = items.size() - 1; i >= 0; i--) {
-                if (items.get(i) == null) {
-                    return items.size() - i; // 1-based 인덱스
-                }
-            }
-        } else {
-            for (int i = items.size() - 1; i >= 0; i--) {
-                if (item.equals(items.get(i))) {
-                    return items.size() - i; // 1-based 인덱스
-                }
-            }
-        }
-        return -1; // 찾지 못함
+        // TODO 9: item이 null인 경우 처리
+        // - 스택 끝에서부터 시작하여 null을 찾으면 1-based 인덱스 반환
+        
+        // TODO 10: item이 null이 아닌 경우 처리
+        // - 스택 끝에서부터 시작하여 equals로 비교
+        // - 찾으면 1-based 인덱스 반환 (items.size() - i)
+        
+        // TODO 11: 찾지 못하면 -1 반환
+        
+        return -1; // 임시 반환값
     }
     
     // 스택 복사
@@ -236,7 +233,10 @@ public class Pair<T, S> {
     
     // 값 교환
     public Pair<S, T> swap() {
-        return new Pair<>(second, first);
+        // TODO 12: 순서가 바뀐 새 Pair 객체 생성하여 반환
+        // 힌트: 제네릭 타입도 바뀌어야 함 (T, S) -> (S, T)
+        
+        return null; // 임시 반환값
     }
     
     // 첫 번째와 두 번째가 같은지 비교
@@ -351,16 +351,12 @@ public class GenericCache<K, V> {
     }
     
     public void put(K key, V value) {
-        if (key == null) {
-            throw new IllegalArgumentException("키는 null일 수 없습니다");
-        }
+        // TODO 13: key가 null이면 IllegalArgumentException 던지기
         
-        // 캐시 크기 확인
-        if (cache.size() >= maxSize) {
-            evictOldest();
-        }
+        // TODO 14: 캐시가 최대 크기에 도달했으면 evictOldest() 호출
         
-        cache.put(key, new CacheEntry<>(value));
+        // TODO 15: 새 CacheEntry를 생성하여 cache에 저장
+        
     }
     
     public V get(K key) {
@@ -368,18 +364,15 @@ public class GenericCache<K, V> {
             return null;
         }
         
-        CacheEntry<V> entry = cache.get(key);
-        if (entry == null) {
-            return null;
-        }
+        // TODO 16: cache에서 key에 해당하는 entry 가져오기
+        // TODO 17: entry가 null이면 null 반환
         
-        // TTL 확인
-        if (entry.isExpired(ttlMillis)) {
-            cache.remove(key);
-            return null;
-        }
+        // TODO 18: entry가 만료되었는지 확인 (isExpired 메서드 사용)
+        // TODO 19: 만료되었으면 cache에서 제거하고 null 반환
         
-        return entry.value;
+        // TODO 20: entry의 value 반환
+        
+        return null; // 임시 반환값
     }
     
     public boolean containsKey(K key) {
@@ -416,19 +409,15 @@ public class GenericCache<K, V> {
     private void evictOldest() {
         if (cache.isEmpty()) return;
         
-        K oldestKey = null;
-        long oldestTime = Long.MAX_VALUE;
+        // TODO 21: 가장 오래된 키와 시간을 추적할 변수 초기화
+        // 힌트: oldestKey = null, oldestTime = Long.MAX_VALUE
         
-        for (Map.Entry<K, CacheEntry<V>> entry : cache.entrySet()) {
-            if (entry.getValue().createdTime < oldestTime) {
-                oldestTime = entry.getValue().createdTime;
-                oldestKey = entry.getKey();
-            }
-        }
+        // TODO 22: cache의 모든 entry를 순회하며
+        // - createdTime이 더 작은 (더 오래된) entry 찾기
+        // - 찾으면 oldestKey와 oldestTime 업데이트
         
-        if (oldestKey != null) {
-            cache.remove(oldestKey);
-        }
+        // TODO 23: oldestKey가 null이 아니면 cache에서 제거
+        
     }
     
     // 통계 정보
@@ -521,16 +510,13 @@ public class GenericArrayUtils {
             return;
         }
         
-        int left = 0;
-        int right = array.length - 1;
+        // TODO 24: 왼쪽과 오른쪽 인덱스 초기화
+        // 힌트: left = 0, right = array.length - 1
         
-        while (left < right) {
-            T temp = array[left];
-            array[left] = array[right];
-            array[right] = temp;
-            left++;
-            right--;
-        }
+        // TODO 25: left < right인 동안 반복
+        // - 왼쪽과 오른쪽 요소를 교환
+        // - left 증가, right 감소
+        
     }
     
     // 배열에서 조건에 맞는 첫 번째 요소 찾기
@@ -555,11 +541,10 @@ public class GenericArrayUtils {
             return result;
         }
         
-        for (T item : array) {
-            if (predicate.test(item)) {
-                result.add(item);
-            }
-        }
+        // TODO 26: 배열의 각 요소에 대해
+        // - predicate.test()가 true인 경우만
+        // - result 리스트에 추가
+        
         return result;
     }
     

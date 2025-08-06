@@ -12,7 +12,7 @@
 
 ### 1.1 포인터와 객체 연결
 
-Java에서 객체는 다른 객체에 대한 **참조(reference)**를 가질 수 있습니다. 이러한 참조를 **포인터(pointer)**라고도 합니다.
+Java에서 객체는 다른 객체에 대한 **참조(reference)** 를 가질 수 있습니다. 이러한 참조를 **포인터(pointer)** 라고도 합니다.
 
 ```java
 public class Person {
@@ -39,25 +39,25 @@ bob.friend = alice;  // Bob이 Alice를 가리킴
 public class Employee {
     String name;
     Employee supervisor;  // 감독자도 Employee 타입
-    
+
     public Employee(String name) {
         this.name = name;
     }
-    
+
     // 감독자 체인을 따라 사장까지의 거리 계산
     public int getLevelsToPresident() {
         if (supervisor == null) {
             return 0;  // 이 사람이 사장
         }
-        
+
         int count = 0;
         Employee current = this;
-        
+
         while (current.supervisor != null) {
             count++;
             current = current.supervisor;
         }
-        
+
         return count;
     }
 }
@@ -92,7 +92,7 @@ System.out.println(employee.getLevelsToPresident());  // 3
 class Node {
     String item;   // 저장할 데이터
     Node next;     // 다음 노드를 가리키는 포인터
-    
+
     // 생성자
     public Node(String item) {
         this.item = item;
@@ -139,34 +139,34 @@ Node head = null;  // 빈 리스트
 
 ```java
 public class LinkedListTraversal {
-    
+
     // 리스트의 모든 항목 출력
     public static void printList(Node head) {
         Node runner = head;
-        
+
         while (runner != null) {
             System.out.println(runner.item);
             runner = runner.next;
         }
     }
-    
+
     // for 루프를 사용한 버전
     public static void printListWithFor(Node head) {
         for (Node runner = head; runner != null; runner = runner.next) {
             System.out.println(runner.item);
         }
     }
-    
+
     // 리스트의 길이 계산
     public static int getLength(Node head) {
         int count = 0;
         Node runner = head;
-        
+
         while (runner != null) {
             count++;
             runner = runner.next;
         }
-        
+
         return count;
     }
 }
@@ -178,30 +178,30 @@ public class LinkedListTraversal {
 
 ```java
 public class RecursiveListOperations {
-    
+
     // 재귀적으로 리스트 출력
     public static void printListRecursive(Node head) {
         if (head == null) {
             return;  // 기저 사례
         }
-        
+
         System.out.println(head.item);
         printListRecursive(head.next);  // 재귀 호출
     }
-    
+
     // 역순으로 출력 (재귀의 장점!)
     public static void printReversed(Node head) {
         if (head == null) {
             return;
         }
-        
+
         // 먼저 나머지를 역순으로 출력
         printReversed(head.next);
-        
+
         // 그 다음 현재 항목 출력
         System.out.println(head.item);
     }
-    
+
     // 재귀적으로 리스트 길이 계산
     public static int getLengthRecursive(Node head) {
         if (head == null) {
@@ -220,7 +220,7 @@ public class RecursiveListOperations {
 class IntNode {
     int item;
     IntNode next;
-    
+
     public IntNode(int item) {
         this.item = item;
         this.next = null;
@@ -228,20 +228,20 @@ class IntNode {
 }
 
 public class IntLinkedListOperations {
-    
+
     // 리스트의 합계 계산 (반복)
     public static int sumIterative(IntNode head) {
         int sum = 0;
         IntNode runner = head;
-        
+
         while (runner != null) {
             sum += runner.item;
             runner = runner.next;
         }
-        
+
         return sum;
     }
-    
+
     // 리스트의 합계 계산 (재귀)
     public static int sumRecursive(IntNode head) {
         if (head == null) {
@@ -249,23 +249,23 @@ public class IntLinkedListOperations {
         }
         return head.item + sumRecursive(head.next);
     }
-    
+
     // 최댓값 찾기
     public static int findMax(IntNode head) {
         if (head == null) {
             throw new IllegalArgumentException("빈 리스트입니다");
         }
-        
+
         int max = head.item;
         IntNode runner = head.next;
-        
+
         while (runner != null) {
             if (runner.item > max) {
                 max = runner.item;
             }
             runner = runner.next;
         }
-        
+
         return max;
     }
 }
@@ -277,53 +277,53 @@ public class IntLinkedListOperations {
 
 ```java
 public class StringList {
-    
+
     private Node head;  // 리스트의 첫 번째 노드
-    
+
     // 중첩 클래스로 Node 정의
     private static class Node {
         String item;
         Node next;
-        
+
         Node(String item) {
             this.item = item;
             this.next = null;
         }
     }
-    
+
     // 생성자
     public StringList() {
         head = null;  // 빈 리스트로 시작
     }
-    
+
     // 리스트가 비어있는지 확인
     public boolean isEmpty() {
         return head == null;
     }
-    
+
     // 리스트의 크기
     public int size() {
         int count = 0;
         Node runner = head;
-        
+
         while (runner != null) {
             count++;
             runner = runner.next;
         }
-        
+
         return count;
     }
-    
+
     // 리스트 출력
     public void printList() {
         if (isEmpty()) {
             System.out.println("리스트가 비어있습니다.");
             return;
         }
-        
+
         System.out.print("리스트: ");
         Node runner = head;
-        
+
         while (runner != null) {
             System.out.print(runner.item);
             if (runner.next != null) {
@@ -343,14 +343,14 @@ public class StringList {
 ```java
 public boolean find(String searchItem) {
     Node runner = head;
-    
+
     while (runner != null) {
         if (runner.item.equals(searchItem)) {
             return true;  // 찾음!
         }
         runner = runner.next;
     }
-    
+
     return false;  // 찾지 못함
 }
 
@@ -358,7 +358,7 @@ public boolean find(String searchItem) {
 public int indexOf(String searchItem) {
     Node runner = head;
     int position = 0;
-    
+
     while (runner != null) {
         if (runner.item.equals(searchItem)) {
             return position;
@@ -366,7 +366,7 @@ public int indexOf(String searchItem) {
         runner = runner.next;
         position++;
     }
-    
+
     return -1;  // 찾지 못함
 }
 ```
@@ -392,19 +392,19 @@ public void insertAtFront(String newItem) {
 ```java
 public void insertAtEnd(String newItem) {
     Node newNode = new Node(newItem);
-    
+
     if (head == null) {
         // 빈 리스트인 경우
         head = newNode;
         return;
     }
-    
+
     // 마지막 노드 찾기
     Node runner = head;
     while (runner.next != null) {
         runner = runner.next;
     }
-    
+
     // 마지막 노드 뒤에 새 노드 연결
     runner.next = newNode;
 }
@@ -417,30 +417,30 @@ public void insertAtEnd(String newItem) {
 ```java
 public void insertInOrder(String newItem) {
     Node newNode = new Node(newItem);
-    
+
     // 케이스 1: 빈 리스트
     if (head == null) {
         head = newNode;
         return;
     }
-    
+
     // 케이스 2: 맨 앞에 삽입해야 하는 경우
     if (head.item.compareTo(newItem) >= 0) {
         newNode.next = head;
         head = newNode;
         return;
     }
-    
+
     // 케이스 3: 중간이나 끝에 삽입
     Node runner = head.next;
     Node previous = head;
-    
+
     // 삽입 위치 찾기
     while (runner != null && runner.item.compareTo(newItem) < 0) {
         previous = runner;
         runner = runner.next;
     }
-    
+
     // previous와 runner 사이에 삽입
     newNode.next = runner;
     previous.next = newNode;
@@ -474,17 +474,17 @@ public boolean delete(String deleteItem) {
     if (head == null) {
         return false;
     }
-    
+
     // 케이스 2: 첫 번째 항목 삭제
     if (head.item.equals(deleteItem)) {
         head = head.next;
         return true;
     }
-    
+
     // 케이스 3: 중간이나 끝의 항목 삭제
     Node runner = head.next;
     Node previous = head;
-    
+
     while (runner != null) {
         if (runner.item.equals(deleteItem)) {
             // runner가 가리키는 노드 삭제
@@ -494,7 +494,7 @@ public boolean delete(String deleteItem) {
         previous = runner;
         runner = runner.next;
     }
-    
+
     return false;  // 항목을 찾지 못함
 }
 ```
@@ -506,27 +506,27 @@ public boolean deleteAt(int index) {
     if (index < 0 || head == null) {
         return false;
     }
-    
+
     // 첫 번째 항목 삭제
     if (index == 0) {
         head = head.next;
         return true;
     }
-    
+
     // 지정된 인덱스까지 이동
     Node runner = head;
     Node previous = null;
-    
+
     for (int i = 0; i < index && runner != null; i++) {
         previous = runner;
         runner = runner.next;
     }
-    
+
     // 인덱스가 범위를 벗어남
     if (runner == null) {
         return false;
     }
-    
+
     // runner가 가리키는 노드 삭제
     previous.next = runner.next;
     return true;
@@ -550,19 +550,19 @@ public void reverse() {
     Node previous = null;
     Node current = head;
     Node next = null;
-    
+
     while (current != null) {
         // 다음 노드 저장
         next = current.next;
-        
+
         // 현재 노드의 포인터 반전
         current.next = previous;
-        
+
         // 한 칸씩 이동
         previous = current;
         current = next;
     }
-    
+
     head = previous;
 }
 ```
@@ -572,12 +572,12 @@ public void reverse() {
 ```java
 public void removeDuplicates() {
     if (head == null) return;
-    
+
     Node current = head;
-    
+
     while (current != null) {
         Node runner = current;
-        
+
         // current 이후의 모든 중복 제거
         while (runner.next != null) {
             if (runner.next.item.equals(current.item)) {
@@ -586,7 +586,7 @@ public void removeDuplicates() {
                 runner = runner.next;
             }
         }
-        
+
         current = current.next;
     }
 }
@@ -599,7 +599,7 @@ public static StringList merge(StringList list1, StringList list2) {
     StringList result = new StringList();
     Node runner1 = list1.head;
     Node runner2 = list2.head;
-    
+
     // 두 리스트를 정렬된 순서로 병합
     while (runner1 != null && runner2 != null) {
         if (runner1.item.compareTo(runner2.item) <= 0) {
@@ -610,18 +610,18 @@ public static StringList merge(StringList list1, StringList list2) {
             runner2 = runner2.next;
         }
     }
-    
+
     // 남은 요소들 추가
     while (runner1 != null) {
         result.insertAtEnd(runner1.item);
         runner1 = runner1.next;
     }
-    
+
     while (runner2 != null) {
         result.insertAtEnd(runner2.item);
         runner2 = runner2.next;
     }
-    
+
     return result;
 }
 ```
@@ -711,13 +711,13 @@ previous.next = newNode;
 public void debugPrint() {
     System.out.println("=== 리스트 디버그 정보 ===");
     System.out.println("head: " + (head == null ? "null" : head.item));
-    
+
     Node runner = head;
     int index = 0;
-    
+
     while (runner != null) {
-        System.out.printf("[%d] %s → %s%n", 
-            index, 
+        System.out.printf("[%d] %s → %s%n",
+            index,
             runner.item,
             runner.next == null ? "null" : runner.next.item
         );

@@ -12,7 +12,7 @@
 ### 1.1 심볼 테이블이란?
 
 **심볼 테이블**은 컴파일러와 인터프리터에서 사용하는 핵심 자료구조입니다:
-- **이름(식별자)**과 **정의(정보)**를 연결
+- **이름(식별자)** 과 **정의(정보)** 를 연결
 - 변수명 → 값
 - 함수명 → 함수 정보
 - 클래스명 → 클래스 정보
@@ -44,19 +44,19 @@ if (xValue == null) {
 
 public class SimpleInterpreter {
     private Map<String, Double> symbolTable;
-    
+
     public SimpleInterpreter() {
         symbolTable = new HashMap<>();
         // 기본 상수 정의
         symbolTable.put("pi", Math.PI);
         symbolTable.put("e", Math.E);
     }
-    
+
     // let 명령 처리
     public void executeLet(String varName, double value) {
         symbolTable.put(varName, value);
     }
-    
+
     // 변수 값 가져오기
     public double getVariable(String varName) {
         Double value = symbolTable.get(varName);
@@ -92,7 +92,7 @@ TreeMap<String, TreeSet<Integer>> index = new TreeMap<>();
 // 페이지 참조 추가
 public void addReference(String term, int pageNum) {
     TreeSet<Integer> pages = index.get(term);
-    
+
     if (pages == null) {
         // 첫 번째 참조
         pages = new TreeSet<>();
@@ -118,9 +118,9 @@ public void printIndex() {
     for (Map.Entry<String, TreeSet<Integer>> entry : index.entrySet()) {
         String term = entry.getKey();
         TreeSet<Integer> pages = entry.getValue();
-        
+
         System.out.print(term + ": ");
-        
+
         // 쉼표로 구분하여 출력
         boolean first = true;
         for (int page : pages) {
@@ -183,7 +183,7 @@ TreeSet<String> words = new TreeSet<>(byLength);
 TreeSet<Integer> numbers = new TreeSet<>(Comparator.reverseOrder());
 
 // 커스텀 역순
-Comparator<Student> byGradeDesc = (s1, s2) -> 
+Comparator<Student> byGradeDesc = (s1, s2) ->
     Double.compare(s2.getGrade(), s1.getGrade());
 ```
 
@@ -204,7 +204,7 @@ Comparator<Student> byGradeDesc = (s1, s2) ->
 class WordData {
     String word;
     int count;
-    
+
     WordData(String word) {
         this.word = word;
         this.count = 1;
@@ -220,7 +220,7 @@ TreeMap<String, WordData> words = new TreeMap<>();
 ```java
 public void processWord(String word) {
     word = word.toLowerCase();  // 소문자 변환
-    
+
     WordData data = words.get(word);
     if (data == null) {
         // 새 단어
@@ -299,13 +299,13 @@ SortedMap<String, Integer> highScores = scores.tailMap("B");
 
 ### 6.1 자료구조 선택
 
-| 용도 | 추천 자료구조 |
-|------|--------------|
-| 빠른 조회 | HashMap |
-| 정렬 필요 | TreeMap |
+| 용도           | 추천 자료구조 |
+| -------------- | ------------- |
+| 빠른 조회      | HashMap       |
+| 정렬 필요      | TreeMap       |
 | 삽입 순서 유지 | LinkedHashMap |
-| 중복 제거 | HashSet |
-| 정렬된 집합 | TreeSet |
+| 중복 제거      | HashSet       |
+| 정렬된 집합    | TreeSet       |
 
 ### 6.2 초기 용량 설정
 

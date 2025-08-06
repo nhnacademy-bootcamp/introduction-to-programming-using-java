@@ -136,57 +136,42 @@ public class NumberParser extends BasicParser {
     public int parseInteger() throws ParseError {
         skipWhitespace();
         
-        if (!Character.isDigit(peek())) {
-            throw new ParseError("숫자가 필요합니다");
-        }
+        // TODO 1: 현재 문자가 숫자가 아니면 ParseError 던지기
         
-        int result = 0;
-        while (Character.isDigit(peek())) {
-            result = result * 10 + (next() - '0');
-        }
+        // TODO 2: 숫자를 읽어서 정수로 변환
+        // 힌트: 반복문을 사용하여 연속된 숫자를 읽고,
+        //      result = result * 10 + (next() - '0') 방식으로 값 축적
         
-        return result;
+        return 0; // 임시 반환값
     }
     
     // <signed-integer> ::= [ "+" | "-" ] <integer>
     public int parseSignedInteger() throws ParseError {
         skipWhitespace();
         
-        boolean negative = false;
-        if (peek() == '+') {
-            next();
-        } else if (peek() == '-') {
-            next();
-            negative = true;
-        }
+        // TODO 1: 부호 처리
+        // - '+' 또는 '-'가 있는지 확인
+        // - '-'인 경우 negative 플래그 설정
         
-        int value = parseInteger();
-        return negative ? -value : value;
+        // TODO 2: parseInteger()를 호출하여 숫자 파싱
+        
+        // TODO 3: negative이면 음수로 변환하여 반환
+        
+        return 0; // 임시 반환값
     }
     
     // <real-number> ::= <integer> [ "." <integer> ]
     public double parseRealNumber() throws ParseError {
-        double result = parseInteger();
+        // TODO 1: parseInteger()로 정수 부분 파싱
         
-        if (peek() == '.') {
-            next();  // '.' 소비
-            
-            if (!Character.isDigit(peek())) {
-                throw new ParseError("소수점 뒤에 숫자가 필요합니다");
-            }
-            
-            double fraction = 0;
-            double divisor = 10;
-            
-            while (Character.isDigit(peek())) {
-                fraction += (next() - '0') / divisor;
-                divisor *= 10;
-            }
-            
-            result += fraction;
-        }
+        // TODO 2: 소수점이 있는지 확인
+        // TODO 3: 소수점이 있으면:
+        //   - '.' 소비
+        //   - 다음 문자가 숫자인지 확인 (아니면 예외)
+        //   - 소수 부분 파싱 (반복문으로 숫자 읽기)
+        //   - 힌트: fraction += (next() - '0') / divisor; divisor *= 10;
         
-        return result;
+        return 0.0; // 임시 반현값
     }
     
     // 테스트
@@ -222,71 +207,44 @@ public class ExpressionParser extends BasicParser {
     
     // <expression> ::= <term> [ ("+" | "-") <term> ]...
     public double parseExpression() throws ParseError {
-        double result = parseTerm();
+        // TODO 1: parseTerm()으로 첫 번째 항 파싱
         
-        skipWhitespace();
-        while (peek() == '+' || peek() == '-') {
-            char op = next();
-            double rightValue = parseTerm();
-            
-            if (op == '+') {
-                result += rightValue;
-            } else {
-                result -= rightValue;
-            }
-            skipWhitespace();
-        }
+        // TODO 2: '+' 또는 '-' 연산자가 있는 동안 반복:
+        //   - 연산자 저장
+        //   - parseTerm()으로 다음 항 파싱
+        //   - 연산자에 따라 덧셈/뻔셈 수행
         
-        return result;
+        return 0.0; // 임시 반환값
     }
     
     // <term> ::= <factor> [ ("*" | "/") <factor> ]...
     public double parseTerm() throws ParseError {
-        double result = parseFactor();
+        // TODO 1: parseFactor()로 첫 번째 인수 파싱
         
-        skipWhitespace();
-        while (peek() == '*' || peek() == '/') {
-            char op = next();
-            double rightValue = parseFactor();
-            
-            if (op == '*') {
-                result *= rightValue;
-            } else {
-                if (rightValue == 0) {
-                    throw new ParseError("0으로 나눌 수 없습니다");
-                }
-                result /= rightValue;
-            }
-            skipWhitespace();
-        }
+        // TODO 2: '*' 또는 '/' 연산자가 있는 동안 반복:
+        //   - 연산자 저장
+        //   - parseFactor()로 다음 인수 파싱
+        //   - 곱셈/나눗셈 수행 (나눗셈시 0 검사)
         
-        return result;
+        return 0.0; // 임시 반환값
     }
     
     // <factor> ::= <number> | "(" <expression> ")" | "-" <factor>
     public double parseFactor() throws ParseError {
         skipWhitespace();
         
-        // 음수 처리
-        if (peek() == '-') {
-            next();
-            return -parseFactor();
-        }
+        // TODO 1: 음수 처리 - '-'로 시작하면 parseFactor() 재귀 호출
         
-        // 괄호 처리
-        if (peek() == '(') {
-            next();  // '(' 소비
-            double value = parseExpression();
-            expect(')');
-            return value;
-        }
+        // TODO 2: 괄호 처리 - '('로 시작하면:
+        //   - '(' 소비
+        //   - parseExpression() 호출
+        //   - ')' 기대 (expect 메서드 사용)
         
-        // 숫자 처리
-        if (Character.isDigit(peek()) || peek() == '.') {
-            return parseNumber();
-        }
+        // TODO 3: 숫자 처리 - 숫자나 '.' 로 시작하면 parseNumber() 호출
         
-        throw new ParseError("숫자, '-', 또는 '('가 필요합니다");
+        // TODO 4: 그 외의 경우 ParseError 던지기
+        
+        return 0.0; // 임시 반환값
     }
     
     // 숫자 파싱 (정수 또는 실수)
@@ -481,37 +439,44 @@ public class ExpressionTreeParser extends BasicParser {
     
     // <expression> ::= <term> [ ("+" | "-") <term> ]...
     public ExprNode parseExpression() throws ParseError {
-        ExprNode left = parseTerm();
+        // TODO 1: parseTerm()으로 첫 번째 항을 트리로 파싱
         
-        skipWhitespace();
-        while (peek() == '+' || peek() == '-') {
-            char op = next();
-            ExprNode right = parseTerm();
-            left = new BinaryOpNode(op, left, right);
-            skipWhitespace();
-        }
+        // TODO 2: '+' 또는 '-' 연산자가 있는 동안 반복:
+        //   - 연산자 저장
+        //   - parseTerm()으로 다음 항 파싱
+        //   - BinaryOpNode로 새 트리 노드 생성
+        //   - left를 새 노드로 업데이트
         
-        return left;
+        return null; // 임시 반환값
     }
     
     // <term> ::= <factor> [ ("*" | "/") <factor> ]...
     public ExprNode parseTerm() throws ParseError {
-        ExprNode left = parseFactor();
+        // TODO 1: parseFactor()로 첫 번째 인수를 트리로 파싱
         
-        skipWhitespace();
-        while (peek() == '*' || peek() == '/') {
-            char op = next();
-            ExprNode right = parseFactor();
-            left = new BinaryOpNode(op, left, right);
-            skipWhitespace();
-        }
+        // TODO 2: '*' 또는 '/' 연산자가 있는 동안 반복:
+        //   - 연산자 저장
+        //   - parseFactor()로 다음 인수 파싱
+        //   - BinaryOpNode로 새 트리 노드 생성
+        //   - left를 새 노드로 업데이트
         
-        return left;
+        return null; // 임시 반환값
     }
     
     // <factor> ::= <number> | "(" <expression> ")" | "-" <factor>
     public ExprNode parseFactor() throws ParseError {
         skipWhitespace();
+        
+        // TODO 1: 음수 처리 - '-'로 시작하면 UnaryMinusNode 생성
+        
+        // TODO 2: 괄호 처리 - '('로 시작하면:
+        //   - '(' 소비
+        //   - parseExpression() 호출
+        //   - ')' 기대
+        
+        // TODO 3: 숫자 처리 - 숫자나 '.' 로 시작하면 NumberNode 생성
+        
+        // TODO 4: 그 외의 경우 ParseError 던지기
         
         // 단항 마이너스
         if (peek() == '-') {

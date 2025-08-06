@@ -12,7 +12,7 @@
 
 ### 1.1 ADT란 무엇인가?
 
-**추상 데이터 타입(ADT)**은 데이터와 그 데이터에 대한 연산을 추상적으로 정의한 것입니다.
+**추상 데이터 타입(ADT)** 은 데이터와 그 데이터에 대한 연산을 추상적으로 정의한 것입니다.
 
 중요한 특징:
 - **구현과 분리**: 어떻게 구현하는지가 아니라 무엇을 하는지에 집중
@@ -88,23 +88,23 @@ public interface Stack<T> {
 public class LinkedStack<T> {
     private Node<T> top;
     private int size;
-    
+
     private static class Node<T> {
         T data;
         Node<T> next;
-        
+
         Node(T data) {
             this.data = data;
         }
     }
-    
+
     public void push(T item) {
         Node<T> newNode = new Node<>(item);
         newNode.next = top;
         top = newNode;
         size++;
     }
-    
+
     public T pop() {
         if (isEmpty()) {
             throw new IllegalStateException("스택이 비어있습니다");
@@ -114,18 +114,18 @@ public class LinkedStack<T> {
         size--;
         return data;
     }
-    
+
     public T peek() {
         if (isEmpty()) {
             throw new IllegalStateException("스택이 비어있습니다");
         }
         return top.data;
     }
-    
+
     public boolean isEmpty() {
         return top == null;
     }
-    
+
     public int size() {
         return size;
     }
@@ -138,20 +138,20 @@ public class LinkedStack<T> {
 public class ArrayStack<T> {
     private T[] items;
     private int top;
-    
+
     @SuppressWarnings("unchecked")
     public ArrayStack(int capacity) {
         items = (T[]) new Object[capacity];
         top = 0;
     }
-    
+
     public void push(T item) {
         if (top == items.length) {
             resize();  // 배열 크기 증가
         }
         items[top++] = item;
     }
-    
+
     public T pop() {
         if (isEmpty()) {
             throw new IllegalStateException("스택이 비어있습니다");
@@ -160,7 +160,7 @@ public class ArrayStack<T> {
         items[top] = null;  // 가비지 컬렉션을 위해
         return item;
     }
-    
+
     private void resize() {
         @SuppressWarnings("unchecked")
         T[] newItems = (T[]) new Object[items.length * 2];
@@ -172,11 +172,11 @@ public class ArrayStack<T> {
 
 ### 2.5 스택의 시간 복잡도
 
-| 연산 | 연결 리스트 | 배열 |
-|------|------------|------|
-| push | O(1) | O(1)* |
-| pop | O(1) | O(1) |
-| peek | O(1) | O(1) |
+| 연산 | 연결 리스트 | 배열  |
+| ---- | ----------- | ----- |
+| push | O(1)        | O(1)* |
+| pop  | O(1)        | O(1)  |
+| peek | O(1)        | O(1)  |
 
 *배열이 꽉 찬 경우 O(n)이지만, 평균적으로 O(1)
 
@@ -216,19 +216,19 @@ public class LinkedQueue<T> {
     private Node<T> front;
     private Node<T> rear;
     private int size;
-    
+
     private static class Node<T> {
         T data;
         Node<T> next;
-        
+
         Node(T data) {
             this.data = data;
         }
     }
-    
+
     public void enqueue(T item) {
         Node<T> newNode = new Node<>(item);
-        
+
         if (rear == null) {
             // 큐가 비어있는 경우
             front = rear = newNode;
@@ -239,35 +239,35 @@ public class LinkedQueue<T> {
         }
         size++;
     }
-    
+
     public T dequeue() {
         if (isEmpty()) {
             throw new IllegalStateException("큐가 비어있습니다");
         }
-        
+
         T data = front.data;
         front = front.next;
-        
+
         if (front == null) {
             // 큐가 비게 된 경우
             rear = null;
         }
-        
+
         size--;
         return data;
     }
-    
+
     public T peek() {
         if (isEmpty()) {
             throw new IllegalStateException("큐가 비어있습니다");
         }
         return front.data;
     }
-    
+
     public boolean isEmpty() {
         return front == null;
     }
-    
+
     public int size() {
         return size;
     }
@@ -280,12 +280,12 @@ public class LinkedQueue<T> {
 // 작업 처리 시스템
 public class TaskProcessor {
     private Queue<Task> taskQueue = new LinkedQueue<>();
-    
+
     public void submitTask(Task task) {
         taskQueue.enqueue(task);
         System.out.println("작업 추가: " + task.getName());
     }
-    
+
     public void processNextTask() {
         if (!taskQueue.isEmpty()) {
             Task task = taskQueue.dequeue();
@@ -300,12 +300,12 @@ public class TaskProcessor {
 
 ### 4.1 주요 차이점
 
-| 특성 | 스택 (Stack) | 큐 (Queue) |
-|------|-------------|------------|
-| 원칙 | LIFO | FIFO |
-| 추가 위치 | 맨 위 | 뒤쪽 |
-| 제거 위치 | 맨 위 | 앞쪽 |
-| 주요 연산 | push/pop | enqueue/dequeue |
+| 특성      | 스택 (Stack)         | 큐 (Queue)               |
+| --------- | -------------------- | ------------------------ |
+| 원칙      | LIFO                 | FIFO                     |
+| 추가 위치 | 맨 위                | 뒤쪽                     |
+| 제거 위치 | 맨 위                | 앞쪽                     |
+| 주요 연산 | push/pop             | enqueue/dequeue          |
 | 활용 예시 | 함수 호출, 괄호 매칭 | 작업 대기열, 이벤트 처리 |
 
 ### 4.2 선택 기준
@@ -339,10 +339,10 @@ public class TaskProcessor {
 
 ### 5.2 후위 표기법 변환 예시
 
-| 중위 표기법 | 후위 표기법 |
-|------------|------------|
-| `2 + 3` | `2 3 +` |
-| `2 + 3 * 4` | `2 3 4 * +` |
+| 중위 표기법   | 후위 표기법 |
+| ------------- | ----------- |
+| `2 + 3`       | `2 3 +`     |
+| `2 + 3 * 4`   | `2 3 4 * +` |
 | `(2 + 3) * 4` | `2 3 + 4 *` |
 | `2 * (3 + 4)` | `2 3 4 + *` |
 
@@ -353,7 +353,7 @@ public class PostfixCalculator {
     public double evaluate(String expression) {
         Stack<Double> stack = new LinkedStack<>();
         String[] tokens = expression.split(" ");
-        
+
         for (String token : tokens) {
             if (isNumber(token)) {
                 // 숫자인 경우 스택에 푸시
@@ -366,10 +366,10 @@ public class PostfixCalculator {
                 stack.push(result);
             }
         }
-        
+
         return stack.pop();
     }
-    
+
     private boolean isNumber(String token) {
         try {
             Double.parseDouble(token);
@@ -378,7 +378,7 @@ public class PostfixCalculator {
             return false;
         }
     }
-    
+
     private double calculate(double a, double b, String operator) {
         switch (operator) {
             case "+": return a + b;
@@ -412,7 +412,7 @@ public class PostfixCalculator {
 ```java
 public boolean isBalanced(String expression) {
     Stack<Character> stack = new LinkedStack<>();
-    
+
     for (char ch : expression.toCharArray()) {
         if (ch == '(' || ch == '{' || ch == '[') {
             stack.push(ch);
@@ -420,14 +420,14 @@ public boolean isBalanced(String expression) {
             if (stack.isEmpty()) {
                 return false;
             }
-            
+
             char open = stack.pop();
             if (!isMatchingPair(open, ch)) {
                 return false;
             }
         }
     }
-    
+
     return stack.isEmpty();
 }
 
@@ -445,7 +445,7 @@ public class BrowserHistory {
     private Stack<String> backStack = new LinkedStack<>();
     private Stack<String> forwardStack = new LinkedStack<>();
     private String currentPage;
-    
+
     public void visit(String url) {
         if (currentPage != null) {
             backStack.push(currentPage);
@@ -453,14 +453,14 @@ public class BrowserHistory {
         currentPage = url;
         forwardStack.clear();  // 새 페이지 방문 시 앞으로 가기 기록 삭제
     }
-    
+
     public void back() {
         if (!backStack.isEmpty()) {
             forwardStack.push(currentPage);
             currentPage = backStack.pop();
         }
     }
-    
+
     public void forward() {
         if (!forwardStack.isEmpty()) {
             backStack.push(currentPage);
@@ -475,12 +475,12 @@ public class BrowserHistory {
 ```java
 public class PrinterQueue {
     private Queue<PrintJob> jobQueue = new LinkedQueue<>();
-    
+
     public void addJob(PrintJob job) {
         jobQueue.enqueue(job);
         System.out.println("인쇄 작업 추가: " + job.getDocumentName());
     }
-    
+
     public void processJobs() {
         while (!jobQueue.isEmpty()) {
             PrintJob job = jobQueue.dequeue();

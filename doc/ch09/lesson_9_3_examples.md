@@ -29,34 +29,37 @@ public class GenericLinkedStack<T> {
      * 스택의 맨 위에 요소 추가
      */
     public void push(T item) {
-        Node<T> newNode = new Node<>(item);
-        newNode.next = top;
-        top = newNode;
-        size++;
+        // TODO: 새 노드를 생성하고 스택의 맨 위에 추가
+        // 힌트:
+        // 1. 새 노드를 생성
+        // 2. 새 노드의 next를 현재 top으로 설정
+        // 3. top을 새 노드로 변경
+        // 4. size 증가
     }
     
     /**
      * 스택의 맨 위 요소 제거 및 반환
      */
     public T pop() {
-        if (isEmpty()) {
-            throw new IllegalStateException("스택이 비어있습니다");
-        }
+        // TODO: 스택의 맨 위 요소를 제거하고 반환
+        // 힌트:
+        // 1. 비어있는지 확인 (isEmpty() 사용)
+        // 2. top의 데이터 저장
+        // 3. top을 다음 노드로 이동
+        // 4. size 감소
+        // 5. 저장한 데이터 반환
         
-        T data = top.data;
-        top = top.next;
-        size--;
-        return data;
+        return null; // 임시 반환값
     }
     
     /**
      * 스택의 맨 위 요소 확인 (제거하지 않음)
      */
     public T peek() {
-        if (isEmpty()) {
-            throw new IllegalStateException("스택이 비어있습니다");
-        }
-        return top.data;
+        // TODO: 스택의 맨 위 요소를 제거하지 않고 반환
+        // 힌트: 비어있는지 확인 후 top.data 반환
+        
+        return null; // 임시 반환값
     }
     
     /**
@@ -494,40 +497,47 @@ public class CircularArrayQueue<T> {
      * 큐에서 요소 제거 및 반환
      */
     public T dequeue() {
-        if (isEmpty()) {
-            throw new IllegalStateException("큐가 비어있습니다");
-        }
+        // TODO 1: 큐가 비어있는지 확인하고 예외 처리
         
-        T item = items[front];
-        items[front] = null;  // 가비지 컬렉션을 위해
-        front = (front + 1) % items.length;
-        size--;
+        // TODO 2: front 위치의 요소를 임시 변수에 저장
         
-        return item;
+        // TODO 3: front 위치를 null로 설정 (가비지 컬렉션을 위해)
+        
+        // TODO 4: front를 원형 배열 방식으로 증가시키기
+        // 힌트: (front + 1) % items.length
+        
+        // TODO 5: size 감소
+        
+        // TODO 6: 저장한 요소 반환
+        
+        return null; // 임시 반환값
     }
     
     /**
      * 큐의 앞쪽 요소 확인
      */
     public T peek() {
-        if (isEmpty()) {
-            throw new IllegalStateException("큐가 비어있습니다");
-        }
-        return items[front];
+        // TODO 1: 큐가 비어있는지 확인하고 예외 처리
+        
+        // TODO 2: front 위치의 요소 반환
+        
+        return null; // 임시 반환값
     }
     
     /**
      * 큐가 비어있는지 확인
      */
     public boolean isEmpty() {
-        return size == 0;
+        // TODO: size가 0인지 확인
+        return false; // 임시 반환값
     }
     
     /**
      * 큐가 가득 찼는지 확인
      */
     public boolean isFull() {
-        return size == items.length;
+        // TODO: size가 배열의 길이와 같은지 확인
+        return false; // 임시 반환값
     }
     
     /**
@@ -632,22 +642,15 @@ public class BracketMatcher {
     public static boolean isBalanced(String expression) {
         GenericLinkedStack<Character> stack = new GenericLinkedStack<>();
         
-        for (char ch : expression.toCharArray()) {
-            if (isOpenBracket(ch)) {
-                stack.push(ch);
-            } else if (isCloseBracket(ch)) {
-                if (stack.isEmpty()) {
-                    return false;  // 닫는 괄호가 더 많음
-                }
-                
-                char openBracket = stack.pop();
-                if (!isMatchingPair(openBracket, ch)) {
-                    return false;  // 괄호 타입이 맞지 않음
-                }
-            }
-        }
+        // TODO 1: expression의 각 문자를 순회
+        // TODO 2: 여는 괄호이면 스택에 push
+        // TODO 3: 닫는 괄호이면:
+        //   - 스택이 비었으면 false 반환
+        //   - 스택에서 pop한 후 매칭이 맞는지 확인
+        //   - 매칭이 안 맞으면 false 반환
+        // TODO 4: 모든 문자 처리 후 스택이 비어있는지 확인
         
-        return stack.isEmpty();  // 모든 괄호가 매칭되었는지 확인
+        return false; // 임시 반환값
     }
     
     /**
@@ -686,15 +689,19 @@ public class BracketMatcher {
     }
     
     private static boolean isOpenBracket(char ch) {
-        return ch == '(' || ch == '{' || ch == '[';
+        // TODO: ch가 여는 괄호 '(', '{', '[' 중 하나인지 확인
+        return false; // 임시 반환값
     }
     
     private static boolean isCloseBracket(char ch) {
-        return ch == ')' || ch == '}' || ch == ']';
+        // TODO: ch가 닫는 괄호 ')', '}', ']' 중 하나인지 확인
+        return false; // 임시 반환값
     }
     
     private static boolean isMatchingPair(char open, char close) {
-        return BRACKET_PAIRS.get(close) != null && BRACKET_PAIRS.get(close).equals(open);
+        // TODO: BRACKET_PAIRS 맵을 사용하여 open과 close가 매칭되는 쌍인지 확인
+        // 힌트: BRACKET_PAIRS.get(close)가 open과 같은지 확인
+        return false; // 임시 반환값
     }
     
     // 괄호 정보를 저장하는 내부 클래스
@@ -913,33 +920,16 @@ public class PostfixCalculator {
         GenericLinkedStack<Double> stack = new GenericLinkedStack<>();
         StringTokenizer tokenizer = new StringTokenizer(expression);
         
-        while (tokenizer.hasMoreTokens()) {
-            String token = tokenizer.nextToken();
-            
-            if (isNumber(token)) {
-                stack.push(Double.parseDouble(token));
-                System.out.println("숫자 " + token + " 푸시");
-            } else if (isOperator(token)) {
-                if (stack.size() < 2) {
-                    throw new IllegalArgumentException("연산자에 대한 피연산자가 부족합니다: " + token);
-                }
-                
-                double b = stack.pop();
-                double a = stack.pop();
-                double result = applyOperator(a, b, token);
-                
-                System.out.println(a + " " + token + " " + b + " = " + result);
-                stack.push(result);
-            } else {
-                throw new IllegalArgumentException("잘못된 토큰: " + token);
-            }
-        }
+        // TODO 1: tokenizer로 각 토큰을 순회
+        // TODO 2: 토큰이 숫자면 스택에 push
+        // TODO 3: 토큰이 연산자면:
+        //   - 스택에서 두 개의 숫자를 pop (b를 먼저, 그 다음 a)
+        //   - applyOperator(a, b, token)으로 계산
+        //   - 결과를 스택에 push
+        // TODO 4: 모든 토큰 처리 후 스택에 하나의 값만 남았는지 확인
+        // TODO 5: 최종 결과 반환
         
-        if (stack.size() != 1) {
-            throw new IllegalArgumentException("표현식이 올바르지 않습니다");
-        }
-        
-        return stack.pop();
+        return 0.0; // 임시 반환값
     }
     
     /**
@@ -987,9 +977,12 @@ public class PostfixCalculator {
      * 연산자 우선순위 반환
      */
     private static int precedence(char operator) {
-        switch (operator) {
-            case '+':
-            case '-':
+        // TODO: 연산자에 따른 우선순위 반환
+        // +, - : 1
+        // *, / : 2  
+        // ^ : 3
+        
+        return 0; // 임시 반환값
                 return 1;
             case '*':
             case '/':
@@ -1017,24 +1010,22 @@ public class PostfixCalculator {
      * 문자열이 연산자인지 확인
      */
     private static boolean isOperator(String token) {
-        return token.equals("+") || token.equals("-") || 
-               token.equals("*") || token.equals("/") || token.equals("^");
+        // TODO: token이 +, -, *, /, ^ 중 하나인지 확인
+        return false; // 임시 반환값
     }
     
     /**
      * 연산자 적용
      */
     private static double applyOperator(double a, double b, String operator) {
-        switch (operator) {
-            case "+": return a + b;
-            case "-": return a - b;
-            case "*": return a * b;
-            case "/": 
-                if (b == 0) throw new ArithmeticException("0으로 나눌 수 없습니다");
-                return a / b;
-            case "^": return Math.pow(a, b);
-            default: throw new IllegalArgumentException("알 수 없는 연산자: " + operator);
-        }
+        // TODO: operator에 따라 적절한 연산 수행
+        // +: a + b
+        // -: a - b
+        // *: a * b
+        // /: a / b (b가 0이면 ArithmeticException)
+        // ^: Math.pow(a, b)
+        
+        return 0.0; // 임시 반환값
     }
     
     /**
@@ -1161,12 +1152,11 @@ public class BrowserHistory {
      * 새 페이지 방문
      */
     public void visit(String url, String title) {
-        if (currentPage != null) {
-            backStack.push(currentPage);
-        }
+        // TODO 1: 현재 페이지가 있으면 backStack에 push
         
-        currentPage = new Page(url, title);
-        forwardStack.clear();  // 새 페이지 방문 시 앞으로 가기 기록 삭제
+        // TODO 2: 새 Page 객체를 생성하여 currentPage로 설정
+        
+        // TODO 3: forwardStack을 clear() (새 페이지 방문 시 앞으로 가기 기록 삭제)
         
         System.out.println("방문: " + currentPage);
         displayStatus();
@@ -1176,13 +1166,11 @@ public class BrowserHistory {
      * 뒤로 가기
      */
     public void back() {
-        if (backStack.isEmpty()) {
-            System.out.println("뒤로 갈 페이지가 없습니다.");
-            return;
-        }
+        // TODO 1: backStack이 비어있는지 확인
         
-        forwardStack.push(currentPage);
-        currentPage = backStack.pop();
+        // TODO 2: 현재 페이지를 forwardStack에 push
+        
+        // TODO 3: backStack에서 pop한 페이지를 currentPage로 설정
         
         System.out.println("뒤로 가기: " + currentPage);
         displayStatus();

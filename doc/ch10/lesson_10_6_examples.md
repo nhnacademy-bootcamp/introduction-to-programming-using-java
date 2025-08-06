@@ -194,11 +194,13 @@ public class IntermediateOperationsExample {
         
         // 8. 복합 연산
         System.out.println("\n컴퓨터공학과 중 80점 이상 학생 이름:");
+        // TODO 5: 컴퓨터공학과 학생 필터링
+        // TODO 6: 80점 이상인 학생 필터링
+        // TODO 7: 학생 이름으로 매핑
+        // TODO 8: 이름순 정렬
+        // TODO 9: 출력
         students.stream()
-                .filter(s -> s.getMajor().equals("컴퓨터공학"))
-                .filter(s -> s.getScore() >= 80)
-                .map(Student::getName)
-                .sorted()
+                // 스트림 연산들을 완성하세요
                 .forEach(System.out::println);
     }
 }
@@ -372,9 +374,10 @@ public class TerminalOperationsExample {
         mostExpensive.ifPresent(p -> System.out.println("가장 비싼 제품: " + p));
         
         // 5. reduce() - 집계
-        int totalPrice = products.stream()
-                .mapToInt(Product::getPrice)
-                .reduce(0, Integer::sum);
+        // TODO 10: products 스트림을 가격(int)으로 매핑
+        // TODO 11: reduce를 사용하여 모든 가격 합계 계산
+        // 힌트: 초기값 0, Integer::sum 사용
+        int totalPrice = 0; // 스트림 연산으로 계산하세요
         System.out.println("\n총 가격: " + totalPrice + "원");
         
         // 6. anyMatch(), allMatch(), noneMatch() - 조건 확인
@@ -393,8 +396,9 @@ public class TerminalOperationsExample {
         firstFurniture.ifPresent(p -> System.out.println("첫 번째 가구: " + p));
         
         // 8. 그룹화
-        Map<String, List<Product>> productsByCategory = products.stream()
-                .collect(Collectors.groupingBy(Product::getCategory));
+        // TODO 12: products를 카테고리별로 그룹화
+        // 힌트: Collectors.groupingBy 사용
+        Map<String, List<Product>> productsByCategory = new HashMap<>(); // 스트림 연산으로 완성하세요
         
         System.out.println("\n카테고리별 제품:");
         productsByCategory.forEach((category, productList) -> {
@@ -643,10 +647,10 @@ public class ParallelOptimization {
     }
     
     private static boolean isPrime(int n) {
-        if (n < 2) return false;
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) return false;
-        }
+        // TODO 1: n이 2보다 작으면 false 반환
+        // TODO 2: 2부터 sqrt(n)까지 반복하며
+        // TODO 3: n이 i로 나누어떨어지면 false 반환
+        // TODO 4: 반복문이 끝나면 true 반환
         return true;
     }
     

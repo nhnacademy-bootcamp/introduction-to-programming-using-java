@@ -24,13 +24,14 @@ public class SimpleInterpreter {
         Matcher matcher = pattern.matcher(command);
         
         if (matcher.matches()) {
-            String varName = matcher.group(1);
-            String expression = matcher.group(2);
+            // TODO 1: matcher에서 변수명(group 1) 추출
+            // TODO 2: matcher에서 표현식(group 2) 추출
             
             try {
-                double value = evaluateExpression(expression);
-                symbolTable.put(varName, value);
-                System.out.println(varName + " = " + value);
+                // TODO 3: evaluateExpression으로 표현식 평가
+                // TODO 4: symbolTable에 변수와 값 저장
+                // TODO 5: 결과 출력 (형식: "변수명 = 값")
+                
             } catch (Exception e) {
                 System.err.println("오류: " + e.getMessage());
             }
@@ -39,11 +40,12 @@ public class SimpleInterpreter {
     
     // print 명령 처리: print x + 5
     public void executePrint(String command) {
-        String expression = command.substring(5).trim();
+        // TODO 6: "print " 이후의 표현식 추출 (substring 사용)
         
         try {
-            double result = evaluateExpression(expression);
-            System.out.println(result);
+            // TODO 7: 표현식 평가하여 결과 계산
+            // TODO 8: 계산 결과 출력
+            
         } catch (Exception e) {
             System.err.println("오류: " + e.getMessage());
         }
@@ -150,28 +152,26 @@ public class FunctionSymbolTable {
     
     // 함수 정의
     public void defineFunction(String name, List<String> params, String body) {
-        if (functions.containsKey(name)) {
-            System.out.println("경고: 함수 " + name + " 재정의");
-        }
-        functions.put(name, new FunctionInfo(name, params, body));
+        // TODO 9: functions 맵에 이미 같은 이름의 함수가 있는지 확인
+        // TODO 10: 있으면 경고 메시지 출력 ("경고: 함수 [이름] 재정의")
+        // TODO 11: FunctionInfo 객체 생성하여 functions 맵에 저장
+        
     }
     
     // 함수 호출
     public void callFunction(String name, List<Double> arguments) {
-        FunctionInfo func = functions.get(name);
+        // TODO 12: functions 맵에서 함수 정보 가져오기
         
-        if (func == null) {
-            throw new RuntimeException("정의되지 않은 함수: " + name);
-        }
+        // TODO 13: 함수가 없으면 RuntimeException 던지기
+        // 힌트: "정의되지 않은 함수: " + name
         
-        if (func.parameters.size() != arguments.size()) {
-            throw new RuntimeException(
-                String.format("인자 개수 불일치: %s (예상: %d, 실제: %d)",
-                    name, func.parameters.size(), arguments.size()));
-        }
+        // TODO 14: 매개변수 개수와 인자 개수가 다르면 RuntimeException 던지기
+        // 힌트: String.format 사용하여 상세한 오류 메시지 생성
         
-        System.out.println("함수 호출: " + name + arguments);
-        System.out.println("함수 본문: " + func.body);
+        // TODO 15: 함수 호출 정보 출력
+        // - "함수 호출: " + 함수명 + 인자 리스트
+        // - "함수 본문: " + 함수 본문
+        
     }
     
     // 모든 함수 목록
@@ -231,14 +231,14 @@ public class BookIndexer {
     
     // 페이지 처리
     public void processPage(int pageNumber, String content) {
-        // 단어 추출 (알파벳과 숫자만)
-        String[] words = content.toLowerCase().split("\\W+");
+        // TODO 16: content를 소문자로 변환하고 단어 단위로 분리
+        // 힌트: split("\\W+") 사용
         
-        for (String word : words) {
-            if (word.length() > 2 && !stopWords.contains(word)) {
-                addReference(word, pageNumber);
-            }
-        }
+        // TODO 17: 각 단어에 대해 처리
+        // - 단어 길이가 2보다 크고
+        // - stopWords에 포함되지 않은 경우만
+        // - addReference 메서드 호출
+        
     }
     
     // 참조 추가
@@ -271,30 +271,23 @@ public class BookIndexer {
         Iterator<Integer> iter = pages.iterator();
         if (!iter.hasNext()) return;
         
-        int start = iter.next();
-        int prev = start;
+        // TODO 18: 첫 번째 페이지를 start와 prev에 저장
         
         while (iter.hasNext()) {
-            int current = iter.next();
+            // TODO 19: 다음 페이지 번호 가져오기
             
-            if (current != prev + 1) {
-                // 범위 출력
-                if (start == prev) {
-                    System.out.print(start + ", ");
-                } else {
-                    System.out.print(start + "-" + prev + ", ");
-                }
-                start = current;
-            }
-            prev = current;
+            // TODO 20: 현재 페이지가 이전 페이지의 연속이 아니면
+            // - start == prev인 경우: 단일 페이지 출력 (예: "5, ")
+            // - start != prev인 경우: 범위 출력 (예: "5-7, ")
+            // - start를 current로 업데이트
+            
+            // TODO 21: prev를 current로 업데이트
         }
         
-        // 마지막 범위
-        if (start == prev) {
-            System.out.print(start);
-        } else {
-            System.out.print(start + "-" + prev);
-        }
+        // TODO 22: 마지막 범위 출력 (쉼표 없이)
+        // - start == prev: 단일 페이지
+        // - start != prev: 범위
+        
     }
     
     // 특정 용어 검색
@@ -374,25 +367,23 @@ public class InvertedIndex {
     public Set<Integer> searchAnd(String... words) {
         if (words.length == 0) return new TreeSet<>();
         
-        Set<Integer> result = search(words[0]);
+        // TODO 23: 첫 번째 단어로 검색한 결과를 result에 저장
         
-        for (int i = 1; i < words.length; i++) {
-            result.retainAll(search(words[i]));
-            if (result.isEmpty()) break;
-        }
+        // TODO 24: 나머지 단어들에 대해 반복
+        // - 각 단어로 검색한 결과와 result의 교집합 구하기 (retainAll 사용)
+        // - result가 비어있으면 반복 중단
         
-        return result;
+        return null; // 임시 반환값
     }
     
     // OR 검색 (하나 이상의 단어를 포함하는 문서)
     public Set<Integer> searchOr(String... words) {
-        Set<Integer> result = new TreeSet<>();
+        // TODO 25: 빈 TreeSet<Integer> 생성
         
-        for (String word : words) {
-            result.addAll(search(word));
-        }
+        // TODO 26: 각 단어에 대해 반복
+        // - 단어로 검색한 결과를 result에 추가 (addAll 사용)
         
-        return result;
+        return null; // 임시 반환값
     }
     
     // NOT 검색 (특정 단어를 포함하지 않는 문서)
