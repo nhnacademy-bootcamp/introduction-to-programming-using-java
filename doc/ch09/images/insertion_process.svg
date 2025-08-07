@@ -1,0 +1,165 @@
+<svg width="1200" height="899.9999999999999" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Insertion at Front -->
+ <!-- Insertion in Order -->
+ <!-- Important Notes -->
+ <!-- Code snippet -->
+ <!-- Arrow definitions -->
+ <defs>
+  <marker orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrow">
+   <path id="svg_1" fill="#333" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+  <marker orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrowOrange">
+   <path id="svg_2" fill="#f57c00" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+  <marker orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrowBlue">
+   <path id="svg_3" fill="#1565c0" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_4" font-weight="bold" font-size="24" text-anchor="middle" y="30" x="600">연결 리스트 삽입 과정</text>
+  <text id="svg_6" font-weight="bold" font-size="20" text-anchor="middle" y="80" x="300">1. 맨 앞에 삽입</text>
+  <!-- Before insertion -->
+  <text id="svg_8" font-weight="bold" font-size="16" y="110" x="100">삽입 전:</text>
+  <!-- New node -->
+  <g id="svg_18">
+   <text id="svg_19" fill="#4caf50" font-weight="bold" font-size="14" y="192.69939" x="101.22699">새 노드:</text>
+   <rect id="svg_20" rx="5" stroke-width="2" stroke="#4caf50" fill="#c8e6c9" height="40" width="80" y="172.69939" x="201.22699"/>
+   <text id="svg_21" font-weight="bold" font-size="13" text-anchor="middle" y="197.69939" x="241.22699">"Z"</text>
+  </g>
+  <!-- Step 1 -->
+  <text id="svg_23" fill="#d32f2f" font-weight="bold" font-size="14" y="232.26994" x="100">Step 1: newNode.next = head</text>
+  <!-- Step 2 -->
+  <text id="svg_28" fill="#d32f2f" font-weight="bold" font-size="14" y="381.53374" x="98.77301">Step 2: head = newNode</text>
+  <rect id="svg_29" rx="5" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="40" width="60" y="391.53374" x="98.77301"/>
+  <text id="svg_30" font-weight="bold" font-size="12" text-anchor="middle" y="416.53374" x="128.77301">head</text>
+  <path id="svg_31" stroke-dasharray="5,3" marker-end="url(#arrowOrange)" fill="none" stroke-width="2" stroke="#f57c00" d="m128.77301,431.53374q0,30 70,30q40,0 40,-20"/>
+  <!-- After insertion -->
+  <text id="svg_33" font-weight="bold" font-size="16" y="481.53374" x="98.77301">삽입 후:</text>
+  <rect id="svg_34" rx="5" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="40" width="60" y="491.53374" x="98.77301"/>
+  <text id="svg_35" font-weight="bold" font-size="12" text-anchor="middle" y="516.53374" x="128.77301">head</text>
+  <path id="svg_36" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m158.77301,511.53374l30,0"/>
+  <g id="svg_46">
+   <text id="svg_47" font-weight="bold" font-size="20" text-anchor="middle" y="80" x="850">2. 정렬된 순서로 삽입</text>
+   <!-- Before insertion -->
+   <g id="svg_48">
+    <text id="svg_49" font-weight="bold" font-size="16" y="110" x="600">삽입 전: A → C → E → null</text>
+    <text id="svg_50" fill="#4caf50" font-size="14" y="135" x="600">"D"를 삽입</text>
+   </g>
+   <!-- Step 1: Find position -->
+   <g id="svg_51">
+    <text id="svg_52" fill="#d32f2f" font-weight="bold" font-size="14" y="160" x="600">1. 위치 찾기:</text>
+    <rect id="svg_53" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="180" x="600"/>
+    <text id="svg_54" font-size="13" text-anchor="middle" y="205" x="640">"A"</text>
+    <rect id="svg_55" rx="5" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="40" width="80" y="180" x="700"/>
+    <text id="svg_56" font-size="13" text-anchor="middle" y="205" x="740">"C"</text>
+    <text id="svg_57" fill="#f57f17" font-size="12" text-anchor="middle" y="165" x="740">previous</text>
+    <rect id="svg_58" rx="5" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="40" width="80" y="180" x="800"/>
+    <text id="svg_59" font-size="13" text-anchor="middle" y="205" x="840">"E"</text>
+    <text id="svg_60" fill="#f57f17" font-size="12" text-anchor="middle" y="165" x="840">runner</text>
+    <path id="svg_61" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m680,200l20,0"/>
+    <path id="svg_62" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m780,200l20,0"/>
+    <rect id="svg_63" rx="5" stroke-width="2" stroke="#4caf50" fill="#c8e6c9" height="40" width="80" y="180" x="950"/>
+    <text id="svg_64" font-weight="bold" font-size="13" text-anchor="middle" y="205" x="990">"D"</text>
+    <text id="svg_65" fill="#4caf50" font-size="12" text-anchor="middle" y="165" x="990">newNode</text>
+   </g>
+   <!-- Step 2: Adjust pointers -->
+   <g id="svg_66">
+    <text id="svg_67" fill="#d32f2f" font-weight="bold" font-size="14" y="260" x="600">2. 포인터 조정:</text>
+    <rect id="svg_68" rx="5" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="40" width="80" y="280" x="700"/>
+    <text id="svg_69" font-size="13" text-anchor="middle" y="305" x="740">"C"</text>
+    <rect id="svg_70" rx="5" stroke-width="2" stroke="#4caf50" fill="#c8e6c9" height="40" width="80" y="280" x="950"/>
+    <text id="svg_71" font-weight="bold" font-size="13" text-anchor="middle" y="305" x="990">"D"</text>
+    <rect id="svg_72" rx="5" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="40" width="80" y="280" x="800"/>
+    <text id="svg_73" font-size="13" text-anchor="middle" y="305" x="840">"E"</text>
+    <!-- Step 2a -->
+    <path id="svg_74" marker-end="url(#arrowOrange)" fill="none" stroke-width="3" stroke="#f57c00" d="m990,320q0,30 -150,30q0,0 0,-30"/>
+    <text id="svg_75" fill="#f57c00" font-size="12" text-anchor="middle" y="345" x="915">① newNode.next = runner</text>
+    <!-- Step 2b -->
+    <path id="svg_76" marker-end="url(#arrowBlue)" fill="none" stroke-width="3" stroke="#1565c0" d="m780,300q85,-30 170,0"/>
+    <text id="svg_77" fill="#1565c0" font-size="12" text-anchor="middle" y="265" x="865">② previous.next = newNode</text>
+   </g>
+   <!-- After insertion -->
+   <g id="svg_78">
+    <text id="svg_79" font-weight="bold" font-size="16" y="380" x="600">삽입 후:</text>
+    <rect id="svg_80" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="400" x="600"/>
+    <text id="svg_81" font-size="13" text-anchor="middle" y="425" x="640">"A"</text>
+    <path id="svg_82" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m680,420l20,0"/>
+    <rect id="svg_83" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="400" x="700"/>
+    <text id="svg_84" font-size="13" text-anchor="middle" y="425" x="740">"C"</text>
+    <path id="svg_85" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m780,420l20,0"/>
+    <rect id="svg_86" rx="5" stroke-width="2" stroke="#4caf50" fill="#c8e6c9" height="40" width="80" y="400" x="800"/>
+    <text id="svg_87" font-weight="bold" font-size="13" text-anchor="middle" y="425" x="840">"D"</text>
+    <path id="svg_88" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m880,420l20,0"/>
+    <rect id="svg_89" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="400" x="900"/>
+    <text id="svg_90" font-size="13" text-anchor="middle" y="425" x="940">"E"</text>
+    <text id="svg_91" font-weight="bold" font-size="13" y="425" x="1000">null</text>
+   </g>
+  </g>
+  <g id="svg_92">
+   <text id="svg_93" font-weight="bold" font-size="18" text-anchor="middle" y="550" x="600">중요한 점</text>
+   <rect id="svg_94" rx="5" stroke-width="2" stroke="#f57c00" fill="#fff3e0" height="120" width="500" y="570" x="350"/>
+   <text id="svg_95" font-weight="bold" font-size="14" text-anchor="middle" y="595" x="600">포인터 조정 순서가 중요!</text>
+   <text id="svg_96" font-size="13" y="620" x="370">1. 새 노드의 next를 먼저 설정 (기존 연결 보존)</text>
+   <text id="svg_97" font-size="13" y="645" x="370">2. 그 다음 이전 노드의 next를 새 노드로 변경</text>
+   <text id="svg_98" font-size="13" y="670" x="370">3. 순서가 바뀌면 기존 연결을 잃을 수 있음!</text>
+  </g>
+  <g id="svg_99">
+   <rect id="svg_100" rx="5" stroke-width="2" stroke="#666" fill="#f5f5f5" height="150" width="800" y="700" x="200"/>
+   <text id="svg_101" font-weight="bold" font-size="14" text-anchor="middle" y="725" x="600">핵심 코드</text>
+   <text id="svg_102" font-family="monospace" font-size="12" y="750" x="220">// 올바른 순서</text>
+   <text id="svg_103" fill="#4caf50" font-family="monospace" font-size="12" y="770" x="220">newNode.next = runner;      // ① 새 노드가 다음을 가리킴</text>
+   <text id="svg_104" fill="#1565c0" font-family="monospace" font-size="12" y="790" x="220">previous.next = newNode;    // ② 이전 노드가 새 노드를 가리킴</text>
+   <text id="svg_105" fill="#d32f2f" font-family="monospace" font-size="12" y="820" x="220">// 잘못된 순서 - 연결이 끊어짐!</text>
+   <text id="svg_106" fill="#999" font-family="monospace" font-size="12" y="840" x="220">// previous.next = newNode;  // runner에 대한 참조를 잃음</text>
+  </g>
+  <rect id="svg_24" rx="5" stroke-width="2" stroke="#4caf50" fill="#c8e6c9" height="40" width="80" y="303.61964" x="100.61349"/>
+  <text id="svg_25" font-weight="bold" font-size="13" text-anchor="middle" y="328.61964" x="140.61349">"Z"</text>
+  <g id="svg_108">
+   <rect id="svg_9" rx="5" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="40" width="60" y="120" x="100"/>
+   <text id="svg_10" font-weight="bold" font-size="12" text-anchor="middle" y="145" x="130">head</text>
+   <path id="svg_11" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m160,140l30,0"/>
+   <rect id="svg_12" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="120" x="200"/>
+   <text id="svg_13" font-size="13" text-anchor="middle" y="145" x="240">"A"</text>
+   <path id="svg_14" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m280,140l30,0"/>
+   <rect id="svg_15" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="120" x="320"/>
+   <text id="svg_16" font-size="13" text-anchor="middle" y="145" x="360">"B"</text>
+   <text id="svg_17" font-weight="bold" font-size="13" y="145" x="420">null</text>
+  </g>
+  <rect id="svg_109" rx="5" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="40" width="60" y="248.22087" x="103.68098"/>
+  <text id="svg_110" font-weight="bold" font-size="12" text-anchor="middle" y="273.22087" x="133.68098">head</text>
+  <path id="svg_111" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m163.68098,268.22087l30,0"/>
+  <rect id="svg_112" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="248.22087" x="203.68098"/>
+  <text id="svg_113" font-size="13" text-anchor="middle" y="273.22087" x="243.68098">"A"</text>
+  <path id="svg_114" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m283.68098,268.22087l30,0"/>
+  <rect id="svg_115" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="248.22087" x="323.68098"/>
+  <text id="svg_116" font-size="13" text-anchor="middle" y="273.22087" x="363.68098">"B"</text>
+  <text id="svg_117" font-weight="bold" font-size="13" y="273.22087" x="423.68098">null</text>
+  <line id="svg_121" y2="322.3546" x2="242.35481" y1="291.17806" x1="242.35481" stroke-dasharray="5,3" stroke-width="2" stroke="#f57c00" fill="none"/>
+  <path fill="#ffc107" transform="rotate(-89.7208 242.354 306.18)" id="svg_123" marker-end="url(#arrow)" stroke-width="2" stroke="#f57c00" d="m227.3543,306.17997l30,0"/>
+  <line id="svg_124" y2="323.46767" x2="242.85524" y1="323.87584" x1="181.63089" stroke-dasharray="5,3" stroke-width="2" stroke="#f57c00" fill="#ffc107"/>
+  <g id="svg_125">
+   <rect id="svg_37" rx="5" stroke-width="2" stroke="#4caf50" fill="#c8e6c9" height="40" width="80" y="491.53374" x="198.77301"/>
+   <text id="svg_38" font-weight="bold" font-size="13" text-anchor="middle" y="516.53374" x="238.77301">"Z"</text>
+   <path id="svg_39" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m278.77301,511.53374l30,0"/>
+   <rect id="svg_40" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="491.53374" x="318.77301"/>
+   <text id="svg_41" font-size="13" text-anchor="middle" y="516.53374" x="358.77301">"A"</text>
+   <path id="svg_42" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m398.77301,511.53374l30,0"/>
+   <rect id="svg_43" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="491.53374" x="438.77301"/>
+   <text id="svg_44" font-size="13" text-anchor="middle" y="516.53374" x="478.77301">"B"</text>
+   <text id="svg_45" font-weight="bold" font-size="13" y="516.53374" x="538.77301">null</text>
+  </g>
+  <g id="svg_135">
+   <rect id="svg_126" rx="5" stroke-width="2" stroke="#4caf50" fill="#c8e6c9" height="40" width="80" y="395.25715" x="195.0496"/>
+   <text id="svg_127" font-weight="bold" font-size="13" text-anchor="middle" y="420.25715" x="235.0496">"Z"</text>
+   <path id="svg_128" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m275.04961,415.25714l30,0"/>
+   <rect id="svg_129" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="395.25715" x="315.0496"/>
+   <text id="svg_130" font-size="13" text-anchor="middle" y="420.25715" x="355.0496">"A"</text>
+   <path id="svg_131" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m395.04961,415.25714l30,0"/>
+   <rect id="svg_132" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="80" y="395.25715" x="435.0496"/>
+   <text id="svg_133" font-size="13" text-anchor="middle" y="420.25715" x="475.0496">"B"</text>
+   <text id="svg_134" font-weight="bold" font-size="13" y="420.25715" x="535.0496">null</text>
+  </g>
+ </g>
+</svg>

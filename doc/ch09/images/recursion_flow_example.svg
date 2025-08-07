@@ -1,0 +1,150 @@
+<svg width="999.9999999999999" height="800" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Call Stack Visualization -->
+ <!-- Execution Flow -->
+ <!-- Return Path -->
+ <!-- Memory representation -->
+ <!-- Arrow definitions -->
+ <defs>
+  <marker orient="auto" refY="3.5" refX="10" markerHeight="7" markerWidth="10" id="arrowhead">
+   <polygon id="svg_1" fill="#666" points="0 0, 10 3.5, 0 7"/>
+  </marker>
+  <marker orient="auto" refY="3.5" refX="10" markerHeight="7" markerWidth="10" id="redArrow">
+   <polygon id="svg_2" fill="#d32f2f" points="0 0, 10 3.5, 0 7"/>
+  </marker>
+  <marker orient="auto" refY="3.5" refX="10" markerHeight="7" markerWidth="10" id="orangeArrow">
+   <polygon id="svg_3" fill="#ef6c00" points="0 0, 10 3.5, 0 7"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_4" font-weight="bold" font-size="26" text-anchor="middle" y="30" x="500">재귀 호출 흐름: factorial(4)</text>
+  <text id="svg_5" fill="#1565c0" font-weight="bold" font-size="20" text-anchor="middle" y="70" x="213.34489">호출 스택 (Call Stack)</text>
+  <!-- Stack frames -->
+  <!-- Frame 1: factorial(4) -->
+  <g id="svg_7">
+   <rect id="svg_8" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="80" width="240" y="100" x="93.34489"/>
+   <text id="svg_9" font-weight="bold" font-size="14" text-anchor="middle" y="125" x="213.34489">factorial(4)</text>
+   <text id="svg_10" font-size="12" text-anchor="middle" y="145" x="213.34489">n = 4</text>
+   <text id="svg_11" fill="#666" font-size="12" text-anchor="middle" y="165" x="213.34489">대기중: 4 × ?</text>
+   <!-- Arrow -->
+   <path id="svg_12" marker-end="url(#arrowhead)" stroke-width="2" stroke="#1565c0" d="m213.34489,180l0,20"/>
+  </g>
+  <!-- Frame 2: factorial(3) -->
+  <g id="svg_13">
+   <rect id="svg_14" rx="5" stroke-width="2" stroke="#1565c0" fill="#bbdefb" height="80" width="240" y="210" x="93.34489"/>
+   <text id="svg_15" font-weight="bold" font-size="14" text-anchor="middle" y="235" x="213.34489">factorial(3)</text>
+   <text id="svg_16" font-size="12" text-anchor="middle" y="255" x="213.34489">n = 3</text>
+   <text id="svg_17" fill="#666" font-size="12" text-anchor="middle" y="275" x="213.34489">대기중: 3 × ?</text>
+   <!-- Arrow -->
+   <path id="svg_18" marker-end="url(#arrowhead)" stroke-width="2" stroke="#1565c0" d="m213.34489,290l0,20"/>
+  </g>
+  <!-- Frame 3: factorial(2) -->
+  <g id="svg_19">
+   <rect id="svg_20" rx="5" stroke-width="2" stroke="#1565c0" fill="#90caf9" height="80" width="240" y="320" x="93.34489"/>
+   <text id="svg_21" font-weight="bold" font-size="14" text-anchor="middle" y="345" x="213.34489">factorial(2)</text>
+   <text id="svg_22" font-size="12" text-anchor="middle" y="365" x="213.34489">n = 2</text>
+   <text id="svg_23" fill="#666" font-size="12" text-anchor="middle" y="385" x="213.34489">대기중: 2 × ?</text>
+   <!-- Arrow -->
+   <path id="svg_24" marker-end="url(#arrowhead)" stroke-width="2" stroke="#1565c0" d="m213.34489,400l0,20"/>
+  </g>
+  <!-- Frame 4: factorial(1) - Base Case -->
+  <g id="svg_25">
+   <rect id="svg_26" rx="5" stroke-width="3" stroke="#4caf50" fill="#c8e6c9" height="80" width="240" y="430" x="93.34489"/>
+   <text id="svg_27" font-weight="bold" font-size="14" text-anchor="middle" y="455" x="213.34489">factorial(1)</text>
+   <text id="svg_28" font-size="12" text-anchor="middle" y="475" x="213.34489">n = 1</text>
+   <text id="svg_29" font-weight="bold" fill="#2e7d32" font-size="12" text-anchor="middle" y="495" x="213.34489">기저 사례! return 1</text>
+  </g>
+  <!-- Stack pointer -->
+  <g id="svg_30">
+   <path id="svg_31" marker-end="url(#redArrow)" stroke-width="3" stroke="#d32f2f" d="m60.03467,472.24148l30,0"/>
+   <text id="svg_32" fill="#d32f2f" font-size="12" text-anchor="end" y="477.24148" x="50.03467">현재 실행</text>
+  </g>
+  <text id="svg_33" font-weight="bold" font-size="20" text-anchor="middle" y="70" x="513.34489">실행 흐름</text>
+  <!-- Code visualization -->
+  <rect stroke="#666" id="svg_34" rx="5" stroke-width="2" fill="#f5f5f5" height="141.7647" width="240" y="100" x="394.08018"/>
+  <text id="svg_35" font-family="monospace" font-size="13" y="125" x="403.34489">int factorial(int n) {</text>
+  <text id="svg_36" font-family="monospace" font-size="13" y="146.47059" x="422.46254">if (n &lt;= 1) {</text>
+  <text stroke="null" id="svg_37" font-family="monospace" font-size="13" y="167.20588" x="442.31548">return 1;</text>
+  <text id="svg_38" font-family="monospace" font-size="13" y="186.47059" x="422.46254">}</text>
+  <text id="svg_39" font-family="monospace" font-size="13" y="206.47059" x="422.46254">return n *</text>
+  <text id="svg_40" font-family="monospace" font-size="13" y="207.35294" x="507.75666">factorial(n-1);</text>
+  <text id="svg_41" font-family="monospace" font-size="13" y="229.55882" x="403.34489">}</text>
+  <!-- Flow steps -->
+  <g id="svg_42">
+   <rect id="svg_43" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="160" y="320" x="433.34489"/>
+   <text id="svg_44" font-size="12" text-anchor="middle" y="345" x="513.34489">1. factorial(4) 시작</text>
+   <path id="svg_45" marker-end="url(#arrowhead)" stroke-width="2" stroke="#666" d="m513.34489,360l0,20"/>
+   <rect id="svg_46" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="160" y="380" x="433.34489"/>
+   <text id="svg_47" font-size="12" text-anchor="middle" y="405" x="513.34489">2. 4 &gt; 1이므로 재귀</text>
+   <path id="svg_48" marker-end="url(#arrowhead)" stroke-width="2" stroke="#666" d="m513.34489,420l0,20"/>
+   <rect id="svg_49" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="160" y="440" x="433.34489"/>
+   <text id="svg_50" font-size="12" text-anchor="middle" y="465" x="513.34489">3. 4 × factorial(3)</text>
+  </g>
+  <g id="return-path">
+   <text id="svg_51" fill="#ef6c00" font-weight="bold" font-size="20" text-anchor="middle" y="70" x="813.34489">반환 경로</text>
+   <!-- Return stack -->
+   <g id="svg_52">
+    <!-- Return 1 -->
+    <g id="svg_53">
+     <rect id="svg_54" rx="5" stroke-width="3" stroke="#4caf50" fill="#c8e6c9" height="60" width="200" y="430" x="713.34489"/>
+     <text id="svg_55" font-weight="bold" font-size="14" text-anchor="middle" y="455" x="813.34489">factorial(1) = 1</text>
+     <text id="svg_56" font-size="12" text-anchor="middle" y="475" x="813.34489">기저 사례 반환</text>
+     <!-- Arrow up -->
+     <path id="svg_57" marker-end="url(#orangeArrow)" stroke-width="3" stroke="#ef6c00" d="m813.34489,430l0,-30"/>
+    </g>
+    <!-- Return 2 -->
+    <g id="svg_58">
+     <rect id="svg_59" rx="5" stroke-width="2" stroke="#ef6c00" fill="#ffe0b2" height="80" width="200" y="320" x="713.34489"/>
+     <text id="svg_60" font-weight="bold" font-size="14" text-anchor="middle" y="345" x="813.34489">factorial(2)</text>
+     <text id="svg_61" font-size="12" text-anchor="middle" y="365" x="813.34489">2 × 1 = 2</text>
+     <text id="svg_62" fill="#666" font-size="12" text-anchor="middle" y="385" x="813.34489">반환값: 2</text>
+     <!-- Arrow up -->
+     <path id="svg_63" marker-end="url(#orangeArrow)" stroke-width="3" stroke="#ef6c00" d="m813.34489,320l0,-30"/>
+    </g>
+    <!-- Return 6 -->
+    <g id="svg_64">
+     <rect id="svg_65" rx="5" stroke-width="2" stroke="#ef6c00" fill="#ffccbc" height="80" width="200" y="210" x="713.34489"/>
+     <text id="svg_66" font-weight="bold" font-size="14" text-anchor="middle" y="235" x="813.34489">factorial(3)</text>
+     <text id="svg_67" font-size="12" text-anchor="middle" y="255" x="813.34489">3 × 2 = 6</text>
+     <text id="svg_68" fill="#666" font-size="12" text-anchor="middle" y="275" x="813.34489">반환값: 6</text>
+     <!-- Arrow up -->
+     <path id="svg_69" marker-end="url(#orangeArrow)" stroke-width="3" stroke="#ef6c00" d="m813.34489,210l0,-30"/>
+    </g>
+    <!-- Return 24 -->
+    <g id="svg_70">
+     <rect id="svg_71" rx="5" stroke-width="3" stroke="#d84315" fill="#ff8a65" height="80" width="200" y="100" x="713.34489"/>
+     <text id="svg_72" font-weight="bold" font-size="14" text-anchor="middle" y="125" x="813.34489">factorial(4)</text>
+     <text id="svg_73" font-weight="bold" font-size="12" text-anchor="middle" y="145" x="813.34489">4 × 6 = 24</text>
+     <text id="svg_74" font-weight="bold" fill="#fff" font-size="12" text-anchor="middle" y="165" x="813.34489">최종 결과: 24</text>
+    </g>
+   </g>
+  </g>
+  <!-- Stack memory -->
+  <!-- Stack frames in memory -->
+  <!-- Execution pointer -->
+  <g id="svg_96">
+   <text id="svg_75" font-weight="bold" font-size="18" text-anchor="middle" y="580" x="513.34489">메모리 상태 (n=1일 때)</text>
+   <g id="svg_94">
+    <text id="svg_77" font-weight="bold" font-size="14" y="608.52941" x="281.72724">스택 메모리</text>
+    <rect id="svg_78" stroke-width="2" stroke="#0277bd" fill="#e1f5fe" height="140" width="100" y="620" x="263.34489"/>
+    <rect id="svg_79" stroke="#01579b" fill="#b3e5fc" height="30" width="90" y="625" x="268.34489"/>
+    <rect id="svg_81" stroke="#01579b" fill="#81d4fa" height="30" width="90" y="660" x="268.34489"/>
+    <rect id="svg_83" stroke="#01579b" fill="#4fc3f7" height="30" width="90" y="695" x="268.34489"/>
+    <text id="svg_82" font-size="11" text-anchor="middle" y="713.82353" x="314.81548">f(3): n=3</text>
+    <text id="svg_84" font-size="11" text-anchor="middle" y="678.23529" x="314.81547">f(2): n=2</text>
+    <rect id="svg_85" stroke-width="2" stroke="#01579b" fill="#29b6f6" height="25" width="90" y="730" x="268.34489"/>
+    <text id="svg_80" font-size="11" text-anchor="middle" y="746.47059" x="314.08018">f(4): n=4</text>
+    <text id="svg_86" font-weight="bold" font-size="11" text-anchor="middle" y="646.26471" x="317.02136">f(1): n=1</text>
+   </g>
+   <g id="svg_95">
+    <text id="svg_88" font-weight="bold" font-size="14" y="610" x="683.93313">실행 상태</text>
+    <rect id="svg_89" rx="5" stroke-width="2" stroke="#f57f17" fill="#fff9c4" height="100" width="160" y="620" x="633.34489"/>
+    <text id="svg_90" font-size="12" text-anchor="middle" y="645" x="713.34489">현재 함수: factorial(1)</text>
+    <text id="svg_91" font-size="12" text-anchor="middle" y="665" x="713.34489">매개변수: n = 1</text>
+    <text id="svg_92" font-size="12" text-anchor="middle" y="685" x="713.34489">조건: n &lt;= 1 (참)</text>
+    <text id="svg_93" fill="#2e7d32" font-weight="bold" font-size="12" text-anchor="middle" y="705" x="713.34489">반환: 1</text>
+   </g>
+  </g>
+ </g>
+</svg>

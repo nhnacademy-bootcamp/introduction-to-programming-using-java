@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="24" font-weight="bold">재귀적 클래스 정의</text>
+  
+  <!-- Employee hierarchy -->
+  <g transform="translate(400, 80)">
+    <!-- President -->
+    <g transform="translate(0, 0)">
+      <rect x="-100" y="0" width="200" height="80" fill="#2e7d32" stroke="#1b5e20" stroke-width="2" rx="5"/>
+      <text x="0" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Employee 객체</text>
+      <line x1="-90" y1="30" x2="90" y2="30" stroke="white" stroke-width="1"/>
+      <text x="0" y="50" text-anchor="middle" font-size="13" fill="white">name: "대표이사"</text>
+      <text x="0" y="70" text-anchor="middle" font-size="13" fill="white">supervisor: null</text>
+    </g>
+    
+    <!-- VP -->
+    <g transform="translate(0, 120)">
+      <rect x="-100" y="0" width="200" height="80" fill="#388e3c" stroke="#2e7d32" stroke-width="2" rx="5"/>
+      <text x="0" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Employee 객체</text>
+      <line x1="-90" y1="30" x2="90" y2="30" stroke="white" stroke-width="1"/>
+      <text x="0" y="50" text-anchor="middle" font-size="13" fill="white">name: "부사장"</text>
+      <text x="0" y="70" text-anchor="middle" font-size="13" fill="white">supervisor:</text>
+      <circle cx="70" cy="70" r="4" fill="#ffc107"/>
+    </g>
+    
+    <!-- Manager -->
+    <g transform="translate(0, 240)">
+      <rect x="-100" y="0" width="200" height="80" fill="#43a047" stroke="#388e3c" stroke-width="2" rx="5"/>
+      <text x="0" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Employee 객체</text>
+      <line x1="-90" y1="30" x2="90" y2="30" stroke="white" stroke-width="1"/>
+      <text x="0" y="50" text-anchor="middle" font-size="13" fill="white">name: "부장"</text>
+      <text x="0" y="70" text-anchor="middle" font-size="13" fill="white">supervisor:</text>
+      <circle cx="70" cy="70" r="4" fill="#ffc107"/>
+    </g>
+    
+    <!-- Employee -->
+    <g transform="translate(0, 360)">
+      <rect x="-100" y="0" width="200" height="80" fill="#66bb6a" stroke="#43a047" stroke-width="2" rx="5"/>
+      <text x="0" y="20" text-anchor="middle" font-size="14" font-weight="bold">Employee 객체</text>
+      <line x1="-90" y1="30" x2="90" y2="30" stroke="#333" stroke-width="1"/>
+      <text x="0" y="50" text-anchor="middle" font-size="13">name: "사원"</text>
+      <text x="0" y="70" text-anchor="middle" font-size="13">supervisor:</text>
+      <circle cx="70" cy="70" r="4" fill="#f57c00"/>
+    </g>
+    
+    <!-- Arrows showing supervisor relationships -->
+    <path d="M 70 190 L 70 120 Q 70 90 40 80" stroke="#ffc107" stroke-width="3" fill="none" marker-end="url(#arrowYellow)"/>
+    <path d="M 70 310 L 70 240 Q 70 210 40 200" stroke="#ffc107" stroke-width="3" fill="none" marker-end="url(#arrowYellow)"/>
+    <path d="M 70 430 L 70 360 Q 70 330 40 320" stroke="#f57c00" stroke-width="3" fill="none" marker-end="url(#arrowOrange)"/>
+    
+    <!-- Level indicators -->
+    <g transform="translate(150, 0)">
+      <text x="0" y="40" font-size="14" fill="#666">Level 0</text>
+      <text x="0" y="160" font-size="14" fill="#666">Level 1</text>
+      <text x="0" y="280" font-size="14" fill="#666">Level 2</text>
+      <text x="0" y="400" font-size="14" fill="#666">Level 3</text>
+    </g>
+  </g>
+  
+  <!-- Method result -->
+  <g transform="translate(400, 550)">
+    <rect x="-180" y="0" width="360" height="40" fill="#fff3e0" stroke="#f57c00" stroke-width="2" rx="5"/>
+    <text x="0" y="25" text-anchor="middle" font-size="14" font-weight="bold">employee.getLevelsToPresident() = 3</text>
+  </g>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowYellow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ffc107"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f57c00"/>
+    </marker>
+  </defs>
+</svg>

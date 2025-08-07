@@ -1,0 +1,93 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Base Case Section -->
+ <!-- Recursive Case Section -->
+ <!-- Arrow definitions -->
+ <defs>
+  <marker markerUnits="strokeWidth" orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrowBlue">
+   <path id="svg_1" fill="#1565c0" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+  <marker markerUnits="strokeWidth" orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrowGreen">
+   <path id="svg_2" fill="#4caf50" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+  <marker markerUnits="strokeWidth" orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrowOrange">
+   <path id="svg_3" fill="#ef6c00" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_4" font-weight="bold" font-size="26" text-anchor="middle" y="30" x="450">재귀의 두 가지 핵심 요소</text>
+  <!-- Container -->
+  <rect stroke="#1565c0" id="svg_5" rx="15" stroke-width="3" fill="#e3f2fd" height="530.00001" width="380" y="52" x="50"/>
+  <!-- Title -->
+  <rect id="svg_6" rx="15" fill="#1565c0" height="60" width="380" y="51" x="50"/>
+  <text id="svg_7" font-weight="bold" font-size="22" fill="white" text-anchor="middle" y="86" x="240">기저 사례 (Base Case)</text>
+  <!-- Detailed Code Example -->
+  <path id="svg_8" d="m70,149c0,-4.34703 3.65297,-8 8,-8l324,0c4.34703,0 8,3.65297 8,8l0,184c0,4.34703 -3.65297,8 -8,8l-324,0c-4.34703,0 -8,-3.65297 -8,-8l0,-184z" opacity="undefined" stroke-width="2" stroke="#0d47a1" fill="#ffffff"/>
+  <text id="svg_9" fill="#0d47a1" font-family="monospace" font-size="15" y="166" x="80">// factorial 함수의 기저 사례</text>
+  <text id="svg_10" font-family="monospace" font-size="15" y="191" x="80">public static int factorial(int n) {</text>
+  <text id="svg_11" font-weight="bold" fill="#d32f2f" font-family="monospace" font-size="15" y="218" x="112">if (n &lt;= 1) {</text>
+  <text id="svg_12" font-weight="bold" fill="#d32f2f" font-family="monospace" font-size="15" y="243" x="144">return 1;  // 재귀 종료!</text>
+  <text id="svg_13" font-weight="bold" fill="#d32f2f" font-family="monospace" font-size="15" y="268" x="112">}</text>
+  <text id="svg_14" font-family="monospace" font-size="15" y="293" x="112">return n * factorial(n - 1);</text>
+  <text style="cursor: move;" id="svg_15" font-family="monospace" font-size="15" y="316" x="80">}</text>
+  <!-- Visual Flow Diagram -->
+  <g id="svg_16">
+   <!-- Function call -->
+   <rect id="svg_17" rx="20" stroke-width="2" stroke="#1565c0" fill="#bbdefb" height="40" width="200" y="359" x="140"/>
+   <text id="svg_18" font-size="14" text-anchor="middle" y="384" x="240">factorial(1) 호출</text>
+   <!-- Arrow down -->
+   <path id="svg_19" marker-end="url(#arrowBlue)" stroke-width="3" stroke="#1565c0" d="m240,399l0,30"/>
+   <!-- Base case check -->
+   <rect id="svg_20" rx="5" stroke-width="2" stroke="#f57f17" fill="#fff9c4" height="50" width="160" y="429" x="160"/>
+   <text id="svg_21" font-weight="bold" font-size="13" text-anchor="middle" y="444" x="240">n &lt;= 1 ?</text>
+   <text id="svg_22" font-weight="bold" font-size="13" text-anchor="middle" y="464" x="240">YES!</text>
+   <!-- Arrow down -->
+   <path id="svg_23" marker-end="url(#arrowGreen)" stroke-width="3" stroke="#4caf50" d="m240,479l0,30"/>
+   <!-- Return value -->
+   <circle id="svg_24" stroke-width="3" stroke="#388e3c" fill="#4caf50" r="30" cy="539" cx="240"/>
+   <text id="svg_25" font-weight="bold" font-size="16" fill="white" text-anchor="middle" y="544" x="240">return 1</text>
+   <!-- Stop sign -->
+   <g id="svg_26">
+    <polygon id="svg_27" stroke-width="2" stroke="#b71c1c" fill="#d32f2f" points="320,514 337.67999267578125,521.3200073242188 345,539 337.67999267578125,556.6799926757812 320,564 302.32000732421875,556.6799926757812 295,539 302.32000732421875,521.3200073242188 "/>
+    <text id="svg_28" font-weight="bold" font-size="12" fill="white" text-anchor="middle" y="544" x="320">STOP</text>
+   </g>
+  </g>
+  <!-- Container -->
+  <rect stroke="#ef6c00" id="svg_29" rx="15" stroke-width="3" fill="#fff3e0" height="529.99997" width="380" y="51" x="471"/>
+  <!-- Title -->
+  <rect id="svg_30" rx="15" fill="#ef6c00" height="60" width="380" y="51" x="470"/>
+  <text id="svg_31" font-weight="bold" font-size="22" fill="white" text-anchor="middle" y="86" x="660">재귀 사례 (Recursive Case)</text>
+  <!-- Detailed Code Example -->
+  <rect id="svg_32" rx="8" stroke-width="2" stroke="#e65100" fill="#ffffff" height="200" width="340" y="141" x="490"/>
+  <text id="svg_33" fill="#e65100" font-family="monospace" font-size="15" y="166" x="500">// factorial 함수의 재귀 사례</text>
+  <text id="svg_34" font-family="monospace" font-size="15" y="191" x="500">public static int factorial(int n) {</text>
+  <text id="svg_35" font-family="monospace" font-size="15" y="217" x="534">if (n &lt;= 1) {</text>
+  <text id="svg_36" font-family="monospace" font-size="15" y="243" x="568">return 1;</text>
+  <text id="svg_37" font-family="monospace" font-size="15" y="267" x="534">}</text>
+  <text id="svg_38" font-weight="bold" fill="#ef6c00" font-family="monospace" font-size="15" y="291" x="538">return n * factorial(n - 1);</text>
+  <text id="svg_39" fill="#ef6c00" font-family="monospace" font-size="15" y="316" x="540">// 자기 자신을 더 작은 값으로 호출</text>
+  <!-- Visual Flow Diagram -->
+  <g id="svg_40">
+   <!-- Function call -->
+   <rect id="svg_41" rx="20" stroke-width="2" stroke="#ef6c00" fill="#ffe0b2" height="40" width="200" y="359" x="560"/>
+   <text id="svg_42" font-size="14" text-anchor="middle" y="384" x="660">factorial(4) 호출</text>
+   <!-- Arrow down -->
+   <path id="svg_43" marker-end="url(#arrowOrange)" stroke-width="3" stroke="#ef6c00" d="m660,399l0,30"/>
+   <!-- Base case check -->
+   <rect id="svg_44" rx="5" stroke-width="2" stroke="#f57f17" fill="#fff9c4" height="50" width="160" y="429" x="580"/>
+   <text id="svg_45" font-weight="bold" font-size="13" text-anchor="middle" y="444" x="660">n &lt;= 1 ?</text>
+   <text id="svg_46" font-weight="bold" font-size="13" text-anchor="middle" y="464" x="660">NO</text>
+   <!-- Arrow down -->
+   <path id="svg_47" marker-end="url(#arrowOrange)" stroke-width="3" stroke="#ef6c00" d="m660,479l0,30"/>
+   <!-- Recursive call -->
+   <rect id="svg_48" rx="5" stroke-width="3" stroke="#ef6c00" fill="#ffccbc" height="60" width="240" y="509" x="540"/>
+   <text id="svg_49" font-weight="bold" font-size="14" text-anchor="middle" y="529" x="660">4 × factorial(3)</text>
+   <text id="svg_50" font-size="12" text-anchor="middle" y="549" x="660">더 작은 문제로 분해!</text>
+   <!-- Recursive arrow -->
+   <path id="svg_51" stroke-dasharray="5,5" marker-end="url(#arrowOrange)" fill="none" stroke-width="2" stroke="#ef6c00" d="m760,539q40,0 40,-155l-30,0"/>
+   <text id="svg_52" fill="#ef6c00" font-size="11" y="459" x="805">재귀 호출</text>
+  </g>
+  <text id="svg_53" font-family="monospace" font-size="15" y="328" x="504">}</text>
+ </g>
+</svg>

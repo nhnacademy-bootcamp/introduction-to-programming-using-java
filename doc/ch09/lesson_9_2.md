@@ -12,6 +12,8 @@
 
 ### 1.1 포인터와 객체 연결
 
+![포인터와 객체 연결](./images/pointer_connections.svg)
+
 Java에서 객체는 다른 객체에 대한 **참조(reference)** 를 가질 수 있습니다. 이러한 참조를 **포인터(pointer)** 라고도 합니다.
 
 ```java
@@ -32,6 +34,8 @@ bob.friend = alice;  // Bob이 Alice를 가리킴
 ```
 
 ### 1.2 재귀적 클래스 정의
+
+![재귀적 클래스 정의](./images/recursive_class_definition.svg)
 
 클래스가 자기 자신의 타입을 인스턴스 변수로 가질 때, 이를 **재귀적 클래스 정의**라고 합니다:
 
@@ -84,6 +88,8 @@ System.out.println(employee.getLevelsToPresident());  // 3
 
 ## 2. 연결 리스트(Linked List)
 
+![연결 리스트 구조](./images/linked_list_structure.svg)
+
 ### 2.1 노드(Node) 클래스
 
 연결 리스트의 기본 구성 요소는 **노드**입니다:
@@ -135,6 +141,8 @@ Node head = null;  // 빈 리스트
 
 ### 3.1 리스트 순회(Traversal)
 
+![리스트 순회](./images/list_traversal.svg)
+
 연결 리스트의 모든 요소를 방문하는 기본 패턴:
 
 ```java
@@ -173,6 +181,8 @@ public class LinkedListTraversal {
 ```
 
 ### 3.2 재귀적 리스트 처리
+
+![재귀적 리스트 처리](./images/recursive_list_processing.svg)
 
 연결 리스트는 재귀적으로도 처리할 수 있습니다:
 
@@ -448,6 +458,8 @@ public void insertInOrder(String newItem) {
 ```
 
 ### 5.4 삽입 과정 시각화
+
+![삽입 과정](./images/insertion_process.svg)
 
 ```
 삽입 전: A → C → E → null

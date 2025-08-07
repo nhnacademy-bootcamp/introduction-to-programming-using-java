@@ -1,0 +1,143 @@
+<svg width="1200" height="700" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Traversal steps -->
+ <!-- Code pattern -->
+ <!-- Arrow definitions -->
+ <defs>
+  <marker orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrow">
+   <path id="svg_1" fill="#333" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+  <marker orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrowYellow">
+   <path id="svg_2" fill="#f57f17" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_3" font-weight="bold" font-size="24" text-anchor="middle" y="30" x="600">리스트 순회 (Traversal)</text>
+  <!-- Step 1 -->
+  <text id="svg_6" font-weight="bold" font-size="16" y="80" x="100">Step 1: runner = head</text>
+  <!-- head -->
+  <rect id="svg_7" rx="5" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="35" width="60" y="100" x="100"/>
+  <text id="svg_8" font-weight="bold" font-size="12" text-anchor="middle" y="122" x="130">head</text>
+  <!-- runner -->
+  <!-- arrows pointing to first node -->
+  <path id="svg_11" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m160,117.5l30,0"/>
+  <!-- nodes -->
+  <g id="svg_13">
+   <rect id="svg_14" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="100" x="200"/>
+   <text id="svg_15" font-weight="bold" font-size="13" text-anchor="middle" y="130" x="250">"첫번째"</text>
+   <path id="svg_16" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m300,125l30,0"/>
+  </g>
+  <g id="svg_17">
+   <rect id="svg_18" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="100" x="340"/>
+   <text id="svg_19" font-size="13" text-anchor="middle" y="130" x="390">"두번째"</text>
+   <path id="svg_20" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m440,125l30,0"/>
+  </g>
+  <g id="svg_21">
+   <rect id="svg_22" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="100" x="480"/>
+   <text id="svg_23" font-size="13" text-anchor="middle" y="130" x="530">"세번째"</text>
+   <text id="svg_24" font-weight="bold" font-size="13" text-anchor="middle" y="130" x="600">null</text>
+  </g>
+  <!-- Step 2 -->
+  <text id="svg_26" font-weight="bold" font-size="16" y="230" x="100">Step 2: runner = runner.next</text>
+  <!-- head -->
+  <rect id="svg_27" rx="5" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="35" width="60" y="250" x="100"/>
+  <text id="svg_28" font-weight="bold" font-size="12" text-anchor="middle" y="272" x="130">head</text>
+  <!-- runner -->
+  <!-- arrows -->
+  <path id="svg_31" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m160,267.5l30,0"/>
+  <g id="svg_33">
+   <rect id="svg_34" opacity="0.6" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="250" x="200"/>
+   <text id="svg_35" font-size="13" text-anchor="middle" y="280" x="250">"첫번째"</text>
+   <path id="svg_36" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m300,275l30,0"/>
+  </g>
+  <!-- nodes -->
+  <g id="svg_37">
+   <rect id="svg_38" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="250" x="340"/>
+   <text id="svg_39" font-weight="bold" font-size="13" text-anchor="middle" y="280" x="390">"두번째"</text>
+   <path id="svg_40" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m440,275l30,0"/>
+  </g>
+  <g id="svg_41">
+   <rect id="svg_42" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="250" x="480"/>
+   <text id="svg_43" font-size="13" text-anchor="middle" y="280" x="530">"세번째"</text>
+   <text id="svg_44" font-weight="bold" font-size="13" text-anchor="middle" y="280" x="600">null</text>
+  </g>
+  <!-- Step 3 -->
+  <text id="svg_46" font-weight="bold" font-size="16" y="380" x="100">Step 3: runner = runner.next</text>
+  <!-- head -->
+  <rect id="svg_47" rx="5" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="35" width="60" y="400" x="100"/>
+  <text id="svg_48" font-weight="bold" font-size="12" text-anchor="middle" y="422" x="130">head</text>
+  <!-- runner -->
+  <!-- arrows -->
+  <path id="svg_51" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m160,417.5l30,0"/>
+  <g id="svg_57">
+   <rect id="svg_58" opacity="0.6" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="400" x="340"/>
+   <text id="svg_59" font-size="13" text-anchor="middle" y="430" x="390">"두번째"</text>
+   <path id="svg_60" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m440,425l30,0"/>
+  </g>
+  <!-- nodes -->
+  <g id="svg_53">
+   <rect id="svg_54" opacity="0.6" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="400" x="200"/>
+   <text id="svg_55" font-size="13" text-anchor="middle" y="430" x="250">"첫번째"</text>
+   <path id="svg_56" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m300,425l30,0"/>
+  </g>
+  <g id="svg_61">
+   <rect id="svg_62" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="400" x="480"/>
+   <text id="svg_63" font-weight="bold" font-size="13" text-anchor="middle" y="430" x="530">"세번째"</text>
+   <text id="svg_64" font-weight="bold" font-size="13" text-anchor="middle" y="430" x="600">null</text>
+  </g>
+  <!-- Step 4 -->
+  <text id="svg_66" font-weight="bold" font-size="16" y="530" x="100">Step 4: runner = runner.next (null)</text>
+  <!-- head -->
+  <rect id="svg_67" rx="5" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="35" width="60" y="550" x="100"/>
+  <text id="svg_68" font-weight="bold" font-size="12" text-anchor="middle" y="572" x="130">head</text>
+  <!-- runner -->
+  <rect id="svg_69" rx="5" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="35" width="60" y="616.34615" x="519.51923"/>
+  <text stroke="null" id="svg_70" font-weight="bold" font-size="12" text-anchor="middle" y="638.34615" x="549.51923">runner</text>
+  <text id="svg_71" font-weight="bold" font-size="14" text-anchor="middle" y="638.34615" x="619.51923">null</text>
+  <!-- arrows -->
+  <path id="svg_72" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m160,567.5l30,0"/>
+  <!-- nodes -->
+  <g id="svg_73">
+   <rect id="svg_74" opacity="0.6" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="550" x="200"/>
+   <text id="svg_75" font-size="13" text-anchor="middle" y="580" x="250">"첫번째"</text>
+   <path id="svg_76" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m300,575l30,0"/>
+  </g>
+  <g id="svg_77">
+   <rect id="svg_78" opacity="0.6" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="550" x="340"/>
+   <text id="svg_79" font-size="13" text-anchor="middle" y="580" x="390">"두번째"</text>
+   <path id="svg_80" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m440,575l30,0"/>
+  </g>
+  <g id="svg_81">
+   <rect id="svg_82" opacity="0.6" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="100" y="550" x="480"/>
+   <text id="svg_83" font-size="13" text-anchor="middle" y="580" x="530">"세번째"</text>
+   <text id="svg_84" font-weight="bold" font-size="13" text-anchor="middle" y="580" x="600">null</text>
+  </g>
+  <text id="svg_85" fill="#d32f2f" font-weight="bold" font-size="16" text-anchor="middle" y="680" x="350">순회 종료!</text>
+  <g id="svg_86">
+   <rect id="svg_87" rx="5" stroke-width="2" stroke="#666" fill="#f5f5f5" height="180" width="400" y="200" x="700"/>
+   <text id="svg_88" font-weight="bold" font-size="16" text-anchor="middle" y="225" x="900">순회 패턴</text>
+   <text id="svg_89" font-family="monospace" font-size="13" y="255" x="715">Node runner = head;</text>
+   <text id="svg_90" font-family="monospace" font-size="13" y="280" x="715">while (runner != null) {</text>
+   <text id="svg_91" fill="#4caf50" font-family="monospace" font-size="13" y="305" x="715">// runner.item 처리</text>
+   <text id="svg_92" font-family="monospace" font-size="13" y="330" x="715">System.out.println(runner.item);</text>
+   <text id="svg_93" font-family="monospace" font-size="13" y="355" x="715">runner = runner.next;</text>
+   <text id="svg_94" font-family="monospace" font-size="13" y="370" x="715">}</text>
+  </g>
+  <g id="svg_95">
+   <rect stroke="#f57f17" id="svg_29" rx="5" stroke-width="2" fill="#ffeb3b" height="35" width="60" y="325.48077" x="219.32692"/>
+   <text id="svg_30" font-weight="bold" font-size="12" text-anchor="middle" y="347.48077" x="249.32692">runner</text>
+   <path id="svg_32" stroke-dasharray="5,3" marker-end="url(#arrowYellow)" stroke-width="2" stroke="#f57f17" d="m249.32692,325.48077l0,-25"/>
+  </g>
+  <g id="svg_96">
+   <rect id="svg_49" rx="5" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="35" width="60" y="475.48077" x="362.69231"/>
+   <text id="svg_50" font-weight="bold" font-size="12" text-anchor="middle" y="497.48077" x="392.69231">runner</text>
+   <path id="svg_52" stroke-dasharray="5,3" marker-end="url(#arrowYellow)" stroke-width="2" stroke="#f57f17" d="m392.69231,475.48077l0,-25"/>
+  </g>
+  <g id="svg_100">
+   <rect stroke="#f57f17" id="svg_97" rx="5" stroke-width="2" fill="#ffeb3b" height="35" width="60" y="160.57693" x="100.09616"/>
+   <text id="svg_98" font-weight="bold" font-size="12" text-anchor="middle" y="182.57693" x="130.09616">runner</text>
+   <path id="svg_99" stroke-dasharray="5,3" marker-end="url(#arrowYellow)" stroke-width="2" stroke="#f57f17" d="m130.09615,160.57693l0,-25"/>
+  </g>
+ </g>
+</svg>

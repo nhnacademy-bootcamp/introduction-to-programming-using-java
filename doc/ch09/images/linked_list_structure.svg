@@ -1,0 +1,93 @@
+<svg width="700" height="450" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Node class definition -->
+ <!-- Linked list example -->
+ <!-- Empty list -->
+ <!-- Arrow definitions -->
+ <defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+   <path d="m0,0l0,6l9,-3l-9,-3z" fill="#333" id="svg_1"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <!-- head pointer -->
+  <!-- First node -->
+  <!-- Second node -->
+  <!-- Third node -->
+  <!-- Ground symbol for null -->
+  <g id="svg_15">
+   <text x="349.99999" y="46.50799" text-anchor="middle" font-size="24" font-weight="bold" id="svg_2">연결 리스트 구조</text>
+   <g id="svg_3">
+    <text x="350" y="86.50799" text-anchor="middle" font-size="18" font-weight="bold" id="svg_4">Node 클래스</text>
+    <rect x="250" y="96.50799" width="200" height="80" fill="#f5f5f5" stroke="#666" stroke-width="2" rx="5" id="svg_5"/>
+    <text x="350" y="121.50799" text-anchor="middle" font-size="14" font-weight="bold" id="svg_6">class Node</text>
+    <line x1="260" y1="126.50799" x2="440" y2="126.50799" stroke="#666" id="svg_7"/>
+    <text x="350" y="146.50799" text-anchor="middle" font-size="13" id="svg_8">String item</text>
+    <text x="350" y="166.50799" text-anchor="middle" font-size="13" id="svg_9">Node next</text>
+   </g>
+   <text x="350.00001" y="216.50799" text-anchor="middle" font-size="18" font-weight="bold" id="svg_11">연결 리스트 예시</text>
+   <g id="svg_43">
+    <text x="350" y="366.50799" text-anchor="middle" font-size="18" font-weight="bold" id="svg_44">빈 리스트</text>
+    <rect x="260" y="386.50799" width="80" height="40" fill="#ffc107" stroke="#f57c00" stroke-width="2" rx="5" id="svg_45"/>
+    <text x="300" y="411.50799" text-anchor="middle" font-size="14" font-weight="bold" id="svg_46">head</text>
+    <text x="380" y="411.50799" text-anchor="middle" font-size="16" font-weight="bold" id="svg_47">null</text>
+    <!-- Ground symbol -->
+    <g id="svg_48">
+     <line x1="430" y1="401.50799" x2="430" y2="411.50799" stroke="#333" stroke-width="3" id="svg_49"/>
+     <line x1="420" y1="411.50799" x2="440" y2="411.50799" stroke="#333" stroke-width="3" id="svg_50"/>
+     <line x1="423" y1="414.50799" x2="437" y2="414.50799" stroke="#333" stroke-width="2" id="svg_51"/>
+     <line x1="426" y1="417.50799" x2="434" y2="417.50799" stroke="#333" id="svg_52"/>
+    </g>
+   </g>
+   <g id="svg_59"/>
+   <g id="svg_53">
+    <g id="svg_31">
+     <rect x="523.46151" y="245.36697" width="140" height="60" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="5" id="svg_32"/>
+     <line x1="593.46151" y1="245.36697" x2="593.46151" y2="305.36697" stroke="#1565c0" stroke-width="2" id="svg_33"/>
+     <text x="558.46151" y="265.36697" text-anchor="middle" font-size="12" id="svg_34">item:</text>
+     <text x="558.46151" y="285.36697" text-anchor="middle" font-size="13" font-weight="bold" id="svg_35">"세번째"</text>
+     <text x="628.46151" y="275.36697" text-anchor="middle" font-size="12" id="svg_36">next</text>
+     <text x="628.46151" y="290.36697" text-anchor="middle" font-size="13" font-weight="bold" id="svg_37">null</text>
+    </g>
+    <g id="svg_38">
+     <line x1="683.46151" y1="267.36697" x2="683.46151" y2="277.36697" stroke="#333" stroke-width="3" id="svg_39"/>
+     <line x1="673.46151" y1="277.36697" x2="693.46151" y2="277.36697" stroke="#333" stroke-width="3" id="svg_40"/>
+     <line x1="676.46151" y1="280.36697" x2="690.46151" y2="280.36697" stroke="#333" stroke-width="2" id="svg_41"/>
+     <line x1="679.46151" y1="283.36697" x2="687.46151" y2="283.36697" stroke="#333" id="svg_42"/>
+    </g>
+   </g>
+   <g id="svg_54">
+    <rect x="6.53845" y="255.36697" width="80" height="40" fill="#ffc107" stroke="#f57c00" stroke-width="2" rx="5" id="svg_12"/>
+    <text x="46.53845" y="280.86697" text-anchor="middle" font-size="14" font-weight="bold" id="svg_13">head</text>
+    <path d="m86.53845,275.36697l58.20512,0" stroke-width="3" marker-end="url(#arrow)" id="svg_14" stroke="#333"/>
+   </g>
+   <g id="svg_58">
+    <g id="svg_57">
+     <g id="svg_55">
+      <rect x="145.1282" y="245.68749" width="140" height="60" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="5" id="svg_16"/>
+      <text x="179.48717" y="265.04646" text-anchor="middle" font-size="12" id="svg_18">item:</text>
+      <text x="179.48717" y="285.04646" text-anchor="middle" font-size="13" font-weight="bold" id="svg_19">"첫번째"</text>
+      <text x="249.48717" y="275.04646" text-anchor="middle" font-size="12" id="svg_20">next</text>
+      <path d="m253.48718,290.04646l78.82051,0" stroke-width="3" marker-end="url(#arrow)" id="svg_22" stroke="#333"/>
+     </g>
+     <circle cx="249.48717" cy="290.04646" r="4" fill="#333" id="svg_21"/>
+    </g>
+    <line x1="214.48717" y1="245.04646" x2="214.48717" y2="305.04646" stroke="#1565c0" stroke-width="2" id="svg_17"/>
+   </g>
+   <g id="svg_10">
+    <g id="svg_62">
+     <g id="svg_56">
+      <rect x="333.33332" y="245.36697" width="140" height="60" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" rx="5" id="svg_24"/>
+      <text x="368.33332" y="265.36697" text-anchor="middle" font-size="12" id="svg_26">item:</text>
+      <text x="368.33332" y="285.36697" text-anchor="middle" font-size="13" font-weight="bold" id="svg_27">"두번째"</text>
+      <text x="438.33332" y="275.36697" text-anchor="middle" font-size="12" id="svg_28">next</text>
+      <path d="m442.97435,290.36697l80.10256,0" stroke-width="3" marker-end="url(#arrow)" id="svg_30" stroke="#333"/>
+     </g>
+     <circle cx="439.48582" cy="290.74486" r="4" fill="#333" id="svg_29"/>
+    </g>
+    <line x1="403.33332" y1="245.36697" x2="403.33332" y2="305.36697" stroke="#1565c0" stroke-width="2" id="svg_25"/>
+   </g>
+  </g>
+ </g>
+</svg>

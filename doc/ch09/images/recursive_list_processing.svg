@@ -1,0 +1,141 @@
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+ <!-- Title -->
+ <!-- Head and Tail concept -->
+ <!-- Recursive decomposition -->
+ <!-- Recursive code examples -->
+ <!-- Execution trace -->
+ <!-- Arrow definitions -->
+ <defs>
+  <marker orient="auto" refY="3" refX="9" markerHeight="10" markerWidth="10" id="arrow">
+   <path id="svg_1" fill="#333" d="m0,0l0,6l9,-3l-9,-3z"/>
+  </marker>
+  <filter id="svg_116_blur">
+   <feGaussianBlur stdDeviation="0.4" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <!-- Full list -->
+  <!-- Nodes -->
+  <!-- Arrows -->
+  <!-- Labels -->
+  <!-- Level 1 -->
+  <!-- Level 2 -->
+  <!-- Level 3 -->
+  <!-- Level 4 -->
+  <!-- Print list recursive -->
+  <!-- Print reversed -->
+  <g filter="url(#svg_116_blur)" id="svg_116">
+   <text id="svg_2" font-weight="bold" font-size="24" text-anchor="middle" y="46.53848" x="463.46155">재귀적 리스트 처리</text>
+   <text id="svg_4" font-weight="bold" font-size="20" text-anchor="middle" y="96.53848" x="463.46155">Head와 Tail 개념</text>
+   <text id="svg_6" font-weight="bold" font-size="16" y="126.53848" x="63.46155">전체 리스트</text>
+   <rect id="svg_7" rx="5" stroke-width="2" stroke="#388e3c" fill="#4caf50" height="50" width="80" y="136.53848" x="63.46155"/>
+   <text id="svg_8" fill="white" font-weight="bold" font-size="14" text-anchor="middle" y="166.53848" x="103.46155">"A"</text>
+   <rect id="svg_9" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="80" y="136.53848" x="163.46155"/>
+   <text id="svg_10" font-size="14" text-anchor="middle" y="166.53848" x="203.46155">"B"</text>
+   <rect id="svg_11" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="80" y="136.53848" x="263.46155"/>
+   <text id="svg_12" font-size="14" text-anchor="middle" y="166.53848" x="303.46155">"C"</text>
+   <rect id="svg_13" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="50" width="80" y="136.53848" x="363.46155"/>
+   <text id="svg_14" font-size="14" text-anchor="middle" y="166.53848" x="403.46155">"D"</text>
+   <path id="svg_15" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m143.46155,161.53848l20,0"/>
+   <path id="svg_16" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m243.46155,161.53848l20,0"/>
+   <path id="svg_17" marker-end="url(#arrow)" stroke-width="2" stroke="#333" d="m343.46155,161.53848l20,0"/>
+   <text id="svg_18" font-weight="bold" font-size="14" y="166.53848" x="463.46155">null</text>
+   <path transform="rotate(90.0362 103.462 198.644)" stroke="#4caf50" id="svg_20" stroke-width="2" d="m103.46154,233.81942l0,-70.35066"/>
+   <text transform="matrix(1 0 0 1.06582 0 -11.2898)" stroke="null" id="svg_21" fill="#4caf50" font-weight="bold" font-size="14" text-anchor="middle" y="213.21379" x="103.46155">head</text>
+   <path stroke="#f57c00" id="svg_22" stroke-width="2" d="m163.46155,198.64411q140,-0.44106 280,0l0,0.22053"/>
+   <text transform="matrix(1 0 0 1.06582 0 -11.2898)" stroke="null" id="svg_23" fill="#f57c00" font-weight="bold" font-size="14" text-anchor="middle" y="212.96705" x="303.46155">tail (나머지)</text>
+   <text id="svg_25" font-weight="bold" font-size="18" y="266.53848" x="63.46155">재귀적 분해 과정</text>
+   <text id="svg_41" font-weight="bold" font-size="14" y="382.17951" x="126.92311">2단계:</text>
+   <rect id="svg_42" rx="5" stroke-width="2" stroke="#388e3c" fill="#4caf50" height="40" width="60" y="356.53848" x="184.46156"/>
+   <text id="svg_43" fill="white" font-weight="bold" font-size="12" text-anchor="middle" y="381.53848" x="214.46156">"B"</text>
+   <text id="svg_44" font-size="14" y="381.53848" x="254.26485">+</text>
+   <rect id="svg_46" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="60" y="356.53848" x="274.46155"/>
+   <text id="svg_47" font-size="12" text-anchor="middle" y="381.53848" x="304.46155">"C"</text>
+   <path stroke="#333" id="svg_48" marker-end="url(#arrow)" stroke-width="2" d="m334.46155,376.53848l28.63309,0"/>
+   <rect id="svg_49" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="60" y="356.53848" x="364.46155"/>
+   <text id="svg_50" font-size="12" text-anchor="middle" y="381.53848" x="394.46155">"D"</text>
+   <text id="svg_52" font-weight="bold" font-size="14" y="442.17951" x="219.87182">3단계:</text>
+   <rect id="svg_53" rx="5" stroke-width="2" stroke="#388e3c" fill="#4caf50" height="40" width="60" y="416.53848" x="274.46155"/>
+   <text id="svg_54" fill="white" font-weight="bold" font-size="12" text-anchor="middle" y="441.53848" x="304.46157">"C"</text>
+   <text id="svg_55" font-size="14" y="441.53848" x="343.46155">+</text>
+   <rect id="svg_56" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="60" y="416.53848" x="363.46155"/>
+   <text id="svg_57" font-size="12" text-anchor="middle" y="441.53848" x="393.46155">"D"</text>
+   <g id="svg_58">
+    <text id="svg_59" font-weight="bold" font-size="14" y="501.53848" x="313.46155">4단계:</text>
+    <rect id="svg_60" rx="5" stroke-width="2" stroke="#388e3c" fill="#4caf50" height="40" width="60" y="476.53848" x="363.46155"/>
+    <text id="svg_61" fill="white" font-weight="bold" font-size="12" text-anchor="middle" y="501.53848" x="393.46155">"D"</text>
+    <text id="svg_62" font-size="14" y="501.53848" x="443.46155">+</text>
+    <text id="svg_63" font-weight="bold" font-size="14" y="501.53848" x="473.46155">null</text>
+   </g>
+   <text id="svg_65" font-weight="bold" font-size="18" y="266.53848" x="563.46155">재귀 코드 예시</text>
+   <rect id="svg_66" rx="5" stroke-width="2" stroke="#666" fill="#f5f5f5" height="140" width="450" y="286.53848" x="513.46155"/>
+   <text id="svg_67" font-weight="bold" font-size="14" text-anchor="middle" y="311.53848" x="738.46155">리스트 출력 (재귀)</text>
+   <text id="svg_68" font-family="monospace" font-size="12" y="336.53848" x="523.46155">public static void printList(Node head) {</text>
+   <text id="svg_69" fill="#d32f2f" font-family="monospace" font-size="12" y="356.53848" x="550.38467">if (head == null) return;  // 기저 사례</text>
+   <text id="svg_70" fill="#4caf50" font-family="monospace" font-size="12" y="376.53848" x="550.38467">System.out.println(head.item);  // head 처리</text>
+   <text id="svg_71" fill="#f57c00" font-family="monospace" font-size="12" y="396.53848" x="550.38467">printList(head.next);  // tail 재귀 호출</text>
+   <text id="svg_72" font-family="monospace" font-size="12" y="416.53848" x="523.46155">}</text>
+   <rect id="svg_73" rx="5" stroke-width="2" stroke="#666" fill="#f5f5f5" height="140" width="450" y="446.53848" x="513.46155"/>
+   <text id="svg_74" font-weight="bold" font-size="14" text-anchor="middle" y="471.53848" x="738.46155">역순 출력 (재귀)</text>
+   <text id="svg_75" font-family="monospace" font-size="12" y="496.53848" x="523.46155">public static void printReversed(Node head) {</text>
+   <text id="svg_76" fill="#d32f2f" font-family="monospace" font-size="12" y="515.25643" x="550.38467">if (head == null) return;  // 기저 사례</text>
+   <text id="svg_77" fill="#f57c00" font-family="monospace" font-size="12" y="535.25643" x="550.38467">printReversed(head.next);  // tail 먼저 처리</text>
+   <text id="svg_78" fill="#4caf50" font-family="monospace" font-size="12" y="555.25643" x="550.38467">System.out.println(head.item);  // head 나중에</text>
+   <text id="svg_79" font-family="monospace" font-size="12" y="576.53848" x="523.46155">}</text>
+   <g id="svg_80">
+    <text id="svg_81" font-weight="bold" font-size="18" y="566.53848" x="63.46155">실행 추적: printReversed()</text>
+    <!-- Call stack -->
+    <g id="svg_82">
+     <text id="svg_83" font-weight="bold" font-size="14" y="596.53848" x="63.46155">호출 스택</text>
+     <g id="svg_84">
+      <rect id="svg_85" rx="3" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="30" width="150" y="736.53848" x="63.46155"/>
+      <text id="svg_86" font-size="12" text-anchor="middle" y="756.53848" x="138.46155">printReversed("A")</text>
+      <rect id="svg_87" rx="3" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="30" width="150" y="706.53848" x="63.46155"/>
+      <text id="svg_88" font-size="12" text-anchor="middle" y="726.53848" x="138.46155">printReversed("B")</text>
+      <rect id="svg_89" rx="3" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="30" width="150" y="676.53848" x="63.46155"/>
+      <text id="svg_90" font-size="12" text-anchor="middle" y="696.53848" x="138.46155">printReversed("C")</text>
+      <rect id="svg_91" rx="3" stroke-width="2" stroke="#f57f17" fill="#ffeb3b" height="30" width="150" y="646.53848" x="63.46155"/>
+      <text id="svg_92" font-size="12" text-anchor="middle" y="666.53848" x="138.46155">printReversed("D")</text>
+      <rect id="svg_93" rx="3" stroke-width="2" stroke="#f57c00" fill="#ffc107" height="30" width="150" y="616.53848" x="63.46155"/>
+      <text id="svg_94" font-weight="bold" font-size="12" text-anchor="middle" y="636.53848" x="138.46155">printReversed(null)</text>
+     </g>
+    </g>
+    <!-- Output order -->
+    <g id="svg_95">
+     <text id="svg_96" font-weight="bold" font-size="14" y="596.53848" x="313.46155">출력 순서</text>
+     <g id="svg_97">
+      <circle id="svg_98" fill="#d32f2f" r="15" cy="631.53848" cx="328.46155"/>
+      <text id="svg_99" font-weight="bold" fill="white" font-size="12" text-anchor="middle" y="636.53848" x="328.46155">1</text>
+      <text id="svg_100" font-size="14" y="636.53848" x="353.46155">"D" 출력</text>
+      <circle id="svg_101" fill="#d32f2f" r="15" cy="661.53848" cx="328.46155"/>
+      <text id="svg_102" font-weight="bold" fill="white" font-size="12" text-anchor="middle" y="666.53848" x="328.46155">2</text>
+      <text id="svg_103" font-size="14" y="666.53848" x="353.46155">"C" 출력</text>
+      <circle id="svg_104" fill="#d32f2f" r="15" cy="691.53848" cx="328.46155"/>
+      <text id="svg_105" font-weight="bold" fill="white" font-size="12" text-anchor="middle" y="696.53848" x="328.46155">3</text>
+      <text id="svg_106" font-size="14" y="696.53848" x="353.46155">"B" 출력</text>
+      <circle id="svg_107" fill="#d32f2f" r="15" cy="721.53848" cx="328.46155"/>
+      <text id="svg_108" font-weight="bold" fill="white" font-size="12" text-anchor="middle" y="726.53848" x="328.46155">4</text>
+      <text id="svg_109" font-size="14" y="726.53848" x="353.46155">"A" 출력</text>
+      <rect id="svg_110" rx="5" stroke-width="2" stroke="#66bb6a" fill="#c8e6c9" height="30" width="120" y="746.53848" x="293.46155"/>
+      <text id="svg_111" font-weight="bold" font-size="12" text-anchor="middle" y="766.53848" x="353.46155">결과: D C B A</text>
+     </g>
+    </g>
+   </g>
+   <text id="svg_27" font-weight="bold" font-size="14" y="321.53848" x="36.53851">1단계:</text>
+   <text id="svg_30" font-size="14" y="322.25791" x="160.0083">+</text>
+   <rect id="svg_32" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="60" y="296.49892" x="184.46155"/>
+   <text id="svg_33" font-size="12" text-anchor="middle" y="321.53848" x="214.46155">"B"</text>
+   <path stroke="#333" id="svg_34" marker-end="url(#arrow)" stroke-width="2" d="m244.46153,316.53848l28.27338,0"/>
+   <rect id="svg_35" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="60" y="296.53848" x="274.46155"/>
+   <text id="svg_36" font-size="12" text-anchor="middle" y="321.53848" x="304.46155">"C"</text>
+   <path stroke="#333" id="svg_37" marker-end="url(#arrow)" stroke-width="2" d="m334.46155,316.53848l28.63309,0"/>
+   <rect id="svg_38" rx="5" stroke-width="2" stroke="#1565c0" fill="#e3f2fd" height="40" width="60" y="296.53848" x="364.46155"/>
+   <text id="svg_39" font-size="12" text-anchor="middle" y="321.53848" x="394.46155">"D"</text>
+   <g id="svg_115">
+    <rect id="svg_28" rx="5" stroke-width="2" stroke="#388e3c" fill="#4caf50" height="40" width="60" y="296.49891" x="87.56225"/>
+    <text id="svg_29" fill="white" font-weight="bold" font-size="12" text-anchor="middle" y="321.49891" x="117.56225">"A"</text>
+   </g>
+  </g>
+ </g>
+</svg>

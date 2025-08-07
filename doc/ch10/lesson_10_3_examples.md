@@ -300,11 +300,11 @@ public class MapViewFiltering {
         System.out.println(midRangeStudents);
         
         // 평균 계산
-        int sum = 0;
-        for (Integer score : studentScores.values()) {
-            sum += score;
-        }
-        double average = (double) sum / studentScores.size();
+        // TODO 1: values()를 사용하여 모든 점수의 합계 구하기
+        // TODO 2: 평균 계산 (합계 / 학생 수)
+        
+        int sum = 0; // 임시값
+        double average = 0.0; // 임시값
         System.out.printf("\n평균 점수: %.1f점%n", average);
         
         // 평균 이상 학생
@@ -484,10 +484,13 @@ public class MapComputeMethods {
         Map<String, List<Integer>> indexMap = new HashMap<>();
         String[] words = text.split(" ");
         
+        // TODO 10: 각 단어가 나타나는 인덱스를 리스트로 저장
+        // 힌트: computeIfAbsent를 사용하여 키가 없으면 새 ArrayList 생성
+        //      그 리스트에 현재 인덱스 추가
+        
         for (int i = 0; i < words.length; i++) {
             final int index = i;
-            indexMap.computeIfAbsent(words[i], k -> new ArrayList<>())
-                   .add(index);
+            // TODO 구현
         }
         System.out.println("단어 위치: " + indexMap);
         
@@ -806,19 +809,15 @@ public class PhoneBookSystem {
     
     // 전화번호 추가
     public void addContact(String name, String phoneNumber) {
-        // 기존 번호가 있으면 역방향 맵에서 제거
-        String oldNumber = phoneBook.get(name);
-        if (oldNumber != null) {
-            reversePhoneBook.get(oldNumber).remove(name);
-            if (reversePhoneBook.get(oldNumber).isEmpty()) {
-                reversePhoneBook.remove(oldNumber);
-            }
-        }
+        // TODO 3: 기존 번호가 있으면 역방향 맵에서 제거
+        // 힌트: phoneBook에서 기존 번호 조회
+        //      있으면 reversePhoneBook에서 해당 이름 제거
+        //      Set이 비어있으면 해당 번호 키도 제거
         
-        // 새 번호 추가
-        phoneBook.put(name, phoneNumber);
-        reversePhoneBook.computeIfAbsent(phoneNumber, k -> new HashSet<>())
-                       .add(name);
+        // TODO 4: 새 번호 추가
+        // - phoneBook에 이름-번호 매핑 추가
+        // - reversePhoneBook에 번호-이름 Set 매핑 추가
+        //   (힌트: computeIfAbsent 사용)
     }
     
     // 이름으로 번호 찾기
@@ -834,13 +833,11 @@ public class PhoneBookSystem {
     // 이름으로 검색
     public List<Map.Entry<String, String>> searchByName(String prefix) {
         List<Map.Entry<String, String>> results = new ArrayList<>();
-        String endPrefix = prefix + "힣";  // 한글 마지막 문자
         
-        if (phoneBook instanceof TreeMap) {
-            TreeMap<String, String> treeMap = (TreeMap<String, String>) phoneBook;
-            SortedMap<String, String> subMap = treeMap.subMap(prefix, endPrefix);
-            results.addAll(subMap.entrySet());
-        }
+        // TODO 5: TreeMap의 subMap을 사용하여 prefix로 시작하는 항목 찾기
+        // 힌트: phoneBook이 TreeMap 인스턴스인지 확인
+        //      prefix로 시작하여 prefix+"힣"으로 끝나는 범위 사용
+        //      subMap의 모든 entry를 results에 추가
         
         return results;
     }
@@ -872,11 +869,11 @@ public class PhoneBookSystem {
     // 중복 번호 찾기
     public Map<String, Set<String>> findDuplicateNumbers() {
         Map<String, Set<String>> duplicates = new HashMap<>();
-        for (Map.Entry<String, Set<String>> entry : reversePhoneBook.entrySet()) {
-            if (entry.getValue().size() > 1) {
-                duplicates.put(entry.getKey(), new HashSet<>(entry.getValue()));
-            }
-        }
+        
+        // TODO 6: reversePhoneBook에서 여러 이름이 있는 번호 찾기
+        // 힌트: entrySet()을 순회하며 value Set의 크기가 1보다 큰 경우
+        //      해당 번호와 이름 Set을 duplicates에 추가
+        
         return duplicates;
     }
     

@@ -59,6 +59,8 @@ public class RecursionExample {
 
 ### 1.3 재귀의 두 가지 핵심 요소
 
+![재귀의 두 가지 핵심 요소](./images/recursion_key_elements.svg)
+
 #### 1) 기저 사례(Base Case)
 - 재귀를 멈추는 조건
 - 더 이상 자기 자신을 호출하지 않고 직접 답을 반환
@@ -81,6 +83,12 @@ public static int countdown(int n) {
     return countdown(n - 1);  // 문제 크기가 1씩 감소
 }
 ```
+
+### 1.4 재귀 호출의 동작 원리
+
+재귀 함수가 어떻게 호출되고 반환되는지 factorial 예제로 살펴보겠습니다:
+
+![재귀 호출 흐름 예시](./images/recursion_flow_example.svg)
 
 ## 2. 재귀적 이진 탐색
 
@@ -195,6 +203,8 @@ n개의 원반을 A에서 C로 옮기는 방법:
 1. 위쪽 n-1개를 A에서 B로 옮김 (C를 임시 사용)
 2. 가장 큰 원반을 A에서 C로 옮김
 3. n-1개를 B에서 C로 옮김 (A를 임시 사용)
+
+![하노이의 탑 - 4개 원반](./images/hanoi_tower_4disks.svg)
 
 ```java
 public class TowersOfHanoi {
